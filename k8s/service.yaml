@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: brcstar-enterprise-service
+  namespace: production
+  labels:
+    app.kubernetes.io/name: brcstar-enterprise
+spec:
+  type: ClusterIP
+  selector:
+    app: brcstar-enterprise-web
+  ports:
+    - port: 80
+      targetPort: 3000
+      name: http
+      protocol: TCP

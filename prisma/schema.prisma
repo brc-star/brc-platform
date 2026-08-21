@@ -1,0 +1,520 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ==========================================
+// DOMAIN 1: IDENTITY, RBAC & AUDIT
+// ==========================================
+
+enum UserRole {
+  SUPER_ADMIN
+  FOUNDER
+  CTO
+  CFO
+  INVESTOR
+  RND_ENGINEER
+  MANUFACTURING_LEAD
+  SALES_EXECUTIVE
+  DEALER_PARTNER
+  CUSTOMER
+  SERVICE_TECH
+  AUDITOR
+}
+
+model User {
+  id               String            @id @default(uuid())
+  email            String            @unique
+  passwordHash     String
+  fullName         String
+  phone            String?
+  role             UserRole          @default(CUSTOMER)
+  isActive         Boolean           @default(true)
+  twoFactorEnabled Boolean           @default(false)
+  lastLoginAt      DateTime?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  sessions         Session[]
+  auditLogs        AuditLog[]
+  leadsHandled     Lead[]            @relation("HandledBy")
+  preBookings      PreBooking[]
+  investorProfile  InvestorProfile?
+  dealership       Dealership?       @relation("DealerOwner")
+  sopRevisions     SOPRevision[]     @relation("RevisionAuthor")
+  sopApprovals     SOPApproval[]     @relation("Approver")
+  serviceTickets   ServiceTicket[]   @relation("CustomerTickets")
+
+  @@index([email, role])
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  userId       String
+  token        String   @unique
+  ipAddress    String?
+  userAgent    String?
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, token])
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  action     String   // e.g. "USER_LOGIN", "NDA_SIGNED", "BOM_APPROVED", "TELEMETRY_EXPORT"
+  entityType String   // e.g. "InvestorNDA", "PreBooking", "SOPDocument"
+  entityId   String?
+  metadata   Json?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([action, entityType, createdAt])
+}
+
+// ==========================================
+// DOMAIN 2: SALES, LEADS & PRE-BOOKINGS
+// ==========================================
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  TEST_DRIVE_BOOKED
+  QUOTATION_SENT
+  CONVERTED
+  LOST
+}
+
+enum LeadInterestType {
+  PASSENGER_EV
+  COMMERCIAL_FLEET
+  ELECTRIC_BUS
+  DEALER_FRANCHISE
+  INVESTOR_RELATIONS
+  RND_COLLABORATION
+}
+
+model Lead {
+  id             String           @id @default(uuid())
+  fullName       String
+  email          String
+  phone          String
+  city           String
+  state          String
+  interestType   LeadInterestType @default(PASSENGER_EV)
+  status         LeadStatus       @default(NEW)
+  leadScore      Int              @default(50)
+  notes          String?
+  utmSource      String?
+  utmCampaign    String?
+  assignedToId   String?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  assignedTo     User?            @relation("HandledBy", fields: [assignedToId], references: [id])
+  testDrives     TestDrive[]
+  preBookings    PreBooking[]
+
+  @@index([email, status, interestType])
+}
+
+model PreBooking {
+  id                 String     @id @default(uuid())
+  bookingReference   String     @unique // Format: BRC-2026-XXXX
+  userId             String?
+  leadId             String?
+  vehicleModelSlug   String
+  trimLevel          String
+  exteriorColor      String
+  tokenAmountInr     Decimal    @default(25000.00) @db.Decimal(10, 2)
+  isRefundable       Boolean    @default(true)
+  paymentStatus      String     @default("PENDING") // PENDING, PAID, REFUNDED
+  deliveryState      String
+  targetDeliveryYear Int        @default(2027)
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  user               User?      @relation(fields: [userId], references: [id])
+  lead               Lead?      @relation(fields: [leadId], references: [id])
+
+  @@index([bookingReference, paymentStatus])
+}
+
+model TestDrive {
+  id             String    @id @default(uuid())
+  leadId         String
+  vehicleModel   String
+  preferredDate  DateTime
+  location       String
+  status         String    @default("SCHEDULED") // SCHEDULED, COMPLETED, CANCELLED
+  feedback       String?
+  createdAt      DateTime  @default(now())
+
+  lead           Lead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId, preferredDate])
+}
+
+// ==========================================
+// DOMAIN 3: VEHICLE CATALOG & CONFIGURATION
+// ==========================================
+
+model VehicleModel {
+  id               String        @id @default(uuid())
+  slug             String        @unique // e.g. "starcraft-gt", "starpulse-suv", "startransit-bus"
+  name             String
+  tagline          String
+  category         String        // "Passenger", "Commercial", "Heavy Transit"
+  basePriceInr     Decimal       @db.Decimal(12, 2)
+  heroImageUrl     String
+  isActive         Boolean       @default(true)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  trims            VehicleTrim[]
+  specs            VehicleSpec[]
+  instances        VehicleInstance[]
+
+  @@index([slug, category])
+}
+
+model VehicleTrim {
+  id             String       @id @default(uuid())
+  modelId        String
+  name           String       // "Standard Self-Volt", "Long Range Dual-Pack", "Aero Performance"
+  acceleration   String       // "0-100 km/h in 3.4s"
+  topSpeedKmh    Int          // 220
+  ratedRangeKm   Int          // 850
+  batteryKwh     Decimal      @db.Decimal(6, 2)
+  motorKw        Int
+  priceOffsetInr Decimal      @default(0.00) @db.Decimal(10, 2)
+
+  model          VehicleModel @relation(fields: [modelId], references: [id], onDelete: Cascade)
+
+  @@index([modelId])
+}
+
+model VehicleSpec {
+  id             String       @id @default(uuid())
+  modelId        String
+  category       String       // "Powertrain", "Self-Volt ACM", "Aerodynamics", "Dimensions", "Safety"
+  label          String
+  value          String
+  displayOrder   Int          @default(0)
+
+  model          VehicleModel @relation(fields: [modelId], references: [id], onDelete: Cascade)
+
+  @@index([modelId, category])
+}
+
+// ==========================================
+// DOMAIN 4: INVESTORS & SECURE DATA ROOM
+// ==========================================
+
+enum NDAStatus {
+  PENDING
+  SIGNED
+  EXPIRED
+  REVOKED
+}
+
+model InvestorProfile {
+  id               String            @id @default(uuid())
+  userId           String            @unique
+  organization     String
+  designation      String
+  fundType         String            // "Venture Capital", "Family Office", "Angel Network", "Strategic Corporate"
+  checkSizeMin     Decimal?          @db.Decimal(14, 2)
+  checkSizeMax     Decimal?          @db.Decimal(14, 2)
+  ndaStatus        NDAStatus         @default(PENDING)
+  ndaSignedAt      DateTime?
+  ndaIpAddress     String?
+  ndaSignatureHash String?
+  dataRoomTier     Int               @default(1) // 1=Public Overview, 2=Financials/CapTable, 3=Deep Tech IP
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessLogs       DataRoomAccess[]
+
+  @@index([userId, ndaStatus])
+}
+
+model DataRoomAccess {
+  id                String          @id @default(uuid())
+  investorProfileId String
+  documentSlug      String
+  accessedAt        DateTime        @default(now())
+  ipAddress         String?
+  durationSeconds   Int?
+
+  investorProfile   InvestorProfile @relation(fields: [investorProfileId], references: [id], onDelete: Cascade)
+
+  @@index([investorProfileId, documentSlug])
+}
+
+// ==========================================
+// DOMAIN 5: DEALERS & DISTRIBUTION NETWORK
+// ==========================================
+
+enum FranchiseTier {
+  FLAGSHIP_EXPERIENCE_CENTER
+  REGIONAL_SALES_AND_SERVICE
+  AUTHORIZED_SERVICE_NODE
+}
+
+model DealerApplication {
+  id                 String        @id @default(uuid())
+  applicantName      String
+  companyName        String
+  email              String
+  phone              String
+  proposedTerritory  String
+  proposedState      String
+  tierInterested     FranchiseTier @default(REGIONAL_SALES_AND_SERVICE)
+  liquidCapitalInr   Decimal       @db.Decimal(12, 2)
+  commercialSpaceSqFt Int
+  automotiveExpYears Int           @default(0)
+  status             String        @default("UNDER_REVIEW") // UNDER_REVIEW, APPROVED, REJECTED
+  createdAt          DateTime      @default(now())
+
+  @@index([email, proposedTerritory, status])
+}
+
+model Dealership {
+  id             String        @id @default(uuid())
+  ownerUserId    String        @unique
+  dealershipName String
+  code           String        @unique
+  city           String
+  state          String
+  tier           FranchiseTier
+  isActive       Boolean       @default(true)
+  createdAt      DateTime      @default(now())
+
+  owner          User          @relation("DealerOwner", fields: [ownerUserId], references: [id])
+
+  @@index([code, city, state])
+}
+
+// ==========================================
+// DOMAIN 6: VEHICLE TELEMETRY & IOT GATEWAY
+// ==========================================
+
+model VehicleInstance {
+  id               String          @id @default(uuid())
+  vin              String          @unique
+  modelId          String
+  licensePlate     String?
+  ownerEmail       String?
+  manufacturingDate DateTime
+  firmwareVersion  String          @default("BRC-OS-1.0.4-LTS")
+  batteryHealthPct Decimal         @default(100.0) @db.Decimal(5, 2)
+  totalKmTraveled  Decimal         @default(0.0) @db.Decimal(10, 2)
+  isOnline         Boolean         @default(false)
+  createdAt        DateTime        @default(now())
+
+  model            VehicleModel    @relation(fields: [modelId], references: [id])
+  telemetryLogs    TelemetryLog[]
+  serviceTickets   ServiceTicket[]
+
+  @@index([vin, ownerEmail])
+}
+
+model TelemetryLog {
+  id               String          @id @default(uuid())
+  vehicleId        String
+  socPrimaryPct    Decimal         @db.Decimal(5, 2) // Battery Pack A
+  socSecondaryPct  Decimal         @db.Decimal(5, 2) // Battery Pack B
+  packVoltageV     Decimal         @db.Decimal(6, 2)
+  dischargeCurrentA Decimal        @db.Decimal(6, 2)
+  regenKw          Decimal         @db.Decimal(6, 2)
+  acmEfficiencyPct Decimal         @db.Decimal(5, 2) // Alternator Control Module efficiency
+  motorTempC       Decimal         @db.Decimal(5, 2)
+  batteryTempC     Decimal         @db.Decimal(5, 2)
+  speedKmh         Decimal         @db.Decimal(5, 2)
+  loggedAt         DateTime        @default(now())
+
+  vehicle          VehicleInstance @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+
+  @@index([vehicleId, loggedAt])
+}
+
+// ==========================================
+// DOMAIN 7: R&D, PATENTS & SIMULATION BENCHMARKS
+// ==========================================
+
+model PatentRecord {
+  id               String   @id @default(uuid())
+  patentRefNumber  String   @unique // e.g. "IN-PAT-2025-BRC-009"
+  title            String
+  abstractSummary  String
+  jurisdiction     String   @default("India (IPO) & PCT International")
+  status           String   @default("PUBLISHED_PENDING_GRANT") // PROVISIONAL, PUBLISHED, GRANTED
+  filingDate       DateTime
+  claimsCount      Int      @default(18)
+  category         String   // "Dual-Pack Closed Loop", "ACM Controller", "Kinetic PMG Harvester"
+  isPublic         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+
+  @@index([patentRefNumber, status, isPublic])
+}
+
+model SimulationTest {
+  id               String   @id @default(uuid())
+  testName         String
+  testBed          String   // "Dynamometer Rig 4", "Thermal Chamber B", "HIL Simulator"
+  cycleType        String   // "WLTP High Speed", "Indian Urban Drive Cycle (MIDC)", "Extreme Cold -20C"
+  baselineWhPerKm  Decimal  @db.Decimal(6, 2)
+  selfVoltWhPerKm  Decimal  @db.Decimal(6, 2)
+  efficiencyGainPct Decimal @db.Decimal(5, 2)
+  runDate          DateTime @default(now())
+  verifiedBy       String
+
+  @@index([testName, cycleType])
+}
+
+// ==========================================
+// DOMAIN 8: ERP, BOM & MANUFACTURING
+// ==========================================
+
+model Component {
+  id               String   @id @default(uuid())
+  partNumber       String   @unique // e.g. "BRC-ACM-700V-01"
+  name             String
+  category         String   // "Battery Cells", "BMS", "Inverter", "ACM", "PMG Alternator", "Chassis"
+  unitCostInr      Decimal  @db.Decimal(10, 2)
+  stockQuantity    Int      @default(0)
+  reorderLevel     Int      @default(50)
+  supplierName     String
+  leadTimeDays     Int      @default(14)
+  createdAt        DateTime @default(now())
+
+  bomItems         BOMItem[]
+
+  @@index([partNumber, category])
+}
+
+model BOMItem {
+  id               String    @id @default(uuid())
+  componentId      String
+  targetModelSlug  String
+  quantityPerUnit  Int       @default(1)
+  assemblyStation  String    // "Station 3: High Voltage Powertrain"
+
+  component        Component @relation(fields: [componentId], references: [id])
+
+  @@index([componentId, targetModelSlug])
+}
+
+// ==========================================
+// DOMAIN 9: ENTERPRISE SOP SYSTEM
+// ==========================================
+
+model SOPDocument {
+  id               String        @id @default(uuid())
+  code             String        @unique // e.g. "SOP-MFG-BAT-004"
+  title            String
+  department       String        // "Manufacturing", "Quality Control", "Battery Assembly", "Service"
+  currentVersion   String        @default("v1.0")
+  isActive         Boolean       @default(true)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  revisions        SOPRevision[]
+
+  @@index([code, department])
+}
+
+model SOPRevision {
+  id               String        @id @default(uuid())
+  sopId            String
+  version          String
+  contentMarkdown  String
+  authorId         String
+  changeSummary    String
+  createdAt        DateTime      @default(now())
+
+  sop              SOPDocument   @relation(fields: [sopId], references: [id], onDelete: Cascade)
+  author           User          @relation("RevisionAuthor", fields: [authorId], references: [id])
+  approvals        SOPApproval[]
+
+  @@index([sopId, version])
+}
+
+model SOPApproval {
+  id               String      @id @default(uuid())
+  revisionId       String
+  approverId       String
+  status           String      @default("APPROVED")
+  signedAt         DateTime    @default(now())
+
+  revision         SOPRevision @relation(fields: [revisionId], references: [id], onDelete: Cascade)
+  approver         User        @relation("Approver", fields: [approverId], references: [id])
+
+  @@index([revisionId, approverId])
+}
+
+// ==========================================
+// DOMAIN 10: AFTER-SALES & SERVICE TICKETS
+// ==========================================
+
+model ServiceTicket {
+  id               String           @id @default(uuid())
+  ticketNumber     String           @unique // Format: BRC-SRV-2026-XXXX
+  customerId       String
+  vehicleId        String?
+  issueDescription String
+  serviceType      String           // "Periodic Maintenance", "BMS Calibration", "Firmware Flash", "Warranty Inspection"
+  status           String           @default("OPEN") // OPEN, IN_PROGRESS, RESOLVED, CLOSED
+  scheduledDate    DateTime?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  customer         User             @relation("CustomerTickets", fields: [customerId], references: [id])
+  vehicle          VehicleInstance? @relation(fields: [vehicleId], references: [id])
+
+  @@index([ticketNumber, customerId, status])
+}
+
+// ==========================================
+// DOMAIN 11 & 12: CONTENT, MEDIA & WHITEPAPERS
+// ==========================================
+
+model PressArticle {
+  id               String   @id @default(uuid())
+  slug             String   @unique
+  title            String
+  summary          String
+  source           String   // e.g. "Autocar Professional", "ET Auto", "BRC Official Newsroom"
+  publishedAt      DateTime
+  coverImageUrl    String
+  contentHtml      String
+  isFeatured       Boolean  @default(false)
+  createdAt        DateTime @default(now())
+
+  @@index([slug, publishedAt, isFeatured])
+}
+
+model WhitepaperDocument {
+  id               String   @id @default(uuid())
+  title            String
+  slug             String   @unique
+  abstractText     String
+  pdfUrl           String
+  downloadCount    Int      @default(0)
+  isPublic         Boolean  @default(true)
+  publishedAt      DateTime @default(now())
+
+  @@index([slug, isPublic])
+}

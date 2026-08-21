@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # Next.js 16 Digital Enterprise Platform
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: brcstar_enterprise_web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://brc_admin:secure_db_password@postgres:5432/brcstar_enterprise?schema=public
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=enterprise_production_jwt_secret_key_32_bytes_min
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - brcstar_internal_network
+
+  # PostgreSQL 16 Enterprise Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: brcstar_enterprise_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: brc_admin
+      POSTGRES_PASSWORD: secure_db_password
+      POSTGRES_DB: brcstar_enterprise
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U brc_admin -d brcstar_enterprise"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - brcstar_internal_network
+
+  # Redis Cache & Queue
+  redis:
+    image: redis:7-alpine
+    container_name: brcstar_enterprise_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - brcstar_internal_network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  brcstar_internal_network:
+    driver: bridge
