@@ -36,7 +36,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
     imageUrl: "/brc-starcraft-gt-suv.png",
     sideImageUrl: "/brc-starcraft-gt-side.png",
     aeroImageUrl: "/brc-starcraft-gt-aero.png",
-    basePriceInr: 3450000,
+    basePriceInr: 1550000,
     acceleration: "0-100 km/h in 3.2s",
     topSpeedKmh: 240,
     ratedRangeKm: 850,
