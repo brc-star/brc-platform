@@ -57,7 +57,7 @@ export default function VehiclesPage() {
               Designed for extreme highway range, 0-100 in 3.2s acceleration, and zero range anxiety with dual-pack continuous recoup.
             </p>
             <div className="text-xs font-mono text-slate-400 space-y-1 pt-2 border-t border-slate-800">
-              <div>• Starting from {formatInr(2850000)}</div>
+              <div>• Starting from {formatInr(2950000)}</div>
               <div>• Up to 850 km Self-Volt Range</div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function VehiclesPage() {
               Engineered for enterprise logistics, cold chain, and multi-axle freight haulage. Up to 44% lower operating expense than diesel.
             </p>
             <div className="text-xs font-mono text-slate-400 space-y-1 pt-2 border-t border-slate-800">
-              <div>• Starting from {formatInr(1650000)}</div>
+              <div>• Starting from {formatInr(2450000)}</div>
               <div>• Up to 8,500 kg High-Tonnage Payload</div>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function VehiclesPage() {
               12-meter low-floor high-capacity electric bus with dual-axle kinetic harvesters for 18-hour continuous municipal duty.
             </p>
             <div className="text-xs font-mono text-slate-400 space-y-1 pt-2 border-t border-slate-800">
-              <div>• Starting from {formatInr(9800000)}</div>
+              <div>• Starting from {formatInr(6500000)}</div>
               <div>• 72+ Passenger High-Capacity Coach</div>
             </div>
           </div>

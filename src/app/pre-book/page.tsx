@@ -4,30 +4,17 @@ import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Car, Zap, CheckCircle2, ArrowRight, ShieldCheck, CreditCard, ChevronRight, AlertCircle } from "lucide-react";
-import { VEHICLES_DATA, VehicleModelData } from "@/lib/data";
+import {
+  VEHICLES_DATA,
+  VehicleModelData,
+  STANDARD_DRIVETRAIN_TRIMS,
+  COMMON_DISCLAIMERS,
+  calculateVehiclePrice,
+} from "@/data/vehicles";
 import { formatInr } from "@/lib/utils";
 
-const DRIVETRAIN_TRIMS = [
-  {
-    id: "standard",
-    name: "Standard Self-Volt Edition",
-    desc: "Single / Dual motor baseline configuration",
-    priceOffset: 0,
-  },
-  {
-    id: "long_range",
-    name: "Dual-Pack Extended Range",
-    badge: "RECOMMENDED",
-    desc: "Dual-pack closed loop continuous kinetic recoup",
-    priceOffset: 350000,
-  },
-  {
-    id: "performance",
-    name: "Hyper-Performance Track Edition",
-    desc: "High-output dual drive, enhanced torque & active cooling",
-    priceOffset: 650000,
-  },
-];
+// Exclude aliases for model selection tabs
+const PRIMARY_PREBOOK_VEHICLES = VEHICLES_DATA.filter((v) => v.slug !== "starfleet-logistic");
 
 function PreBookContent() {
   const searchParams = useSearchParams();
@@ -55,7 +42,7 @@ function PreBookContent() {
     if (modelParam && VEHICLES_DATA.some((v) => v.slug === modelParam)) {
       setSelectedModelSlug(modelParam);
     }
-    if (trimParam && DRIVETRAIN_TRIMS.some((t) => t.id === trimParam)) {
+    if (trimParam && STANDARD_DRIVETRAIN_TRIMS.some((t) => t.id === trimParam)) {
       setSelectedTrim(trimParam);
     }
   }, [searchParams]);
@@ -64,9 +51,9 @@ function PreBookContent() {
     VEHICLES_DATA.find((v) => v.slug === selectedModelSlug) || VEHICLES_DATA[0];
 
   const activeTrim =
-    DRIVETRAIN_TRIMS.find((t) => t.id === selectedTrim) || DRIVETRAIN_TRIMS[0];
+    STANDARD_DRIVETRAIN_TRIMS.find((t) => t.id === selectedTrim) || STANDARD_DRIVETRAIN_TRIMS[0];
 
-  const calculatedTotal = currentVehicle.basePriceInr + activeTrim.priceOffset;
+  const calculatedTotal = calculateVehiclePrice(currentVehicle.basePriceInr, activeTrim.priceOffset);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -180,7 +167,7 @@ function PreBookContent() {
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
               <div className="text-xs font-mono text-cyan-400 uppercase">Step 1: Choose Vehicle Model</div>
               <div className="grid grid-cols-2 gap-3">
-                {VEHICLES_DATA.map((v) => (
+                {PRIMARY_PREBOOK_VEHICLES.map((v) => (
                   <button
                     key={v.slug}
                     type="button"
@@ -204,7 +191,7 @@ function PreBookContent() {
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
               <div className="text-xs font-mono text-cyan-400 uppercase">Step 2: Choose Drivetrain Architecture</div>
               <div className="space-y-2">
-                {DRIVETRAIN_TRIMS.map((trim) => (
+                {STANDARD_DRIVETRAIN_TRIMS.map((trim) => (
                   <button
                     key={trim.id}
                     type="button"
@@ -224,7 +211,9 @@ function PreBookContent() {
                           </span>
                         )}
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">{trim.desc}</div>
+                      <div className="text-[11px] text-slate-400 mt-0.5">
+                        {trim.description(currentVehicle.name, currentVehicle.ratedRangeKm)}
+                      </div>
                     </div>
                     <div className="text-xs font-mono font-semibold text-cyan-400 shrink-0 ml-3">
                       {trim.priceOffset === 0 ? "Base Included" : `+${formatInr(trim.priceOffset)}`}
@@ -328,6 +317,9 @@ function PreBookContent() {
                 <div className="flex justify-between text-slate-300">
                   <span>Indicative Vehicle Price:</span>
                   <span className="font-bold text-cyan-400">{formatInr(calculatedTotal)}</span>
+                </div>
+                <div className="text-[10px] text-slate-500 font-mono">
+                  {COMMON_DISCLAIMERS.homologationNotice}
                 </div>
                 <div className="flex justify-between text-emerald-400 font-bold pt-1 border-t border-slate-800">
                   <span>Token Payable Now (Refundable):</span>

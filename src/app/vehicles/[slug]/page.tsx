@@ -47,8 +47,13 @@ export default async function VehicleDetailPage({ params }: PageProps) {
           </div>
 
           <div className="text-left md:text-right">
-            <span className="text-xs font-mono text-slate-400 block">Indicative Starting Price</span>
+            <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
+              INDICATIVE EX-SHOWROOM (ESTIMATED)
+            </span>
             <span className="text-3xl font-extrabold text-white font-mono">{formatInr(vehicle.basePriceInr)}</span>
+            <span className="text-[10px] font-mono text-slate-500 block">
+              Subject to homologation &amp; prototype validation
+            </span>
           </div>
         </div>
       </div>

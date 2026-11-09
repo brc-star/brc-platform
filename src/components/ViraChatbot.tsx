@@ -96,7 +96,7 @@ export const ViraChatbot = () => {
     // 2. Vehicles / Models / Specs / Lineup
     if (q.includes("vehicle") || q.includes("car") || q.includes("starcraft") || q.includes("starpulse") || q.includes("starfleet") || q.includes("bus") || q.includes("suv") || q.includes("model") || q.includes("speed") || q.includes("range")) {
       return {
-        text: "**BRC STAR Vehicle Portfolio**:\n\n1. **StarCraft GT** — Hyper-Sedan (0-100 in 3.2s, 850 km Dual-Pack range, 800V solid-state bus, ₹28.5L base).\n2. **StarPulse SUV** — Luxury All-Terrain EV (820 km range, 7-seater, intelligent air suspension).\n3. **StarFleet Commercial** — High-uptime urban cargo van (3.2-ton payload, 520 km route range, ₹4.8L annual OPEX savings).\n4. **StarTransit 12M Bus** — High-capacity municipal and intercity transit coach (650 km range).",
+        text: "**BRC STAR Vehicle Portfolio**:\n\n1. **StarCraft GT** — Hyper-Sedan (0-100 in 3.2s, 850 km Dual-Pack range, 800V solid-state bus, ₹34.5L base).\n2. **StarPulse SUV** — Luxury All-Terrain EV (720 km range, 7-seater, intelligent air suspension, ₹29.5L base).\n3. **StarFleet Commercial** — High-uptime urban cargo van (1,850 kg payload, 520 km route range, ₹24.5L base, ₹4.8L annual OPEX savings).\n4. **StarTransit 12M Bus** — High-capacity municipal and intercity transit coach (480 km range, ₹65L base).",
         links: [
           { label: "Configure StarCraft GT", url: "/vehicles/passenger" },
           { label: "Pre-Book Build Slot", url: "/pre-book" },

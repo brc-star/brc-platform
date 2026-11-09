@@ -114,11 +114,14 @@ export default function PassengerVehiclesPage() {
 
               <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <span className="text-[10px] font-mono text-slate-400 uppercase block">
-                    Starting from
+                  <span className="text-[10px] font-mono text-slate-400 uppercase block tracking-wider">
+                    INDICATIVE EX-SHOWROOM (ESTIMATED)
                   </span>
                   <span className="text-2xl font-bold text-white font-mono">
                     {formatInr(vehicle.basePriceInr)}
+                  </span>
+                  <span className="text-[9px] font-mono text-slate-500 block">
+                    Subject to homologation &amp; prototype validation
                   </span>
                 </div>
 

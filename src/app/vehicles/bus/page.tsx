@@ -98,8 +98,9 @@ export default function BusVehiclesPage() {
 
           <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
             <div>
-              <span className="text-[10px] font-mono text-slate-400 uppercase block">Indicative Pricing</span>
+              <span className="text-[10px] font-mono text-slate-400 uppercase block tracking-wider">INDICATIVE EX-SHOWROOM (ESTIMATED)</span>
               <span className="text-2xl font-bold text-white font-mono">{formatInr(busVehicle.basePriceInr)}</span>
+              <span className="text-[9px] font-mono text-slate-500 block">Subject to homologation &amp; prototype validation</span>
             </div>
 
             <div className="flex items-center gap-3">
