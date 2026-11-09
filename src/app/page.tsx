@@ -209,13 +209,13 @@ export default function HomePage() {
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">TRL-6 Prototype Track Tested:</strong> Validated 32.8% energy gain on dynamometer rigs.
+                    <strong className="text-white">TRL 3/4 Dynamometer Validated:</strong> 32.8% auxiliary energy gain measured across test rig profiles.
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Patent Examination Progress:</strong> Primary closed-loop claim published with IPO.
+                    <strong className="text-white">Patent Examination Progress:</strong> Indian Patent Application No. 202511050655 published with IPO.
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">

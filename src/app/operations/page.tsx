@@ -16,6 +16,7 @@ import {
   Plus,
 } from "lucide-react";
 import { formatInr, formatNumber } from "@/lib/utils";
+import { ResponsiveTable } from "@/components/ResponsiveTable";
 
 export default function EnterpriseOperationsPage() {
   const [activeModule, setActiveModule] = useState<"crm" | "bom" | "sop" | "telemetry">("crm");
@@ -131,7 +132,7 @@ export default function EnterpriseOperationsPage() {
               </button>
             </div>
 
-            <div className="overflow-x-auto">
+            <ResponsiveTable>
               <table className="w-full text-xs font-mono text-left">
                 <thead>
                   <tr className="border-b border-slate-800 text-slate-400 uppercase">
@@ -160,7 +161,7 @@ export default function EnterpriseOperationsPage() {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </ResponsiveTable>
           </div>
         )}
 

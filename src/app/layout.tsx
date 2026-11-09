@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ViraChatbot } from "@/components/ViraChatbot";
 import "./globals.css";
+
+// Deferred non-critical chatbot hydration (improves FCP, LCP & INP)
+const ViraChatbot = dynamic(
+  () => import("@/components/ViraChatbot").then((mod) => mod.ViraChatbot),
+  { ssr: false }
+);
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,35 +24,42 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "BRC STAR | Self Volt Electric Vehicle Technology | Official Platform",
+  metadataBase: new URL("https://brcstar.in"),
+  title: {
+    default: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
+    template: "%s | BRC STAR Deep-Tech EV",
+  },
   description:
-    "BRC STAR (OPC) PRIVATE LIMITED — Pioneering India's deep-tech Self Volt Electric Vehicle architecture. Closed-loop dual-battery energy recovery, 850 km real-world range, and reduced grid power dependency.",
+    "BRC STAR (OPC) PRIVATE LIMITED — Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical harvesting, closed-loop dynamic battery switching, and high-uptime commercial powertrains.",
   keywords: [
     "BRC STAR",
-    "Self Volt EV",
-    "Electric Vehicle India",
-    "Deep Tech EV",
-    "Closed Loop Battery",
-    "Dual Pack EV",
+    "Patent 202511050655",
+    "Dual Pack EV Architecture",
+    "Kinetic Energy Recovery System",
+    "Alternator Control Module ACM",
+    "Commercial Electric Vehicle India",
     "StarCraft GT",
-    "StarPulse SUV",
-    "StarFleet Commercial",
     "StarTransit Bus",
-    "Clean Mobility",
+    "DPIIT Incubated EV Startup",
   ],
-  authors: [{ name: "BRC STAR (OPC) PRIVATE LIMITED" }],
+  authors: [{ name: "BRC STAR (OPC) PRIVATE LIMITED", url: "https://brcstar.in" }],
+  creator: "Dr. B. Chauhan",
+  publisher: "BRC STAR (OPC) PRIVATE LIMITED",
+  alternates: {
+    canonical: "https://brcstar.in",
+  },
   openGraph: {
-    title: "BRC STAR | Self Volt Electric Vehicle Platform",
+    title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
     description:
-      "Deep-tech electric vehicle architecture with closed-loop dual-battery energy recoup and high-efficiency permanent magnet harvesting.",
+      "Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical kinetic energy recovery with dynamic dual-pack bus switching.",
     url: "https://brcstar.in",
-    siteName: "BRC STAR EV",
+    siteName: "BRC STAR Deep-Tech Mobility",
     images: [
       {
         url: "https://brcstar.in/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BRC STAR Self Volt EV",
+        alt: "BRC STAR Dual-Pack Kinetic Energy Recovery Architecture",
       },
     ],
     locale: "en_IN",
@@ -54,12 +67,20 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BRC STAR | Self Volt Electric Vehicle Platform",
-    description: "Deep-tech electric vehicle architecture with closed-loop kinetic energy recoup.",
+    title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
+    description: "Deep-tech electric mobility filed under Indian Patent Application No. 202511050655.",
+    images: ["https://brcstar.in/og-image.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -70,18 +91,43 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "BRC STAR (OPC) PRIVATE LIMITED",
-    url: "https://brcstar.in",
-    logo: "https://brcstar.in/logo.png",
-    description:
-      "Indian deep-tech automotive startup developing proprietary BRC STAR Self Volt Electric Vehicle technology.",
-    foundingLocation: "Rajasthan, India",
-    knowsAbout: [
-      "Electric Vehicle Powertrains",
-      "Closed-Loop Dual-Battery Energy Management",
-      "Permanent Magnet Generator Kinetic Harvesting",
-      "Solid-State Battery Thermal Balance",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://brcstar.in/#organization",
+        name: "BRC STAR (OPC) PRIVATE LIMITED",
+        legalName: "BRC STAR (OPC) PRIVATE LIMITED",
+        identifier: "CIN: U34100RJ2019OPC066948",
+        url: "https://brcstar.in",
+        logo: "https://brcstar.in/logo.png",
+        email: "contact@brcstar.in",
+        telephone: "+91-99241-00759",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "7SJM-A, Anupgarh",
+          addressLocality: "Ganganagar",
+          addressRegion: "Rajasthan",
+          postalCode: "335701",
+          addressCountry: "IN",
+        },
+        foundingLocation: "Rajasthan, India",
+        knowsAbout: [
+          "Electric Vehicle Powertrains",
+          "Kinetic Energy Recovery Systems (KERS)",
+          "Dual-Pack Battery Bus Dynamic Switching",
+          "Permanent Magnet Generator Auxiliary Harvesting",
+          "Indian Patent Application No. 202511050655",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://brcstar.in/#website",
+        url: "https://brcstar.in",
+        name: "BRC STAR Digital Platform",
+        publisher: {
+          "@id": "https://brcstar.in/#organization",
+        },
+      },
     ],
   };
 
@@ -98,9 +144,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-[#02040a] text-slate-100 antialiased flex flex-col font-sans">
+      <body className="min-h-screen bg-[#02040a] text-slate-100 antialiased flex flex-col font-sans selection:bg-cyan-500 selection:text-slate-950">
         <Navbar />
-        <div className="flex-1">{children}</div>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <ViraChatbot />
       </body>

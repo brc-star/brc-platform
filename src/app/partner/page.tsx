@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { PortalLayout } from "@/components/PortalLayout";
 import { Users, Car, TrendingUp, Calendar, CheckCircle2, Search, Filter } from "lucide-react";
 import { formatInr } from "@/lib/utils";
+import { ResponsiveTable } from "@/components/ResponsiveTable";
 
 export default function DealerHubPage() {
   const [leadList, setLeadList] = useState([
@@ -54,7 +55,7 @@ export default function DealerHubPage() {
             </div>
           </div>
 
-          <div className="overflow-x-auto">
+          <ResponsiveTable>
             <table className="w-full text-xs font-mono text-left">
               <thead>
                 <tr className="border-b border-slate-800 text-slate-400 uppercase">
@@ -91,7 +92,7 @@ export default function DealerHubPage() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </ResponsiveTable>
         </div>
       </div>
     </PortalLayout>

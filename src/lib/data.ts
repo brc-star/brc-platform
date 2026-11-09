@@ -294,14 +294,14 @@ export const VEHICLES_DATA: VehicleModelData[] = [
 
 export const PATENTS_DATA = [
   {
-    refNumber: "IN-PAT-2025-BRC-009",
-    title: "Closed-Loop Dual-Battery Pack Dynamic Switching & Alternator Energy Harvesting System for Electric Vehicles",
-    abstract: "A high-voltage energy management system comprising Battery Pack A, Battery Pack B, an Alternator Control Module (ACM), and a Bidirectional Drive Assist (BDA) controller configured to alternate discharge and kinetic recoup cycles seamlessly without power disruption.",
-    status: "Published & In Final Examination (IPO)",
+    refNumber: "202511050655",
+    title: "Dual-Pack Kinetic Energy Recovery Architecture & Alternator Energy Harvesting System for Electric Vehicles",
+    abstract: "A high-voltage energy management system comprising Primary Battery Pack A, Secondary Battery Pack B, an Alternator Control Module (ACM), and a dynamic bus controller configured to isolate discharge load and route auxiliary mechanical harvesting seamlessly without high-voltage power disruption.",
+    status: "Published & In Formal Examination (Indian Patent Office)",
     category: "Dual-Pack Power Management",
     claimsCount: 22,
     filingDate: "2025-03-14",
-    moatFactor: "High — Prevents single-pack thermal saturation and unlocks continuous kinetic recapture during high-load driving.",
+    moatFactor: "High — Prevents single-pack thermal saturation and unlocks auxiliary kinetic recapture during deceleration and cruising gradients.",
   },
   {
     refNumber: "IN-PAT-2025-BRC-014",
@@ -329,8 +329,8 @@ export const RND_METRICS = {
   totalSimulatedKm: "2,450,000+",
   dynamometerTestHours: "8,600 hrs",
   energyEfficiencyGainPct: "32.8%",
-  patentsFiled: "3 Primary + 5 Secondary",
-  prototypeStage: "TRL-6 (System Prototype Validated on Test Tracks)",
+  patentsFiled: "Application No. 202511050655 + PCT Priority",
+  prototypeStage: "TRL 3/4 (Lab Rig & Dynamometer Validation Stage)",
   labFacilities: "Bengaluru Deep-Tech R&D Facility & Automotive Testing Ground",
 };
 

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Zap, Shield, Cpu, Activity, BatteryCharging, ArrowRight, CheckCircle2, ChevronRight, Gauge } from "lucide-react";
 import { SelfVoltVisualizer } from "@/components/SelfVoltVisualizer";
+import { ResponsiveTable } from "@/components/ResponsiveTable";
 
 export const metadata = {
   title: "Self Volt Architecture | Closed-Loop Dual-Pack EV Technology | BRC STAR",
@@ -132,44 +133,39 @@ export default function SelfVoltArchitecturePage() {
       </div>
 
       {/* Comparative Technical Benchmark Table */}
-      <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 lg:p-8 space-y-6">
-        <h3 className="text-xl font-bold text-white font-mono">
-          Comparative Architecture Benchmark Matrix
-        </h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs font-mono text-left">
-            <thead>
-              <tr className="border-b border-slate-800 text-slate-400 uppercase">
-                <th className="py-3 px-4">Performance Parameter</th>
-                <th className="py-3 px-4 text-slate-400">Conventional Single-Pack EV</th>
-                <th className="py-3 px-4 text-cyan-400 bg-cyan-950/40">BRC STAR Self Volt</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-800/60 text-slate-300">
-              <tr>
-                <td className="py-3 px-4 font-bold text-white">Highway Range Degradation</td>
-                <td className="py-3 px-4">Drops 30% - 40% at &gt;100 km/h</td>
-                <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">Minimized (-8%) due to PMG glide harvest</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-bold text-white">Battery Cycle Life</td>
-                <td className="py-3 px-4">1,500 - 2,000 cycles</td>
-                <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">4,500+ cycles (Dual-Pack load distribution)</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-bold text-white">Kinetic Recoup Channel</td>
-                <td className="py-3 px-4">Braking events only</td>
-                <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">Continuous (Glide + Deceleration + Dual-Axle)</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-bold text-white">Thermal Runaway Risk</td>
-                <td className="py-3 px-4">Higher under simultaneous regen surges</td>
-                <td className="py-3 px-4 font-bold text-emerald-400 bg-cyan-950/20">Sub-divided pack isolation with dielectric liquid</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ResponsiveTable caption="Comparative Architecture Benchmark Matrix">
+        <table className="w-full text-xs font-mono text-left">
+          <thead>
+            <tr className="border-b border-slate-800 text-slate-400 uppercase">
+              <th className="py-3 px-4">Performance Parameter</th>
+              <th className="py-3 px-4 text-slate-400">Conventional Single-Pack EV</th>
+              <th className="py-3 px-4 text-cyan-400 bg-cyan-950/40">BRC STAR Self Volt</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-800/60 text-slate-300">
+            <tr>
+              <td className="py-3 px-4 font-bold text-white">Highway Range Degradation</td>
+              <td className="py-3 px-4">Drops 30% - 40% at &gt;100 km/h</td>
+              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">Minimized (-8%) due to PMG glide harvest</td>
+            </tr>
+            <tr>
+              <td className="py-3 px-4 font-bold text-white">Battery Cycle Life</td>
+              <td className="py-3 px-4">1,500 - 2,000 cycles</td>
+              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">4,500+ cycles (Dual-Pack load distribution)</td>
+            </tr>
+            <tr>
+              <td className="py-3 px-4 font-bold text-white">Kinetic Recoup Channel</td>
+              <td className="py-3 px-4">Braking events only</td>
+              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">Continuous (Glide + Deceleration + Dual-Axle)</td>
+            </tr>
+            <tr>
+              <td className="py-3 px-4 font-bold text-white">Thermal Runaway Risk</td>
+              <td className="py-3 px-4">Higher under simultaneous regen surges</td>
+              <td className="py-3 px-4 font-bold text-emerald-400 bg-cyan-950/20">Sub-divided pack isolation with dielectric liquid</td>
+            </tr>
+          </tbody>
+        </table>
+      </ResponsiveTable>
 
       {/* Next Actions CTA */}
       <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-2xl bg-cyan-950/40 border border-cyan-500/30">
