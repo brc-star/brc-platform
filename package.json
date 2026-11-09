@@ -13,6 +13,12 @@
     "prisma:migrate": "prisma migrate dev"
   },
   "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/network": "^8.0.1",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4",
     "@prisma/client": "^6.4.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
@@ -24,6 +30,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.6.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.10",

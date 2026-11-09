@@ -1,9 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import ChatbotWrapper from "@/components/ChatbotWrapper";
+import { MobileAppBridge } from "@/components/MobileAppBridge";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#060913",
+};
 
 const inter = Inter({
   subsets: ["latin"],
@@ -139,6 +147,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-[#02040a] text-slate-100 antialiased flex flex-col font-sans selection:bg-cyan-500 selection:text-slate-950">
+        <MobileAppBridge />
         <Navbar />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />

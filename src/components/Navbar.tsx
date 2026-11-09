@@ -187,7 +187,7 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-[env(safe-area-inset-top,0px)]",
         isScrolled
           ? "bg-[#02040a]/90 backdrop-blur-xl border-b border-cyan-500/20 py-2 shadow-2xl shadow-cyan-950/20"
           : "bg-gradient-to-b from-[#02040a]/90 via-[#02040a]/40 to-transparent py-3 sm:py-3.5"

@@ -178,7 +178,7 @@ export const ViraChatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 font-sans">
+    <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-[calc(1.25rem+env(safe-area-inset-right,0px))] z-50 font-sans">
       {/* Floating Launcher Trigger Button */}
       {!isOpen && (
         <div className="relative group">
