@@ -70,11 +70,24 @@ function PreBookContent() {
   useEffect(() => {
     const modelParam = searchParams.get("model");
     const trimParam = searchParams.get("trim");
+    const colorParam = searchParams.get("color");
     if (modelParam && VEHICLES_DATA.some((v) => v.slug === modelParam)) {
       setSelectedModelSlug(modelParam);
     }
     if (trimParam && STANDARD_DRIVETRAIN_TRIMS.some((t) => t.id === trimParam)) {
       setSelectedTrim(trimParam);
+    }
+    if (colorParam) {
+      const colorMap: Record<string, string> = {
+        "cosmic-obsidian": "Cosmic Obsidian",
+        "quantum-cyan": "Quantum Cyan Metallic",
+        "apex-white": "Apex Stellar Pearl",
+        "hyper-red": "Hyper Crimson Gloss",
+        "stealth-titanium": "Stealth Titanium Matte",
+      };
+      if (colorMap[colorParam]) {
+        setSelectedColor(colorMap[colorParam]);
+      }
     }
   }, [searchParams]);
 
