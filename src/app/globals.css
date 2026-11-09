@@ -753,6 +753,11 @@ html.light .bg-cyan-400 {
   color: #02040a !important;
 }
 
+html.light .bg-gradient-to-r.from-cyan-500.to-blue-600,
+html.light .bg-gradient-to-r.from-cyan-500.to-blue-600 * {
+  color: #ffffff !important;
+}
+
 /* ==========================================================================
    VIRA CHATBOT IN LIGHT MODE
    ========================================================================== */

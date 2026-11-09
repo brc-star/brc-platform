@@ -19,6 +19,7 @@ import {
   COMMON_DISCLAIMERS,
 } from "@/data/vehicles";
 import { formatInr } from "@/lib/utils";
+import { VehiclesCTA } from "@/components/VehiclesCTA";
 
 // Primary vehicles to display in the 6-card catalog grid
 const PRIMARY_PORTFOLIO_VEHICLES = VEHICLES_DATA.filter((v) => v.slug !== "starfleet-logistic");
@@ -149,40 +150,7 @@ export const VehiclePortfolioNoImage = () => {
       </div>
 
       {/* 3. Bottom Portfolio CTA */}
-      <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#050814] via-slate-900/90 to-[#02040a] border border-cyan-500/30 shadow-2xl relative overflow-hidden text-center space-y-6">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-3xl mx-auto space-y-3 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-xs font-mono text-cyan-300">
-            <Zap className="w-3.5 h-3.5 text-cyan-400" />
-            <span>ZERO-EMISSION ECOSYSTEM</span>
-          </div>
-
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-sans">
-            Explore the Future of Self-Volt Mobility
-          </h3>
-
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            All models feature BRC STAR&apos;s proprietary kinetic energy harvesting architecture, reducing dependence on fixed charging grids and delivering unmatched fleet uptime.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <Link
-              href="/pre-book"
-              className="px-8 py-3.5 rounded-xl font-mono text-sm font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/25 flex items-center gap-2"
-            >
-              <span>Reserve a Build Slot</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/technology/self-volt"
-              className="px-8 py-3.5 rounded-xl font-mono text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-cyan-500/40 transition-colors"
-            >
-              Technical Whitepaper
-            </Link>
-          </div>
-        </div>
-      </div>
+      <VehiclesCTA />
     </section>
   );
 };
