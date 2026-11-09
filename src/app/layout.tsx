@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
-import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import ChatbotWrapper from "@/components/ChatbotWrapper";
 import "./globals.css";
-
-// Deferred non-critical chatbot hydration (improves FCP, LCP & INP)
-const ViraChatbot = dynamic(
-  () => import("@/components/ViraChatbot").then((mod) => mod.ViraChatbot),
-  { ssr: false }
-);
 
 const inter = Inter({
   subsets: ["latin"],
@@ -148,7 +142,7 @@ export default function RootLayout({
         <Navbar />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
-        <ViraChatbot />
+        <ChatbotWrapper />
       </body>
     </html>
   );
