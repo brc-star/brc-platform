@@ -20,6 +20,9 @@ jobs:
   build-android:
     name: Package Android Release Artifacts
     runs-on: ubuntu-latest
+    env:
+      ANDROID_HOME: /usr/local/lib/android/sdk
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
     steps:
       - name: Checkout Repository
@@ -36,9 +39,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
 
       - name: Install Project Dependencies
         run: npm ci
