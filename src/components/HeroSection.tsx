@@ -12,46 +12,50 @@ export const HeroSection: React.FC = () => {
   return (
     <section 
       aria-label="BRC STAR Powertrain Overview"
-      className="relative min-h-[90vh] sm:min-h-[94vh] flex flex-col justify-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden bg-[#02040a]"
+      className="relative pt-20 pb-8 px-4 md:pt-28 md:pb-16 md:px-8 overflow-hidden bg-[#F8FAFC] dark:bg-[#060913] transition-colors duration-300"
     >
-      {/* Background Architectural Glow & Grids */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
+      {/* Background Architectural Glow & Radial Layer */}
       <div 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[650px] h-[320px] sm:h-[650px] bg-cyan-500/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" 
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-100/30 via-transparent to-transparent dark:from-cyan-950/20 dark:via-transparent dark:to-transparent pointer-events-none" 
+        aria-hidden="true" 
+      />
+      <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-15 pointer-events-none" />
+      <div 
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[600px] h-[280px] sm:h-[600px] bg-cyan-400/10 dark:bg-cyan-500/10 rounded-full blur-[80px] sm:blur-[140px] pointer-events-none" 
         aria-hidden="true" 
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
         {/* Top Patent Status Badge */}
-        <div className="flex items-center justify-center mb-4 sm:mb-6">
-          <div className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-[11px] sm:text-xs font-mono text-cyan-200 shadow-lg shadow-cyan-950/50">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shrink-0" aria-hidden="true" />
-            <span className="font-semibold tracking-wider">INDIAN PATENT APP 202511050655</span>
-            <span className="text-slate-600 hidden sm:inline" aria-hidden="true">|</span>
-            <span className="text-slate-300 hidden sm:inline">TRL 3/4 Validation Stage</span>
+        <div className="flex items-center justify-center">
+          <div className="mt-2 mb-3 py-1 px-3 text-[11px] leading-tight inline-flex items-center gap-2 rounded-full bg-cyan-100/80 border border-cyan-300/60 text-cyan-800 dark:bg-cyan-950/80 dark:border-cyan-500/40 dark:text-cyan-200 shadow-sm dark:shadow-lg dark:shadow-cyan-950/50 transition-colors">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse shrink-0" aria-hidden="true" />
+            <span className="font-semibold tracking-wider font-mono">INDIAN PATENT APP 202511050655</span>
+            <span className="text-slate-400 dark:text-slate-600 hidden sm:inline" aria-hidden="true">|</span>
+            <span className="text-slate-600 dark:text-slate-300 hidden sm:inline font-mono">TRL 3/4 Validation Stage</span>
           </div>
         </div>
 
-        {/* Master Headline - Rigorous Institutional KERS Terminology */}
-        <div className="text-center max-w-5xl mx-auto space-y-4 sm:space-y-5">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold text-white tracking-tight leading-[1.08] sm:leading-[1.04] font-display">
+        {/* Master Headline & Subtitle */}
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-snug font-display text-slate-900 dark:text-white mb-3 md:mb-5 transition-colors">
             Dual-Pack Kinetic Energy Recovery Architecture.
-            <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-600 dark:from-cyan-300 dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent">
               Engineered for High-Duty Fleet Range.
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base lg:text-lg text-slate-200 max-w-3xl mx-auto leading-relaxed font-sans font-normal">
+          <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-xl mx-auto mb-5 leading-relaxed font-sans font-normal transition-colors">
             Pioneering auxiliary mechanical harvesting with isolated secondary-pack dynamic switching. 
             Mitigating highway range degradation and single-battery thermal stress via proprietary 
             Alternator Control Module (ACM) power routing.
           </p>
 
-          {/* Accessible Action CTAs (Min 48px touch-target bounds) */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-6">
+          {/* Action CTAs Group */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-6">
             <Link
               href="/technology/self-volt"
-              className="w-full sm:w-auto min-h-[48px] px-8 py-3 rounded-xl font-mono text-sm font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25 focus:ring-2 focus:ring-cyan-300 focus:outline-none"
+              className="w-full sm:w-auto min-h-[44px] sm:min-h-[48px] px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-mono text-xs sm:text-sm font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-md sm:shadow-lg shadow-cyan-500/25 focus:ring-2 focus:ring-cyan-300 focus:outline-none"
             >
               <span>Inspect Architecture</span>
               <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -60,75 +64,75 @@ export const HeroSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsDeckModalOpen(true)}
-              className="w-full sm:w-auto min-h-[48px] px-7 py-3 rounded-xl font-mono text-sm font-semibold text-slate-100 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-cyan-500/60 active:scale-[0.98] transition-all flex items-center justify-center gap-2 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+              className="w-full sm:w-auto min-h-[44px] sm:min-h-[48px] px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-white text-slate-800 border border-slate-300 hover:bg-slate-100 shadow-sm dark:bg-slate-900/90 dark:text-slate-100 dark:hover:text-white dark:border-slate-700 dark:hover:bg-slate-800 dark:shadow-none active:scale-[0.98] transition-all flex items-center justify-center gap-2 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
             >
-              <Lock className="w-4 h-4 text-cyan-400 shrink-0" aria-hidden="true" />
+              <Lock className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" aria-hidden="true" />
               <span>Institutional Deck (NDA)</span>
             </button>
 
             <Link
               href="/pre-book"
-              className="w-full sm:w-auto min-h-[48px] px-6 py-3 rounded-xl font-mono text-xs font-semibold text-slate-300 hover:text-cyan-300 transition-colors flex items-center justify-center gap-1.5 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+              className="w-full sm:w-auto min-h-[40px] sm:min-h-[48px] px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-mono text-xs font-semibold text-slate-600 hover:text-cyan-700 dark:text-slate-300 dark:hover:text-cyan-300 transition-colors flex items-center justify-center gap-1.5 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
             >
               <span>Fleet Pre-Booking</span>
-              <ChevronRight className="w-4 h-4 text-cyan-400 shrink-0" aria-hidden="true" />
+              <ChevronRight className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" aria-hidden="true" />
             </Link>
           </div>
         </div>
 
         {/* Mobile-First 2x2 to Desktop 4-Col Performance HUD Spec Strip */}
-        <div className="mt-10 sm:mt-12 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
-          <div className="bg-[#050814]/90 border border-cyan-500/30 p-3 sm:p-4 rounded-xl backdrop-blur-md text-center flex flex-col justify-center">
-            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 font-medium">
+        <div className="grid grid-cols-2 gap-2.5 w-full max-w-md mx-auto mb-4 md:grid-cols-4 md:gap-4 md:max-w-4xl">
+          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center transition-all">
+            <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
               Target Range
             </span>
-            <span className="text-xl sm:text-3xl font-extrabold text-cyan-300 font-mono mt-0.5 sm:mt-1">
+            <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-cyan-600 dark:text-cyan-300 mt-0.5 sm:mt-1">
               850 km
             </span>
-            <span className="text-[10px] sm:text-[11px] text-slate-400 mt-0.5">
+            <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
               Dual-Pack (Simulated)
             </span>
           </div>
 
-          <div className="bg-[#050814]/90 border border-cyan-500/30 p-3 sm:p-4 rounded-xl backdrop-blur-md text-center flex flex-col justify-center">
-            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 font-medium">
+          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center transition-all">
+            <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
               0-100 km/h
             </span>
-            <span className="text-xl sm:text-3xl font-extrabold text-white font-mono mt-0.5 sm:mt-1">
+            <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-slate-900 dark:text-white mt-0.5 sm:mt-1">
               3.2 s
             </span>
-            <span className="text-[10px] sm:text-[11px] text-slate-400 mt-0.5">
+            <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
               StarCraft GT AWD
             </span>
           </div>
 
-          <div className="bg-[#050814]/90 border border-cyan-500/30 p-3 sm:p-4 rounded-xl backdrop-blur-md text-center flex flex-col justify-center">
-            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 font-medium">
+          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center transition-all">
+            <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
               Aux Harvest
             </span>
-            <span className="text-xl sm:text-3xl font-extrabold text-emerald-300 font-mono mt-0.5 sm:mt-1">
+            <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-emerald-600 dark:text-emerald-400 mt-0.5 sm:mt-1">
               +42 kW
             </span>
-            <span className="text-[10px] sm:text-[11px] text-slate-400 mt-0.5">
+            <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
               Peak Kinetic Inflow
             </span>
           </div>
 
-          <div className="bg-[#050814]/90 border border-cyan-500/30 p-3 sm:p-4 rounded-xl backdrop-blur-md text-center flex flex-col justify-center">
-            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-slate-300 font-medium">
+          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center transition-all">
+            <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
               HV Architecture
             </span>
-            <span className="text-xl sm:text-3xl font-extrabold text-amber-300 font-mono mt-0.5 sm:mt-1">
+            <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-amber-600 dark:text-amber-400 mt-0.5 sm:mt-1">
               800V
             </span>
-            <span className="text-[10px] sm:text-[11px] text-slate-400 mt-0.5">
+            <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
               Dual Solid-State Bus
             </span>
           </div>
         </div>
 
         {/* Telemetry Stream Section */}
-        <div className="mt-8 sm:mt-10 max-w-4xl mx-auto">
+        <div className="mt-4 sm:mt-6 max-w-4xl mx-auto w-full">
           <LiveTelemetryWidget />
         </div>
       </div>

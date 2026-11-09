@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Gauge, Zap, Thermometer, Radio, Cpu, Activity, RefreshCw } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Gauge, Zap, Thermometer, Activity } from "lucide-react";
 
 export const LiveTelemetryWidget = () => {
   const [telemetry, setTelemetry] = useState({
@@ -42,79 +41,82 @@ export const LiveTelemetryWidget = () => {
   }, []);
 
   return (
-    <div className="w-full bg-[#040714] border border-cyan-500/30 rounded-2xl p-6 backdrop-blur-xl relative overflow-hidden shadow-2xl font-mono text-xs">
+    <div className="w-full bg-white/80 border border-slate-200/80 shadow-md backdrop-blur-xl dark:bg-[#040714] dark:border-cyan-500/30 dark:shadow-2xl rounded-2xl p-3 sm:p-5 relative overflow-hidden font-mono text-xs transition-colors duration-300">
       {/* Live Indicator Bar */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 border-b border-slate-200/80 dark:border-slate-800 pb-2.5 mb-3">
         <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-          <span className="text-emerald-400 font-bold uppercase tracking-wider text-[11px]">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 dark:bg-emerald-400" />
+          </span>
+          <span className="text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">
             CAN-Bus High-Speed Telemetry Stream
           </span>
         </div>
-        <div className="text-[10px] text-slate-400 flex items-center gap-2">
+        <div className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 flex items-center gap-2">
           <span>VIN: {telemetry.vin}</span>
-          <span className="px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-500/30">
+          <span className="px-1.5 py-0.5 rounded bg-cyan-100/80 text-cyan-800 border border-cyan-300/60 dark:bg-cyan-950 dark:text-cyan-400 dark:border-cyan-500/30">
             50 Hz Rate
           </span>
         </div>
       </div>
 
-      {/* Primary Metrics Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      {/* Primary Metrics Grid (2x2 on mobile, 4-col on desktop) */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
         {/* Speed */}
-        <div className="bg-slate-900/80 border border-slate-800 p-3 rounded-xl">
-          <div className="text-slate-400 text-[10px] uppercase flex items-center gap-1">
-            <Gauge className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Chassis Velocity</span>
+        <div className="bg-slate-50/90 border border-slate-200/80 dark:bg-slate-900/80 dark:border-slate-800 p-2.5 sm:p-3 rounded-xl transition-colors">
+          <div className="text-slate-500 dark:text-slate-400 text-[9px] sm:text-[10px] uppercase flex items-center gap-1 truncate">
+            <Gauge className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+            <span className="truncate">Chassis Velocity</span>
           </div>
-          <div className="text-xl font-bold text-white mt-1">
+          <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-1">
             {telemetry.speedKmh}{" "}
-            <span className="text-[11px] font-normal text-slate-400">km/h</span>
+            <span className="text-[10px] font-normal text-slate-500 dark:text-slate-400">km/h</span>
           </div>
-          <div className="text-[10px] text-slate-500 mt-0.5">
+          <div className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">
             PMSM: {telemetry.motorRpm} RPM
           </div>
         </div>
 
         {/* Kinetic Harvest */}
-        <div className="bg-slate-900/80 border border-slate-800 p-3 rounded-xl">
-          <div className="text-slate-400 text-[10px] uppercase flex items-center gap-1">
-            <Zap className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Kinetic Harvest</span>
+        <div className="bg-slate-50/90 border border-slate-200/80 dark:bg-slate-900/80 dark:border-slate-800 p-2.5 sm:p-3 rounded-xl transition-colors">
+          <div className="text-slate-500 dark:text-slate-400 text-[9px] sm:text-[10px] uppercase flex items-center gap-1 truncate">
+            <Zap className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+            <span className="truncate">Kinetic Harvest</span>
           </div>
-          <div className="text-xl font-bold text-cyan-400 mt-1">
+          <div className="text-base sm:text-lg font-bold text-cyan-600 dark:text-cyan-400 mt-1">
             +{telemetry.regenKw}{" "}
-            <span className="text-[11px] font-normal text-cyan-300">kW</span>
+            <span className="text-[10px] font-normal text-cyan-700 dark:text-cyan-300">kW</span>
           </div>
-          <div className="text-[10px] text-slate-500 mt-0.5">
+          <div className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">
             ACM Transfer: {telemetry.acmCurrentTransferA} A
           </div>
         </div>
 
         {/* Dual Pack Status */}
-        <div className="bg-slate-900/80 border border-slate-800 p-3 rounded-xl">
-          <div className="text-slate-400 text-[10px] uppercase flex items-center gap-1">
-            <Activity className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Pack A / B Bus</span>
+        <div className="bg-slate-50/90 border border-slate-200/80 dark:bg-slate-900/80 dark:border-slate-800 p-2.5 sm:p-3 rounded-xl transition-colors">
+          <div className="text-slate-500 dark:text-slate-400 text-[9px] sm:text-[10px] uppercase flex items-center gap-1 truncate">
+            <Activity className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <span className="truncate">Pack A / B Bus</span>
           </div>
-          <div className="text-base font-bold text-white mt-1">
+          <div className="text-sm sm:text-base font-bold text-slate-900 dark:text-white mt-1 truncate">
             {telemetry.packAVoltage}V / {telemetry.packBVoltage}V
           </div>
-          <div className="text-[10px] text-emerald-400 mt-0.5">
+          <div className="text-[9px] sm:text-[10px] text-emerald-600 dark:text-emerald-400 mt-0.5 truncate">
             SOC: {telemetry.packASoc}% | {telemetry.packBSoc}%
           </div>
         </div>
 
         {/* Thermal Telemetry */}
-        <div className="bg-slate-900/80 border border-slate-800 p-3 rounded-xl">
-          <div className="text-slate-400 text-[10px] uppercase flex items-center gap-1">
-            <Thermometer className="w-3.5 h-3.5 text-amber-400" />
-            <span>Thermal Matrix</span>
+        <div className="bg-slate-50/90 border border-slate-200/80 dark:bg-slate-900/80 dark:border-slate-800 p-2.5 sm:p-3 rounded-xl transition-colors">
+          <div className="text-slate-500 dark:text-slate-400 text-[9px] sm:text-[10px] uppercase flex items-center gap-1 truncate">
+            <Thermometer className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400 shrink-0" />
+            <span className="truncate">Thermal Matrix</span>
           </div>
-          <div className="text-xl font-bold text-white mt-1">
+          <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-1">
             {telemetry.batteryCellMaxTempC}°C
           </div>
-          <div className="text-[10px] text-slate-500 mt-0.5">
+          <div className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">
             Motor Core: {telemetry.motorTempC}°C
           </div>
         </div>
@@ -122,3 +124,5 @@ export const LiveTelemetryWidget = () => {
     </div>
   );
 };
+
+export default LiveTelemetryWidget;

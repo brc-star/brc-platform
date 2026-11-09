@@ -26,7 +26,7 @@ import { INVESTOR_METRICS, RND_METRICS } from "@/lib/data";
 
 export default function HomePage() {
   return (
-    <div className="space-y-24 pb-20">
+    <div className="space-y-12 sm:space-y-16 md:space-y-24 pb-16 sm:pb-20">
       {/* 01. MASTER CINEMATIC HERO */}
       <HeroSection />
 
