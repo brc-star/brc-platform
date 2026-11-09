@@ -57,7 +57,7 @@ export default function VehiclesPage() {
               Designed for extreme highway range, 0-100 in 3.2s acceleration, and zero range anxiety with dual-pack continuous recoup.
             </p>
             <div className="text-xs font-mono text-slate-400 space-y-1 pt-2 border-t border-slate-800">
-              <div>• Starting from {formatInr(2950000)}</div>
+              <div>• Starting from {formatInr(1650000)}</div>
               <div>• Up to 850 km Self-Volt Range</div>
             </div>
           </div>
