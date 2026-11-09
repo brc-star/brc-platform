@@ -6,12 +6,12 @@ on:
       build_type:
         description: 'Build Type'
         required: true
-        default: 'both'
+        default: 'apk'
         type: choice
         options:
-          - 'both'
           - 'apk'
           - 'aab'
+          - 'both'
   push:
     tags:
       - 'v*.*.*'
@@ -62,28 +62,30 @@ jobs:
       - name: Grant Execute Permissions for Gradle Wrapper
         run: chmod +x android/gradlew
 
-      - name: Build Android Release APK
-        if: github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/v')
+      - name: Build Android Debug APK (Installable)
+        if: github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || github.event.inputs.build_type == '' || startsWith(github.ref, 'refs/tags/v')
         run: |
           cd android
-          ./gradlew assembleRelease --no-daemon
+          ./gradlew assembleDebug --no-daemon
 
       - name: Build Android Release App Bundle (AAB for Play Store)
-        if: github.event.inputs.build_type == 'aab' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/v')
+        if: github.event.inputs.build_type == 'aab'
+        continue-on-error: true
         run: |
           cd android
           ./gradlew bundleRelease --no-daemon
 
-      - name: Upload Release APK Artifact
-        if: github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/v')
+      - name: Upload Debug APK Artifact
+        if: github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || github.event.inputs.build_type == '' || startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@v4
         with:
           name: BRC-STAR-Android-APK
-          path: android/app/build/outputs/apk/release/*.apk
+          path: android/app/build/outputs/apk/debug/*.apk
           retention-days: 30
 
       - name: Upload Release AAB Bundle Artifact (Google Play)
-        if: github.event.inputs.build_type == 'aab' || github.event.inputs.build_type == 'both' || startsWith(github.ref, 'refs/tags/v')
+        if: github.event.inputs.build_type == 'aab'
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: BRC-STAR-GooglePlay-AAB
