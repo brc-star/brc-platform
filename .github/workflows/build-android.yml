@@ -1,20 +1,10 @@
-name: Build Android APK & AAB
+name: Build Android APK
 
 on:
   workflow_dispatch:
-    inputs:
-      build_type:
-        description: 'Build Type'
-        required: true
-        default: 'apk'
-        type: choice
-        options:
-          - 'apk'
-          - 'aab'
-          - 'both'
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - main
 
 jobs:
   build-android:
@@ -22,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ANDROID_HOME: /usr/local/lib/android/sdk
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
     steps:
       - name: Checkout Repository
@@ -63,31 +52,13 @@ jobs:
         run: chmod +x android/gradlew
 
       - name: Build Android Debug APK (Installable)
-        if: github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || github.event.inputs.build_type == '' || startsWith(github.ref, 'refs/tags/v')
         run: |
           cd android
           ./gradlew assembleDebug --no-daemon
 
-      - name: Build Android Release App Bundle (AAB for Play Store)
-        if: github.event.inputs.build_type == 'aab'
-        continue-on-error: true
-        run: |
-          cd android
-          ./gradlew bundleRelease --no-daemon
-
       - name: Upload Debug APK Artifact
-        if: github.event.inputs.build_type == 'apk' || github.event.inputs.build_type == 'both' || github.event.inputs.build_type == '' || startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@v4
         with:
           name: BRC-STAR-Android-APK
           path: android/app/build/outputs/apk/debug/*.apk
-          retention-days: 30
-
-      - name: Upload Release AAB Bundle Artifact (Google Play)
-        if: github.event.inputs.build_type == 'aab'
-        continue-on-error: true
-        uses: actions/upload-artifact@v4
-        with:
-          name: BRC-STAR-GooglePlay-AAB
-          path: android/app/build/outputs/bundle/release/*.aab
           retention-days: 30
