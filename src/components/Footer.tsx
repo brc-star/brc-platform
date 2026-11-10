@@ -108,28 +108,33 @@ export const Footer = () => {
             </div>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/vehicles/passenger" className="hover:text-cyan-300 transition-colors">
+                <Link href="/vehicles/starcraft-gt" className="hover:text-cyan-300 transition-colors">
                   StarCraft GT Sedan
                 </Link>
               </li>
               <li>
-                <Link href="/vehicles/passenger" className="hover:text-cyan-300 transition-colors">
+                <Link href="/vehicles/starpulse-suv" className="hover:text-cyan-300 transition-colors">
                   StarPulse Luxury SUV
                 </Link>
               </li>
               <li>
-                <Link href="/vehicles/commercial" className="hover:text-cyan-300 transition-colors">
-                  StarFleet Logistics
+                <Link href="/vehicles/starfleet" className="hover:text-cyan-300 transition-colors">
+                  StarFleet Logistics Van
                 </Link>
               </li>
               <li>
-                <Link href="/vehicles/bus" className="hover:text-cyan-300 transition-colors">
+                <Link href="/vehicles/startransit-bus" className="hover:text-cyan-300 transition-colors">
                   StarTransit 12M Bus
                 </Link>
               </li>
               <li>
+                <Link href="/vehicles" className="hover:text-cyan-300 transition-colors">
+                  All 6 Vehicle Models
+                </Link>
+              </li>
+              <li>
                 <Link href="/pre-book" className="hover:text-cyan-300 transition-colors text-cyan-400 font-semibold">
-                  Pre-Book Custom Build
+                  Pre-Book Priority Slot
                 </Link>
               </li>
             </ul>
@@ -138,12 +143,17 @@ export const Footer = () => {
           {/* 04 Innovation & 05 Invest */}
           <div className="space-y-3">
             <div className="text-xs font-mono uppercase tracking-widest text-cyan-400">
-              04 Innovation &amp; Invest
+              04 Company &amp; Invest
             </div>
             <ul className="space-y-2 text-xs">
               <li>
+                <Link href="/about" className="hover:text-cyan-300 transition-colors text-cyan-300 font-medium">
+                  About BRC STAR &amp; Journey
+                </Link>
+              </li>
+              <li>
                 <Link href="/innovation/rnd" className="hover:text-cyan-300 transition-colors">
-                  R&amp;D &amp; Simulation Rigs
+                  R&amp;D &amp; Test Benches
                 </Link>
               </li>
               <li>
@@ -152,13 +162,8 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/innovation/news" className="hover:text-cyan-300 transition-colors">
-                  News &amp; Press Center
-                </Link>
-              </li>
-              <li>
                 <Link href="/invest" className="hover:text-cyan-300 transition-colors font-medium text-slate-200">
-                  Investor Relations (TAM)
+                  Investor Relations
                 </Link>
               </li>
               <li>
@@ -252,6 +257,9 @@ export const Footer = () => {
             </Link>
             <Link href="/invest/pitch-deck" className="hover:text-cyan-400 transition-colors">
               NDA Portal
+            </Link>
+            <Link href="/about" className="hover:text-cyan-400 transition-colors">
+              About
             </Link>
             <Link href="/contact" className="hover:text-cyan-400 transition-colors">
               Contact

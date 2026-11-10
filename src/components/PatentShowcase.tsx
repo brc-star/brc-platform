@@ -43,13 +43,13 @@ export const PatentShowcase = () => {
         <div>
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-cyan-600 dark:text-cyan-400 mb-1.5 font-bold">
             <ShieldCheck className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
-            <span>Proprietary Intellectual Property &amp; Patent Fortress</span>
+            <span>Proprietary Intellectual Property &amp; Patent Architecture</span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-            Self-Volt Defensible IP Portfolio
+            Self-Volt IP Portfolio
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-2xl">
-            Indian Patent Application No. <strong className="font-mono text-cyan-600 dark:text-cyan-400">{PATENT_METADATA.applicationNumber}</strong> (IPO) with international PCT priority filings.
+            Indian Patent Application No. <strong className="font-mono text-cyan-600 dark:text-cyan-400">{PATENT_METADATA.applicationNumber}</strong> (Filed/Published with IPO) • [PCT details pending]. Figures simulated/lab-validated.
           </p>
         </div>
 
@@ -147,7 +147,7 @@ export const PatentShowcase = () => {
             {/* Legal Specification */}
             <div className="space-y-1.5">
               <span className="text-[10px] font-mono uppercase text-slate-500 dark:text-slate-400 block font-bold">
-                Certified Legal Claim Language (As Filed with IPO)
+                Legal Claim Language (Indian Patent App No. 202511050655)
               </span>
               <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-mono bg-white dark:bg-slate-950/80 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800/80">
                 &ldquo;{selectedClaim.legalText}&rdquo;
@@ -158,7 +158,7 @@ export const PatentShowcase = () => {
             <div className="p-3.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/30 border border-cyan-200 dark:border-cyan-500/20 space-y-1">
               <div className="text-xs font-mono uppercase text-cyan-800 dark:text-cyan-400 flex items-center gap-1.5 font-bold">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Novelty &amp; Inventive Step Justification</span>
+                <span>Novelty &amp; Inventive Step Differentiation</span>
               </div>
               <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                 {selectedClaim.noveltyAssertion}
@@ -169,7 +169,7 @@ export const PatentShowcase = () => {
             <div className="p-3.5 rounded-xl bg-white dark:bg-[#030611] border border-slate-200 dark:border-cyan-500/20 space-y-1">
               <div className="text-xs font-mono uppercase text-slate-700 dark:text-cyan-400 flex items-center gap-1.5 font-bold">
                 <Lock className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-                <span>Prior-Art Defensibility (Tesla &amp; Toyota Comparison)</span>
+                <span>Architecture Distinction (Conventional Baseline Comparison)</span>
               </div>
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 {selectedClaim.priorArtDistinction}

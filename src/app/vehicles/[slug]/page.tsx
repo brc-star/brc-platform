@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import { Car, Zap, Gauge, Compass, ShieldCheck, ArrowRight, ChevronRight, CheckCircle2, Layers } from "lucide-react";
 import { VEHICLES_DATA, VehicleModelData } from "@/lib/data";
 import { formatInr } from "@/lib/utils";
@@ -11,6 +12,26 @@ interface PageProps {
 
 export async function generateStaticParams() {
   return VEHICLES_DATA.map((v) => ({ slug: v.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const vehicle = VEHICLES_DATA.find((v) => v.slug === slug);
+  if (!vehicle) return { title: "Vehicle Not Found | BRC STAR" };
+
+  return {
+    title: `${vehicle.name} Specifications | BRC STAR Self Volt EV`,
+    description: `${vehicle.name}: ${vehicle.tagline}. Indicative Ex-Showroom ${formatInr(vehicle.basePriceInr)}. ${vehicle.ratedRangeKm} km target range with kinetic recovery.`,
+    alternates: {
+      canonical: `https://brcstar.in/vehicles/${vehicle.slug}`,
+    },
+    openGraph: {
+      title: `${vehicle.name} | BRC STAR`,
+      description: vehicle.tagline,
+      url: `https://brcstar.in/vehicles/${vehicle.slug}`,
+      type: "website",
+    },
+  };
 }
 
 export default async function VehicleDetailPage({ params }: PageProps) {
@@ -115,6 +136,13 @@ export default async function VehicleDetailPage({ params }: PageProps) {
           <span>Pre-Book Build Slot</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
+      </div>
+
+      {/* Disclaimers */}
+      <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs font-mono text-slate-400">
+        <p>
+          <span className="text-cyan-400 font-semibold">Pricing &amp; Performance Disclaimer:</span> All prices are indicative ex-showroom estimates and subject to final prototype homologation. Range and acceleration figures are target simulations; real-world values may vary. Priority pre-booking token of ₹25,000 is 100% refundable at any time prior to VIN allocation.
+        </p>
       </div>
     </div>
   );

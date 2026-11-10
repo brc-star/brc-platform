@@ -3,8 +3,17 @@ import Link from "next/link";
 import { Shield, ChevronRight, Mail, Phone, MapPin, Lock, FileText } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy Policy | BRC STAR Self Volt EV",
-  description: "Privacy Policy for BRC STAR (OPC) PRIVATE LIMITED — Self Volt EV.",
+  title: "Privacy Policy",
+  description:
+    "Privacy Policy for BRC STAR (OPC) PRIVATE LIMITED. Indian DPDPA 2023 compliance, pre-booking data protection, and telematics handling.",
+  alternates: {
+    canonical: "https://brcstar.in/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | BRC STAR",
+    description: "Privacy Policy and Indian DPDPA 2023 compliance for BRC STAR.",
+    url: "https://brcstar.in/privacy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -281,6 +290,27 @@ export default function PrivacyPolicyPage() {
           <p>
             Our Service may contain links to other websites that are not operated by Us. We strongly advise You to review the Privacy Policy of every site You visit. We have no control over and assume no responsibility for third-party content or practices.
           </p>
+
+          <h2 className="text-2xl font-bold text-white font-mono pt-2">
+            Indian Digital Personal Data Protection Act (DPDPA 2023) &amp; Pre-Booking Telemetry
+          </h2>
+          <p>
+            In accordance with India&apos;s Digital Personal Data Protection Act (DPDPA), 2023, BRC STAR (OPC) PRIVATE LIMITED operates as a Data Fiduciary regarding the personal information you supply during vehicle pre-booking, priority waitlist registration, and investor NDA access:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-xs font-mono text-slate-300">
+            <li>
+              <strong>Purpose Limitation</strong>: Pre-booking data (full name, email, phone number, territory, and payment identifiers) is strictly collected to maintain your production priority reservation, deliver vehicle availability updates, and process refunds.
+            </li>
+            <li>
+              <strong>Financial Security</strong>: Payment transactions are processed via PCI-DSS compliant banking partners (such as Razorpay/authorized escrow aggregators). BRC STAR does not store full credit/debit card numbers or UPI MPINs on company servers.
+            </li>
+            <li>
+              <strong>Vehicle Telemetry &amp; CAN-Bus Stream</strong>: Any diagnostic or prototype simulator telemetry streamed through https://brcstar.in/app is anonymized and aggregated for powertrain algorithm calibration.
+            </li>
+            <li>
+              <strong>Data Principal Rights</strong>: You possess the statutory right to request a summary of your personal data, rectify inaccuracies, or exercise erasure of your pre-booking contact record by writing to our designated Grievance Officer at <a href="mailto:contact@brcstar.in" className="text-cyan-400 underline">contact@brcstar.in</a>.
+            </li>
+          </ul>
 
           <h2 className="text-2xl font-bold text-white font-mono pt-2">
             Changes to this Privacy Policy

@@ -14,6 +14,13 @@ export const SelfVoltVisualizer = () => {
   const [packBSoc, setPackBSoc] = useState(62);
   const [isAutoCycle, setIsAutoCycle] = useState(true);
 
+  // Check prefers-reduced-motion
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIsAutoCycle(false);
+    }
+  }, []);
+
   // Auto-cycle through operating modes
   useEffect(() => {
     if (!isAutoCycle) return;

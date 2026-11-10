@@ -4,8 +4,17 @@ import { Layers, Zap, Gauge, Cpu, ShieldCheck, ArrowRight, ChevronRight, Activit
 import { LiveTelemetryWidget } from "@/components/LiveTelemetryWidget";
 
 export const metadata = {
-  title: "Energy Recovery & PMG Kinetic Harvesting | BRC STAR Technology",
-  description: "Electromechanical kinetics, high-efficiency Permanent Magnet Generators (PMG), deceleration retarders, and real-time kinetic regeneration in BRC STAR electric vehicles.",
+  title: "Energy Recovery & Kinetic Harvesting | BRC STAR Technology",
+  description: "Electromechanical kinetics, high-efficiency Permanent Magnet Generators (PMG), and simulated kinetic energy recovery in BRC STAR electric vehicles.",
+  alternates: {
+    canonical: "https://brcstar.in/technology/energy-recovery",
+  },
+  openGraph: {
+    title: "Energy Recovery & Kinetic Harvesting | BRC STAR",
+    description: "Electromechanical kinetics and kinetic energy recovery architecture.",
+    url: "https://brcstar.in/technology/energy-recovery",
+    type: "website",
+  },
 };
 
 export default function EnergyRecoveryPage() {
@@ -105,6 +114,12 @@ export default function EnergyRecoveryPage() {
           <span>Patent Portfolio</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
+      </div>
+      {/* Regulatory & Real-World Results Disclaimer */}
+      <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs font-mono text-slate-400">
+        <p>
+          <span className="text-cyan-400 font-semibold">Engineering Disclaimer:</span> PMG output and glide recoup figures represent laboratory and dynamometer test-bench simulations at TRL 3/4. Figures simulated/lab-validated; real-world results vary with driving style, road gradient, ambient climate, and vehicle configuration.
+        </p>
       </div>
     </div>
   );

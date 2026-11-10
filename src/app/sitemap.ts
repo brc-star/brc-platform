@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     "",
+    "/about",
     "/technology",
     "/technology/self-volt",
     "/technology/energy-recovery",
@@ -15,7 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vehicles/bus",
     "/vehicles/starcraft-gt",
     "/vehicles/starpulse-suv",
+    "/vehicles/starfleet-commercial",
     "/vehicles/starfleet-logistic",
+    "/vehicles/starhauler-truck",
+    "/vehicles/startitan-semi-truck",
     "/vehicles/startransit-bus",
     "/innovation",
     "/innovation/rnd",

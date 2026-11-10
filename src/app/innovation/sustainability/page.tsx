@@ -4,7 +4,16 @@ import { Leaf, Zap, RefreshCw, Globe, CheckCircle2, ChevronRight, ArrowRight } f
 
 export const metadata = {
   title: "Sustainability & Circular ESG Roadmap | BRC STAR EV",
-  description: "Carbon lifecycle reduction index, circular second-life battery stewardship, sustainable Indian supply chain, and net-zero manufacturing at BRC STAR.",
+  description: "Carbon lifecycle reduction targets, circular second-life battery stewardship, sustainable Indian supply chain, and net-zero manufacturing at BRC STAR.",
+  alternates: {
+    canonical: "https://brcstar.in/innovation/sustainability",
+  },
+  openGraph: {
+    title: "Sustainability & Circular ESG Roadmap | BRC STAR",
+    description: "BRC STAR sustainability commitments and circular lifecycle targets.",
+    url: "https://brcstar.in/innovation/sustainability",
+    type: "website",
+  },
 };
 
 export default function SustainabilityPage() {

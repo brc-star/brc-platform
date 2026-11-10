@@ -1,32 +1,43 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { Newspaper, FileText, Download, ArrowRight, ChevronRight, Calendar, ExternalLink } from "lucide-react";
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Newsroom & Corporate Announcements | BRC STAR",
+  description: "Official corporate news, press statements, leadership updates, and media kit from BRC STAR electric vehicle startup.",
+  alternates: {
+    canonical: "https://brcstar.in/innovation/news",
+  },
+  openGraph: {
+    title: "Newsroom & Corporate Announcements | BRC STAR",
+    description: "Official press announcements and media statements from BRC STAR.",
+    url: "https://brcstar.in/innovation/news",
+    type: "website",
+  },
+};
 
 export default function NewsMediaPage() {
   const pressReleases = [
     {
-      title: "BRC STAR Completes TRL-6 Dynamometer Track Validation of Self-Volt Closed-Loop System",
+      title: "BRC STAR Advances TRL 3/4 Laboratory Dynamometer Simulation of Kinetic Recovery System",
       date: "August 2026",
       source: "Official Newsroom",
-      summary: "Empirical telemetry records a 32.8% reduction in net battery draw over the standard Indian Urban Drive Cycle (MIDC) and high-speed expressways.",
+      summary: "Empirical bench telemetry indicates a 32.8% simulated reduction in net battery draw across modeled urban and highway driving drive cycles.",
       category: "Technology Milestone",
     },
     {
       title: "Indian Patent Office Publishes BRC STAR Dual-Pack Kinetic Recovery Patent Application",
-      date: "May 2026",
+      date: "March 2025",
       source: "IP Regulatory Desk",
-      summary: "Publication of Patent Application IN-PAT-2025-BRC-009 marks significant progress in securing exclusive proprietary rights over closed-loop EV power routing.",
+      summary: "Publication of Indian Patent Application No. 202511050655 marks formal IPO examination for dual-pack kinetic energy recovery and alternator routing.",
       category: "Patent & IP",
     },
     {
-      title: "BRC STAR Signs Commercial Fleet Demonstration LOIs with Southern Logistics Operators",
-      date: "March 2026",
+      title: "Commercial Fleet Demonstrator Concept & Expression of Interest Framework Announced",
+      date: "January 2026",
       source: "Corporate Partnerships",
-      summary: "Preliminary agreements cover pilot deployment of 50 StarFleet commercial electric delivery vans across high-density intercity logistics routes.",
+      summary: "Framework for logistics demonstration pilots and fleet feasibility studies [Discussion stage / Available in data room].",
       category: "Commercial Partnerships",
     },
   ];
@@ -52,7 +63,7 @@ export default function NewsMediaPage() {
             Newsroom &amp; Corporate Announcements
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Stay informed on our latest engineering breakthroughs, funding milestones, executive statements, and global automotive media coverage.
+            Stay informed on our verified engineering milestones, patent examination disclosures, executive updates, and technical disclosures.
           </p>
         </div>
       </div>
@@ -83,13 +94,13 @@ export default function NewsMediaPage() {
                 </p>
               </div>
 
-              <button
-                onClick={() => alert(`Viewing full press release: ${release.title}`)}
+              <Link
+                href="/docs"
                 className="px-4 py-2 rounded-xl font-mono text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors flex items-center gap-1.5 shrink-0 self-start md:self-center"
               >
-                <span>Read Release</span>
+                <span>Read in Docs</span>
                 <ExternalLink className="w-3.5 h-3.5" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -99,20 +110,27 @@ export default function NewsMediaPage() {
       <div className="p-8 rounded-2xl bg-gradient-to-r from-cyan-950/80 via-[#050814] to-slate-950 border border-cyan-500/40 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
           <h3 className="text-xl font-bold text-white font-mono">
-            Download Official BRC STAR Media Kit (2026)
+            Official BRC STAR Press &amp; Media Kit
           </h3>
           <p className="text-xs text-slate-300 mt-1">
-            High-resolution vector logos, executive biographies, vehicle 4K renders, and corporate fact sheet.
+            High-resolution brand logos, executive biographies, vehicle rendered concept assets, and verified corporate disclosures.
           </p>
         </div>
 
-        <button
-          onClick={() => alert("Downloading BRC_STAR_Official_Media_Kit_2026.zip (42 MB)")}
+        <Link
+          href="/contact?intent=press"
           className="px-6 py-3 rounded-xl font-mono text-xs font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors flex items-center gap-2 shadow-lg shadow-cyan-500/20 shrink-0"
         >
           <Download className="w-4 h-4" />
-          <span>Download Media Kit (.ZIP)</span>
-        </button>
+          <span>Request Media Kit</span>
+        </Link>
+      </div>
+
+      {/* Engineering Disclaimer */}
+      <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs font-mono text-slate-400">
+        <p>
+          <span className="text-cyan-400 font-semibold">Regulatory Disclosure:</span> All efficiency comparisons, mileage simulations, and performance metrics reflect controlled laboratory test-bench and dynamometer simulations. Figures simulated/lab-validated; real-world results vary.
+        </p>
       </div>
     </div>
   );

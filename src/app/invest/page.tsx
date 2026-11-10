@@ -4,8 +4,17 @@ import { TrendingUp, ShieldCheck, Lock, CheckCircle2, ArrowRight, DollarSign, Ta
 import { INVESTOR_METRICS } from "@/lib/data";
 
 export const metadata = {
-  title: "Investor Relations & Opportunity | BRC STAR Deep-Tech EV",
-  description: "BRC STAR investor relations: market TAM ($50B+ Indian & global clean mobility transition), unit economics, capital allocation roadmap, and cap table overview.",
+  title: "Investor Relations & Capital Opportunity",
+  description:
+    "BRC STAR investor relations: market TAM ($50B+ Indian & global clean mobility transition), unit economics, capital allocation roadmap, and cap table overview.",
+  alternates: {
+    canonical: "https://brcstar.in/invest",
+  },
+  openGraph: {
+    title: "Investor Relations & Capital Opportunity | BRC STAR",
+    description: "BRC STAR investor relations: market TAM ($50B+), unit economics, capital allocation roadmap.",
+    url: "https://brcstar.in/invest",
+  },
 };
 
 export default function InvestorRelationsPage() {
@@ -21,7 +30,7 @@ export default function InvestorRelationsPage() {
           Backing the Definitive EV Architecture of the Next Decade
         </h1>
         <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-          BRC STAR represents a rare combination of defensible proprietary hardware IP, extreme software margins, and massive $50B+ market tailwinds across the Indian and global EV transition.
+          BRC STAR combines proprietary hardware IP (Indian Patent App No. 202511050655), high projected gross margins, and massive $50B+ market tailwinds across the Indian clean mobility transition.
         </p>
       </div>
 
@@ -29,18 +38,18 @@ export default function InvestorRelationsPage() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-center">
         <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
           <div className="text-[10px] text-slate-400 uppercase">Indian EV TAM (2030)</div>
-          <div className="text-2xl font-bold text-cyan-400 mt-1">{INVESTOR_METRICS.tamIndianEvTransition.split(" ")[0]}</div>
+          <div className="text-2xl font-bold text-cyan-400 mt-1">$50B+</div>
           <div className="text-[10px] text-slate-500 mt-0.5">Total Addressable Market</div>
         </div>
         <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
           <div className="text-[10px] text-slate-400 uppercase">Serviceable Market (SAM)</div>
-          <div className="text-2xl font-bold text-white mt-1">{INVESTOR_METRICS.targetSegmentSam.split(" ")[0]}</div>
+          <div className="text-2xl font-bold text-white mt-1">$12.4B</div>
           <div className="text-[10px] text-slate-500 mt-0.5">Passenger &amp; Commercial</div>
         </div>
         <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
           <div className="text-[10px] text-slate-400 uppercase">Projected Gross Margin</div>
-          <div className="text-2xl font-bold text-emerald-400 mt-1">{INVESTOR_METRICS.projectedGrossMargin.split(" ")[0]}</div>
-          <div className="text-[10px] text-slate-500 mt-0.5">At Phase 2 Scale</div>
+          <div className="text-2xl font-bold text-emerald-400 mt-1">28.5%</div>
+          <div className="text-[10px] text-slate-500 mt-0.5">Target at Phase 2 Scale</div>
         </div>
         <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
           <div className="text-[10px] text-slate-400 uppercase">Active Round Target</div>
@@ -57,7 +66,7 @@ export default function InvestorRelationsPage() {
             Defensible IP &amp; High Moat
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Patented dual-pack closed-loop kinetic harvesting cannot be replicated without infringing our registered IPO/PCT patent claims, creating an unassailable technical barrier to entry.
+            Proprietary dual-pack closed-loop kinetic harvesting filed under Indian Patent Application No. 202511050655 [PCT details pending], establishing clear technological differentiation.
           </p>
         </div>
 
@@ -74,10 +83,10 @@ export default function InvestorRelationsPage() {
         <div className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
           <div className="text-xs font-mono uppercase text-cyan-400">Pillar 3</div>
           <h3 className="text-lg font-bold text-white font-mono">
-            Immediate B2B Fleet Demand
+            Commercial Fleet Interest
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Fleet operators face crushing diesel expenses. StarFleet commercial delivery vans slash total cost of ownership by ₹4.8 Lakhs annually, fueling explosive pre-order velocity.
+            Fleet operators face high operating fuel expenses. StarFleet commercial delivery vans are designed to reduce total cost of ownership by up to ₹4.8 Lakhs annually (simulated models available in data room).
           </p>
         </div>
       </div>
@@ -90,10 +99,10 @@ export default function InvestorRelationsPage() {
             <span>CONFIDENTIAL INVESTOR DATA ROOM</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Access Audited Financial Model &amp; Pitch Deck
+            Access Financial Model &amp; Master Pitch Deck
           </h2>
           <p className="text-xs sm:text-sm text-slate-300">
-            Sign our digital bilateral NDA to instantly unlock the 38-page Master Series-A Deck, Cap Table schedule, and audited unit economics.
+            Sign our digital bilateral NDA to review the Master Pitch Deck, Cap Table schedule, and unit economics projections. [Financial projections are internal models subject to homologation].
           </p>
         </div>
 

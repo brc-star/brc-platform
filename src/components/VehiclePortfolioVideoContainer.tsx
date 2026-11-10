@@ -6,16 +6,37 @@ export const VehiclePortfolioVideoContainer = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch((err) => {
-          console.warn("Portfolio video autoplay deferred:", err);
-        });
-      }
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Respect user's motion preference
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      video.pause();
+      return;
     }
+
+    video.defaultMuted = true;
+    video.muted = true;
+
+    // Lazy load video playback via IntersectionObserver
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch((err) => {
+              console.warn("Portfolio video autoplay deferred:", err);
+            });
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -24,12 +45,11 @@ export const VehiclePortfolioVideoContainer = () => {
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <video
           ref={videoRef}
-          src="/BRC_STAR_30.mp4"
-          autoPlay
+          poster="/brc-star-hero-fleet.jpg"
           loop
           muted
           playsInline
-          preload="auto"
+          preload="none"
           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
         >
           <source src="/BRC_STAR_30.mp4" type="video/mp4" />

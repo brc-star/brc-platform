@@ -3,8 +3,16 @@ import Link from "next/link";
 import { FileCheck, ChevronRight, Mail, Phone, MapPin, Scale, FileText } from "lucide-react";
 
 export const metadata = {
-  title: "Terms & Conditions | BRC STAR Self Volt EV",
-  description: "Terms and Conditions for BRC STAR (OPC) PRIVATE LIMITED — Self Volt EV.",
+  title: "Terms & Conditions",
+  description: "Official Terms and Conditions, vehicle pre-booking token terms, and 100% refund policies for BRC STAR (OPC) PRIVATE LIMITED.",
+  alternates: {
+    canonical: "https://brcstar.in/terms",
+  },
+  openGraph: {
+    title: "Terms & Conditions | BRC STAR",
+    description: "Terms and Conditions, vehicle pre-booking token terms, and refund policy.",
+    url: "https://brcstar.in/terms",
+  },
 };
 
 export default function TermsConditionsPage() {
@@ -203,6 +211,27 @@ export default function TermsConditionsPage() {
           <p>
             If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
           </p>
+
+          <h2 className="text-2xl font-bold text-white font-mono pt-2">
+            Vehicle Pre-Booking, Priority Token, &amp; 100% Refund Policy
+          </h2>
+          <p>
+            When you submit a vehicle pre-booking reservation through https://brcstar.in/pre-book, the following terms govern the relationship between you and BRC STAR (OPC) PRIVATE LIMITED:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-xs font-mono text-slate-300">
+            <li>
+              <strong>₹25,000 Fully Refundable Reservation Token</strong>: The initial reservation deposit of ₹25,000 is not a purchase agreement, but a priority queue reservation. The deposit is held in dedicated escrow/booking accounts.
+            </li>
+            <li>
+              <strong>100% Unconditional Refund Policy</strong>: You may cancel your reservation at any time for any reason prior to signing the formal final allocation agreement and vehicle VIN assignment. Upon receiving your cancellation request, the full ₹25,000 token will be refunded to your original payment method within 7–10 banking business days without deduction or cancellation penalty.
+            </li>
+            <li>
+              <strong>Indicative Pricing &amp; Homologation Disclaimer</strong>: All vehicle specifications, pricing baselines (including StarCraft GT base ₹16,50,000), battery ranges, and acceleration figures displayed on this website are indicative engineering projections. Final vehicle specifications and ex-showroom prices remain subject to formal ARAI/ICAT statutory homologation testing and applicable state/central EV subsidies.
+            </li>
+            <li>
+              <strong>Production &amp; Allocation Timeline</strong>: Priority queue allocations are targeted for phased manufacturing rollouts across 2026–2027. Delivery queues are organized strictly by timestamp of confirmed reservation registration.
+            </li>
+          </ul>
 
           <h2 className="text-2xl font-bold text-white font-mono pt-2">
             Changes to These Terms and Conditions

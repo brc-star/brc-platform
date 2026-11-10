@@ -5,7 +5,16 @@ import { RND_METRICS } from "@/lib/data";
 
 export const metadata = {
   title: "R&D & Engineering Labs | BRC STAR Deep-Tech",
-  description: "Explore BRC STAR's advanced electric powertrain R&D labs, dynamometer test-beds, high-speed thermal chambers, and TRL-6 test-bench validation data.",
+  description: "Explore BRC STAR's advanced electric powertrain R&D labs, dynamometer test-beds, high-speed thermal chambers, and TRL 3/4 test-bench validation data.",
+  alternates: {
+    canonical: "https://brcstar.in/innovation/rnd",
+  },
+  openGraph: {
+    title: "R&D & Engineering Labs | BRC STAR",
+    description: "Explore BRC STAR powertrain R&D labs and TRL 3/4 simulation validation.",
+    url: "https://brcstar.in/innovation/rnd",
+    type: "website",
+  },
 };
 
 export default function RndPage() {
@@ -51,7 +60,7 @@ export default function RndPage() {
         </div>
         <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
           <div className="text-[10px] text-slate-400 uppercase">Readiness Level</div>
-          <div className="text-2xl font-bold text-amber-400 mt-1">TRL-6 Validated</div>
+          <div className="text-2xl font-bold text-amber-400 mt-1">TRL 3/4 (Lab Rig)</div>
         </div>
       </div>
 
@@ -106,6 +115,13 @@ export default function RndPage() {
           <Lock className="w-4 h-4" />
           <span>Access Internal Engineering Hub</span>
         </Link>
+      </div>
+
+      {/* Engineering Disclaimer */}
+      <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs font-mono text-slate-400">
+        <p>
+          <span className="text-cyan-400 font-semibold">Testing Notice:</span> Dynamometer test hours and simulated kilometer endurance metrics represent laboratory simulation runs and hardware-in-the-loop test benches at TRL 3/4. Figures simulated/lab-validated; real-world results vary.
+        </p>
       </div>
     </div>
   );

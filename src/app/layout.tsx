@@ -29,21 +29,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://brcstar.in"),
   title: {
     default: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
-    template: "%s | BRC STAR Deep-Tech EV",
+    template: "%s | BRC STAR",
   },
   description:
     "BRC STAR (OPC) PRIVATE LIMITED — Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical harvesting, closed-loop dynamic battery switching, and high-uptime commercial powertrains.",
-  keywords: [
-    "BRC STAR",
-    "Patent 202511050655",
-    "Dual Pack EV Architecture",
-    "Kinetic Energy Recovery System",
-    "Alternator Control Module ACM",
-    "Commercial Electric Vehicle India",
-    "StarCraft GT",
-    "StarTransit Bus",
-    "DPIIT Incubated EV Startup",
-  ],
   authors: [{ name: "BRC STAR (OPC) PRIVATE LIMITED", url: "https://brcstar.in" }],
   creator: "Dr. B. Chauhan",
   publisher: "BRC STAR (OPC) PRIVATE LIMITED",
@@ -114,7 +103,7 @@ export default function RootLayout({
         legalName: "BRC STAR (OPC) PRIVATE LIMITED",
         identifier: "CIN: U34100RJ2019OPC066948",
         url: "https://brcstar.in",
-        logo: "https://brcstar.in/logo.png",
+        logo: "https://brcstar.in/icon-512.png",
         email: "contact@brcstar.in",
         telephone: "+91-99241-00759",
         address: {
@@ -142,6 +131,70 @@ export default function RootLayout({
         publisher: {
           "@id": "https://brcstar.in/#organization",
         },
+      },
+      {
+        "@type": "Product",
+        "@id": "https://brcstar.in/vehicles/starcraft-gt#product",
+        name: "BRC STAR StarCraft GT Hyper-Sedan",
+        description: "Next-generation electric passenger hyper-sedan with dual-pack kinetic energy recovery architecture.",
+        brand: {
+          "@type": "Brand",
+          name: "BRC STAR",
+        },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "INR",
+          price: "1650000",
+          availability: "https://schema.org/PreOrder",
+          url: "https://brcstar.in/pre-book?model=starcraft-gt",
+        },
+      },
+      {
+        "@type": "Product",
+        "@id": "https://brcstar.in/vehicles/starfleet-commercial#product",
+        name: "BRC STAR StarFleet Commercial Carrier",
+        description: "Enterprise commercial logistics electric carrier with auxiliary kinetic harvesting.",
+        brand: {
+          "@type": "Brand",
+          name: "BRC STAR",
+        },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "INR",
+          price: "2450000",
+          availability: "https://schema.org/PreOrder",
+          url: "https://brcstar.in/pre-book?model=starfleet-commercial",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://brcstar.in/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://brcstar.in",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Technology",
+            item: "https://brcstar.in/technology",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Vehicles",
+            item: "https://brcstar.in/vehicles",
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: "Pre-Book",
+            item: "https://brcstar.in/pre-book",
+          },
+        ],
       },
     ],
   };

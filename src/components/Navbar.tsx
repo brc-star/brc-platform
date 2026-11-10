@@ -104,7 +104,7 @@ export const Navbar = () => {
         },
         {
           name: "Patent & IP Portfolio",
-          desc: "Certified patent claims, IPO filings, and defensibility moat",
+          desc: "Indian Patent Application No. 202511050655 & IP moat",
           href: "/technology/patent-ip",
           icon: Shield,
         },
@@ -139,8 +139,14 @@ export const Navbar = () => {
       href: "/innovation",
       sublinks: [
         {
+          name: "About Us & Story",
+          desc: "Founder Bishna Chauhan, DPIIT & iStart journey since 2019",
+          href: "/about",
+          icon: Users,
+        },
+        {
           name: "R&D & Test Rigs",
-          desc: "Simulation test-beds, dynamometer metrics & TRL-6 track logs",
+          desc: "Simulation test-beds, dynamometer metrics & TRL 3/4 lab data",
           href: "/innovation/rnd",
           icon: Layers,
         },
@@ -165,7 +171,7 @@ export const Navbar = () => {
       sublinks: [
         {
           name: "Investor Relations",
-          desc: "Vision, $50B TAM market capture, and capital roadmap",
+          desc: "Vision, $50B+ TAM market capture, and capital roadmap",
           href: "/invest",
           icon: TrendingUp,
         },

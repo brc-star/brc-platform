@@ -516,11 +516,11 @@ export const Vehicle3DDigitalTwin = () => {
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors">
               <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">0-100 km/h</span>
               <span className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-                {selectedTrim === "performance" ? "2.9s" : currentVehicle.acceleration.split(" ")[0]}
+                {selectedTrim === "performance" ? "2.9s" : (currentVehicle.acceleration.match(/\d+(\.\d+)?s/)?.[0] || "3.2s")}
               </span>
             </div>
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors">
-              <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">Self-Volt Range</span>
+              <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">Target Range (Sim.)</span>
               <span className="text-sm sm:text-base font-bold text-cyan-600 dark:text-cyan-400">
                 {calculatedRange} km
               </span>

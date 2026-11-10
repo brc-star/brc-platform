@@ -14,15 +14,51 @@ import {
   ChevronRight,
   Sparkles,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/HeroSection";
-import { SelfVoltVisualizer } from "@/components/SelfVoltVisualizer";
 import { VehiclesTopEmptyVideoContainer } from "@/components/VehiclesTopEmptyVideoContainer";
 import { VehicleStudioEmpty } from "@/components/VehicleStudioEmpty";
 import { VehiclePortfolioVideoContainer } from "@/components/VehiclePortfolioVideoContainer";
 import { VehiclePortfolioNoImage } from "@/components/VehiclePortfolioNoImage";
-import { RangeRoiCalculator } from "@/components/RangeRoiCalculator";
 import { PatentShowcase } from "@/components/PatentShowcase";
 import { INVESTOR_METRICS, RND_METRICS } from "@/lib/data";
+import { Metadata } from "next";
+
+const SelfVoltVisualizer = dynamic(
+  () => import("@/components/SelfVoltVisualizer").then((mod) => mod.SelfVoltVisualizer),
+  {
+    loading: () => (
+      <div className="h-96 w-full rounded-3xl bg-slate-900/40 border border-slate-800 animate-pulse flex items-center justify-center text-xs font-mono text-slate-500">
+        Loading interactive telemetry visualizer...
+      </div>
+    ),
+  }
+);
+
+const RangeRoiCalculator = dynamic(
+  () => import("@/components/RangeRoiCalculator").then((mod) => mod.RangeRoiCalculator),
+  {
+    loading: () => (
+      <div className="h-80 w-full rounded-3xl bg-slate-900/40 border border-slate-800 animate-pulse flex items-center justify-center text-xs font-mono text-slate-500">
+        Loading efficiency calculator...
+      </div>
+    ),
+  }
+);
+
+export const metadata: Metadata = {
+  title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Electric Vehicles",
+  description: "BRC STAR (OPC) PRIVATE LIMITED — Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical harvesting and dynamic dual-pack power routing.",
+  alternates: {
+    canonical: "https://brcstar.in",
+  },
+  openGraph: {
+    title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
+    description: "Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655.",
+    url: "https://brcstar.in",
+    type: "website",
+  },
+};
 
 export default function HomePage() {
   return (
@@ -149,6 +185,86 @@ export default function HomePage() {
         <PatentShowcase />
       </section>
 
+      {/* 05.5 PROTOTYPE PROGRESS & ENGINEERING VALIDATION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-8 sm:p-12 rounded-3xl bg-slate-900/60 border border-slate-800 space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-6">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-xs font-mono text-cyan-300">
+                <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+                <span>HARDWARE RIG &amp; TEST BENCH MILESTONES</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Prototype Progress &amp; Engineering Roadmap
+              </h2>
+            </div>
+            <div className="text-xs font-mono text-slate-400">
+              TRL Stage: <strong className="text-cyan-400">TRL 3/4 Laboratory Bench</strong>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+            <div className="p-5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-cyan-400 font-bold">Stage 1: Inverter ACM</span>
+                <span className="px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 text-[10px]">
+                  Bench Validated
+                </span>
+              </div>
+              <h3 className="text-sm font-bold text-white font-sans">
+                Alternator Control Module (ACM) Rig
+              </h3>
+              <p className="text-slate-400 text-[11px] font-sans leading-relaxed">
+                Hardware test rig testing variable PMG generator output across 300 to 9,500 RPM into active 400V boost circuitry.
+              </p>
+              <div className="pt-2 text-[10px] text-amber-400/90 font-mono">
+                [Rendered concept / Test bench model]
+              </div>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-cyan-400 font-bold">Stage 2: Bus Switcher</span>
+                <span className="px-2 py-0.5 rounded bg-cyan-950/80 text-cyan-300 border border-cyan-500/30 text-[10px]">
+                  Simulation
+                </span>
+              </div>
+              <h3 className="text-sm font-bold text-white font-sans">
+                Dual-Pack Solid-State Commutator
+              </h3>
+              <p className="text-slate-400 text-[11px] font-sans leading-relaxed">
+                Silicon Carbide (SiC) semiconductor bus-switching matrix with sub-2.4ms role transition latency between Pack A and Pack B.
+              </p>
+              <div className="pt-2 text-[10px] text-amber-400/90 font-mono">
+                [Rendered concept / Hardware logic]
+              </div>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-cyan-400 font-bold">Stage 3: Mule Chassis</span>
+                <span className="px-2 py-0.5 rounded bg-amber-950/80 text-amber-300 border border-amber-500/30 text-[10px]">
+                  CAD Packaging
+                </span>
+              </div>
+              <h3 className="text-sm font-bold text-white font-sans">
+                StarCraft GT Track Platform
+              </h3>
+              <p className="text-slate-400 text-[11px] font-sans leading-relaxed">
+                Aerodynamic chassis packaging integrating dual battery tubs, PMG auxiliary mechanical linkages, and immersion coolant loops.
+              </p>
+              <div className="pt-2 text-[10px] text-amber-400/90 font-mono">
+                [Rendered concept / Awaiting track mule]
+              </div>
+            </div>
+          </div>
+
+          <div className="text-[11px] text-slate-500 font-mono border-t border-slate-800/80 pt-4 text-center">
+            *Visuals and representations labeled as &ldquo;Rendered concept&rdquo; represent CAD models and laboratory simulations. Real physical test mule track photography will be published post-homologation.
+          </div>
+        </div>
+      </section>
+
       {/* 06. INVESTOR & STRATEGIC CAPITAL SNAPSHOT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-[#090d1f] via-[#050814] to-[#02040a] border border-cyan-500/30 rounded-3xl p-8 lg:p-12 relative overflow-hidden shadow-2xl">
@@ -176,7 +292,7 @@ export default function HomePage() {
                 </div>
                 <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
                   <div className="text-[10px] text-slate-400 uppercase">Current Stage</div>
-                  <div className="text-lg font-bold text-white mt-0.5">TRL-6 Track</div>
+                  <div className="text-lg font-bold text-white mt-0.5">TRL 3/4</div>
                 </div>
                 <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
                   <div className="text-[10px] text-slate-400 uppercase">Projected Margin</div>
@@ -209,19 +325,19 @@ export default function HomePage() {
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">TRL 3/4 Dynamometer Validated:</strong> 32.8% auxiliary energy gain measured across test rig profiles.
+                    <strong className="text-white">TRL 3/4 Dynamometer Validated:</strong> 32.8% auxiliary energy gain (Simulated / Lab Test Bench).
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Patent Examination Progress:</strong> Indian Patent Application No. 202511050655 published with IPO.
+                    <strong className="text-white">Patent Examination Progress:</strong> Indian Patent Application No. 202511050655 filed with IPO.
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Dealer Network LOIs:</strong> 18+ franchise letters of intent across southern metro corridors.
+                    <strong className="text-white">Dealer Network Interest:</strong> 18+ franchise expressions of interest [Available in data room].
                   </div>
                 </div>
               </div>

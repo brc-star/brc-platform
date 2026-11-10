@@ -6,6 +6,15 @@ import { RND_METRICS } from "@/lib/data";
 export const metadata = {
   title: "Innovation & R&D Hub | BRC STAR Self Volt EV",
   description: "BRC STAR innovation ecosystem: advanced EV simulation rigs, ESG sustainability roadmap, battery circularity, and official press releases.",
+  alternates: {
+    canonical: "https://brcstar.in/innovation",
+  },
+  openGraph: {
+    title: "Innovation & R&D Hub | BRC STAR",
+    description: "BRC STAR innovation ecosystem and engineering simulation labs.",
+    url: "https://brcstar.in/innovation",
+    type: "website",
+  },
 };
 
 export default function InnovationOverviewPage() {
@@ -13,18 +22,18 @@ export default function InnovationOverviewPage() {
     {
       title: "R&D & Simulation Labs",
       href: "/innovation/rnd",
-      badge: "TRL-6 Test Bench",
+      badge: "TRL 3/4 Test Bench",
       icon: Cpu,
       desc: "Dynamometer test rigs, hardware-in-the-loop (HIL) battery simulation, and computational fluid dynamics (CFD) optimization.",
-      metrics: "8,600+ Dynamometer Test Hours",
+      metrics: "8,600+ Dynamometer Test Hours (Simulated Rig)",
     },
     {
       title: "Sustainability & Circular ESG",
       href: "/innovation/sustainability",
-      badge: "Net-Zero Lifecycle",
+      badge: "Net-Zero Lifecycle Target",
       icon: Leaf,
       desc: "Closed-loop battery second-life utilization, zero-emission supply chains, and circular recycling protocols.",
-      metrics: "3.2 MT CO₂ Prevented / Vehicle / Yr",
+      metrics: "3.2 MT CO₂ Prevented / Vehicle / Yr (Projected)",
     },
     {
       title: "News & Media Center",

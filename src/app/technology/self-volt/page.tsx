@@ -5,8 +5,17 @@ import { SelfVoltVisualizer } from "@/components/SelfVoltVisualizer";
 import { ResponsiveTable } from "@/components/ResponsiveTable";
 
 export const metadata = {
-  title: "Self Volt Architecture | Closed-Loop Dual-Pack EV Technology | BRC STAR",
-  description: "Detailed engineering architecture of the BRC STAR Self Volt powertrain: Pack A/B solid-state switching, Alternator Control Module (ACM), and closed-loop kinetic regeneration.",
+  title: "Self Volt Architecture | Dual-Pack Kinetic Recovery",
+  description:
+    "Engineering architecture of the BRC STAR Self Volt powertrain: Pack A/B solid-state switching, Alternator Control Module (ACM), and kinetic energy recovery.",
+  alternates: {
+    canonical: "https://brcstar.in/technology/self-volt",
+  },
+  openGraph: {
+    title: "Self Volt Architecture | BRC STAR",
+    description: "Dual-Pack kinetic energy recovery and dynamic switching architecture.",
+    url: "https://brcstar.in/technology/self-volt",
+  },
 };
 
 export default function SelfVoltArchitecturePage() {
@@ -25,13 +34,13 @@ export default function SelfVoltArchitecturePage() {
         <div className="max-w-4xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-xs font-mono text-cyan-300">
             <Zap className="w-3.5 h-3.5 text-cyan-400" />
-            <span>PATENTED CLOSED-LOOP ENERGY REGENERATION</span>
+            <span>INDIAN PATENT APP NO. 202511050655 • KINETIC RECOVERY</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Self Volt: Continuous Kinetic Energy Circulation
+            Self Volt: Kinetic Energy Recovery Architecture
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Conventional electric vehicles draw from a single battery pack until depletion. The BRC STAR Self Volt powertrain couples a high-efficiency Permanent Magnet Generator (PMG) and Alternator Control Module (ACM) with a dual-pack system, dynamically harvesting kinetic momentum into secondary cells while maintaining highway propulsion.
+            Conventional electric vehicles draw from a single battery pack until depletion. The BRC STAR Self Volt powertrain couples an auxiliary Permanent Magnet Generator (PMG) and Alternator Control Module (ACM) with an isolated dual-pack system, dynamically harvesting kinetic momentum into secondary cells to improve overall system efficiency. Figures simulated/lab-validated; real-world results vary.
           </p>
         </div>
       </div>

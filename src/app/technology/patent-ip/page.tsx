@@ -5,8 +5,17 @@ import { PatentShowcase } from "@/components/PatentShowcase";
 import { PATENTS_DATA } from "@/lib/data";
 
 export const metadata = {
-  title: "Patent & Intellectual Property Portfolio | BRC STAR Self Volt",
-  description: "Official patent filings, registered utility claims, and international PCT IP protection for BRC STAR Self Volt Electric Vehicle technology.",
+  title: "Patent & Intellectual Property Portfolio",
+  description:
+    "Indian Patent Application No. 202511050655, filed with the Indian Patent Office (IPO). Dual-pack kinetic energy recovery architecture and adaptive alternator control.",
+  alternates: {
+    canonical: "https://brcstar.in/technology/patent-ip",
+  },
+  openGraph: {
+    title: "Patent & Intellectual Property Portfolio | BRC STAR",
+    description: "Indian Patent Application No. 202511050655, filed with Indian Patent Office (IPO).",
+    url: "https://brcstar.in/technology/patent-ip",
+  },
 };
 
 export default function PatentIpPage() {
@@ -25,13 +34,13 @@ export default function PatentIpPage() {
         <div className="max-w-4xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100/90 text-cyan-900 border border-cyan-300/80 dark:bg-cyan-950/80 dark:border-cyan-500/30 text-xs font-mono dark:text-cyan-300 font-semibold">
             <ShieldCheck className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-            <span>INDIAN PATENT OFFICE (IPO) &amp; PCT INTERNATIONAL FILINGS</span>
+            <span>INDIAN PATENT APPLICATION NO. 202511050655 • [PCT DETAILS PENDING]</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Defensible Intellectual Property Moat
+            Proprietary IP &amp; Patent Architecture
           </h1>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-            BRC STAR has secured comprehensive intellectual property protection covering the core electromechanical topologies, solid-state switching logic, and embedded thermochemical control algorithms of the Self Volt system.
+            BRC STAR has filed Indian Patent Application No. 202511050655 covering auxiliary electromechanical kinetic harvesting, dual-pack closed-loop battery switching, and adaptive alternator control modules. Figures simulated/lab-validated; real-world results vary.
           </p>
         </div>
       </div>
@@ -43,25 +52,25 @@ export default function PatentIpPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="p-6 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3 transition-colors">
           <div className="text-xs font-mono uppercase text-cyan-600 dark:text-cyan-400 font-bold">Pillar 1</div>
-          <h3 className="text-base font-bold text-slate-900 dark:text-white">Utility Patent Breadth</h3>
+          <h3 className="text-base font-bold text-slate-900 dark:text-white">Patent Claims Coverage</h3>
           <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Over 22 specific independent and dependent claims protecting dual-pack closed-loop energy routing, high-frequency ACM rectification, and synchronous PMG alternator mechanical couplings.
+            22 independent and dependent claims filed with the Indian Patent Office protecting dual-pack sequential energy routing, high-frequency ACM rectification, and synchronous PMG alternator mechanical couplings.
           </p>
         </div>
 
         <div className="p-6 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3 transition-colors">
           <div className="text-xs font-mono uppercase text-cyan-600 dark:text-cyan-400 font-bold">Pillar 2</div>
-          <h3 className="text-base font-bold text-slate-900 dark:text-white">Global PCT Priority</h3>
+          <h3 className="text-base font-bold text-slate-900 dark:text-white">International PCT Framework</h3>
           <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            International patent priority applications filed under the Patent Cooperation Treaty (PCT), establishing priority across North America, Europe, East Asia, and ASEAN automotive markets.
+            International patent application documentation structured under the Patent Cooperation Treaty (PCT) framework [PCT details pending]. Target national phase filings subject to homologation schedule.
           </p>
         </div>
 
         <div className="p-6 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3 transition-colors">
           <div className="text-xs font-mono uppercase text-cyan-600 dark:text-cyan-400 font-bold">Pillar 3</div>
-          <h3 className="text-base font-bold text-slate-900 dark:text-white">Embedded Algorithm Trade Secrets</h3>
+          <h3 className="text-base font-bold text-slate-900 dark:text-white">Proprietary Control Firmware</h3>
           <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Core neural state-of-health estimators and sub-millisecond cell balancing firmware are encrypted at the edge on custom silicon, providing impenetrable software defense.
+            Embedded state-of-health estimation algorithms and sub-millisecond cell balancing logic are maintained as proprietary trade secrets and executed locally on microcontroller hardware.
           </p>
         </div>
       </div>
@@ -69,7 +78,7 @@ export default function PatentIpPage() {
       {/* Investor NDA Gateway Inset */}
       <div className="p-8 rounded-2xl bg-gradient-to-br from-slate-50 via-cyan-50/40 to-slate-100 border border-slate-200/80 shadow-xl dark:bg-[#050814] dark:border-cyan-500/30 text-center space-y-4 transition-colors">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white font-mono">
-          Request Full Patent Legal Dossier &amp; Certified Copies
+          Request Full Patent Legal Dossier &amp; Filing Copies
         </h3>
         <p className="text-xs text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
           Authorized institutional investors and strategic OEM partners can access complete patent specifications, prior-art search clearance, and claims matrices through the authenticated Data Room.

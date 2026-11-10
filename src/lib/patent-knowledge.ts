@@ -26,14 +26,15 @@ export const PATENT_METADATA = {
   provisionalFilingDate: "2025-03-14",
   formalFilingDate: "2025-08-22",
   jurisdiction: "Indian Patent Office (IPO), New Delhi / Kolkata",
-  internationalPctRef: "PCT/IB2025/BRC001",
+  internationalPctRef: "[PCT details pending]",
   applicant: "BRC STAR (OPC) PRIVATE LIMITED",
   cin: "U34100RJ2019OPC066948",
   incubation: "iStart Rajasthan & Startup India (DPIIT Recognized)",
   ipcClassification: "B60L 58/10, B60L 50/16, H02J 7/14, B60K 25/00",
   title:
     "CLOSED-LOOP DUAL-PACK KINETIC ENERGY RECOVERY ARCHITECTURE AND ADAPTIVE ALTERNATOR CONTROL SYSTEM FOR ELECTRIC VEHICLES",
-  trlStage: "TRL 4 (Validated in Laboratory Test Benches & Dynamometer Mule)",
+  trlStage: "TRL 3/4 (Laboratory Simulation & Proof-of-Concept Test Bench)",
+  status: "Indian Patent Application No. 202511050655, filed with Indian Patent Office (IPO)",
 };
 
 export const PATENT_CLAIMS_DATABASE: PatentClaimDetail[] = [
@@ -46,9 +47,9 @@ export const PATENT_CLAIMS_DATABASE: PatentClaimDetail[] = [
     noveltyAssertion:
       "Unlike conventional EVs where regeneration feeds back into the identical battery undergoing discharge (causing localized micro-heating and chemical dendrite degradation), Claim 1 physically decouples the active propulsion source from the kinetic absorption buffer.",
     technicalMetric:
-      "800V dual-bus switching latency < 2.4 milliseconds; zero tractive torque drop during bus handover.",
+      "800V dual-bus switching latency < 2.4 milliseconds; zero tractive torque drop during bus handover (Simulated).",
     priorArtDistinction:
-      "Distinguished from US Patent 9,180,782 (Tesla) and US 8,818,597 (Toyota THS-II), which utilize a single continuous high-voltage bus with shared capacitor bank buffering rather than isolated dual-reservoir sequential chemistry.",
+      "Distinguished from conventional single-bus EV and parallel hybrid powertrains which utilize a single continuous high-voltage bus with shared capacitor buffering, by implementing isolated dual-reservoir sequential chemistry to decouple tractive propulsion draw from kinetic recovery absorption.",
   },
   {
     claimNumber: 2,
@@ -187,17 +188,17 @@ export function queryPatentKnowledge(query: string, mode: "general" | "investor"
 
   if (q.includes("tesla") || q.includes("toyota") || q.includes("prior art") || q.includes("novelty") || q.includes("distinction")) {
     const c1 = PATENT_CLAIMS_DATABASE[0];
-    answer = `### 🔬 Novelty & Prior-Art Legal Analysis (Indian Patent App No. 202511050655)
+    answer = `### 🔬 Novelty & Architecture Distinction (Indian Patent App No. 202511050655)
 
-**Core Distinction Against Global Prior Art:**
-* **Tesla Motors (US 9,180,782 / US 20130207604 A1)**: Tesla architectures utilize a single continuous high-voltage bus with bi-directional inverter regeneration. During high-speed regeneration, high charging currents flow directly into the exact cell matrix that is already elevated in temperature from driving discharge. This causes accelerated lithium dendrite growth and severe thermal throttling.
-* **Toyota Hybrid Synergy Drive (US 8,818,597)**: Toyota couples a planetary gearset with motor-generators MG1/MG2, but relies on a low-capacity high-voltage buffer without dual sequential chemistry isolation.
-* **BRC STAR Invention (Claim 1 & Claim 4)**: Completely solves this dilemma by introducing a **Dual-Pack Closed-Loop Topology (Pack A & Pack B)**. Pack A powers the PMSM traction drives while the patented **Alternator Control Module (ACM)** routes up to **+42 kW** of kinetic inertial recapture into isolated Pack B. At designated thresholds, our **Silicon Carbide (SiC) contactor matrix switches roles in < 2.4 ms** with zero drop in wheel drive torque.
+**Core Distinction Against Conventional Architectures:**
+* **Standard Single-Bus EV Topologies**: Conventional EV powertrains route regenerative braking energy back into the same battery matrix currently supplying motor discharge. Under sustained driving, this bi-directional flow creates localized thermal stress and accelerated chemical aging.
+* **BRC STAR Approach (Claim 1 & Claim 4)**: Introduces a **Dual-Pack Kinetic Energy Recovery Architecture (Pack A & Pack B)**. Pack A powers the PMSM traction motor while kinetic recovery is directed to isolated Pack B via the Alternator Control Module (ACM). Microcontroller-managed switching alternates roles dynamically to balance pack utilization.
+* **Disclaimer**: Figures and performance metrics are simulated/lab-validated; real-world results vary by operational conditions.
 
-**Patent Examiner Citation Metrics:**
-* **Filing Reference**: Indian Patent Application No. \`202511050655\` (Formal Examination Phase).
-* **International PCT Priority**: Reference \`PCT/IB2025/BRC001\`.
-* **TRL Stage**: TRL 4 (Lab Rig & Dynamometer Track Mule Validation).`;
+**Patent Reference Status:**
+* **Filing Reference**: Indian Patent Application No. \`202511050655\` (Filed/Published with Indian Patent Office).
+* **International PCT Details**: Reference \`[PCT details pending]\`.
+* **Technology Readiness Level (TRL)**: TRL 3/4 (Laboratory Simulation & Proof-of-Concept Test Bench).`;
   } else if (q.includes("ais") || q.includes("safety") || q.includes("homologation") || q.includes("standard") || q.includes("fire") || q.includes("puncture")) {
     answer = `### 🛡️ Automotive Regulatory & AIS Homologation Compliance
 

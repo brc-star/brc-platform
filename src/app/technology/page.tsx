@@ -1,38 +1,58 @@
 import React from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Zap, Layers, Shield, Cpu, Gauge, BatteryCharging, ArrowRight, RefreshCw, Sparkles, CheckCircle2 } from "lucide-react";
-import { SelfVoltVisualizer } from "@/components/SelfVoltVisualizer";
+
+const SelfVoltVisualizer = dynamic(
+  () => import("@/components/SelfVoltVisualizer").then((mod) => mod.SelfVoltVisualizer),
+  {
+    loading: () => (
+      <div className="h-96 w-full rounded-3xl bg-slate-900/40 border border-slate-800 animate-pulse flex items-center justify-center text-xs font-mono text-slate-500">
+        Loading interactive telemetry visualizer...
+      </div>
+    ),
+  }
+);
 
 export const metadata = {
   title: "Technology & Engineering Pillars | BRC STAR Self Volt EV",
-  description: "Explore BRC STAR's deep-tech engineering: Self-Volt dual-pack closed-loop recovery, Alternator Control Modules, Permanent Magnet kinetic harvesting, and solid-state thermochemical BMS.",
+  description: "Explore BRC STAR's deep-tech engineering: Self-Volt dual-pack kinetic energy recovery, Alternator Control Modules, and Indian Patent Application No. 202511050655.",
+  alternates: {
+    canonical: "https://brcstar.in/technology",
+  },
+  openGraph: {
+    title: "Technology & Engineering Pillars | BRC STAR",
+    description: "Deep-tech kinetic energy recovery and dual-pack powertrain architecture for electric mobility.",
+    url: "https://brcstar.in/technology",
+    type: "website",
+  },
 };
 
 export default function TechnologyOverviewPage() {
   const techPillars = [
     {
-      title: "Self Volt Closed-Loop Architecture",
+      title: "Self Volt Dual-Pack Architecture",
       href: "/technology/self-volt",
-      badge: "Core Proprietary IP",
+      badge: "Proprietary Architecture",
       icon: Zap,
-      desc: "Our dual-pack system decouples discharge load from simultaneous kinetic charging, eliminating thermal bottlenecks and delivering up to 850 km range.",
-      specs: ["400V Dual-Bus Topology", "Continuous Glide Harvesting", "TRL-6 Track Validated"],
+      desc: "Our dual-pack system decouples discharge load from simultaneous kinetic charging, eliminating thermal bottlenecks and delivering up to 850 km target range.",
+      specs: ["400V Dual-Bus Topology", "Kinetic Energy Recovery", "TRL 3/4 Test Bench Validated"],
     },
     {
       title: "Energy Recovery & Kinetic PMG",
       href: "/technology/energy-recovery",
       badge: "Electromechanical Link",
       icon: Layers,
-      desc: "Proprietary permanent magnet generator harvesting converts vehicle momentum and heavy braking into high-amp electrical replenishment.",
-      specs: ["+42 kW Glide Recoup", "98.4% ACM Inverter Efficiency", "Multi-Stage Retarder"],
+      desc: "Permanent magnet generator kinetic recovery converts vehicle momentum and deceleration into high-amp electrical replenishment.",
+      specs: ["Kinetic Glide Recoup", "98.4% ACM Inverter Efficiency (Lab)", "Multi-Stage Retarder"],
     },
     {
       title: "Patent & Intellectual Property",
       href: "/technology/patent-ip",
-      badge: "IPO & PCT Filings",
+      badge: "IPO Filing",
       icon: Shield,
-      desc: "Defensible IP moat encompassing 3 primary utility patents and international priority filings protecting core switching algorithms.",
-      specs: ["IN-PAT-2025-BRC-009", "PCT Priority Claims", "52 Combined Utility Claims"],
+      desc: "Intellectual property foundation centered on Indian Patent Application No. 202511050655 with international PCT application details pending.",
+      specs: ["Indian Patent App No. 202511050655", "[PCT details pending]", "22 Utility Claims"],
     },
   ];
 
@@ -102,6 +122,13 @@ export default function TechnologyOverviewPage() {
             </div>
           );
         })}
+      </div>
+
+      {/* Regulatory & Real-World Results Disclaimer */}
+      <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs font-mono text-slate-400">
+        <p>
+          <span className="text-cyan-400 font-semibold">Engineering Notice:</span> All powertrain performance metrics, efficiency gains, and operational ranges are laboratory-simulated and bench-validated at TRL 3/4. Figures simulated/lab-validated; real-world results vary depending on driving cycles, vehicle payload, environmental temperatures, and production homologation.
+        </p>
       </div>
     </div>
   );

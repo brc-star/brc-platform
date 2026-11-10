@@ -6,7 +6,16 @@ import { formatInr } from "@/lib/utils";
 
 export const metadata = {
   title: "Electric Bus Mobility | StarTransit 12M | BRC STAR",
-  description: "High-capacity 12-meter electric bus for municipal transit authorities and intercity operators with closed-loop kinetic regeneration.",
+  description: "High-capacity 12-meter electric bus for municipal transit authorities and intercity operators with kinetic energy recovery.",
+  alternates: {
+    canonical: "https://brcstar.in/vehicles/bus",
+  },
+  openGraph: {
+    title: "Electric Bus Mobility | BRC STAR",
+    description: "StarTransit 12M electric transit bus platform.",
+    url: "https://brcstar.in/vehicles/bus",
+    type: "website",
+  },
 };
 
 export default function BusVehiclesPage() {

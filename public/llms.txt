@@ -1,0 +1,45 @@
+# BRC STAR (OPC) PRIVATE LIMITED — Technical Knowledge Base
+
+> BRC STAR is an Indian deep-tech electric mobility startup pioneering auxiliary mechanical kinetic energy recovery and closed-loop dual-battery switching architectures.
+
+## Corporate Identity & Governance
+- **Legal Entity**: BRC STAR (OPC) PRIVATE LIMITED
+- **Corporate Identification Number (CIN)**: U34100RJ2019OPC066948
+- **Date of Incorporation**: November 2019
+- **Founder & Managing Director**: Dr. B. Chauhan (Bishna Chauhan)
+- **Registered Headquarters**: 7SJM-A, Anupgarh, Ganganagar, Rajasthan 335701, India
+- **Incubation & Recognition**: iStart Rajasthan (Government of Rajasthan) and DPIIT Startup India Recognized Startup
+
+## Intellectual Property & Patent Architecture
+- **Primary Patent Filing**: Indian Patent Application No. 202511050655
+- **Jurisdiction**: Indian Patent Office (IPO), New Delhi / Kolkata
+- **Title**: Closed-Loop Dual-Pack Kinetic Energy Recovery Architecture and Adaptive Alternator Control System for Electric Vehicles
+- **International Priority**: [PCT details pending]
+- **Technology Readiness Level (TRL)**: TRL 3/4 (Laboratory Simulation & Proof-of-Concept Test Bench Validation)
+
+## Core Technical Architecture: Self Volt
+1. **Dual-Pack Sequential Topology**: Physically decouples active propulsion draw (Pack A) from kinetic harvesting absorption (Pack B), reducing single-pack thermal stress and mitigating localized micro-heating.
+2. **Alternator Control Module (ACM)**: High-frequency active boost rectification converting variable rotational momentum (300 RPM to 9,500 RPM) into stabilized 400V DC charge current.
+3. **Solid-State SiC Commutation**: Sub-2.4ms switching handover between battery packs without interruption to wheel tractive torque (Simulated).
+4. **Safety & Standards Alignment**: Designed around Indian AIS-038 Rev 2 and AIS-156 traction battery safety standards, incorporating dielectric immersion cooling paths.
+
+## Vehicle Portfolio & Indicative Specifications
+- **StarCraft GT**: Performance electric sedan. Indicative base price ₹16,50,000. Simulated range up to 850 km target (Dual-pack). Acceleration 0-100 km/h in 3.2s.
+- **StarFleet**: Commercial electric delivery van. Indicative base price ₹18,50,000. Designed for last-mile and regional delivery fleets.
+- **StarTransit**: Urban transit electric bus. Indicative base price ₹28,00,000. High-uptime fleet architecture.
+*Disclaimer: All pricing and performance metrics are indicative and simulated, subject to final ARAI/ICAT statutory homologation.*
+
+## Pre-Booking Terms & Consumer Protection
+- **Reservation Token**: ₹25,000 fully refundable priority allocation token held in dedicated escrow.
+- **Refund Policy**: 100% unconditional refund available at any time prior to final vehicle VIN allocation.
+- **Compliance**: Fully compliant with Indian Consumer Protection Act 2019 and Digital Personal Data Protection Act (DPDPA) 2023.
+
+## Official Web Links
+- Website: https://brcstar.in
+- Technology: https://brcstar.in/technology/self-volt
+- Patent & IP: https://brcstar.in/technology/patent-ip
+- Vehicles: https://brcstar.in/vehicles
+- Pre-Book: https://brcstar.in/pre-book
+- Investor Relations: https://brcstar.in/invest
+- Privacy Policy: https://brcstar.in/privacy
+- Terms & Conditions: https://brcstar.in/terms

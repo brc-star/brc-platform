@@ -2,9 +2,21 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { ArrowRight, ChevronRight, Lock } from "lucide-react";
-import { LiveTelemetryWidget } from "./LiveTelemetryWidget";
 import { PitchDeckModal } from "./PitchDeckModal";
+
+const LiveTelemetryWidget = dynamic(
+  () => import("./LiveTelemetryWidget").then((mod) => mod.LiveTelemetryWidget),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-64 w-full rounded-2xl bg-slate-900/60 border border-slate-800 animate-pulse flex items-center justify-center text-xs font-mono text-slate-500">
+        Initializing telemetry HUD...
+      </div>
+    ),
+  }
+);
 
 export const HeroSection: React.FC = () => {
   const [isDeckModalOpen, setIsDeckModalOpen] = useState(false);
@@ -135,6 +147,11 @@ export const HeroSection: React.FC = () => {
         <div className="mt-4 sm:mt-6 max-w-4xl mx-auto w-full">
           <LiveTelemetryWidget />
         </div>
+
+        {/* Real-world variance disclaimer */}
+        <p className="mt-3 text-center text-[10px] sm:text-[11px] font-mono text-slate-500 dark:text-slate-500 max-w-2xl mx-auto">
+          *Performance and range figures are simulated and bench-validated under laboratory test cycles. Real-world results vary with payload, terrain, and operational conditions.
+        </p>
       </div>
 
       {/* DPDPA-Compliant Pitch Deck Modal Gateway */}
