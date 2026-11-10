@@ -417,7 +417,7 @@ export const Navbar = () => {
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold tracking-wide text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/60 border border-cyan-500/40 hover:border-cyan-400 transition-all shadow-md shadow-cyan-950/40 hover:scale-[1.02]"
               >
                 <User className="w-3 h-3 text-cyan-400" />
-                <span>Sign Up / Sign In</span>
+                <span>Login</span>
                 <ArrowRight className="w-3 h-3 text-cyan-400" />
               </Link>
             )}
@@ -448,7 +448,7 @@ export const Navbar = () => {
                 href="/signin"
                 className="px-2.5 py-1.5 rounded-md text-xs font-semibold font-mono text-slate-950 bg-cyan-400"
               >
-                Sign In
+                Login
               </Link>
             )}
 
@@ -526,10 +526,11 @@ export const Navbar = () => {
                 <div className="space-y-2">
                   <Link
                     href="/signin"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold font-mono text-cyan-300 bg-cyan-950/80 border border-cyan-500/40"
                   >
                     <User className="w-4 h-4 text-cyan-400" />
-                    <span>Sign Up / Sign In</span>
+                    <span>Login</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
