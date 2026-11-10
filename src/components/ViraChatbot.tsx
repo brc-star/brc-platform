@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   MessageSquare,
   X,
@@ -67,7 +68,7 @@ export const ViraChatbot = () => {
     {
       id: "welcome-1",
       sender: "vira",
-      text: "Namaste & Welcome to BRC STAR! ⚡\n\nI am **VIRA AI**, equipped with the **Indian Patent Application No. 202511050655 Due-Diligence Engine**. You can ask about our proprietary dual-pack kinetic topology, vehicle specs, dealership expansion, or legal patent claims.",
+      text: "Namaste & Welcome to BRC STAR! ⚡\n\nI am **BRC ViraBot**, equipped with the **Indian Patent Application No. 202511050655 Due-Diligence Engine**. You can ask about our proprietary dual-pack kinetic topology, vehicle specs, dealership expansion, or legal patent claims.",
       timestamp: "Just now",
       links: [
         { label: "View Patent & IP Registry", url: "/technology/patent-ip" },
@@ -188,7 +189,7 @@ export const ViraChatbot = () => {
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
                 <span className="font-semibold text-slate-900 dark:text-white font-mono">
-                  VIRA AI Patent Bot
+                  BRC ViraBot
                 </span>
               </div>
               <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1 leading-snug">
@@ -200,14 +201,23 @@ export const ViraChatbot = () => {
 
           <button
             onClick={() => setIsOpen(true)}
-            className="relative flex items-center gap-2.5 px-4 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 text-slate-950 font-mono font-bold shadow-2xl shadow-cyan-500/40 hover:shadow-cyan-400/60 hover:scale-105 active:scale-95 transition-all duration-300 border border-white/50"
-            aria-label="Open BRC STAR AI Due-Diligence Chatbot"
+            className="relative flex items-center gap-2.5 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 text-slate-950 font-mono font-bold shadow-2xl shadow-cyan-500/40 hover:shadow-cyan-400/60 hover:scale-105 active:scale-95 transition-all duration-300 border border-white/50"
+            aria-label="Open BRC ViraBot AI Due-Diligence Chatbot"
           >
-            <div className="relative w-7 h-7 rounded-full bg-slate-950 text-cyan-400 flex items-center justify-center shadow-inner">
-              <Bot className="w-4 h-4 text-cyan-400" />
-              <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-950 animate-pulse" />
+            <div className="relative w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden bg-slate-950 border border-cyan-200/80 shadow-inner">
+                <Image
+                  src="/brc-virabot-avatar.jpg"
+                  alt="BRC ViraBot"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+              <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-950 animate-pulse z-10" />
             </div>
-            <span className="text-xs tracking-wider hidden sm:inline">VIRA AI • RAG</span>
+            <span className="text-xs tracking-wider hidden sm:inline">BRC ViraBot</span>
             <Sparkles className="w-3.5 h-3.5 text-slate-950 animate-pulse" />
           </button>
         </div>
@@ -224,16 +234,22 @@ export const ViraChatbot = () => {
           {/* Header */}
           <div className="px-4 py-3 bg-slate-50 dark:bg-gradient-to-r dark:from-cyan-950/90 dark:via-[#050814] dark:to-slate-900 border-b border-slate-200 dark:border-cyan-500/30 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2.5">
-              <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-[1px] shadow-sm">
-                <div className="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-cyan-400" />
+              <div className="relative w-8 h-8 rounded-xl overflow-visible shrink-0">
+                <div className="w-8 h-8 rounded-xl overflow-hidden bg-slate-950 border border-cyan-400/60 shadow-sm flex items-center justify-center">
+                  <Image
+                    src="/brc-virabot-avatar.jpg"
+                    alt="BRC ViraBot"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 border-2 border-slate-950" />
+                <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 border-2 border-slate-950 z-10" />
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white font-mono">
-                    VIRA <span className="text-cyan-600 dark:text-cyan-400">AI</span>
+                    BRC <span className="text-cyan-600 dark:text-cyan-400">ViraBot</span>
                   </h3>
                   <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 font-semibold">
                     PATENT RAG
@@ -297,8 +313,14 @@ export const ViraChatbot = () => {
                     )}
                   >
                     {msg.sender === "vira" && (
-                      <div className="w-6 h-6 rounded-lg bg-cyan-100 dark:bg-cyan-950 border border-cyan-300 dark:border-cyan-500/30 flex items-center justify-center shrink-0 mt-1">
-                        <Zap className="w-3.5 h-3.5 text-cyan-700 dark:text-cyan-400" />
+                      <div className="w-6 h-6 rounded-full overflow-hidden bg-slate-950 border border-cyan-400/50 flex items-center justify-center shrink-0 mt-1 shadow-sm">
+                        <Image
+                          src="/brc-virabot-avatar.jpg"
+                          alt="BRC ViraBot"
+                          width={24}
+                          height={24}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     )}
 
@@ -399,8 +421,14 @@ export const ViraChatbot = () => {
                 {/* Typing Indicator */}
                 {isTyping && (
                   <div className="flex items-center gap-2.5 text-xs text-slate-400">
-                    <div className="w-6 h-6 rounded-lg bg-cyan-100 dark:bg-cyan-950 border border-cyan-300 dark:border-cyan-500/30 flex items-center justify-center shrink-0">
-                      <Bot className="w-3.5 h-3.5 text-cyan-700 dark:text-cyan-400" />
+                    <div className="w-6 h-6 rounded-full overflow-hidden bg-slate-950 border border-cyan-400/50 flex items-center justify-center shrink-0 shadow-sm">
+                      <Image
+                        src="/brc-virabot-avatar.jpg"
+                        alt="BRC ViraBot"
+                        width={24}
+                        height={24}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 px-3.5 py-2.5 rounded-2xl rounded-tl-none flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-bounce" style={{ animationDelay: "0ms" }} />
@@ -446,7 +474,7 @@ export const ViraChatbot = () => {
                     placeholder={
                       botMode === "investor"
                         ? "Ask about Claim 1, ACM inverter, AIS-156 safety..."
-                        : "Ask VIRA anything about BRC STAR..."
+                        : "Ask BRC ViraBot anything about BRC STAR..."
                     }
                     className="flex-1 px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 dark:bg-slate-900/90 dark:border-slate-800 dark:text-white text-xs placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-cyan-500 font-sans"
                   />
