@@ -954,39 +954,63 @@ html.light .vehicle-portfolio-specs span:last-child {
   }
 }
 
-/* Chatbot Periodic Vibration Animation */
-@keyframes chatbot-vibrate {
+/* Chatbot Video-Matched Vibration & Radar Ripple Animations */
+@keyframes chatbot-shake {
   0%, 100% {
-    transform: rotate(0deg) scale(1);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
-  10% {
-    transform: rotate(-10deg) scale(1.04);
+  2%, 6%, 10%, 14% {
+    transform: translate3d(-3px, 0, 0) rotate(-6deg) scale(1.05);
+  }
+  4%, 8%, 12%, 16% {
+    transform: translate3d(3px, 0, 0) rotate(6deg) scale(1.05);
+  }
+  18% {
+    transform: translate3d(-1px, 0, 0) rotate(-2deg) scale(1.02);
   }
   20% {
-    transform: rotate(10deg) scale(1.04);
+    transform: translate3d(1px, 0, 0) rotate(2deg) scale(1.02);
   }
-  30% {
-    transform: rotate(-8deg) scale(1.02);
+  22%, 85% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
-  40% {
-    transform: rotate(8deg) scale(1.02);
+  87%, 91%, 95% {
+    transform: translate3d(-2.5px, 0, 0) rotate(-5deg) scale(1.04);
+  }
+  89%, 93%, 97% {
+    transform: translate3d(2.5px, 0, 0) rotate(5deg) scale(1.04);
+  }
+  99% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes chatbot-ripple {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.75;
   }
   50% {
-    transform: rotate(-3deg);
+    transform: scale(1.4);
+    opacity: 0.3;
   }
-  60% {
-    transform: rotate(3deg);
-  }
-  70%, 90% {
-    transform: rotate(0deg) scale(1);
+  100% {
+    transform: scale(1.85);
+    opacity: 0;
   }
 }
 
-.animate-chatbot-vibrate {
-  animation: chatbot-vibrate 3.5s ease-in-out infinite;
+.animate-chatbot-shake {
+  animation: chatbot-shake 3.6s ease-in-out infinite;
 }
 
-.animate-chatbot-vibrate:hover {
+.animate-chatbot-ripple {
+  animation: chatbot-ripple 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.group:hover .animate-chatbot-shake,
+.group:hover .animate-chatbot-ripple,
+.animate-chatbot-shake:hover {
   animation-play-state: paused;
 }
 

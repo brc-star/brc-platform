@@ -182,10 +182,20 @@ export const ViraChatbot = () => {
     <>
       {/* Floating Launcher Trigger Button */}
       {!isOpen && (
-        <div className="fixed bottom-5 right-5 z-50 flex items-center justify-center">
+        <div className="fixed bottom-5 right-5 z-50 flex items-center justify-center group">
+          {/* Staggered Concentric Radar Rings */}
+          <span
+            className="absolute w-14 h-14 rounded-full bg-cyan-400/30 border border-cyan-400/50 animate-chatbot-ripple pointer-events-none"
+          />
+          <span
+            className="absolute w-14 h-14 rounded-full bg-blue-500/25 border border-cyan-300/40 animate-chatbot-ripple pointer-events-none"
+            style={{ animationDelay: "1.2s" }}
+          />
+
+          {/* Vibrating Core Launcher FAB */}
           <button
             onClick={() => setIsOpen(true)}
-            className="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-cyan-500 to-blue-600 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all duration-200 border-2 border-white/20 overflow-hidden animate-chatbot-vibrate hover:[animation-play-state:paused]"
+            className="relative z-10 w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-cyan-500 to-blue-600 shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105 active:scale-95 transition-all duration-200 border-2 border-white/20 overflow-hidden animate-chatbot-shake"
             aria-label="Open BRC VIRA AI"
           >
             <Image

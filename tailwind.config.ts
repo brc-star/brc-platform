@@ -58,37 +58,55 @@ const config: Config = {
       animation: {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "flow": "flow 3s linear infinite",
-        "chatbot-vibrate": "chatbot-vibrate 3.5s ease-in-out infinite",
+        "chatbot-shake": "chatbot-shake 3.6s ease-in-out infinite",
+        "chatbot-ripple": "chatbot-ripple 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite",
       },
       keyframes: {
         flow: {
           "0%": { strokeDashoffset: "24" },
           "100%": { strokeDashoffset: "0" },
         },
-        "chatbot-vibrate": {
+        "chatbot-shake": {
           "0%, 100%": {
-            transform: "rotate(0deg) scale(1)",
+            transform: "translate3d(0, 0, 0) rotate(0deg) scale(1)",
           },
-          "10%": {
-            transform: "rotate(-10deg) scale(1.04)",
+          "2%, 6%, 10%, 14%": {
+            transform: "translate3d(-3px, 0, 0) rotate(-6deg) scale(1.05)",
+          },
+          "4%, 8%, 12%, 16%": {
+            transform: "translate3d(3px, 0, 0) rotate(6deg) scale(1.05)",
+          },
+          "18%": {
+            transform: "translate3d(-1px, 0, 0) rotate(-2deg) scale(1.02)",
           },
           "20%": {
-            transform: "rotate(10deg) scale(1.04)",
+            transform: "translate3d(1px, 0, 0) rotate(2deg) scale(1.02)",
           },
-          "30%": {
-            transform: "rotate(-8deg) scale(1.02)",
+          "22%, 85%": {
+            transform: "translate3d(0, 0, 0) rotate(0deg) scale(1)",
           },
-          "40%": {
-            transform: "rotate(8deg) scale(1.02)",
+          "87%, 91%, 95%": {
+            transform: "translate3d(-2.5px, 0, 0) rotate(-5deg) scale(1.04)",
+          },
+          "89%, 93%, 97%": {
+            transform: "translate3d(2.5px, 0, 0) rotate(5deg) scale(1.04)",
+          },
+          "99%": {
+            transform: "translate3d(0, 0, 0) rotate(0deg) scale(1)",
+          },
+        },
+        "chatbot-ripple": {
+          "0%": {
+            transform: "scale(0.95)",
+            opacity: "0.75",
           },
           "50%": {
-            transform: "rotate(-3deg)",
+            transform: "scale(1.4)",
+            opacity: "0.3",
           },
-          "60%": {
-            transform: "rotate(3deg)",
-          },
-          "70%, 90%": {
-            transform: "rotate(0deg) scale(1)",
+          "100%": {
+            transform: "scale(1.85)",
+            opacity: "0",
           },
         },
       },
