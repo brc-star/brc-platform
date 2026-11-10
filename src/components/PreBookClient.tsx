@@ -308,7 +308,7 @@ function PreBookContent() {
           {/* Cryptographic SHA-256 Audit Stamp */}
           <div className="text-[10px] font-mono text-slate-500 dark:text-slate-400 flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 dark:border-slate-800 pt-3">
             <span>Audit Hash: {bookingConfirmed.verificationHash?.slice(0, 24)}...</span>
-            <span>CIN: U34100RJ2019OPC066948</span>
+            <span>CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7</span>
           </div>
 
           {/* Certificate Actions */}

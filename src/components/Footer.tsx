@@ -223,7 +223,7 @@ export const Footer = () => {
               <span>INTELLECTUAL PROPERTY &amp; REGISTERED ENTITY</span>
             </div>
             <p className="leading-relaxed">
-              <strong>BRC STAR (OPC) PRIVATE LIMITED</strong> (CIN: U34100RJ2019OPC066948). Key innovations including dual-pack closed-loop battery switching, Alternator Control Modules (ACM), and Permanent Magnet kinetic harvesting are covered by Indian Patent Application No. 202511050655 (filed/published). PCT details pending.
+              <strong>BRC STAR (OPC) PRIVATE LIMITED</strong> (CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7). Key innovations including dual-pack closed-loop battery switching, Alternator Control Modules (ACM), and Permanent Magnet kinetic harvesting are covered by Indian Patent Application No. 202511050655 (filed/published). PCT details pending.
             </p>
           </div>
           <div className="space-y-1.5 bg-slate-900/40 p-3.5 rounded-lg border border-slate-800">

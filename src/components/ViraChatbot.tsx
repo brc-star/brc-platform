@@ -488,7 +488,7 @@ export const ViraChatbot = () => {
                   </button>
                 </form>
                 <div className="flex items-center justify-between text-[9px] font-mono text-slate-400 mt-1.5 px-1">
-                  <span>BRC STAR • CIN: U34100RJ2019OPC066948</span>
+                  <span>BRC STAR • CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7</span>
                   <span className="text-cyan-600 dark:text-cyan-400 font-semibold">
                     Patent 202511050655 RAG Core
                   </span>

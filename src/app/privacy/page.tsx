@@ -345,7 +345,7 @@ export default function PrivacyPolicyPage() {
             </div>
             <div className="flex items-start gap-2 pt-1">
               <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-              <span>Registered Office: BRC STAR (OPC) PRIVATE LIMITED, 7SJM-A, Anupgarh, Ganganagar, Rajasthan 335701 (CIN: U34100RJ2019OPC066948)</span>
+              <span>Registered Office: BRC STAR (OPC) PRIVATE LIMITED, 7SJM-A, Anupgarh, Ganganagar, Rajasthan 335701 (CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7)</span>
             </div>
           </div>
         </div>

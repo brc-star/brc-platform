@@ -29,6 +29,7 @@ export const PATENT_METADATA = {
   internationalPctRef: "[PCT details pending]",
   applicant: "BRC STAR (OPC) PRIVATE LIMITED",
   cin: "U34100RJ2019OPC066948",
+  gstin: "08AAICB7401R1Z7",
   incubation: "iStart Rajasthan & Startup India (DPIIT Recognized)",
   ipcClassification: "B60L 58/10, B60L 50/16, H02J 7/14, B60K 25/00",
   title:
@@ -237,7 +238,7 @@ The **Alternator Control Module (ACM)** is the core proprietary electromechanica
 
     answer = `### 📜 Technical Due-Diligence Summary: Indian Patent App No. 202511050655
 
-**Entity**: BRC STAR (OPC) PRIVATE LIMITED • CIN: \`U34100RJ2019OPC066948\`  
+**Entity**: BRC STAR (OPC) PRIVATE LIMITED • CIN: \`U34100RJ2019OPC066948\` • GSTIN: \`08AAICB7401R1Z7\`  
 **Status**: Formal Examination Phase • Indian Patent Office (IPO) • PCT Priority  
 **Technology Readiness Level (TRL)**: TRL 4 (Dynamometer Test Benches & High-Speed Mule)
 

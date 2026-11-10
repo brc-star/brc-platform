@@ -156,7 +156,7 @@ export default function AboutPage() {
               <span className="text-cyan-600 dark:text-cyan-400 font-bold text-sm block">Nov 2019</span>
               <span className="font-bold text-slate-900 dark:text-white block font-sans text-xs">Incorporation</span>
               <p className="text-slate-600 dark:text-slate-400 text-[11px] font-sans leading-relaxed">
-                Incorporated as BRC STAR (OPC) PRIVATE LIMITED in Rajasthan (CIN: U34100RJ2019OPC066948).
+                Incorporated as BRC STAR (OPC) PRIVATE LIMITED in Rajasthan (CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7).
               </p>
             </div>
 
@@ -191,10 +191,14 @@ export default function AboutPage() {
           <span className="text-cyan-600 dark:text-cyan-400 uppercase font-bold tracking-wider block">
             Statutory Corporate Governance
           </span>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-slate-600 dark:text-slate-300">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-slate-600 dark:text-slate-300">
             <div>
               <span className="text-slate-500 dark:text-slate-400 block text-[10px]">CIN:</span>
               <span className="font-bold text-slate-900 dark:text-white">U34100RJ2019OPC066948</span>
+            </div>
+            <div>
+              <span className="text-slate-500 dark:text-slate-400 block text-[10px]">GSTIN:</span>
+              <span className="font-bold text-slate-900 dark:text-white">08AAICB7401R1Z7</span>
             </div>
             <div>
               <span className="text-slate-500 dark:text-slate-400 block text-[10px]">Incorporation Date:</span>

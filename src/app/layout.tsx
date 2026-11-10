@@ -102,6 +102,8 @@ export default function RootLayout({
         name: "BRC STAR (OPC) PRIVATE LIMITED",
         legalName: "BRC STAR (OPC) PRIVATE LIMITED",
         identifier: "CIN: U34100RJ2019OPC066948",
+        taxID: "08AAICB7401R1Z7",
+        vatID: "08AAICB7401R1Z7",
         url: "https://www.brcstar.in",
         logo: "https://www.brcstar.in/icon-512.png",
         email: "contact@brcstar.in",

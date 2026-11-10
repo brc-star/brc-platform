@@ -58,7 +58,7 @@ export default function ContactPage() {
                 <div>
                   <strong className="text-white block">BRC STAR (OPC) PRIVATE LIMITED</strong>
                   <span>7SJM-A, Anupgarh, Ganganagar, Rajasthan 335701, India</span>
-                  <div className="text-[10px] text-slate-400 mt-0.5">CIN: U34100RJ2019OPC066948</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5">CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7</div>
                 </div>
               </div>
 
