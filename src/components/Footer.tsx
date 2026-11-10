@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Zap, Shield, FileText, Lock, Globe, Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
 
 export const Footer = () => {
@@ -14,9 +15,15 @@ export const Footer = () => {
           {/* Brand & Corporate Overview */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 p-[1px] shadow-lg shadow-cyan-500/20">
-                <div className="w-full h-full bg-[#050814] rounded-lg flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-cyan-400" />
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400/40 via-amber-400/30 to-blue-600/40 p-[1px] shadow-lg shadow-cyan-500/10">
+                <div className="w-full h-full bg-[#050814] rounded-lg flex items-center justify-center p-1 overflow-hidden">
+                  <Image
+                    src="/brc-star-symbol.png"
+                    alt="BRC STAR Emblem"
+                    width={28}
+                    height={28}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
               <div className="flex flex-col">

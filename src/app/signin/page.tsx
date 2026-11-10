@@ -2,6 +2,7 @@
 
 import React, { useState, Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   Zap,
@@ -121,9 +122,16 @@ function SignInForm() {
 
       {/* Brand Header */}
       <div className="text-center space-y-3 mb-6 sm:mb-8">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 p-[1px] shadow-lg shadow-cyan-500/25 mx-auto">
-          <div className="w-full h-full bg-slate-950 dark:bg-[#050814] rounded-xl flex items-center justify-center">
-            <Zap className="w-6 h-6 text-cyan-400" />
+        <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400/40 via-amber-400/30 to-blue-600/40 p-[1px] shadow-lg shadow-cyan-500/25 mx-auto">
+          <div className="w-full h-full bg-slate-950 dark:bg-[#050814] rounded-xl flex items-center justify-center p-2 overflow-hidden">
+            <Image
+              src="/brc-star-symbol.png"
+              alt="BRC STAR Emblem"
+              width={36}
+              height={36}
+              className="w-full h-full object-contain drop-shadow"
+              priority
+            />
           </div>
         </div>
 
