@@ -185,7 +185,7 @@ export const ViraChatbot = () => {
         <div className="fixed bottom-5 right-5 z-50 flex items-center justify-center">
           <button
             onClick={() => setIsOpen(true)}
-            className="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-cyan-500 to-blue-600 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all duration-200 border-2 border-white/20 overflow-hidden"
+            className="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-cyan-500 to-blue-600 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all duration-200 border-2 border-white/20 overflow-hidden animate-chatbot-vibrate hover:[animation-play-state:paused]"
             aria-label="Open BRC VIRA AI"
           >
             <Image

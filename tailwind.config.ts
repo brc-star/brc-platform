@@ -58,11 +58,38 @@ const config: Config = {
       animation: {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "flow": "flow 3s linear infinite",
+        "chatbot-vibrate": "chatbot-vibrate 3.5s ease-in-out infinite",
       },
       keyframes: {
         flow: {
           "0%": { strokeDashoffset: "24" },
           "100%": { strokeDashoffset: "0" },
+        },
+        "chatbot-vibrate": {
+          "0%, 100%": {
+            transform: "rotate(0deg) scale(1)",
+          },
+          "10%": {
+            transform: "rotate(-10deg) scale(1.04)",
+          },
+          "20%": {
+            transform: "rotate(10deg) scale(1.04)",
+          },
+          "30%": {
+            transform: "rotate(-8deg) scale(1.02)",
+          },
+          "40%": {
+            transform: "rotate(8deg) scale(1.02)",
+          },
+          "50%": {
+            transform: "rotate(-3deg)",
+          },
+          "60%": {
+            transform: "rotate(3deg)",
+          },
+          "70%, 90%": {
+            transform: "rotate(0deg) scale(1)",
+          },
         },
       },
     },
