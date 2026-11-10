@@ -179,65 +179,43 @@ export const ViraChatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-[calc(1.25rem+env(safe-area-inset-right,0px))] z-50 font-sans">
+    <>
       {/* Floating Launcher Trigger Button */}
       {!isOpen && (
-        <div className="relative group">
-          {/* Tooltip speech bubble */}
-          {hasUnread && (
-            <div className="absolute bottom-full right-0 mb-3 w-56 p-2.5 rounded-xl bg-white/95 border border-slate-300 dark:bg-[#050814]/95 dark:border-cyan-500/40 text-xs shadow-2xl backdrop-blur-xl animate-bounce pointer-events-none">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
-                <span className="font-semibold text-slate-900 dark:text-white font-mono">
-                  BRC ViraBot
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1 leading-snug">
-                Ask about Indian Patent 202511050655, Technical Specs &amp; Due-Diligence.
-              </p>
-              <div className="absolute top-full right-6 w-0 h-0 border-x-6 border-x-transparent border-t-6 border-t-slate-300 dark:border-t-cyan-500/40" />
-            </div>
-          )}
-
+        <div className="fixed bottom-5 right-5 z-50 flex items-center justify-center">
           <button
             onClick={() => setIsOpen(true)}
-            className="relative flex items-center gap-2.5 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 text-slate-950 font-mono font-bold shadow-2xl shadow-cyan-500/40 hover:shadow-cyan-400/60 hover:scale-105 active:scale-95 transition-all duration-300 border border-white/50"
-            aria-label="Open BRC ViraBot AI Due-Diligence Chatbot"
+            className="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-cyan-500 to-blue-600 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all duration-200 border-2 border-white/20 overflow-hidden"
+            aria-label="Open BRC VIRA AI"
           >
-            <div className="relative w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden bg-slate-950 border border-cyan-200/80 shadow-inner">
-                <Image
-                  src="/brc-virabot-avatar.jpg"
-                  alt="BRC ViraBot"
-                  width={32}
-                  height={32}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </div>
-              <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-950 animate-pulse z-10" />
-            </div>
-            <span className="text-xs tracking-wider hidden sm:inline">BRC ViraBot</span>
-            <Sparkles className="w-3.5 h-3.5 text-slate-950 animate-pulse" />
+            <Image
+              src="/brc-virabot-avatar.png"
+              alt="BRC VIRA AI"
+              width={56}
+              height={56}
+              className="w-full h-full object-cover rounded-full"
+              priority
+            />
           </button>
         </div>
       )}
 
       {/* Main Chatbot Window */}
       {isOpen && (
-        <div
-          className={cn(
-            "w-[94vw] sm:w-[440px] bg-white/95 border border-slate-200/90 dark:bg-[#050814]/95 dark:border-cyan-500/40 rounded-3xl shadow-2xl shadow-slate-900/20 dark:shadow-black/90 backdrop-blur-2xl flex flex-col overflow-hidden transition-all duration-300",
-            isMinimized ? "h-16" : "h-[620px] max-h-[88vh]"
-          )}
-        >
+        <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-[calc(1.25rem+env(safe-area-inset-right,0px))] z-50 font-sans">
+          <div
+            className={cn(
+              "w-[94vw] sm:w-[440px] bg-white/95 border border-slate-200/90 dark:bg-[#050814]/95 dark:border-cyan-500/40 rounded-3xl shadow-2xl shadow-slate-900/20 dark:shadow-black/90 backdrop-blur-2xl flex flex-col overflow-hidden transition-all duration-300",
+              isMinimized ? "h-16" : "h-[620px] max-h-[88vh]"
+            )}
+          >
           {/* Header */}
           <div className="px-4 py-3 bg-slate-50 dark:bg-gradient-to-r dark:from-cyan-950/90 dark:via-[#050814] dark:to-slate-900 border-b border-slate-200 dark:border-cyan-500/30 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2.5">
               <div className="relative w-8 h-8 rounded-xl overflow-visible shrink-0">
                 <div className="w-8 h-8 rounded-xl overflow-hidden bg-slate-950 border border-cyan-400/60 shadow-sm flex items-center justify-center">
                   <Image
-                    src="/brc-virabot-avatar.jpg"
+                    src="/brc-virabot-avatar.png"
                     alt="BRC ViraBot"
                     width={32}
                     height={32}
@@ -315,7 +293,7 @@ export const ViraChatbot = () => {
                     {msg.sender === "vira" && (
                       <div className="w-6 h-6 rounded-full overflow-hidden bg-slate-950 border border-cyan-400/50 flex items-center justify-center shrink-0 mt-1 shadow-sm">
                         <Image
-                          src="/brc-virabot-avatar.jpg"
+                          src="/brc-virabot-avatar.png"
                           alt="BRC ViraBot"
                           width={24}
                           height={24}
@@ -423,7 +401,7 @@ export const ViraChatbot = () => {
                   <div className="flex items-center gap-2.5 text-xs text-slate-400">
                     <div className="w-6 h-6 rounded-full overflow-hidden bg-slate-950 border border-cyan-400/50 flex items-center justify-center shrink-0 shadow-sm">
                       <Image
-                        src="/brc-virabot-avatar.jpg"
+                        src="/brc-virabot-avatar.png"
                         alt="BRC ViraBot"
                         width={24}
                         height={24}
@@ -496,9 +474,10 @@ export const ViraChatbot = () => {
               </div>
             </>
           )}
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
