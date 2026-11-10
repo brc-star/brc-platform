@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/app/", "/investor-portal/", "/partner/", "/operations/", "/dashboard/"],
     },
-    sitemap: "https://brcstar.in/sitemap.xml",
+    sitemap: "https://www.brcstar.in/sitemap.xml",
   };
 }

@@ -103,7 +103,7 @@ const XRAY_HOTSPOTS: XRayHotspot[] = [
     xPct: 38,
     yPct: 44,
     patentRef: "Patent App No. 202511050655 (Core)",
-    description: "Patented kinetic energy recoup module converting rotor inertia into continuous DC reserve charge.",
+    description: "Kinetic energy recovery module (Patent application filed) converting rotor inertia into continuous DC reserve charge.",
     spec: "+42 kW Peak Harvest • 98.4% Inverter Yield",
   },
   {

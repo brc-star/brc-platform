@@ -18,12 +18,12 @@ export const metadata = {
   title: "Technology & Engineering Pillars | BRC STAR Self Volt EV",
   description: "Explore BRC STAR's deep-tech engineering: Self-Volt dual-pack kinetic energy recovery, Alternator Control Modules, and Indian Patent Application No. 202511050655.",
   alternates: {
-    canonical: "https://brcstar.in/technology",
+    canonical: "https://www.brcstar.in/technology",
   },
   openGraph: {
     title: "Technology & Engineering Pillars | BRC STAR",
     description: "Deep-tech kinetic energy recovery and dual-pack powertrain architecture for electric mobility.",
-    url: "https://brcstar.in/technology",
+    url: "https://www.brcstar.in/technology",
     type: "website",
   },
 };

@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: "Newsroom & Corporate Announcements | BRC STAR",
   description: "Official corporate news, press statements, leadership updates, and media kit from BRC STAR electric vehicle startup.",
   alternates: {
-    canonical: "https://brcstar.in/innovation/news",
+    canonical: "https://www.brcstar.in/innovation/news",
   },
   openGraph: {
     title: "Newsroom & Corporate Announcements | BRC STAR",
     description: "Official press announcements and media statements from BRC STAR.",
-    url: "https://brcstar.in/innovation/news",
+    url: "https://www.brcstar.in/innovation/news",
     type: "website",
   },
 };

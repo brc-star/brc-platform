@@ -26,28 +26,28 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://brcstar.in"),
+  metadataBase: new URL("https://www.brcstar.in"),
   title: {
     default: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
     template: "%s | BRC STAR",
   },
   description:
     "BRC STAR (OPC) PRIVATE LIMITED — Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical harvesting, closed-loop dynamic battery switching, and high-uptime commercial powertrains.",
-  authors: [{ name: "BRC STAR (OPC) PRIVATE LIMITED", url: "https://brcstar.in" }],
+  authors: [{ name: "BRC STAR (OPC) PRIVATE LIMITED", url: "https://www.brcstar.in" }],
   creator: "Dr. B. Chauhan",
   publisher: "BRC STAR (OPC) PRIVATE LIMITED",
   alternates: {
-    canonical: "https://brcstar.in",
+    canonical: "https://www.brcstar.in",
   },
   openGraph: {
     title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
     description:
       "Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical kinetic energy recovery with dynamic dual-pack bus switching.",
-    url: "https://brcstar.in",
+    url: "https://www.brcstar.in",
     siteName: "BRC STAR Deep-Tech Mobility",
     images: [
       {
-        url: "https://brcstar.in/og-image.png",
+        url: "https://www.brcstar.in/og-image.png",
         width: 1200,
         height: 630,
         alt: "BRC STAR Dual-Pack Kinetic Energy Recovery Architecture",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
     description: "Deep-tech electric mobility filed under Indian Patent Application No. 202511050655.",
-    images: ["https://brcstar.in/og-image.png"],
+    images: ["https://www.brcstar.in/og-image.png"],
   },
   robots: {
     index: true,
@@ -98,12 +98,12 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://brcstar.in/#organization",
+        "@id": "https://www.brcstar.in/#organization",
         name: "BRC STAR (OPC) PRIVATE LIMITED",
         legalName: "BRC STAR (OPC) PRIVATE LIMITED",
         identifier: "CIN: U34100RJ2019OPC066948",
-        url: "https://brcstar.in",
-        logo: "https://brcstar.in/icon-512.png",
+        url: "https://www.brcstar.in",
+        logo: "https://www.brcstar.in/icon-512.png",
         email: "contact@brcstar.in",
         telephone: "+91-99241-00759",
         address: {
@@ -125,16 +125,16 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://brcstar.in/#website",
-        url: "https://brcstar.in",
+        "@id": "https://www.brcstar.in/#website",
+        url: "https://www.brcstar.in",
         name: "BRC STAR Digital Platform",
         publisher: {
-          "@id": "https://brcstar.in/#organization",
+          "@id": "https://www.brcstar.in/#organization",
         },
       },
       {
         "@type": "Product",
-        "@id": "https://brcstar.in/vehicles/starcraft-gt#product",
+        "@id": "https://www.brcstar.in/vehicles/starcraft-gt#product",
         name: "BRC STAR StarCraft GT Hyper-Sedan",
         description: "Next-generation electric passenger hyper-sedan with dual-pack kinetic energy recovery architecture.",
         brand: {
@@ -146,12 +146,12 @@ export default function RootLayout({
           priceCurrency: "INR",
           price: "1650000",
           availability: "https://schema.org/PreOrder",
-          url: "https://brcstar.in/pre-book?model=starcraft-gt",
+          url: "https://www.brcstar.in/pre-book?model=starcraft-gt",
         },
       },
       {
         "@type": "Product",
-        "@id": "https://brcstar.in/vehicles/starfleet-commercial#product",
+        "@id": "https://www.brcstar.in/vehicles/starfleet-commercial#product",
         name: "BRC STAR StarFleet Commercial Carrier",
         description: "Enterprise commercial logistics electric carrier with auxiliary kinetic harvesting.",
         brand: {
@@ -163,36 +163,36 @@ export default function RootLayout({
           priceCurrency: "INR",
           price: "2450000",
           availability: "https://schema.org/PreOrder",
-          url: "https://brcstar.in/pre-book?model=starfleet-commercial",
+          url: "https://www.brcstar.in/pre-book?model=starfleet-commercial",
         },
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://brcstar.in/#breadcrumb",
+        "@id": "https://www.brcstar.in/#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://brcstar.in",
+            item: "https://www.brcstar.in",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Technology",
-            item: "https://brcstar.in/technology",
+            item: "https://www.brcstar.in/technology",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Vehicles",
-            item: "https://brcstar.in/vehicles",
+            item: "https://www.brcstar.in/vehicles",
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "Pre-Book",
-            item: "https://brcstar.in/pre-book",
+            item: "https://www.brcstar.in/pre-book",
           },
         ],
       },

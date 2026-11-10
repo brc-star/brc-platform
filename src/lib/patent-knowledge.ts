@@ -259,7 +259,7 @@ ${claimsMarkdown}
     confidence: 0.985,
     technicalMetrics: metrics,
     links: [
-      { label: "View Patent Registry Dossier", url: "/technology/patent-ip" },
+      { label: "View Patent & IP Portfolio", url: "/technology/patent-ip" },
       { label: "Request Data Room NDA Access", url: "/invest/pitch-deck" },
       { label: "Live Telemetry CAN-Bus Link", url: "/app" },
     ],

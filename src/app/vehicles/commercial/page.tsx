@@ -8,12 +8,12 @@ export const metadata = {
   title: "Commercial Electric Mobility | StarFleet, StarHauler & StarTitan Semi-Truck | BRC STAR",
   description: "Enterprise commercial electric vehicles: light cargo vans, rigid heavy freight trucks, and long-haul multi-axle electric semi-trailers.",
   alternates: {
-    canonical: "https://brcstar.in/vehicles/commercial",
+    canonical: "https://www.brcstar.in/vehicles/commercial",
   },
   openGraph: {
     title: "Commercial Electric Mobility | BRC STAR",
     description: "Enterprise commercial electric logistics and freight lineup.",
-    url: "https://brcstar.in/vehicles/commercial",
+    url: "https://www.brcstar.in/vehicles/commercial",
     type: "website",
   },
 };

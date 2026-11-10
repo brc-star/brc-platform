@@ -8,12 +8,12 @@ export const metadata = {
   title: "Passenger Electric Vehicles | StarCraft GT & StarPulse | BRC STAR",
   description: "Explore BRC STAR's luxury deep-tech passenger lineup: the StarCraft GT aerodynamic hyper-sedan and StarPulse luxury long-range electric SUV.",
   alternates: {
-    canonical: "https://brcstar.in/vehicles/passenger",
+    canonical: "https://www.brcstar.in/vehicles/passenger",
   },
   openGraph: {
     title: "Passenger Electric Vehicles | BRC STAR",
     description: "StarCraft GT and StarPulse luxury electric passenger lineup.",
-    url: "https://brcstar.in/vehicles/passenger",
+    url: "https://www.brcstar.in/vehicles/passenger",
     type: "website",
   },
 };

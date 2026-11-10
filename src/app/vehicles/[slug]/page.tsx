@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Metadata } from "next";
 import { Car, Zap, Gauge, Compass, ShieldCheck, ArrowRight, ChevronRight, CheckCircle2, Layers } from "lucide-react";
 import { VEHICLES_DATA, VehicleModelData } from "@/lib/data";
@@ -11,24 +11,26 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return VEHICLES_DATA.map((v) => ({ slug: v.slug }));
+  const baseParams = VEHICLES_DATA.map((v) => ({ slug: v.slug }));
+  return [...baseParams, { slug: "starfleet" }];
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const vehicle = VEHICLES_DATA.find((v) => v.slug === slug);
+  const resolvedSlug = (slug === "starfleet" || slug === "starfleet-logistic") ? "starfleet-commercial" : slug;
+  const vehicle = VEHICLES_DATA.find((v) => v.slug === resolvedSlug);
   if (!vehicle) return { title: "Vehicle Not Found | BRC STAR" };
 
   return {
     title: `${vehicle.name} Specifications | BRC STAR Self Volt EV`,
     description: `${vehicle.name}: ${vehicle.tagline}. Indicative Ex-Showroom ${formatInr(vehicle.basePriceInr)}. ${vehicle.ratedRangeKm} km target range with kinetic recovery.`,
     alternates: {
-      canonical: `https://brcstar.in/vehicles/${vehicle.slug}`,
+      canonical: `https://www.brcstar.in/vehicles/${vehicle.slug}`,
     },
     openGraph: {
       title: `${vehicle.name} | BRC STAR`,
       description: vehicle.tagline,
-      url: `https://brcstar.in/vehicles/${vehicle.slug}`,
+      url: `https://www.brcstar.in/vehicles/${vehicle.slug}`,
       type: "website",
     },
   };
@@ -36,6 +38,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function VehicleDetailPage({ params }: PageProps) {
   const { slug } = await params;
+  if (slug === "starfleet" || slug === "starfleet-logistic") {
+    redirect("/vehicles/starfleet-commercial");
+  }
   const vehicle = VEHICLES_DATA.find((v) => v.slug === slug);
 
   if (!vehicle) {

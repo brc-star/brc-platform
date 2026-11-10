@@ -9,12 +9,12 @@ export const metadata = {
   description:
     "Indian Patent Application No. 202511050655, filed with the Indian Patent Office (IPO). Dual-pack kinetic energy recovery architecture and adaptive alternator control.",
   alternates: {
-    canonical: "https://brcstar.in/technology/patent-ip",
+    canonical: "https://www.brcstar.in/technology/patent-ip",
   },
   openGraph: {
     title: "Patent & Intellectual Property Portfolio | BRC STAR",
     description: "Indian Patent Application No. 202511050655, filed with Indian Patent Office (IPO).",
-    url: "https://brcstar.in/technology/patent-ip",
+    url: "https://www.brcstar.in/technology/patent-ip",
   },
 };
 

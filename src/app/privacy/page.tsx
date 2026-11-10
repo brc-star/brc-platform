@@ -7,12 +7,12 @@ export const metadata = {
   description:
     "Privacy Policy for BRC STAR (OPC) PRIVATE LIMITED. Indian DPDPA 2023 compliance, pre-booking data protection, and telematics handling.",
   alternates: {
-    canonical: "https://brcstar.in/privacy",
+    canonical: "https://www.brcstar.in/privacy",
   },
   openGraph: {
     title: "Privacy Policy | BRC STAR",
     description: "Privacy Policy and Indian DPDPA 2023 compliance for BRC STAR.",
-    url: "https://brcstar.in/privacy",
+    url: "https://www.brcstar.in/privacy",
   },
 };
 
@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
               <strong className="text-white">User</strong> means any individual who accesses or uses the Service.
             </li>
             <li>
-              <strong className="text-white">Website</strong> refers to BRC STAR, accessible from <a href="https://brcstar.in/" className="text-cyan-400 underline">https://brcstar.in/</a>.
+              <strong className="text-white">Website</strong> refers to BRC STAR, accessible from <a href="https://www.brcstar.in/" className="text-cyan-400 underline">https://www.brcstar.in/</a>.
             </li>
             <li>
               <strong className="text-white">You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
@@ -305,7 +305,7 @@ export default function PrivacyPolicyPage() {
               <strong>Financial Security</strong>: Payment transactions are processed via PCI-DSS compliant banking partners (such as Razorpay/authorized escrow aggregators). BRC STAR does not store full credit/debit card numbers or UPI MPINs on company servers.
             </li>
             <li>
-              <strong>Vehicle Telemetry &amp; CAN-Bus Stream</strong>: Any diagnostic or prototype simulator telemetry streamed through https://brcstar.in/app is anonymized and aggregated for powertrain algorithm calibration.
+              <strong>Vehicle Telemetry &amp; CAN-Bus Stream</strong>: Any diagnostic or prototype simulator telemetry streamed through https://www.brcstar.in/app is anonymized and aggregated for powertrain algorithm calibration.
             </li>
             <li>
               <strong>Data Principal Rights</strong>: You possess the statutory right to request a summary of your personal data, rectify inaccuracies, or exercise erasure of your pre-booking contact record by writing to our designated Grievance Officer at <a href="mailto:contact@brcstar.in" className="text-cyan-400 underline">contact@brcstar.in</a>.

@@ -7,12 +7,12 @@ export const metadata = {
   title: "Innovation & R&D Hub | BRC STAR Self Volt EV",
   description: "BRC STAR innovation ecosystem: advanced EV simulation rigs, ESG sustainability roadmap, battery circularity, and official press releases.",
   alternates: {
-    canonical: "https://brcstar.in/innovation",
+    canonical: "https://www.brcstar.in/innovation",
   },
   openGraph: {
     title: "Innovation & R&D Hub | BRC STAR",
     description: "BRC STAR innovation ecosystem and engineering simulation labs.",
-    url: "https://brcstar.in/innovation",
+    url: "https://www.brcstar.in/innovation",
     type: "website",
   },
 };

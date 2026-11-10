@@ -23,10 +23,13 @@ import {
 import { formatInr } from "@/lib/utils";
 import { VehiclesCTA } from "@/components/VehiclesCTA";
 
-// Hero vehicles featured prominently for pre-booking
+// Hero vehicles featured prominently for pre-booking (Single canonical StarFleet slug)
 const HERO_SLUGS = ["starcraft-gt", "starfleet-commercial", "startransit-bus"];
 const HERO_VEHICLES = VEHICLES_DATA.filter((v) => HERO_SLUGS.includes(v.slug));
-const ROADMAP_VEHICLES = VEHICLES_DATA.filter((v) => !HERO_SLUGS.includes(v.slug));
+// Roadmap vehicles excluding hero models and duplicate fleet variants
+const ROADMAP_VEHICLES = VEHICLES_DATA.filter(
+  (v) => !HERO_SLUGS.includes(v.slug) && v.slug !== "starfleet-logistic"
+);
 
 export const VehiclePortfolioNoImage = () => {
   return (
@@ -181,7 +184,7 @@ export const VehiclePortfolioNoImage = () => {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ROADMAP_VEHICLES.map((vehicle) => (
             <div
               key={vehicle.slug}

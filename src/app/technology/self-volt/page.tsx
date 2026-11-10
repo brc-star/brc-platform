@@ -9,12 +9,12 @@ export const metadata = {
   description:
     "Engineering architecture of the BRC STAR Self Volt powertrain: Pack A/B solid-state switching, Alternator Control Module (ACM), and kinetic energy recovery.",
   alternates: {
-    canonical: "https://brcstar.in/technology/self-volt",
+    canonical: "https://www.brcstar.in/technology/self-volt",
   },
   openGraph: {
     title: "Self Volt Architecture | BRC STAR",
     description: "Dual-Pack kinetic energy recovery and dynamic switching architecture.",
-    url: "https://brcstar.in/technology/self-volt",
+    url: "https://www.brcstar.in/technology/self-volt",
   },
 };
 

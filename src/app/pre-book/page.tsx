@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description:
     "Reserve your BRC STAR production priority queue. ₹25,000 fully refundable reservation deposit, indicative ex-showroom pricing subject to statutory homologation.",
   alternates: {
-    canonical: "https://brcstar.in/pre-book",
+    canonical: "https://www.brcstar.in/pre-book",
   },
   openGraph: {
     title: "Pre-Book BRC STAR Electric Vehicles",
     description: "Reserve your production priority slot. 100% fully refundable ₹25,000 reservation deposit.",
-    url: "https://brcstar.in/pre-book",
+    url: "https://www.brcstar.in/pre-book",
   },
 };
 

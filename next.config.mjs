@@ -8,6 +8,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'www.brcstar.in',
+      },
+      {
+        protocol: 'https',
         hostname: 'brcstar.in',
       },
       {
@@ -58,21 +62,6 @@ const nextConfig = {
             value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https:; frame-ancestors 'self';",
           },
         ],
-      },
-    ];
-  },
-  redirects: async () => {
-    return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.brcstar.in',
-          },
-        ],
-        destination: 'https://brcstar.in/:path*',
-        permanent: true,
       },
     ];
   },

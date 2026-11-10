@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: "Technical Documentation & Technology Summary | BRC STAR",
   description: "Public engineering summary, system blueprints, whitepapers, and technical specifications for BRC STAR kinetic energy recovery powertrain.",
   alternates: {
-    canonical: "https://brcstar.in/docs",
+    canonical: "https://www.brcstar.in/docs",
   },
   openGraph: {
     title: "Technical Documentation & Technology Summary | BRC STAR",
     description: "Public engineering summary, whitepapers, and technical specifications.",
-    url: "https://brcstar.in/docs",
+    url: "https://www.brcstar.in/docs",
     type: "website",
   },
 };

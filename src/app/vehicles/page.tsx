@@ -12,12 +12,12 @@ export const metadata = {
   title: "Vehicle Portfolio | BRC STAR Self Volt Electric Vehicles",
   description: "Explore BRC STAR's full electric vehicle portfolio: StarCraft GT Hyper-Sedan, StarPulse Luxury SUV, StarFleet Commercial, and StarTransit Electric Bus.",
   alternates: {
-    canonical: "https://brcstar.in/vehicles",
+    canonical: "https://www.brcstar.in/vehicles",
   },
   openGraph: {
     title: "Vehicle Portfolio | BRC STAR",
     description: "BRC STAR electric mobility portfolio: flagship vehicles and future roadmap.",
-    url: "https://brcstar.in/vehicles",
+    url: "https://www.brcstar.in/vehicles",
     type: "website",
   },
 };

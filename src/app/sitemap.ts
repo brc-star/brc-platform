@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://brcstar.in";
+  const baseUrl = "https://www.brcstar.in";
 
   const routes = [
     "",
@@ -17,7 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vehicles/starcraft-gt",
     "/vehicles/starpulse-suv",
     "/vehicles/starfleet-commercial",
-    "/vehicles/starfleet-logistic",
     "/vehicles/starhauler-truck",
     "/vehicles/startitan-semi-truck",
     "/vehicles/startransit-bus",

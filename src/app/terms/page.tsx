@@ -6,12 +6,12 @@ export const metadata = {
   title: "Terms & Conditions",
   description: "Official Terms and Conditions, vehicle pre-booking token terms, and 100% refund policies for BRC STAR (OPC) PRIVATE LIMITED.",
   alternates: {
-    canonical: "https://brcstar.in/terms",
+    canonical: "https://www.brcstar.in/terms",
   },
   openGraph: {
     title: "Terms & Conditions | BRC STAR",
     description: "Terms and Conditions, vehicle pre-booking token terms, and refund policy.",
-    url: "https://brcstar.in/terms",
+    url: "https://www.brcstar.in/terms",
   },
 };
 
@@ -89,7 +89,7 @@ export default function TermsConditionsPage() {
               <strong className="text-white">Third-Party Social Media Service</strong> means any services or content provided by a third party that is displayed, included, made available, or linked to through the Service.
             </li>
             <li>
-              <strong className="text-white">Website</strong> refers to BRC STAR, accessible from <a href="https://brcstar.in/" className="text-cyan-400 underline">https://brcstar.in/</a>.
+              <strong className="text-white">Website</strong> refers to BRC STAR, accessible from <a href="https://www.brcstar.in/" className="text-cyan-400 underline">https://www.brcstar.in/</a>.
             </li>
             <li>
               <strong className="text-white">You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
@@ -216,7 +216,7 @@ export default function TermsConditionsPage() {
             Vehicle Pre-Booking, Priority Token, &amp; 100% Refund Policy
           </h2>
           <p>
-            When you submit a vehicle pre-booking reservation through https://brcstar.in/pre-book, the following terms govern the relationship between you and BRC STAR (OPC) PRIVATE LIMITED:
+            When you submit a vehicle pre-booking reservation through https://www.brcstar.in/pre-book, the following terms govern the relationship between you and BRC STAR (OPC) PRIVATE LIMITED:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-xs font-mono text-slate-300">
             <li>

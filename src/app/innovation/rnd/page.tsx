@@ -7,12 +7,12 @@ export const metadata = {
   title: "R&D & Engineering Labs | BRC STAR Deep-Tech",
   description: "Explore BRC STAR's advanced electric powertrain R&D labs, dynamometer test-beds, high-speed thermal chambers, and TRL 3/4 test-bench validation data.",
   alternates: {
-    canonical: "https://brcstar.in/innovation/rnd",
+    canonical: "https://www.brcstar.in/innovation/rnd",
   },
   openGraph: {
     title: "R&D & Engineering Labs | BRC STAR",
     description: "Explore BRC STAR powertrain R&D labs and TRL 3/4 simulation validation.",
-    url: "https://brcstar.in/innovation/rnd",
+    url: "https://www.brcstar.in/innovation/rnd",
     type: "website",
   },
 };

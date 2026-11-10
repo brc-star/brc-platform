@@ -8,12 +8,12 @@ export const metadata = {
   description:
     "BRC STAR investor relations: market TAM ($50B+ Indian & global clean mobility transition), unit economics, capital allocation roadmap, and cap table overview.",
   alternates: {
-    canonical: "https://brcstar.in/invest",
+    canonical: "https://www.brcstar.in/invest",
   },
   openGraph: {
     title: "Investor Relations & Capital Opportunity | BRC STAR",
     description: "BRC STAR investor relations: market TAM ($50B+), unit economics, capital allocation roadmap.",
-    url: "https://brcstar.in/invest",
+    url: "https://www.brcstar.in/invest",
   },
 };
 

@@ -7,12 +7,12 @@ export const metadata = {
   title: "Energy Recovery & Kinetic Harvesting | BRC STAR Technology",
   description: "Electromechanical kinetics, high-efficiency Permanent Magnet Generators (PMG), and simulated kinetic energy recovery in BRC STAR electric vehicles.",
   alternates: {
-    canonical: "https://brcstar.in/technology/energy-recovery",
+    canonical: "https://www.brcstar.in/technology/energy-recovery",
   },
   openGraph: {
     title: "Energy Recovery & Kinetic Harvesting | BRC STAR",
     description: "Electromechanical kinetics and kinetic energy recovery architecture.",
-    url: "https://brcstar.in/technology/energy-recovery",
+    url: "https://www.brcstar.in/technology/energy-recovery",
     type: "website",
   },
 };

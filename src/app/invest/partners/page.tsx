@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Franchise Dealership Network & Territory Expansion | BRC STAR",
   description: "Secure exclusive territory rights for BRC STAR Flagship Experience Centers and certified Self-Volt service hubs.",
   alternates: {
-    canonical: "https://brcstar.in/invest/partners",
+    canonical: "https://www.brcstar.in/invest/partners",
   },
   openGraph: {
     title: "Franchise Dealership Network | BRC STAR",
     description: "Exclusive dealership and commercial partner opportunities.",
-    url: "https://brcstar.in/invest/partners",
+    url: "https://www.brcstar.in/invest/partners",
     type: "website",
   },
 };

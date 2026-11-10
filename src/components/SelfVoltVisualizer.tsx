@@ -184,7 +184,7 @@ export const SelfVoltVisualizer = () => {
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-[11px] font-mono text-cyan-300 mb-3">
               <Cpu className="w-3.5 h-3.5 text-cyan-400" />
-              <span>PATENTED ACM &amp; BDA ENERGY CONTROLLER</span>
+              <span>ACM &amp; BDA CONTROLLER (PATENT APPLICATION FILED)</span>
             </div>
 
             <div className="grid grid-cols-3 gap-3 my-4">

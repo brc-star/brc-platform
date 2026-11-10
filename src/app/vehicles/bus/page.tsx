@@ -8,12 +8,12 @@ export const metadata = {
   title: "Electric Bus Mobility | StarTransit 12M | BRC STAR",
   description: "High-capacity 12-meter electric bus for municipal transit authorities and intercity operators with kinetic energy recovery.",
   alternates: {
-    canonical: "https://brcstar.in/vehicles/bus",
+    canonical: "https://www.brcstar.in/vehicles/bus",
   },
   openGraph: {
     title: "Electric Bus Mobility | BRC STAR",
     description: "StarTransit 12M electric transit bus platform.",
-    url: "https://brcstar.in/vehicles/bus",
+    url: "https://www.brcstar.in/vehicles/bus",
     type: "website",
   },
 };

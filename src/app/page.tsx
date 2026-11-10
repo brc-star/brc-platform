@@ -50,12 +50,12 @@ export const metadata: Metadata = {
   title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Electric Vehicles",
   description: "BRC STAR (OPC) PRIVATE LIMITED — Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical harvesting and dynamic dual-pack power routing.",
   alternates: {
-    canonical: "https://brcstar.in",
+    canonical: "https://www.brcstar.in",
   },
   openGraph: {
     title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
     description: "Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655.",
-    url: "https://brcstar.in",
+    url: "https://www.brcstar.in",
     type: "website",
   },
 };
@@ -113,7 +113,7 @@ export default function HomePage() {
               ACM Intelligent Controller
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Patented Alternator Control Module converts variable rotor RPM into ultra-stable 400V DC harvest with 98.4% peak inverter efficiency.
+              Alternator Control Module (Patent application filed/published) converts variable rotor RPM into ultra-stable 400V DC harvest with 98.4% peak inverter efficiency (Simulated).
             </p>
             <Link
               href="/technology/energy-recovery"
@@ -132,7 +132,7 @@ export default function HomePage() {
               Defensible Patent Moat
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Protected under registered Indian Patent Office (IPO) filings and PCT international priority claims with comprehensive architectural protection.
+              Filed with the Indian Patent Office under Application No. 202511050655 (Published); international [PCT details pending].
             </p>
             <Link
               href="/technology/patent-ip"

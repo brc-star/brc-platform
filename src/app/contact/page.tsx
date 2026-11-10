@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "Contact & Corporate Headquarters | BRC STAR",
   description: "Get in touch with BRC STAR (OPC) Private Limited leadership, R&D labs, institutional investor relations, or pre-booking advisory.",
   alternates: {
-    canonical: "https://brcstar.in/contact",
+    canonical: "https://www.brcstar.in/contact",
   },
   openGraph: {
     title: "Contact & Corporate Headquarters | BRC STAR",
     description: "Get in touch with BRC STAR leadership, R&D labs, and investor relations.",
-    url: "https://brcstar.in/contact",
+    url: "https://www.brcstar.in/contact",
     type: "website",
   },
 };

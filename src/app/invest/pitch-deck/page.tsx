@@ -7,12 +7,12 @@ export const metadata = {
   title: "Investor Pitch Deck Request & Data Room | BRC STAR",
   description: "Secure NDA digital signature gateway for authorized institutional investors, venture funds, and family offices to access BRC STAR Series-A pitch deck and financial models.",
   alternates: {
-    canonical: "https://brcstar.in/invest/pitch-deck",
+    canonical: "https://www.brcstar.in/invest/pitch-deck",
   },
   openGraph: {
     title: "Investor Pitch Deck Request & Data Room | BRC STAR",
     description: "Confidential investor data room and pitch deck access request.",
-    url: "https://brcstar.in/invest/pitch-deck",
+    url: "https://www.brcstar.in/invest/pitch-deck",
     type: "website",
   },
 };

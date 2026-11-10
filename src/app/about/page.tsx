@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   description:
     "Founded by Bishna Chauhan in November 2019, BRC STAR (OPC) PRIVATE LIMITED is an Indian deep-tech EV startup incubated by iStart Rajasthan and recognized by DPIIT.",
   alternates: {
-    canonical: "https://brcstar.in/about",
+    canonical: "https://www.brcstar.in/about",
   },
   openGraph: {
     title: "About BRC STAR | Founder Journey & Deep-Tech EV Architecture",
     description: "The story, mission, and leadership behind BRC STAR and Indian Patent Application No. 202511050655.",
-    url: "https://brcstar.in/about",
+    url: "https://www.brcstar.in/about",
   },
 };
 
