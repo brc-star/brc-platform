@@ -99,7 +99,7 @@ function PreBookContent() {
 
   const calculatedTotal = calculateVehiclePrice(currentVehicle.basePriceInr, activeTrim.priceOffset);
 
-  // Step 1: Initiate Order & Open Payment Gateway
+  // Step 1: Initiate Priority Waitlist Registration (No Payment Collection)
   const handleInitiatePayment = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -114,16 +114,51 @@ function PreBookContent() {
           vehicleModelSlug: selectedModelSlug,
           trimLevel: selectedTrim,
           exteriorColor: selectedColor,
-          tokenAmountInr: 25000,
+          tokenAmountInr: 0,
         }),
       });
 
       const data = await res.json();
-      if (res.ok && data.success && data.order) {
-        setPendingOrder(data.order);
-        setIsPaymentModalOpen(true);
-      } else {
+      if (!res.ok || !data.success || !data.order) {
         setErrorMessage(data.message || "Failed to create reservation order. Please retry.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Automatically confirm priority waitlist allocation
+      const waitlistId = `wl_BRC_${Date.now().toString(36).toUpperCase()}_${Math.floor(1000 + Math.random() * 9000)}`;
+      const verifyRes = await fetch("/api/v1/pre-booking/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          orderId: data.order.orderId,
+          bookingReference: data.order.bookingReference,
+          paymentId: waitlistId,
+          method: "WAITLIST",
+          customer: {
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            city: formData.city,
+            state: formData.state,
+          },
+          vehicle: {
+            modelSlug: currentVehicle.slug,
+            modelName: currentVehicle.name,
+            trim: activeTrim.id,
+            trimName: activeTrim.name,
+            color: selectedColor,
+            totalPriceInr: calculatedTotal,
+          },
+          tokenAmountInr: 0,
+        }),
+      });
+
+      const verifyData = await verifyRes.json();
+      if (verifyRes.ok && verifyData.success && verifyData.booking) {
+        setBookingConfirmed(verifyData.booking);
+      } else {
+        setErrorMessage(verifyData.message || "Failed to finalize reservation. Please retry.");
       }
     } catch (err) {
       setErrorMessage("Network error occurred connecting to BRC STAR booking engine.");
@@ -217,12 +252,12 @@ function PreBookContent() {
             </h2>
             <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-500/40 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-semibold">
               <ShieldCheck className="w-3.5 h-3.5" />
-              <span>PAID &amp; SECURED IN BANK ESCROW</span>
+              <span>PRIORITY WAITLIST CONFIRMED (NO PAYMENT COLLECTED)</span>
             </div>
           </div>
 
           <p className="text-xs text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Congratulations, <strong>{formData.fullName}</strong>. Your official allocation slot for the <strong>{currentVehicle.name}</strong> ({activeTrim.name}) is cryptographically verified and recorded in the manufacturing queue.
+            Congratulations, <strong>{formData.fullName}</strong>. Your official allocation slot for the <strong>{currentVehicle.name}</strong> ({activeTrim.name}) is registered in the priority manufacturing queue.
           </p>
 
           {/* Certificate Spec & Financial Matrix */}
@@ -244,11 +279,11 @@ function PreBookContent() {
               <span className="text-slate-900 dark:text-white font-bold">{formatInr(calculatedTotal)}</span>
             </div>
             <div className="flex justify-between border-b border-slate-200 dark:border-slate-800/80 pb-2">
-              <span className="text-slate-500 dark:text-slate-400">Refundable Token Paid:</span>
-              <span className="text-emerald-700 dark:text-emerald-400 font-bold">₹25,000 (100% Fully Refundable)</span>
+              <span className="text-slate-500 dark:text-slate-400">Token Status:</span>
+              <span className="text-emerald-700 dark:text-emerald-400 font-bold">Payable upon Escrow Activation (100% Refundable)</span>
             </div>
             <div className="flex justify-between border-b border-slate-200 dark:border-slate-800/80 pb-2">
-              <span className="text-slate-500 dark:text-slate-400">Razorpay Payment Ref:</span>
+              <span className="text-slate-500 dark:text-slate-400">Waitlist Reference:</span>
               <span className="text-cyan-700 dark:text-cyan-400 font-mono font-semibold">{bookingConfirmed.paymentId}</span>
             </div>
             <div className="flex justify-between border-b border-slate-200 dark:border-slate-800/80 pb-2">
@@ -482,9 +517,12 @@ function PreBookContent() {
                 <div className="text-[10px] text-slate-500 font-mono">
                   {COMMON_DISCLAIMERS.homologationNotice}
                 </div>
-                <div className="flex justify-between text-emerald-700 dark:text-emerald-400 font-bold pt-2 border-t border-slate-200 dark:border-slate-800 text-sm">
-                  <span>Token Payable Now (100% Refundable):</span>
-                  <span>₹25,000</span>
+                <div className="flex justify-between text-emerald-700 dark:text-emerald-400 font-bold pt-2 border-t border-slate-200 dark:border-slate-800 text-xs sm:text-sm">
+                  <span>Priority Waitlist Token:</span>
+                  <span>₹25,000 (100% Refundable)</span>
+                </div>
+                <div className="p-2.5 rounded-lg bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-500/30 text-[11px] text-cyan-800 dark:text-cyan-300">
+                  <span className="font-bold">Waitlist Mode Active:</span> No payment is collected today. You will receive an invitation to lock your ₹25,000 escrow token when commercial banking is activated following ARAI homologation.
                 </div>
               </div>
 
@@ -504,11 +542,11 @@ function PreBookContent() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin text-slate-950" />
-                    <span>Initiating Payment Order...</span>
+                    <span>Allocating Priority Queue Spot...</span>
                   </>
                 ) : (
                   <>
-                    <span>Pay ₹25,000 Refundable Token &amp; Lock Priority Slot</span>
+                    <span>Join Priority Waitlist (No Payment Today)</span>
                     <ArrowRight className="w-4 h-4" />
                   </>
                 )}
@@ -516,7 +554,7 @@ function PreBookContent() {
 
               <div className="text-[10px] text-center text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1.5 pt-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>Statutory 100% Refund Guarantee • RBI Compliant Bank Escrow</span>
+                <span>Statutory 100% Refund Policy • Zero Obligation Waitlist</span>
               </div>
             </form>
           </div>

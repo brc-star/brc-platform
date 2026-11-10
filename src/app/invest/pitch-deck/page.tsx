@@ -39,7 +39,7 @@ export default function PitchDeckRequestPage() {
             Institutional Investor Pitch Deck &amp; Data Room
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Please execute the digital Non-Disclosure Agreement below to instantly generate a secure session key and unlock audited financial models, TRL-6 track logs, and the 38-page Master Series-A deck.
+            Please execute the digital Non-Disclosure Agreement below to instantly generate a secure session key and unlock financial models, TRL 3/4 test-bench simulation logs, and the Master Series-A deck.
           </p>
         </div>
       </div>

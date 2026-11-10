@@ -7,7 +7,7 @@ const VerifyPaymentSchema = z.object({
   bookingReference: z.string(),
   paymentId: z.string().min(4),
   signature: z.string().optional(),
-  method: z.string().default("UPI_INSTANT"),
+  method: z.string().default("WAITLIST"),
   customer: z.object({
     name: z.string(),
     email: z.string().email(),
@@ -23,13 +23,15 @@ const VerifyPaymentSchema = z.object({
     color: z.string().optional(),
     totalPriceInr: z.number().optional(),
   }),
-  tokenAmountInr: z.number().default(25000),
+  tokenAmountInr: z.number().default(0),
 });
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const data = VerifyPaymentSchema.parse(body);
+
+    const isWaitlist = data.method === "WAITLIST" || data.tokenAmountInr === 0;
 
     // Compute cryptographic verification audit hash
     const hashData = `${data.orderId}|${data.paymentId}|${data.bookingReference}|${data.tokenAmountInr}`;
@@ -40,23 +42,23 @@ export async function POST(req: Request) {
       orderId: data.orderId,
       paymentId: data.paymentId,
       verificationHash,
-      paymentMethod: data.method,
-      paymentStatus: "PAID_ESCROW_CONFIRMED",
+      paymentMethod: isWaitlist ? "PRIORITY_WAITLIST_RESERVATION" : data.method,
+      paymentStatus: isWaitlist ? "WAITLIST_PRIORITY_CONFIRMED" : "PAID_ESCROW_CONFIRMED",
       isRefundable: true,
       tokenAmountInr: data.tokenAmountInr,
       customer: data.customer,
       vehicle: data.vehicle,
       targetDeliveryYear: 2027,
-      escrowBank: "HDFC Escrow Account / Razorpay Payment Services",
-      gstInvoiceNo: `INV-BRC-${Date.now().toString(36).toUpperCase()}`,
-      rbiComplianceNote: "100% fully refundable token escrow under Indian Consumer Protection Act 2019",
+      escrowBank: isWaitlist ? "Pending Commercial Escrow Gateway" : "HDFC Escrow Account / Razorpay Payment Services",
+      gstInvoiceNo: `WL-BRC-${Date.now().toString(36).toUpperCase()}`,
+      rbiComplianceNote: "Priority waitlist allocation without payment collection; ₹25,000 token is payable upon commercial banking escrow activation. 100% refundable under Indian Consumer Protection Act 2019.",
       dpdpaAuditId: `DPDPA-${crypto.randomBytes(4).toString("hex").toUpperCase()}`,
       paidAt: new Date().toISOString(),
     };
 
     return NextResponse.json({
       success: true,
-      message: "Payment successfully verified and locked in escrow.",
+      message: isWaitlist ? "Priority waitlist reservation confirmed." : "Payment successfully verified and locked in escrow.",
       booking: verifiedBooking,
     });
   } catch (err: any) {

@@ -113,7 +113,7 @@ export default function HomePage() {
               ACM Intelligent Controller
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Alternator Control Module (Patent application filed/published) converts variable rotor RPM into ultra-stable 400V DC harvest with 98.4% peak inverter efficiency (Simulated).
+              Patent-pending Alternator Control Module converts variable rotor RPM into ultra-stable 400V DC harvest with 98.4% peak inverter efficiency (Simulated).
             </p>
             <Link
               href="/technology/energy-recovery"
@@ -132,7 +132,7 @@ export default function HomePage() {
               Defensible Patent Moat
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Filed with the Indian Patent Office under Application No. 202511050655 (Published); international [PCT details pending].
+              Indian Patent Application No. 202511050655 filed/published with the Indian Patent Office. PCT details pending.
             </p>
             <Link
               href="/technology/patent-ip"

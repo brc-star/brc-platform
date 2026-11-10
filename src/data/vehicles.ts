@@ -78,7 +78,7 @@ export const STANDARD_DRIVETRAIN_TRIMS: DrivetrainTrim[] = [
     badge: "RECOMMENDED",
     priceOffset: 350000, // +₹3.50L
     description: (name, range) =>
-      `Dual-pack closed-loop continuous kinetic recoup with active A/B battery bus isolation (${range} km range).`,
+      `Dual-pack kinetic energy recovery and efficiency improvement with active A/B battery bus isolation (${range} km range).`,
   },
   {
     id: "performance",

@@ -71,7 +71,7 @@ export const VehiclePortfolioNoImage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {HERO_VEHICLES.map((vehicle) => (
+          {HERO_VEHICLES.map((vehicle, index) => (
             <div
               key={vehicle.slug}
               className="p-6 sm:p-7 rounded-2xl bg-gradient-to-b from-slate-900/90 via-[#050814] to-slate-950 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 shadow-xl hover:shadow-cyan-950/50 flex flex-col justify-between space-y-6 group relative overflow-hidden vehicle-portfolio-card"
@@ -83,7 +83,7 @@ export const VehiclePortfolioNoImage = () => {
               <div className="space-y-4 relative z-10">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-bold text-cyan-400/90 bg-cyan-950/70 border border-cyan-500/40 px-2.5 py-0.5 rounded-md">
-                    Hero Model • {vehicle.vehicleNumber}
+                    Hero Model • {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-slate-300">
                     {vehicle.segmentBadge || vehicle.category}

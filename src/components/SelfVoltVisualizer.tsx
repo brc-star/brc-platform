@@ -184,7 +184,7 @@ export const SelfVoltVisualizer = () => {
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-[11px] font-mono text-cyan-300 mb-3">
               <Cpu className="w-3.5 h-3.5 text-cyan-400" />
-              <span>ACM &amp; BDA CONTROLLER (PATENT APPLICATION FILED)</span>
+              <span>PATENT-PENDING ACM &amp; BDA CONTROLLER</span>
             </div>
 
             <div className="grid grid-cols-3 gap-3 my-4">
@@ -201,7 +201,7 @@ export const SelfVoltVisualizer = () => {
                 </div>
               </div>
               <div className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                <div className="text-[10px] font-mono uppercase text-slate-400">Continuous Loop</div>
+                <div className="text-[10px] font-mono uppercase text-slate-400">Kinetic Recoup</div>
                 <div className="text-base sm:text-lg font-extrabold text-amber-400 font-mono mt-0.5">
                   Active
                 </div>

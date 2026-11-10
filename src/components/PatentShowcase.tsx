@@ -178,7 +178,7 @@ export const PatentShowcase = () => {
 
             {/* Verified Technical Metric */}
             <div className="flex items-center justify-between text-xs font-mono pt-1 text-slate-500 dark:text-slate-400">
-              <span>Verified Test Rig Spec:</span>
+              <span>Test Rig Spec (Simulated / Bench):</span>
               <span className="font-bold text-emerald-600 dark:text-emerald-400">
                 {selectedClaim.technicalMetric}
               </span>

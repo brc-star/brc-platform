@@ -68,14 +68,14 @@ export const InvestorDataRoomGate = () => {
       type: "Legal IP Dossier & IPO Filing Certified Copy",
       tier: "Tier 3: Deep-Tech IP",
       size: "14.8 MB",
-      watermark: "CONFIDENTIAL - IPO REGISTERED",
+      watermark: "CONFIDENTIAL - IPO APPLICATION",
     },
     {
       title: "Dynamometer Rig 4 Testing & Track Validation Logs",
       type: "Empirical Sensor Telemetry & Efficiency Logs",
       tier: "Tier 3: Engineering R&D",
       size: "22.1 MB",
-      watermark: "CONFIDENTIAL - TRL-6 BENCHMARK",
+      watermark: "CONFIDENTIAL - TRL 3/4 BENCHMARK",
     },
   ];
 
@@ -137,7 +137,7 @@ export const InvestorDataRoomGate = () => {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                <span>TRL-6 Test-Bench Validation &amp; Patent Claims Dossier</span>
+                <span>TRL 3/4 Test-Bench Validation &amp; Patent Claims Dossier</span>
               </div>
             </div>
           </div>
