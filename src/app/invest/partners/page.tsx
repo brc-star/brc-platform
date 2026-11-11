@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { Users, ChevronRight } from "lucide-react";
 import { DealerRoiCalculator } from "@/components/DealerRoiCalculator";
-import { DealerPartnerFormClient } from "@/components/DealerPartnerFormClient";
+import { DealershipApplicationForm } from "@/components/DealershipApplicationForm";
 
 export const metadata: Metadata = {
   title: "Franchise Dealership Network & Territory Expansion | BRC STAR",
@@ -50,7 +50,7 @@ export default function DealerPartnersPage() {
       <DealerRoiCalculator />
 
       {/* Franchise Application Form Section */}
-      <DealerPartnerFormClient />
+      <DealershipApplicationForm />
     </div>
   );
 }

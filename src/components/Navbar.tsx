@@ -30,9 +30,11 @@ import {
 import { cn } from "@/lib/utils";
 import { AuthUser } from "@/lib/auth";
 import { ThemeToggle } from "./ThemeToggle";
+import { usePreBookDrawer } from "@/components/PreBookContext";
 
 export const Navbar = () => {
   const pathname = usePathname();
+  const { openDrawer } = usePreBookDrawer();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -423,13 +425,14 @@ export const Navbar = () => {
             )}
 
             {/* Pre-Book Primary CTA - Sleek & Compact */}
-            <Link
-              href="/pre-book"
+            <button
+              type="button"
+              onClick={() => openDrawer()}
               className="relative inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-bold font-mono tracking-wide text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 hover:to-cyan-200 transition-all duration-200 shadow-md shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98]"
             >
               <span>Pre-Book</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -538,13 +541,17 @@ export const Navbar = () => {
             </div>
 
             <div className="pt-3">
-              <Link
-                href="/pre-book"
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openDrawer();
+                }}
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold font-mono text-slate-950 bg-cyan-400 shadow-lg shadow-cyan-500/20"
               >
                 <span>Pre-Book BRC STAR EV</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>

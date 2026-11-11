@@ -273,22 +273,34 @@ enum FranchiseTier {
   AUTHORIZED_SERVICE_NODE
 }
 
+enum InvestmentTier {
+  TIER_1_2_5_CR   // Tier 1: ₹2.5 Cr
+  TIER_2_1_25_CR  // Tier 2: ₹1.25 Cr
+  TIER_3_50_LAKH  // Tier 3: ₹50 Lakh
+}
+
 model DealerApplication {
-  id                 String        @id @default(uuid())
-  applicantName      String
-  companyName        String
-  email              String
-  phone              String
-  proposedTerritory  String
-  proposedState      String
-  tierInterested     FranchiseTier @default(REGIONAL_SALES_AND_SERVICE)
-  liquidCapitalInr   Decimal       @db.Decimal(12, 2)
-  commercialSpaceSqFt Int
-  automotiveExpYears Int           @default(0)
-  status             String        @default("UNDER_REVIEW") // UNDER_REVIEW, APPROVED, REJECTED
-  createdAt          DateTime      @default(now())
+  id                  String         @id @default(uuid())
+  applicationRef      String         @unique // Format: DLR-2026-XXXXXX
+  applicantName       String
+  companyName         String
+  email               String
+  phone               String
+  proposedTerritory   String         // Operating City
+  proposedState       String         // Operating State
+  businessSector      String         // Existing Business Sector
+  commercialSpaceSqFt Int            // Commercial Land Availability (Sq Ft)
+  investmentTier      InvestmentTier @default(TIER_2_1_25_CR)
+  tierInterested      FranchiseTier  @default(REGIONAL_SALES_AND_SERVICE)
+  liquidCapitalInr    Decimal        @db.Decimal(14, 2)
+  automotiveExpYears  Int            @default(0)
+  status              String         @default("UNDER_REVIEW") // UNDER_REVIEW, APPROVED, REJECTED
+  auditHash           String?
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
 
   @@index([email, proposedTerritory, status])
+  @@index([applicationRef])
 }
 
 model Dealership {

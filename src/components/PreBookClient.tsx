@@ -30,6 +30,7 @@ import {
   calculateVehiclePrice,
 } from "@/data/vehicles";
 import { formatInr } from "@/lib/utils";
+import { RAZORPAY_PREBOOK_PAYMENT_LINK } from "@/components/PreBookContext";
 
 // Exclude aliases for model selection tabs
 const PRIMARY_PREBOOK_VEHICLES = VEHICLES_DATA.filter((v) => v.slug !== "starfleet-logistic");
@@ -533,24 +534,35 @@ function PreBookContent() {
                 </div>
               )}
 
-              {/* Submit CTA */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full py-3.5 px-6 rounded-xl font-mono text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 hover:to-cyan-200 transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25 active:scale-[0.99] disabled:opacity-50"
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin text-slate-950" />
-                    <span>Allocating Priority Queue Spot...</span>
-                  </>
-                ) : (
-                  <>
-                    <span>Join Priority Waitlist (No Payment Today)</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </>
-                )}
-              </button>
+              {/* Submit CTA & Direct Razorpay Gateway */}
+              <div className="space-y-2.5">
+                <a
+                  href={RAZORPAY_PREBOOK_PAYMENT_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 px-6 rounded-xl font-mono text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-cyan-300 to-emerald-300 hover:from-cyan-300 hover:to-emerald-200 transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25 active:scale-[0.99]"
+                >
+                  <span>Pay ₹25,000 Token via Razorpay</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-3 px-6 rounded-xl font-mono text-xs font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Allocating Priority Queue Spot...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Join Priority Waitlist (No Payment Today)</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              </div>
 
               <div className="text-[10px] text-center text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1.5 pt-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />

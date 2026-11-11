@@ -29,6 +29,7 @@ import {
   calculateVehiclePrice,
 } from "@/data/vehicles";
 import { cn, formatInr } from "@/lib/utils";
+import { usePreBookDrawer } from "@/components/PreBookContext";
 
 // Filter out alias entries
 const PRIMARY_VEHICLES = VEHICLES_DATA.filter((v) => v.slug !== "starfleet-logistic");
@@ -136,6 +137,7 @@ const XRAY_HOTSPOTS: XRayHotspot[] = [
 ];
 
 export const Vehicle3DDigitalTwin = () => {
+  const { openDrawer } = usePreBookDrawer();
   const [selectedSlug, setSelectedSlug] = useState<string>("starcraft-gt");
   const [selectedTrim, setSelectedTrim] = useState<"standard" | "long_range" | "performance">("standard");
   const [selectedPaint, setSelectedPaint] = useState<string>("cosmic-obsidian");
@@ -672,13 +674,21 @@ export const Vehicle3DDigitalTwin = () => {
 
             {/* Action Buttons */}
             <div className="flex items-center gap-2">
-              <Link
-                href={`/pre-book?model=${currentVehicle.slug}&trim=${selectedTrim}&color=${selectedPaint}&wheels=${selectedWheel}`}
+              <button
+                type="button"
+                onClick={() =>
+                  openDrawer({
+                    modelSlug: currentVehicle.slug,
+                    trim: selectedTrim,
+                    color: selectedPaint,
+                    wheels: selectedWheel,
+                  })
+                }
                 className="flex-1 min-h-[46px] py-2.5 px-4 rounded-xl font-mono text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 transition-all text-center flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25"
               >
                 <span>Reserve Custom Build Slot</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </button>
 
               <button
                 onClick={handleShareConfig}

@@ -22,6 +22,7 @@ import {
 } from "@/data/vehicles";
 import { formatInr } from "@/lib/utils";
 import { VehiclesCTA } from "@/components/VehiclesCTA";
+import { usePreBookDrawer } from "@/components/PreBookContext";
 
 // Hero vehicles featured prominently for pre-booking (Single canonical StarFleet slug)
 const HERO_SLUGS = ["starcraft-gt", "starfleet-commercial", "startransit-bus"];
@@ -32,6 +33,7 @@ const ROADMAP_VEHICLES = VEHICLES_DATA.filter(
 );
 
 export const VehiclePortfolioNoImage = () => {
+  const { openDrawer } = usePreBookDrawer();
   return (
     <section className="w-full space-y-16">
       {/* 1. Section Header */}
@@ -156,13 +158,14 @@ export const VehiclePortfolioNoImage = () => {
                     <span>View Full Specs</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
-                  <Link
-                    href={`/pre-book?model=${vehicle.slug}`}
+                  <button
+                    type="button"
+                    onClick={() => openDrawer({ modelSlug: vehicle.slug })}
                     className="py-2.5 px-3.5 rounded-xl font-mono text-xs font-semibold text-cyan-300 hover:text-white bg-cyan-950/50 hover:bg-cyan-900/60 border border-cyan-500/30 hover:border-cyan-400 transition-colors"
                     title="Reserve Build Slot"
                   >
                     Reserve
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>

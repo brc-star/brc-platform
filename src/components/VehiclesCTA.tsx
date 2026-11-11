@@ -3,8 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import { Zap, ArrowRight } from "lucide-react";
+import { usePreBookDrawer } from "@/components/PreBookContext";
 
 export const VehiclesCTA: React.FC = () => {
+  const { openDrawer } = usePreBookDrawer();
   return (
     <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-50 via-cyan-50/40 to-slate-100 border border-slate-200/80 shadow-xl shadow-slate-200/50 dark:bg-gradient-to-br dark:from-[#0B1120] dark:via-[#0D1527] dark:to-[#070B14] dark:border-cyan-500/20 dark:shadow-none relative overflow-hidden text-center space-y-6 transition-all duration-300">
       {/* Ambient Radial Accent */}
@@ -30,13 +32,14 @@ export const VehiclesCTA: React.FC = () => {
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
           {/* Primary Button */}
-          <Link
-            href="/pre-book"
+          <button
+            type="button"
+            onClick={() => openDrawer()}
             className="px-8 py-3.5 rounded-xl font-mono text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/20 hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2 active:scale-[0.98]"
           >
             <span>Reserve a Build Slot</span>
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </button>
 
           {/* Secondary Button */}
           <Link

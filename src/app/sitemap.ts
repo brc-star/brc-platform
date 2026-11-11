@@ -27,6 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/invest",
     "/invest/pitch-deck",
     "/invest/partners",
+    "/partners",
+    "/dealership",
     "/pre-book",
     "/docs",
     "/contact",

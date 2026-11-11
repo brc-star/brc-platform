@@ -5,6 +5,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { ArrowRight, ChevronRight, Lock } from "lucide-react";
 import { PitchDeckModal } from "./PitchDeckModal";
+import { usePreBookDrawer } from "@/components/PreBookContext";
 
 const LiveTelemetryWidget = dynamic(
   () => import("./LiveTelemetryWidget").then((mod) => mod.LiveTelemetryWidget),
@@ -20,6 +21,7 @@ const LiveTelemetryWidget = dynamic(
 
 export const HeroSection: React.FC = () => {
   const [isDeckModalOpen, setIsDeckModalOpen] = useState(false);
+  const { openDrawer } = usePreBookDrawer();
 
   return (
     <section 
@@ -82,13 +84,14 @@ export const HeroSection: React.FC = () => {
               <span>Institutional Deck (NDA)</span>
             </button>
 
-            <Link
-              href="/pre-book"
+            <button
+              type="button"
+              onClick={() => openDrawer()}
               className="w-full sm:w-auto min-h-[40px] sm:min-h-[48px] px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-mono text-xs font-semibold text-slate-600 hover:text-cyan-700 dark:text-slate-300 dark:hover:text-cyan-300 transition-colors flex items-center justify-center gap-1.5 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
             >
               <span>Fleet Pre-Booking</span>
               <ChevronRight className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" aria-hidden="true" />
-            </Link>
+            </button>
           </div>
         </div>
 

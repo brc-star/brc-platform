@@ -4,6 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import ChatbotWrapper from "@/components/ChatbotWrapper";
 import { MobileAppBridge } from "@/components/MobileAppBridge";
+import { PreBookProvider } from "@/components/PreBookContext";
+import { PreBookingDrawer } from "@/components/PreBookingDrawer";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -215,11 +217,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-[#02040a] text-slate-100 antialiased flex flex-col font-sans selection:bg-cyan-500 selection:text-slate-950">
-        <MobileAppBridge />
-        <Navbar />
-        <main id="main-content" className="flex-1">{children}</main>
-        <Footer />
-        <ChatbotWrapper />
+        <PreBookProvider>
+          <MobileAppBridge />
+          <Navbar />
+          <main id="main-content" className="flex-1">{children}</main>
+          <Footer />
+          <PreBookingDrawer />
+          <ChatbotWrapper />
+        </PreBookProvider>
       </body>
     </html>
   );

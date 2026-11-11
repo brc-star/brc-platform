@@ -21,6 +21,7 @@ import { VehicleStudioEmpty } from "@/components/VehicleStudioEmpty";
 import { VehiclePortfolioVideoContainer } from "@/components/VehiclePortfolioVideoContainer";
 import { VehiclePortfolioNoImage } from "@/components/VehiclePortfolioNoImage";
 import { PatentShowcase } from "@/components/PatentShowcase";
+import { PreBookTriggerButton } from "@/components/PreBookTriggerButton";
 import { INVESTOR_METRICS, RND_METRICS } from "@/lib/data";
 import { Metadata } from "next";
 
@@ -358,15 +359,12 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-              <Link
-                href="/pre-book"
-                className="px-8 py-3.5 rounded-xl font-mono text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 transition-all flex items-center gap-2 shadow-xl shadow-cyan-500/30"
-              >
+              <PreBookTriggerButton className="px-8 py-3.5 rounded-xl font-mono text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 transition-all flex items-center gap-2 shadow-xl shadow-cyan-500/30">
                 <span>Reserve Your BRC STAR EV</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </PreBookTriggerButton>
               <Link
-                href="/invest/partners"
+                href="/partners"
                 className="px-8 py-3.5 rounded-xl font-mono text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-cyan-500/40 transition-all"
               >
                 Become a Franchise Partner
