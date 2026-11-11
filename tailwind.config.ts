@@ -58,7 +58,7 @@ const config: Config = {
       animation: {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "flow": "flow 3s linear infinite",
-        "chatbot-shake": "chatbot-shake 3.6s ease-in-out infinite",
+        "chatbot-shake": "chatbot-shake 5s ease-in-out infinite",
         "chatbot-ripple": "chatbot-ripple 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite",
       },
       keyframes: {

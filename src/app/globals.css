@@ -1001,7 +1001,7 @@ html.light .vehicle-portfolio-specs span:last-child {
 }
 
 .animate-chatbot-shake {
-  animation: chatbot-shake 3.6s ease-in-out infinite;
+  animation: chatbot-shake 5s ease-in-out infinite;
 }
 
 .animate-chatbot-ripple {
