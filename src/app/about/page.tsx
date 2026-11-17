@@ -102,7 +102,7 @@ export default function AboutPage() {
                   src="/founder.jpg"
                   alt="Bishna Chauhan - Founder & CEO, BRC STAR"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
