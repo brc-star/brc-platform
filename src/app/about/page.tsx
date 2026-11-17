@@ -97,17 +97,13 @@ export default function AboutPage() {
           <div className="lg:col-span-4 flex flex-col items-center text-center space-y-3">
             {/* Founder Photo Slot / Frame */}
             <div className="w-44 h-44 rounded-2xl bg-gradient-to-br from-cyan-400/40 via-amber-400/30 to-blue-600/40 p-[2px] shadow-xl shadow-cyan-500/10">
-              <div className="w-full h-full rounded-2xl bg-slate-100 dark:bg-[#050814] flex flex-col items-center justify-center p-4 border border-slate-200 dark:border-slate-800 overflow-hidden relative group">
+              <div className="w-full h-full rounded-2xl bg-slate-100 dark:bg-[#050814] flex flex-col items-center justify-center border border-slate-200 dark:border-slate-800 overflow-hidden relative group">
                 <Image
-                  src="/brc-star-symbol.png"
-                  alt="BRC STAR Emblem"
-                  width={64}
-                  height={64}
-                  className="object-contain opacity-80"
+                  src="/founder.jpg"
+                  alt="Bishna Chauhan - Founder & CEO, BRC STAR"
+                  fill
+                  className="object-cover"
                 />
-                <span className="mt-2 text-[10px] font-mono text-slate-500 dark:text-slate-400 text-center">
-                  [PLACEHOLDER: founder portrait photograph]
-                </span>
               </div>
             </div>
 
@@ -116,7 +112,7 @@ export default function AboutPage() {
                 Bishna Chauhan (Dr. B. Chauhan)
               </h3>
               <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400 block">
-                Founder &amp; Managing Director
+                Founder &amp; CEO
               </span>
               <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono mt-0.5 block">
                 BRC STAR (OPC) PRIVATE LIMITED
@@ -132,10 +128,10 @@ export default function AboutPage() {
               In November 2019, Bishna Chauhan established BRC STAR with a fundamental engineering question: <em>Why should an electric vehicle rely entirely on static grid charging when continuous kinetic momentum can be recovered and managed across dual storage reservoirs?</em>
             </p>
             <p>
-              Operating from Rajasthan, BRC STAR was founded to build practical, durable electric powertrains tailored to India&apos;s demanding operating conditions—extreme ambient temperatures, undulating intercity gradients, and relentless commercial duty cycles.
+              Operating from Anupgarh, Rajasthan, with background ties connecting Surat&apos;s industry, BRC STAR was built without external venture funding to solve highway range degradation and single-battery thermal stress through auxiliary kinetic energy harvesting.
             </p>
             <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 font-mono text-xs text-slate-700 dark:text-slate-400">
-              <strong>Executive Statement:</strong> &ldquo;[PLACEHOLDER: verified founder statement on long-term EV roadmap and regional manufacturing strategy]&rdquo;
+              <strong>Executive Statement:</strong> &ldquo;We are building patiently and transparently: every number we publish is labelled simulated, bench-validated, or target, until the track proves it.&rdquo;
             </div>
           </div>
         </div>

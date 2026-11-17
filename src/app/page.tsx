@@ -22,6 +22,7 @@ import { VehiclePortfolioVideoContainer } from "@/components/VehiclePortfolioVid
 import { VehiclePortfolioNoImage } from "@/components/VehiclePortfolioNoImage";
 import { PatentShowcase } from "@/components/PatentShowcase";
 import { PreBookTriggerButton } from "@/components/PreBookTriggerButton";
+import { FounderSection } from "@/components/FounderSection";
 import { INVESTOR_METRICS, RND_METRICS } from "@/lib/data";
 import { Metadata } from "next";
 
@@ -266,7 +267,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 06. INVESTOR & STRATEGIC CAPITAL SNAPSHOT */}
+      {/* 06. THE FOUNDER */}
+      <FounderSection />
+
+      {/* 07. INVESTOR & STRATEGIC CAPITAL SNAPSHOT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-[#090d1f] via-[#050814] to-[#02040a] border border-cyan-500/30 rounded-3xl p-8 lg:p-12 relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
