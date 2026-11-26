@@ -1,5 +1,6 @@
 export * from "@/data/vehicles";
 import { VEHICLES_DATA, VehicleModelData } from "@/data/vehicles";
+import { PATENT_STATEMENT } from "@/lib/claims";
 
 export { VEHICLES_DATA };
 export type { VehicleModelData };
@@ -7,95 +8,93 @@ export type { VehicleModelData };
 export const PATENTS_DATA = [
   {
     refNumber: "202511050655",
-    title: "Dual-Pack Kinetic Energy Recovery Architecture & Alternator Energy Harvesting System for Electric Vehicles",
-    abstract: "A high-voltage energy management system comprising Primary Battery Pack A, Secondary Battery Pack B, an Alternator Control Module (ACM), and a dynamic bus controller configured to isolate discharge load and route auxiliary mechanical harvesting seamlessly without high-voltage power disruption.",
-    status: "Indian Patent Application No. 202511050655, Filed/Published with IPO",
+    title:
+      "Dual-Pack Kinetic Energy Recovery Architecture & Alternator Energy Harvesting System for Electric Vehicles",
+    abstract:
+      "High-level public architectural summary: An electric powertrain energy-management system comprising Dual Battery Packs (Pack A & Pack B), an Alternator Control Module (ACM), and solid-state bus switching configured to decouple tractive discharge loads from decelerative and glide kinetic recovery currents (full unpublished claims available under NDA).",
+    status: "Patent-Pending (Filed with Indian Patent Office; Not yet published or granted)",
     category: "Dual-Pack Power Management",
-    claimsCount: 22,
-    filingDate: "2025-03-14",
-    moatFactor: "High — Prevents single-pack thermal saturation and unlocks auxiliary kinetic recapture during deceleration and cruising gradients (Simulated).",
+    claimsSummary: "24 claims as filed (subject to examination — TODO_FOUNDER_VERIFY)",
+    filingDate: "May 2025 (Exact date: TODO_FOUNDER_VERIFY)",
+    designObjective:
+      "Targets reduction of single-pack thermal stress while recovering kinetic energy during deceleration and glide cycles (Simulated / TRL 3/4 Bench Stage).",
   },
   {
-    refNumber: "[PCT details pending]",
-    title: "High-Efficiency Permanent Magnet Generator (PMG) Kinetic Linkage for Secondary Battery Recharging",
-    abstract: "A synchronized electromechanical transmission link coupling vehicle drivetrain inertia to a specialized PMG alternator, optimizing electrical harvest at variable vehicle RPM while maintaining aerodynamic glide efficiency.",
-    status: "Provisional Application Filed • [PCT details pending]",
-    category: "Kinetic Harvesting Electromechanics",
-    claimsCount: 16,
-    filingDate: "[Filing pending confirmation]",
-    moatFactor: "Proprietary magnetic tooth alignment reduces mechanical drag resistance compared to standard industrial alternators (Simulated lab test).",
-  },
-  {
-    refNumber: "[Application details pending]",
-    title: "Smart Thermochemical BMS with Sub-Millisecond Cell Balancing & State-of-Health Neural Estimator",
-    abstract: "An embedded distributed hardware architecture utilizing edge tensor processors for real-time electrochemical impedance spectroscopy (EIS) across battery cell strings.",
-    status: "In Development / Application Preparation",
-    category: "Intelligent Battery Management",
-    claimsCount: 14,
-    filingDate: "[Filing pending confirmation]",
-    moatFactor: "Targeted to extend usable battery cycle life in simulated cycling conditions.",
+    refNumber: "CONFIDENTIAL-FW",
+    title:
+      "Proprietary Alternator Control & State-of-Health Estimator Algorithms",
+    abstract:
+      "Embedded microcontroller firmware and electrochemical estimation algorithms governing synchronous AC-to-DC bus matching and dual-pack balancing thresholds, maintained internally as confidential engineering know-how.",
+    status: "Confidential Engineering Know-How",
+    category: "Control Firmware & Estimation",
+    claimsSummary: "Non-public technical documentation (NDA Data Room)",
+    filingDate: "Ongoing R&D",
+    designObjective:
+      "Maintained as proprietary software/firmware know-how for battery state monitoring and switching control.",
   },
 ];
 
 export const RND_METRICS = {
-  totalSimulatedKm: "2,450,000+ (Simulated)",
-  dynamometerTestHours: "8,600 hrs (Lab Rig)",
-  energyEfficiencyGainPct: "32.8% (Simulated Lab Test)",
-  patentsFiled: "Indian Patent App No. 202511050655 • [PCT details pending]",
-  prototypeStage: "TRL 3/4 (Laboratory Simulation & Proof-of-Concept Test Bench)",
-  labFacilities: "Bengaluru Deep-Tech R&D Facility & Automotive Testing Ground",
+  totalSimulatedKm: "Computer simulation duty cycles (Numerical Model)",
+  dynamometerTestHours: "Stage 1 ACM Lab Rig Testing (Bench Validation Stage)",
+  energyEfficiencyGainPct: "Simulation model target (Independent track validation pending)",
+  patentsFiled: PATENT_STATEMENT,
+  prototypeStage: "TRL 3/4 (ACM Lab Bench; Bus Switcher in Simulation; Vehicle in CAD/CFD)",
+  labFacilities: "R&D Engineering Workbench & Digital Simulation Environment",
 };
 
 export const INVESTOR_METRICS = {
-  tamIndianEvTransition: "$50 Billion+ (by 2030 across 2W/4W/Commercial)",
-  targetSegmentSam: "$12.4 Billion (Premium Passenger & Fleet Logistics)",
-  currentRound: "Seed / Pre-Series A ($3.5M - $5.0M Target)",
-  leadInvestorStatus: "Term Sheet Negotiations in Progress",
-  prototypeMilestone: "Functional Track Demonstrator Completed",
-  projectedGrossMargin: "28.5% at Phase 2 Production Scale",
-  breakEvenTimeline: "Month 26 Post Series-A Deployment",
+  tamIndianEvTransition:
+    "Targeting India's expanding commercial & passenger EV market (Cited source/year pending: TODO_FOUNDER_EVIDENCE)",
+  targetSegmentSam:
+    "Commercial fleet & intercity passenger EV segment (Assumptions unaudited)",
+  currentRound: "Seed Round Seeking Capital (Subject to change; not an offer of securities)",
+  leadInvestorStatus: "Early-Stage Capital Raising (TODO_FOUNDER_VERIFY)",
+  prototypeMilestone: "TRL 3/4 Stage 1 ACM Bench Rig (Vehicle Chassis in CAD Concept Stage)",
+  projectedGrossMargin: "28.5% (Illustrative Phase-2 gross-margin assumption — not a financial forecast)",
+  breakEvenTimeline: "Management internal target model (Unaudited — TODO_FOUNDER_EVIDENCE)",
 };
 
 export const DEALER_TIERS = [
   {
     id: "flagship",
     name: "Tier 1: Flagship Experience Center",
-    minSpaceSqFt: "4,500 - 8,000 sq.ft",
+    minSpaceSqFt: "4,500 - 8,000 sq.ft (Target Format)",
     minInvestmentInr: 25000000,
-    annualRoiProjection: "32% - 40%",
+    annualRoiProjection: "Illustrative target model (Unaudited)",
     features: [
-      "Exclusive Metro Territory Rights",
-      "State-of-the-art 3D Holographic Configurator Lounge",
-      "Full 4-Bay Self Volt Certified Service Center",
-      "Priority Allocation on StarCraft GT & StarPulse SUV",
-      "Direct Factory Engineering Hotline & Dedicated Spares Depot",
+      "Proposed Metro Territory Allocation (Subject to Agreement)",
+      "3D Configurator Customer Experience Lounge",
+      "Authorized High-Voltage Service & Diagnostic Bays (Planned)",
+      "Priority Model Demonstration Slot (Post-Homologation)",
+      "Dedicated Factory Technical Support Channel",
     ],
   },
   {
     id: "regional",
     name: "Tier 2: Regional Sales & Service Hub",
-    minSpaceSqFt: "2,500 - 4,000 sq.ft",
+    minSpaceSqFt: "2,500 - 4,000 sq.ft (Target Format)",
     minInvestmentInr: 12500000,
-    annualRoiProjection: "28% - 35%",
+    annualRoiProjection: "Illustrative target model (Unaudited)",
     features: [
-      "Tier 2/3 District Exclusive Operating License",
-      "3-Car Display Showroom & Customer Delivery Bay",
-      "2-Bay Quick Service & High-Voltage Diagnosis Station",
-      "Fleet Support Agreement for Commercial Logistics",
-      "Comprehensive Digital CRM & Lead Generation Support",
+      "Proposed District Territory Format",
+      "Vehicle Display Showroom & Delivery Bay",
+      "Quick Service & High-Voltage Diagnostic Station (Planned)",
+      "Commercial Fleet Support Framework",
+      "Integrated CRM & Lead Allocation Support",
     ],
   },
   {
     id: "service-node",
     name: "Tier 3: Authorized Self-Volt Service Node",
-    minSpaceSqFt: "1,200 - 2,000 sq.ft",
+    minSpaceSqFt: "1,200 - 2,000 sq.ft (Target Format)",
     minInvestmentInr: 5000000,
-    annualRoiProjection: "35% - 48%",
+    annualRoiProjection: "Illustrative target model (Unaudited)",
     features: [
-      "High Margin After-Sales & Battery Health Re-Certification",
-      "Certified High-Voltage BRC Diagnostic Toolkits",
-      "Rapid Warranty & Insurance Claim Processing Pipeline",
-      "Annual Maintenance Contract (AMC) Revenue Share",
+      "After-Sales & Battery Health Diagnostic Bay (Planned)",
+      "Authorized High-Voltage BRC Diagnostic Toolkits",
+      "Warranty & Service Claim Workflow Integration",
+      "Annual Maintenance Support Participation",
     ],
   },
 ];

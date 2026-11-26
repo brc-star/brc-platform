@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   PATENT_METADATA,
-  PATENT_CLAIMS_DATABASE,
-  AIS_STANDARDS,
+  TECHNICAL_DESIGN_GOALS,
+  TARGET_REGULATORY_FRAMEWORKS,
   queryPatentKnowledge,
 } from "@/lib/patent-knowledge";
 import crypto from "crypto";
@@ -12,20 +12,20 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   return NextResponse.json({
     success: true,
-    service: "BRC STAR Patent & Technical Due-Diligence RAG Engine",
-    version: "v1.0.4-LTS",
+    service: "BRC STAR Technical Architecture & Diligence Knowledge Engine",
+    version: "v1.1.0-compliant",
     metadata: PATENT_METADATA,
-    indexedClaimsCount: PATENT_CLAIMS_DATABASE.length,
-    claimsIndex: PATENT_CLAIMS_DATABASE.map((c) => ({
-      claimNumber: c.claimNumber,
-      type: c.type,
-      title: c.title,
-      metric: c.technicalMetric,
+    indexedGoalsCount: TECHNICAL_DESIGN_GOALS.length,
+    technicalDesignGoals: TECHNICAL_DESIGN_GOALS.map((g) => ({
+      id: g.id,
+      title: g.title,
+      evidenceStatus: g.evidenceStatus,
+      metric: g.designGoalMetric,
     })),
-    regulatoryCompliance: AIS_STANDARDS,
+    plannedRegulatoryTargets: TARGET_REGULATORY_FRAMEWORKS,
     auditVerificationHash: crypto
       .createHash("sha256")
-      .update(JSON.stringify(PATENT_METADATA) + PATENT_CLAIMS_DATABASE.length)
+      .update(JSON.stringify(PATENT_METADATA) + TECHNICAL_DESIGN_GOALS.length)
       .digest("hex"),
   });
 }
@@ -34,16 +34,18 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const query = typeof body.query === "string" ? body.query.trim() : "";
-    const mode = (body.mode === "investor" || body.mode === "patent_examiner")
-      ? body.mode
-      : "general";
+    const mode =
+      body.mode === "investor" || body.mode === "patent_examiner"
+        ? body.mode
+        : "general";
 
     if (!query) {
       return NextResponse.json(
         {
           success: false,
           error: "EMPTY_QUERY",
-          message: "Please provide a query regarding BRC STAR patent claims, technical architecture, or due diligence.",
+          message:
+            "Please provide a query regarding BRC STAR architecture, application status, or validation stage.",
         },
         { status: 400 }
       );
@@ -73,7 +75,7 @@ export async function POST(req: NextRequest) {
       {
         success: false,
         error: "RAG_PROCESSING_ERROR",
-        message: "Failed to process patent knowledge query.",
+        message: "Failed to process technical knowledge query.",
       },
       { status: 500 }
     );

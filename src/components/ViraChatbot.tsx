@@ -29,7 +29,7 @@ import {
   Copy,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { queryPatentKnowledge, PATENT_CLAIMS_DATABASE } from "@/lib/patent-knowledge";
+import { queryPatentKnowledge } from "@/lib/patent-knowledge";
 
 interface Message {
   id: string;
@@ -49,10 +49,10 @@ const PRESET_PROMPTS_GENERAL = [
 ];
 
 const PRESET_PROMPTS_INVESTOR = [
-  { label: "📜 Indian Patent 202511050655 Claims", query: "Break down the core independent and dependent claims of Indian Patent Application No. 202511050655." },
-  { label: "🔬 Novelty vs Tesla & Toyota", query: "What specific novel topology distinguishes Claim 1 from Tesla and Toyota prior art?" },
-  { label: "⚡ ACM +42 kW Inverter Boost", query: "How does the Alternator Control Module (ACM) achieve 98.4% efficiency across variable RPM?" },
-  { label: "🛡️ AIS-156 & Immersion Safety", query: "How does the dual-pack dielectric immersion design satisfy AIS-156 and AIS-038 standards?" },
+  { label: "📜 Patent App 202511050655 Status", query: "Summarize the filing status and public architecture of Indian Patent Application No. 202511050655." },
+  { label: "🔬 Dual-Pack vs Single-Bus", query: "How does BRC STAR architecture differ from conventional single-bus EV architectures?" },
+  { label: "⚡ ACM Bench & Recovery Physics", query: "How does the Alternator Control Module (ACM) work at Stage 1 lab validation?" },
+  { label: "🛡️ Target Safety Frameworks", query: "Which AIS safety frameworks does BRC STAR target for future homologation?" },
 ];
 
 export const ViraChatbot = () => {
@@ -68,11 +68,11 @@ export const ViraChatbot = () => {
     {
       id: "welcome-1",
       sender: "vira",
-      text: "Namaste & Welcome to BRC STAR! ⚡\n\nI am **BRC ViraBot**, equipped with the **Indian Patent Application No. 202511050655 Due-Diligence Engine**. You can ask about our proprietary dual-pack kinetic topology, vehicle specs, dealership expansion, or legal patent claims.",
+      text: "Namaste & Welcome to BRC STAR! ⚡\n\nI am **BRC ViraBot**, equipped with our **TRL 3/4 Architecture & Compliance Summary Engine** (Indian Patent Application No. 202511050655, patent-pending, not yet published). Ask about our dual-pack topology, vehicle specs, dealership expansion, or evidence status.",
       timestamp: "Just now",
       links: [
-        { label: "View Patent & IP Registry", url: "/technology/patent-ip" },
-        { label: "Configure StarCraft GT", url: "/vehicles" },
+        { label: "View IP Filing Summary", url: "/technology/patent-ip" },
+        { label: "Evidence & Status Ledger", url: "/evidence" },
         { label: "Request Investor NDA", url: "/invest/pitch-deck" },
       ],
       auditHash: "BRC-IP-VERIFIED",
@@ -167,11 +167,11 @@ export const ViraChatbot = () => {
       {
         id: `welcome-${Date.now()}`,
         sender: "vira",
-        text: "Due-Diligence Session reset. How can I assist you with BRC STAR Self Volt™ EV technology and Patent 202511050655 today?",
+        text: "Session reset. Ask me about BRC STAR's dual-pack energy recovery architecture, Indian Patent Application No. 202511050655 (patent-pending), or our evidence ledger.",
         timestamp: "Just now",
         links: [
-          { label: "View Patent & IP Registry", url: "/technology/patent-ip" },
-          { label: "Pre-Book Custom EV", url: "/pre-book" },
+          { label: "View IP Filing Summary", url: "/technology/patent-ip" },
+          { label: "Evidence & Status Ledger", url: "/evidence" },
         ],
         auditHash: "BRC-IP-VERIFIED",
       },
@@ -461,7 +461,7 @@ export const ViraChatbot = () => {
                     onChange={(e) => setInputMessage(e.target.value)}
                     placeholder={
                       botMode === "investor"
-                        ? "Ask about Claim 1, ACM inverter, AIS-156 safety..."
+                        ? "Ask about dual-pack topology, ACM rig, or patent status..."
                         : "Ask BRC ViraBot anything about BRC STAR..."
                     }
                     className="flex-1 px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 dark:bg-slate-900/90 dark:border-slate-800 dark:text-white text-xs placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-cyan-500 font-sans"
