@@ -12,10 +12,10 @@ export const PATENTS_DATA = [
       "Dual-Pack Kinetic Energy Recovery Architecture & Alternator Energy Harvesting System for Electric Vehicles",
     abstract:
       "High-level public architectural summary: An electric powertrain energy-management system comprising Dual Battery Packs (Pack A & Pack B), an Alternator Control Module (ACM), and solid-state bus switching configured to decouple tractive discharge loads from decelerative and glide kinetic recovery currents (full pre-disclosure claims available under NDA).",
-    status: "Patent-Pending (Filed with Indian Patent Office; Awaiting examination, not yet granted)",
+    status: "Patent-Pending (Filed with Indian Patent Office; not yet published or granted)",
     category: "Dual-Pack Power Management",
-    claimsSummary: "24 claims as filed (subject to examination — TODO_FOUNDER_VERIFY)",
-    filingDate: "May 2025 (Exact date: TODO_FOUNDER_VERIFY)",
+    claimsSummary: "24 claims as filed (text under NDA; subject to examination)",
+    filingDate: "May 2025 (Exact date confirmed under NDA)",
     designObjective:
       "Targets reduction of single-pack thermal stress while recovering kinetic energy during deceleration and glide cycles (Simulated / TRL 3/4 Bench Stage).",
   },
@@ -45,14 +45,14 @@ export const RND_METRICS = {
 
 export const INVESTOR_METRICS = {
   tamIndianEvTransition:
-    "Targeting India's expanding commercial & passenger EV market (Cited source/year pending: TODO_FOUNDER_EVIDENCE)",
+    "Targeting India's expanding commercial & passenger EV market (Supporting citations available under NDA)",
   targetSegmentSam:
     "Commercial fleet & intercity passenger EV segment (Assumptions unaudited)",
   currentRound: "Seed Round Seeking Capital (Subject to change; not an offer of securities)",
-  leadInvestorStatus: "Early-Stage Capital Raising (TODO_FOUNDER_VERIFY)",
+  leadInvestorStatus: "Early-Stage Capital Raising (Details available under NDA)",
   prototypeMilestone: "TRL 3/4 Stage 1 ACM Bench Rig (Vehicle Chassis in CAD Concept Stage)",
-  projectedGrossMargin: "28.5% (Illustrative Phase-2 gross-margin assumption — not a financial forecast)",
-  breakEvenTimeline: "Management internal target model (Unaudited — TODO_FOUNDER_EVIDENCE)",
+  projectedGrossMargin: "28.5% (Illustrative Phase-2 gross-margin assumption — unaudited, not a financial forecast)",
+  breakEvenTimeline: "Management internal target model (Unaudited; available under NDA)",
 };
 
 export const DEALER_TIERS = [

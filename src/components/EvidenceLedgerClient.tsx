@@ -12,6 +12,7 @@ const STATUS_FILTERS: { id: "ALL" | EvidenceStatus; label: string }[] = [
   { id: "verified", label: "Verified" },
   { id: "bench", label: "Bench-tested" },
   { id: "simulated", label: "Simulated" },
+  { id: "illustrative", label: "Illustrative" },
   { id: "target", label: "Target" },
   { id: "planned", label: "Planned" },
 ];
@@ -30,8 +31,8 @@ export function EvidenceLedgerClient() {
   return (
     <div className="space-y-8">
       {/* Status Summary KPI Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 font-mono text-center">
-        {(["verified", "bench", "simulated", "target", "planned"] as EvidenceStatus[]).map(
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 font-mono text-center">
+        {(["verified", "bench", "simulated", "illustrative", "target", "planned"] as EvidenceStatus[]).map(
           (status) => (
             <button
               key={status}
@@ -97,7 +98,8 @@ export function EvidenceLedgerClient() {
             {filteredClaims.map((claim) => (
               <tr
                 key={claim.id}
-                className="hover:bg-slate-50/70 dark:hover:bg-slate-900/40 transition-colors align-top"
+                id={claim.id}
+                className="hover:bg-slate-50/70 dark:hover:bg-slate-900/40 transition-colors align-top scroll-mt-28"
               >
                 <td className="py-4 px-4">
                   <div className="text-[10px] font-mono uppercase text-cyan-700 dark:text-cyan-400 font-semibold">

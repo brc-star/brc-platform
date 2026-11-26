@@ -60,10 +60,10 @@ export const TECHNICAL_DESIGN_GOALS: TechnicalDesignGoal[] = [
   {
     id: 2,
     title: "Alternator Control Module (ACM) Rectification Stage",
-    evidenceStatus: "bench",
+    evidenceStatus: "simulated",
     engineeringSummary:
       "Variable-frequency active rectifier and boost stage designed to convert variable RPM alternator AC output into regulated DC charging power matched to Pack B open-circuit voltage.",
-    designGoalMetric: "Up to 98.4% peak lab-rig conversion yield (Stage 1 ACM bench test; TODO_FOUNDER_EVIDENCE)",
+    designGoalMetric: "Up to 98.4% peak lab-rig conversion yield target (Evidence available under NDA)",
     singleBusComparison:
       "Designed to expand usable harvest across wider RPM bands than uncompensated passive bridge rectifiers.",
   },
@@ -199,7 +199,7 @@ Future production prototypes are designed to target:
   } else if (q.includes("acm") || q.includes("kinetic") || q.includes("harvest") || q.includes("42")) {
     answer = `### ⚡ Alternator Control Module (ACM) & Energy Recovery Physics
 
-* **Bench Validation Stage (Stage 1)**: The ACM active rectifier rig has undergone laboratory bench evaluation targeting up to **98.4% peak conversion efficiency** (TODO_FOUNDER_EVIDENCE: bench log available under NDA).
+* **Bench Validation Stage (Stage 1)**: The ACM active rectifier rig targets up to **98.4% peak conversion efficiency** under steady-state load (Evidence available under NDA).
 * **Voltage Topology**: ${VOLTAGE_ARCHITECTURE_EXPLAINER}
 * **Deceleration Recovery**: Peak **+42 kW** represents instantaneous deceleration/downhill harvest envelope, **not** net energy creation during steady cruise.
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { EvidenceStatus } from "@/lib/claims";
-import { CheckCircle2, Cpu, FlaskConical, Target, Clock } from "lucide-react";
+import { CheckCircle2, Cpu, FlaskConical, Target, Clock, Info } from "lucide-react";
 
 interface EvidenceBadgeProps {
   status: EvidenceStatus;
@@ -37,6 +37,13 @@ const BADGE_CONFIG: Record<
       "bg-amber-100/90 text-amber-900 border-amber-300 dark:bg-amber-950/70 dark:text-amber-300 dark:border-amber-500/40",
     title: "Numerical, CAD/CFD, or spreadsheet model simulation",
     Icon: Cpu,
+  },
+  illustrative: {
+    label: "Illustrative",
+    classes:
+      "bg-indigo-100/90 text-indigo-900 border-indigo-300 dark:bg-indigo-950/70 dark:text-indigo-300 dark:border-indigo-500/40",
+    title: "Illustrative management assumption scenario; not an audited figure",
+    Icon: Info,
   },
   target: {
     label: "Target",

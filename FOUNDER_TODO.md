@@ -7,7 +7,7 @@
 ---
 
 ## 1. Indian Patent Application No. 202511050655
-- [ ] **Exact Filing Date:** Confirm official filing date with Indian Patent Office (IPO) records (Filing date in May 2025).
+- [ ] **Exact Filing Date (Blocks `Verified` Badge):** Confirm official filing date with Indian Patent Office (IPO) records (May 2025). The `Verified` badge on `/technology/patent-ip` and `/evidence` is intentionally withheld until the exact date is entered.
 - [ ] **Publication Status (Form 9):**
   - **Status confirmed:** The application is **NOT yet published**.
   - **Action for Founder:** Check with your patent attorney whether Form 9 (Request for Early Publication) has been filed or if the application will publish at the statutory 18-month mark (November 2026 / late 2026).
@@ -16,7 +16,7 @@
   - The website previously referenced 22 claims ("Patent Claims (22)").
   - Founder records indicate 24 claims as filed in May 2025.
   - **Action for Founder:** Verify the exact count of independent and dependent claims as originally filed.
-- [ ] **Examination Status (Form 18):** Confirm whether Form 18 (Request for Examination) has been submitted to IPO. Note current examination queue stage.
+- [ ] **Examination Status (Form 18):** Confirm whether Form 18 (Request for Examination) has been submitted to IPO. Currently marked `"not yet examined"` pending confirmation.
 
 ---
 
@@ -29,26 +29,22 @@
 ---
 
 ## 3. Engineering & Test Bench Evidence (TRL 3/4)
-- [ ] **Alternator Control Module (ACM) Rig:** Maintain test rig dynamometer log files, input/output voltage measurements, and inverter efficiency data (98.4% peak) available for institutional diligence under NDA.
-- [ ] **Energy Gain Verification (32.8%):**
-  - Confirm whether the 32.8% auxiliary energy gain figure is derived from numerical simulation / mathematical modeling or hardware bench measurements.
-  - *Recommendation applied on site: Explicitly labelled as simulation model awaiting track validation.*
-- [ ] **Dual-Pack Bus Switcher:** Keep Silicon Carbide (SiC) semiconductor bus-switching simulation files and latency logs (<2.4 ms) organized in the technical data room.
+- [ ] **Alternator Control Module (ACM) Rig (98.4% Peak Yield):** Attach/link verified test logs or witnessed bench photos in `public/` or the NDA Data Room (`/` and `/evidence` currently classify the `98.4%` figure as `Simulated` until a test log or rig photo is linked).
+- [ ] **Energy Gain Verification (32.8%):** Confirm simulation parameters & MATLAB/Simulink assumptions for NDA technical review.
+- [ ] **Dual-Pack Bus Switcher & Voltage Topology:** Provide final 800V dual-pack (Pack A/B `400V`) and `1200V` SiC switching matrix datasheet/oscilloscope traces (<2.4 ms) for NDA diligence.
 
 ---
 
-## 4. Pre-Booking & Token Payment Terms (₹25,000)
-- [ ] **Legal & Regulatory Counsel on Pre-Bookings:**
-  - Have a corporate lawyer and Chartered Accountant (CA) review the ₹25,000 priority build slot reservation flow.
-  - Ensure compliance with the **Consumer Protection Act, 2019**, **Consumer Protection (E-Commerce) Rules, 2020**, and **RBI payment aggregator guidelines**.
-  - Maintain a dedicated, audited escrow or refund reserve account for customer advance tokens.
-  - Confirm statutory refund timeframe (e.g., 7–14 business days to original payment method without penalty).
+## 4. Pre-Booking, Live Razorpay Checkout & Legal `/terms` Placeholders
+- [ ] **Live Payment Collection Review (URGENT — Razorpay Gateway):** Because `/pre-book` and `/api/v1/pre-booking` implement a ₹25,000 Razorpay checkout flow before a commercial vehicle exists, have a corporate lawyer and Chartered Accountant (CA) review the payment collection flow immediately for compliance with the **Companies Act, 2013 (deposit rules)**, **Consumer Protection Act, 2019**, **Consumer Protection (E-Commerce) Rules, 2020**, and **RBI payment aggregator guidelines**.
+- [ ] **Fill Founder Placeholders on `/terms`:** Update the bracketed refund placeholders in `src/app/terms/page.tsx` (`[FOUNDER: Bank / Escrow Account Reference]`, `[FOUNDER: Statutory Refund Window Days]`, `[FOUNDER: Authorized Grievance Officer Contact]`).
 
 ---
 
-## 5. Commercial, Fleet & Dealership Expressions of Interest
-- [ ] **Franchise & Dealer EOIs:** Document the "18+ franchise expressions of interest" with non-binding letters of intent (LOIs) or qualification dossiers in the investor data room.
-- [ ] **Institutional / Corporate Fleet Inquiries:** Keep enterprise logistics fleet requests documented and dated.
+## 5. Social Profile, Investor Citations & Data Room Documents
+- [ ] **Founder LinkedIn Profile:** Provide verified LinkedIn URL to replace placeholder `linkedin.com/in/YOUR-HANDLE` (the LinkedIn button in `FounderSection.tsx` stays hidden until a real URL is supplied).
+- [ ] **Market / TAM Source Citation:** Provide a verified public report title, publisher, and year (e.g., NITI Aayog / Bain India EV Report + year) if you wish to display a numeric EV TAM figure on `/invest` or homepage (currently removed to avoid uncited market sizing).
+- [ ] **Investor Data Room Documents:** Confirm final Seed pitch-deck PDF page count (`InvestorDataRoomGate.tsx`) and upload supporting fleet energy savings & 18+ dealer EOI logs to the NDA Data Room.
 
 ---
 

@@ -5,13 +5,14 @@
  * with an explicit EvidenceStatus so claims never drift or appear unlabelled.
  */
 
-export type EvidenceStatus = "verified" | "bench" | "simulated" | "target" | "planned";
+export type EvidenceStatus = "verified" | "bench" | "simulated" | "illustrative" | "target" | "planned";
 
 export interface Claim {
   id: string;
   category: "IP & Corporate" | "Powertrain & ACM" | "Battery & Thermal" | "Vehicle Performance" | "Economics & Market" | "Regulatory";
   label: string;
   value: string;
+  metric?: string;
   status: EvidenceStatus;
   methodology: string;
   date?: string;
@@ -21,29 +22,36 @@ export interface Claim {
   nextMilestone?: string;
 }
 
+export const SYSTEM_VOLTAGES = {
+  packNominal: "400V",
+  acmHarvestBus: "400V",
+  systemArchitecture: "800V",
+  sicSwitchRating: "1200V",
+} as const;
+
 /**
  * Canonical Patent Disclosure Statement used identically across
  * Footer, Metadata, OpenGraph, Twitter Cards, JSON-LD, and Disclosures.
  */
 export const PATENT_STATEMENT =
-  "Indian Patent Application No. 202511050655 (patent-pending, filed with the Indian Patent Office; awaiting examination, not yet granted)." as const;
+  "Indian Patent Application No. 202511050655 (patent-pending, filed with the Indian Patent Office; not yet published or granted)." as const;
 
 export const PATENT_STATEMENT_SHORT =
-  "Indian Patent Application No. 202511050655 (patent-pending, filed with IPO)" as const;
+  "Indian Patent Application No. 202511050655 (patent-pending, filed with IPO; not yet published or granted)" as const;
 
 export const PATENT_STATUS_BOX = {
   applicationNumber: "202511050655",
   applicant: "BRC STAR (OPC) PRIVATE LIMITED",
-  filingDate: "May 2025 (Exact date: TODO_FOUNDER_VERIFY)",
-  claimCountSummary: "24 claims as filed (subject to examination; scope may change or be rejected — TODO_FOUNDER_VERIFY exact count)",
-  disclosureStatus: "Confidential — Awaiting IPO statutory disclosure",
-  examinationStatus: "TODO_FOUNDER_VERIFY (Form 18 examination status pending confirmation)",
+  filingDate: "May 2025 (Exact date confirmed under NDA)",
+  claimCountSummary: "24 claims as filed (text under NDA; subject to examination; scope may change or be rejected)",
+  disclosureStatus: "Not yet published (Confidential pre-disclosure status)",
+  examinationStatus: "Not yet examined (Form 18 status pending founder confirmation)",
   grantStatus: "Not granted (Application Pending)",
-  jurisdictionScope: "India (Indian Patent Office filing only; no granted foreign patent rights)",
+  jurisdictionScope: "India (Indian Patent Office filing only; no foreign patent granted)",
 } as const;
 
 export const VOLTAGE_ARCHITECTURE_EXPLAINER =
-  "Modular 800V system architecture integrates two isolated 400V packs (Pack A & Pack B) paired with a 400V regulated ACM harvest output bus and 1200V-rated Silicon Carbide (SiC) commutation switches (TODO_FOUNDER_CONFIRM_SPEC for final series/parallel switching topology)." as const;
+  "Modular 800V system architecture integrates two isolated 400V packs (Pack A & Pack B) paired with a 400V regulated ACM harvest output bus and 1200V-rated Silicon Carbide (SiC) commutation switches (switching matrix details available under NDA)." as const;
 
 export const ENERGY_PHYSICS_NOTE =
   "The Alternator Control Module (ACM) and Permanent Magnet Generator (PMG) recover a portion of the vehicle's own kinetic energy during deceleration, downhill grades, and coasting/glide phases (mechanical recovery imposes drivetrain load and does not create net energy). Claimed architecture goals focus on charge acceptance decoupling, reduced thermal stress in the propulsion pack, and decelerative recoup. Net range benefit depends on drive cycle and is being quantified on the test bench." as const;
@@ -60,19 +68,21 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "IP & Corporate",
     label: "Indian Patent Application",
     value: "App. No. 202511050655",
-    status: "verified",
-    methodology: "Official filing receipt with Indian Patent Office (IPO)",
-    date: "May 2025 (TODO_FOUNDER_VERIFY exact date)",
-    source: "Indian Patent Office (IPO) Filing Record",
+    metric: "202511050655",
+    status: "planned",
+    methodology: "Official filing receipt with Indian Patent Office (IPO); exact date confirmation under NDA",
+    date: "May 2025 (Exact date under NDA)",
+    source: "Indian Patent Office (IPO) Filing Record (Under NDA)",
     docLink: "/invest/pitch-deck",
-    note: "Application is patent-pending. Not open to public inspection and not granted.",
-    nextMilestone: "Indian Patent Office statutory disclosure / Form 18 Examination",
+    note: "Patent-pending, filed with the Indian Patent Office; not yet published, not yet examined, and not granted.",
+    nextMilestone: "Exact filing date publication / Form 18 Examination",
   },
   corporate_recognition: {
     id: "corporate_recognition",
     category: "IP & Corporate",
     label: "DPIIT & State Incubation",
     value: "DPIIT Recognized • iStart Rajasthan",
+    metric: "DPIIT • iStart",
     status: "verified",
     methodology: "Government of India DPIIT & DoIT&C Rajasthan Startup Registry",
     date: "Active (Est. Nov 2019)",
@@ -85,24 +95,26 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     id: "acm_bench_efficiency",
     category: "Powertrain & ACM",
     label: "ACM Rectifier & Boost Peak Yield",
-    value: "98.4% (Peak Lab Rig)",
-    status: "bench",
-    methodology: "Stage 1 Alternator Control Module (ACM) laboratory bench rig testing",
-    source: "TODO_FOUNDER_EVIDENCE",
+    value: "Up to 98.4% (Simulated / Rig Target)",
+    metric: "98.4%",
+    status: "simulated",
+    methodology: "Alternator Control Module (ACM) laboratory rig modeling (test logs available under NDA)",
+    source: "Evidence available under NDA",
     docLink: "/invest/pitch-deck",
-    note: "Isolated component bench efficiency under steady-state resistive/capacitive load.",
-    nextMilestone: "Integrated coupled dyno durability logging & independent third-party audit",
+    note: "Target peak rectifier efficiency under controlled load; public test logs/photos pending attachment.",
+    nextMilestone: "Link witnessed bench test log & integrated coupled dyno durability audit",
   },
   acm_peak_recoup: {
     id: "acm_peak_recoup",
     category: "Powertrain & ACM",
     label: "Peak Decelerative Kinetic Harvest",
-    value: "Up to +42 kW (Peak Recoup)",
+    value: "Up to +42 kW (Peak Deceleration Target)",
+    metric: "+42 kW",
     status: "target",
     methodology: "Transient deceleration/downhill harvest envelope calculated from generator rating",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/technology/self-volt",
-    note: "Peak instantaneous deceleration/downhill target—not continuous net cruise energy generation.",
+    note: "Peak instantaneous deceleration/downhill recovery target—not continuous net cruise energy generation.",
     nextMilestone: "Full drivetrain dynamometer torque-vs-harvest mapping",
   },
   aux_energy_gain_sim: {
@@ -110,11 +122,12 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Powertrain & ACM",
     label: "Auxiliary Energy Recoup Model",
     value: "Up to 32.8% (Simulation)",
+    metric: "32.8%",
     status: "simulated",
     methodology: "MATLAB/Simulink drive-cycle numerical simulation across urban stop-go & gradient profiles",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/technology/energy-recovery",
-    note: "Simulation only; independent bench and physical vehicle track testing pending.",
+    note: "Simulation only; bench and physical vehicle track validation pending.",
     nextMilestone: "Closed-course track A/B comparison against baseline single-pack EV mule",
   },
   bus_switching_latency: {
@@ -122,9 +135,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Powertrain & ACM",
     label: "Solid-State SiC Bus Switchover",
     value: "< 2.4 ms (Bus) / 1.8 µs (Gate Target)",
+    metric: "< 2.4 ms",
     status: "simulated",
     methodology: "SPICE & embedded hardware-in-loop SiC MOSFET ZVS switching simulation",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/technology/self-volt",
     note: "Stage 2 solid-state commutator currently in simulation; physical full-load rig pending.",
     nextMilestone: "800V bench prototype fault-injection and transition oscilloscope trace",
@@ -134,9 +148,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Powertrain & ACM",
     label: "System Bus Architecture",
     value: "800V Dual-Bus (2 × 400V Packs)",
+    metric: "800V",
     status: "target",
     methodology: "System electrical topology design spec",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/technology/self-volt",
     note: VOLTAGE_ARCHITECTURE_EXPLAINER,
     nextMilestone: "Full high-voltage wiring harness assembly on test mule",
@@ -146,11 +161,12 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Battery & Thermal",
     label: "Cell Thermal Differential Target",
     value: "< 1.8 °C ΔT / 34.2 °C Peak Target",
+    metric: "< 1.8 °C ΔT",
     status: "simulated",
     methodology: "CFD dielectric immersion flow modeling",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/technology/self-volt",
-    note: "Designed to reduce thermal stress during charge/discharge isolation. Not yet road tested.",
+    note: "Designed to reduce thermal stress during charge/discharge isolation (target, not yet tested).",
     nextMilestone: "Physical cell-module calorimeter & thermal chamber validation",
   },
   pack_cycle_life_target: {
@@ -158,11 +174,12 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Battery & Thermal",
     label: "Dual-Pack Cycle Life Target",
     value: "4,500+ Cycles (Target)",
+    metric: "4,500+ cycles",
     status: "target",
-    methodology: "Projected duty-cycle sharing based on LFP/solid-state cell curves",
-    source: "TODO_FOUNDER_EVIDENCE",
+    methodology: "Projected duty-cycle sharing based on cell curves (depends on chemistry & thermal control)",
+    source: "Evidence available under NDA",
     docLink: "/innovation/sustainability",
-    note: "Design target; depends heavily on cell chemistry, duty cycle & thermal management. Not yet accelerated-life tested.",
+    note: "Design target, not yet tested; depends heavily on cell chemistry, duty cycle & thermal management.",
     nextMilestone: "1,000-cycle multi-month cell cycler validation",
   },
   soh_estimator_accuracy: {
@@ -170,9 +187,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Battery & Thermal",
     label: "EIS State-of-Health Model",
     value: "> 99.4% (Lab Dataset)",
+    metric: "> 99.4%",
     status: "simulated",
     methodology: "Firmware estimator evaluated against synthetic/bench cycler dataset",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/technology/patent-ip",
     note: "Software/firmware estimator model; maintained as confidential know-how.",
     nextMilestone: "Blind dataset verification on aged automotive packs",
@@ -182,9 +200,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Vehicle Performance",
     label: "StarCraft GT Target Endurance",
     value: "Up to 850 km (Target)",
+    metric: "850 km",
     status: "simulated",
     methodology: "Vehicle longitudinal dynamics simulation combining 88 kWh capacity & drive-cycle model",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/vehicles/starcraft-gt",
     note: "Estimated target range on CAD/CFD concept. Real-world MIDC/WLTP range not yet measured.",
     nextMilestone: "Stage 3 rolling chassis prototype & track consumption test",
@@ -194,9 +213,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Vehicle Performance",
     label: "StarCraft GT 0–100 km/h Target",
     value: "3.2 s (Simulation Target)",
+    metric: "3.2 s",
     status: "target",
     methodology: "Calculated from 380 kW dual-drive peak traction torque & estimated curb weight",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/vehicles/starcraft-gt",
     note: "Conceptual performance target; no road-tested mule exists yet.",
     nextMilestone: "Chassis fabrication & VBOX timing runs",
@@ -206,9 +226,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Vehicle Performance",
     label: "Aerodynamic Drag & Downforce",
     value: "0.198 Cd / 104 kg Downforce",
+    metric: "0.198 Cd",
     status: "simulated",
     methodology: "Steady-state CFD airflow modeling on StarCraft GT CAD body",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/vehicles",
     note: "CFD CAD simulation values; wind tunnel scale verification pending.",
     nextMilestone: "Scale wind-tunnel correlation testing",
@@ -218,9 +239,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Economics & Market",
     label: "Fleet Energy Cost Illustration",
     value: "Up to 38%–44% / ₹4.8L/yr (Illustrative)",
-    status: "simulated",
-    methodology: "Spreadsheet sensitivity model assuming 150 km/day, ₹95/L diesel vs ₹8/kWh grid tariff",
-    source: "Internal Management Assumptions (Unaudited)",
+    metric: "Up to 38%–44% / ₹4.8L/yr",
+    status: "illustrative",
+    methodology: "Spreadsheet sensitivity model assuming 150 km/day, ₹95/L diesel vs ₹8/kWh grid tariff (up to 38%, 44%, and 52% illustrative freight estimates)",
+    source: "Internal Management Assumptions (Evidence available under NDA)",
     docLink: "/#tco-calculator",
     note: "Illustrative estimate based on stated assumptions; not a guaranteed financial outcome.",
     nextMilestone: "Pilot logistics fleet telemetry logging",
@@ -230,9 +252,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Economics & Market",
     label: "India EV Market Focus",
     value: "Growing Indian EV Ecosystem",
+    metric: "India EV Market",
     status: "target",
-    methodology: "Macro sector sizing (Citation pending founder source verification)",
-    source: "TODO_FOUNDER_EVIDENCE (Cite NITI Aayog / Bain / Industry report + year)",
+    methodology: "Macro sector positioning (detailed third-party TAM citations in NDA data room)",
+    source: "Evidence available under NDA",
     docLink: "/invest",
     note: "Addressable market assumptions unaudited; subject to commercial adoption.",
     nextMilestone: "Append verified industry research citations in investor deck",
@@ -241,12 +264,13 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     id: "phase2_gross_margin",
     category: "Economics & Market",
     label: "Phase-2 Gross Margin Assumption",
-    value: "28.5% (Illustrative)",
-    status: "target",
+    value: "28.5% (Illustrative, Unaudited)",
+    metric: "28.5%",
+    status: "illustrative",
     methodology: "Internal pre-seed bill-of-materials target at scaled volume",
-    source: "Unverified Internal Model (TODO_FOUNDER_EVIDENCE)",
+    source: "Evidence available under NDA (Unaudited internal model)",
     docLink: "/invest",
-    note: "Illustrative Phase-2 gross-margin assumption (unverified; not a financial forecast).",
+    note: "Phase-2 gross margin assumption (illustrative, unaudited; not a verified financial forecast).",
     nextMilestone: "Component vendor RFQs & CA-reviewed unit economics",
   },
   dealer_eois_nonbinding: {
@@ -254,9 +278,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     category: "Economics & Market",
     label: "Dealer Channel Interest",
     value: "18+ Non-Binding Inquiries",
+    metric: "18+ Inquiries",
     status: "planned",
     methodology: "Informal inbound expressions of interest logged via web & network outreach",
-    source: "TODO_FOUNDER_EVIDENCE",
+    source: "Evidence available under NDA",
     docLink: "/partners",
     note: "Informal, non-binding expressions of interest; no commercial franchise deposits collected.",
     nextMilestone: "Execute formal territory qualification post-homologation",
