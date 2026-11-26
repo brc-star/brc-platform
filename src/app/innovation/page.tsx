@@ -1,17 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import { Cpu, Leaf, Newspaper, ArrowRight, ShieldCheck, CheckCircle2, Zap } from "lucide-react";
-import { RND_METRICS } from "@/lib/data";
+import { Cpu, Leaf, Newspaper, ArrowRight } from "lucide-react";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
   title: "Innovation & R&D Hub | BRC STAR Self Volt EV",
-  description: "BRC STAR innovation ecosystem: advanced EV simulation rigs, ESG sustainability roadmap, battery circularity, and official press releases.",
+  description:
+    "BRC STAR innovation ecosystem: TRL 3/4 bench and simulation research, ESG sustainability targets, and corporate announcements.",
   alternates: {
     canonical: "https://www.brcstar.in/innovation",
   },
   openGraph: {
     title: "Innovation & R&D Hub | BRC STAR",
-    description: "BRC STAR innovation ecosystem and engineering simulation labs.",
+    description: "BRC STAR innovation ecosystem and engineering simulation research.",
     url: "https://www.brcstar.in/innovation",
     type: "website",
   },
@@ -20,28 +21,28 @@ export const metadata = {
 export default function InnovationOverviewPage() {
   const innovationModules = [
     {
-      title: "R&D & Simulation Labs",
+      title: "R&D & Test Bench Research",
       href: "/innovation/rnd",
-      badge: "TRL 3/4 Test Bench",
+      badge: "TRL 3/4 Stage",
       icon: Cpu,
-      desc: "Dynamometer test rigs, hardware-in-the-loop (HIL) battery simulation, and computational fluid dynamics (CFD) optimization.",
-      metrics: "8,600+ Dynamometer Test Hours (Simulated Rig)",
+      desc: "Stage 1 ACM bench evaluation, hardware simulation modeling, and dual-pack thermal engineering design.",
+      metrics: "TRL 3/4 Workbench & Numerical Simulation",
     },
     {
       title: "Sustainability & Circular ESG",
       href: "/innovation/sustainability",
-      badge: "Net-Zero Lifecycle Target",
+      badge: "Design Targets",
       icon: Leaf,
-      desc: "Closed-loop battery second-life utilization, zero-emission supply chains, and circular recycling protocols.",
-      metrics: "3.2 MT CO₂ Prevented / Vehicle / Yr (Projected)",
+      desc: "Planned battery second-life stewardship and pack-longevity thermal management targets.",
+      metrics: "Target Lifecycle Durability (Unverified)",
     },
     {
       title: "News & Media Center",
       href: "/innovation/news",
-      badge: "Press Announcements",
+      badge: "Announcements",
       icon: Newspaper,
-      desc: "Official corporate news, press statements, leadership updates, and downloadable brand media kit.",
-      metrics: "Official Newsroom & Media Kit",
+      desc: "Official corporate updates, patent-pending filing notices, and exploratory pilot announcements.",
+      metrics: "Company Disclosures",
     },
   ];
 
@@ -54,10 +55,10 @@ export default function InnovationOverviewPage() {
           <span>04 INNOVATION ECOSYSTEM</span>
         </div>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-          Pioneering the Frontiers of Deep-Tech Clean Mobility
+          Transparent Engineering for Clean Mobility
         </h1>
         <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-          From high-fidelity dynamometer simulations in Bengaluru to circular battery lifecycle stewardship and global media transparency.
+          From TRL 3/4 bench and numerical simulations in Rajasthan to battery circularity planning and corporate reporting.
         </p>
       </div>
 
@@ -89,7 +90,7 @@ export default function InnovationOverviewPage() {
                 </p>
 
                 <div className="pt-2 text-xs font-mono text-cyan-400 border-t border-slate-800/80">
-                  Key Focus: <strong>{module.metrics}</strong>
+                  Focus: <strong>{module.metrics}</strong>
                 </div>
               </div>
 
@@ -104,6 +105,8 @@ export default function InnovationOverviewPage() {
           );
         })}
       </div>
+
+      <ClaimDisclaimer />
     </div>
   );
 }

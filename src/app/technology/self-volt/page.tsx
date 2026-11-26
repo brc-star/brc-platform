@@ -1,8 +1,25 @@
 import React from "react";
 import Link from "next/link";
-import { Zap, Shield, Cpu, Activity, BatteryCharging, ArrowRight, CheckCircle2, ChevronRight, Gauge } from "lucide-react";
+import {
+  Zap,
+  Cpu,
+  Activity,
+  BatteryCharging,
+  ArrowRight,
+  ChevronRight,
+  Gauge,
+  Info,
+} from "lucide-react";
 import { SelfVoltVisualizer } from "@/components/SelfVoltVisualizer";
 import { ResponsiveTable } from "@/components/ResponsiveTable";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
+import {
+  PATENT_STATEMENT_SHORT,
+  VOLTAGE_ARCHITECTURE_EXPLAINER,
+  ENERGY_PHYSICS_NOTE,
+  CLAIMS_REGISTRY,
+} from "@/lib/claims";
 
 export const metadata = {
   title: "Self Volt Architecture | Dual-Pack Kinetic Recovery",
@@ -13,7 +30,8 @@ export const metadata = {
   },
   openGraph: {
     title: "Self Volt Architecture | BRC STAR",
-    description: "Dual-Pack kinetic energy recovery and dynamic switching architecture.",
+    description:
+      "Dual-Pack kinetic energy recovery and dynamic switching architecture.",
     url: "https://www.brcstar.in/technology/self-volt",
   },
 };
@@ -24,9 +42,13 @@ export default function SelfVoltArchitecturePage() {
       {/* Breadcrumb & Header */}
       <div className="space-y-4">
         <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
-          <Link href="/" className="hover:text-cyan-400">Home</Link>
+          <Link href="/" className="hover:text-cyan-400">
+            Home
+          </Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <Link href="/technology" className="hover:text-cyan-400">Technology</Link>
+          <Link href="/technology" className="hover:text-cyan-400">
+            Technology
+          </Link>
           <ChevronRight className="w-3.5 h-3.5" />
           <span className="text-cyan-400">Self Volt Architecture</span>
         </div>
@@ -34,13 +56,42 @@ export default function SelfVoltArchitecturePage() {
         <div className="max-w-4xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-xs font-mono text-cyan-300">
             <Zap className="w-3.5 h-3.5 text-cyan-400" />
-            <span>INDIAN PATENT APP NO. 202511050655 • KINETIC RECOVERY</span>
+            <span>{PATENT_STATEMENT_SHORT}</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Self Volt: Kinetic Energy Recovery Architecture
+            Self Volt: Dual-Pack Kinetic Energy Recovery Architecture
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Conventional electric vehicles draw from a single battery pack until depletion. The BRC STAR Self Volt powertrain couples an auxiliary Permanent Magnet Generator (PMG) and Alternator Control Module (ACM) with an isolated dual-pack system, dynamically harvesting kinetic momentum into secondary cells to improve overall system efficiency. Figures simulated/lab-validated; real-world results vary.
+            Conventional electric vehicles route traction discharge and regeneration onto a single battery pack. BRC STAR evaluates pairing an auxiliary Permanent Magnet Generator (PMG) and Alternator Control Module (ACM) with an isolated dual-pack bus, directing deceleration and glide kinetic recovery into secondary reserve cells.
+          </p>
+        </div>
+      </div>
+
+      {/* Voltage Architecture & Physics Clarity Disclosures */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-1.5 text-xs font-mono">
+          <div className="flex items-center justify-between text-cyan-400 font-bold">
+            <span className="flex items-center gap-1.5">
+              <Info className="w-3.5 h-3.5" />
+              <span>Voltage Architecture Clarification</span>
+            </span>
+            <EvidenceBadge status="target" />
+          </div>
+          <p className="text-slate-300 font-sans leading-relaxed">
+            {VOLTAGE_ARCHITECTURE_EXPLAINER}
+          </p>
+        </div>
+
+        <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-1.5 text-xs font-mono">
+          <div className="flex items-center justify-between text-amber-400 font-bold">
+            <span className="flex items-center gap-1.5">
+              <Zap className="w-3.5 h-3.5" />
+              <span>Energy Recovery Physics Note</span>
+            </span>
+            <EvidenceBadge status="bench" />
+          </div>
+          <p className="text-slate-300 font-sans leading-relaxed">
+            {ENERGY_PHYSICS_NOTE}
           </p>
         </div>
       </div>
@@ -62,17 +113,17 @@ export default function SelfVoltArchitecturePage() {
                 <BatteryCharging className="w-4 h-4" />
                 <span>MODULE 01</span>
               </span>
-              <span>400V + 400V Topology</span>
+              <EvidenceBadge status={CLAIMS_REGISTRY.dual_bus_architecture.status} />
             </div>
             <h3 className="text-lg font-bold text-white">
               Dual-Pack (A/B) Matrix Isolation
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Splitting the total battery capacity into two synchronized 400V sub-packs allows one pack to supply propulsion discharge while the secondary pack receives high-amp kinetic recharge without simultaneous bi-directional thermal stress.
+              Dividing storage capacity into two isolated 400V packs allows Pack A to supply traction discharge while Pack B receives decelerative/glide kinetic recovery, designed to reduce thermal stress compared with simultaneous bi-directional cycling on a single pack.
             </p>
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>• Solid-state sub-millisecond bus switching</div>
-              <div>• Immersion dielectric liquid thermal balance</div>
+              <div>• Solid-state bus switching (&lt; 2.4 ms simulated)</div>
+              <div>• Dielectric liquid thermal isolation concept (Simulated)</div>
             </div>
           </div>
 
@@ -83,17 +134,17 @@ export default function SelfVoltArchitecturePage() {
                 <Cpu className="w-4 h-4" />
                 <span>MODULE 02</span>
               </span>
-              <span>98.4% Efficiency</span>
+              <EvidenceBadge status={CLAIMS_REGISTRY.acm_bench_efficiency.status} />
             </div>
             <h3 className="text-lg font-bold text-white">
               Alternator Control Module (ACM)
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Silicon-Carbide (SiC) high-frequency switching inverter that regulates wild AC generation from the kinetic PMG into ripple-free high-voltage DC current calibrated to the exact electrochemical acceptance of the receiving battery pack.
+              Silicon-Carbide (SiC) active rectifier and boost stage targeting up to 98.4% peak lab-rig conversion efficiency (Stage 1 ACM bench test; TODO_FOUNDER_EVIDENCE), regulating variable AC generator input into a controlled 400V DC bus matching Pack B.
             </p>
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>• 1200V Silicon-Carbide MOSFET array</div>
-              <div>• Adaptive impedance matching algorithms</div>
+              <div>• 1200V-rated Silicon-Carbide MOSFET stage</div>
+              <div>• Adaptive impedance matching algorithms (Confidential know-how)</div>
             </div>
           </div>
 
@@ -104,17 +155,17 @@ export default function SelfVoltArchitecturePage() {
                 <Activity className="w-4 h-4" />
                 <span>MODULE 03</span>
               </span>
-              <span>760 Nm Peak Torque</span>
+              <EvidenceBadge status={CLAIMS_REGISTRY.accel_starcraft_gt.status} />
             </div>
             <h3 className="text-lg font-bold text-white">
               Bidirectional Drive Assist (BDA)
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Controls torque handoff and parallel high-load discharge. When maximum acceleration is demanded, BDA commands simultaneous parallel discharge from both Pack A and Pack B for instantaneous 0-100 km/h in 3.2 seconds.
+              Designed to coordinate torque handoff and parallel discharge. Under peak acceleration demand, BDA commands parallel draw from Pack A and Pack B, targeting 0–100 km/h in 3.2 s on the StarCraft GT concept (simulation target; not yet track-tested).
             </p>
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>• Real-time vector torque distribution</div>
-              <div>• Zero-jitter electronic transition</div>
+              <div>• Parallel torque discharge coordination target</div>
+              <div>• Electronic bus transition control (Simulation)</div>
             </div>
           </div>
 
@@ -125,56 +176,59 @@ export default function SelfVoltArchitecturePage() {
                 <Gauge className="w-4 h-4" />
                 <span>MODULE 04</span>
               </span>
-              <span>Low-Drag Rotational Link</span>
+              <EvidenceBadge status="target" />
             </div>
             <h3 className="text-lg font-bold text-white">
               Permanent Magnet Kinetic Harvester
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Custom neodymium rare-earth magnetic rotor coupled directly to driveline inertia. Proprietary magnetic tooth phasing eliminates the drag penalty typical of industrial generators when operating in glide regimes.
+              Neodymium magnetic rotor coupled to driveline inertia. Proprietary stator/tooth geometry is designed to reduce drag in glide mode (target). Net range benefit depends on drive cycle and is being quantified on the test bench.
             </p>
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>• 74% reduction in parasitic mechanical drag</div>
-              <div>• Dual axle harvesting on heavy commercial platforms</div>
+              <div>• Target parasitic drag minimization during free-glide</div>
+              <div>• Multi-stage deceleration &amp; downhill kinetic recoup</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Comparative Technical Benchmark Table */}
-      <ResponsiveTable caption="Comparative Architecture Benchmark Matrix">
+      {/* Comparative Architecture Design Targets Table */}
+      <ResponsiveTable caption="Architectural Comparison (Design Targets — Subject to Prototype Validation)">
         <table className="w-full text-xs font-mono text-left">
           <thead>
             <tr className="border-b border-slate-800 text-slate-400 uppercase">
-              <th className="py-3 px-4">Performance Parameter</th>
+              <th className="py-3 px-4">Engineering Parameter</th>
               <th className="py-3 px-4 text-slate-400">Conventional Single-Pack EV</th>
-              <th className="py-3 px-4 text-cyan-400 bg-cyan-950/40">BRC STAR Self Volt</th>
+              <th className="py-3 px-4 text-cyan-400 bg-cyan-950/40">BRC STAR Self Volt (Target / Simulated)</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60 text-slate-300">
             <tr>
-              <td className="py-3 px-4 font-bold text-white">Highway Range Degradation</td>
-              <td className="py-3 px-4">Drops 30% - 40% at &gt;100 km/h</td>
-              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">Minimized (-8%) due to PMG glide harvest</td>
+              <td className="py-3 px-4 font-bold text-white">Highway Speed Efficiency</td>
+              <td className="py-3 px-4">Single pack supplies traction + absorbs all regen</td>
+              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">
+                Simulated dual-pack buffering target (Net drive-cycle gain under bench test)
+              </td>
             </tr>
             <tr>
               <td className="py-3 px-4 font-bold text-white">Battery Cycle Life</td>
-              <td className="py-3 px-4">1,500 - 2,000 cycles</td>
-              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">4,500+ cycles (Dual-Pack load distribution)</td>
+              <td className="py-3 px-4">Chemistry &amp; thermal dependent (1,500–3,000+ LFP/NMC)</td>
+              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">
+                Design target: 4,500+ cycles (depends on chemistry, duty cycle &amp; thermal management; not yet tested)
+              </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 font-bold text-white">Kinetic Recoup Channel</td>
-              <td className="py-3 px-4">Braking events only</td>
-              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">Continuous (Glide + Deceleration + Dual-Axle)</td>
-            </tr>
-            <tr>
-              <td className="py-3 px-4 font-bold text-white">Thermal Runaway Risk</td>
-              <td className="py-3 px-4">Higher under simultaneous regen surges</td>
-              <td className="py-3 px-4 font-bold text-emerald-400 bg-cyan-950/20">Sub-divided pack isolation with dielectric liquid</td>
+              <td className="py-3 px-4 font-bold text-white">Kinetic Recovery Regime</td>
+              <td className="py-3 px-4">Traction motor regenerative braking</td>
+              <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">
+                Deceleration, downhill &amp; glide recoup routed to isolated Pack B
+              </td>
             </tr>
           </tbody>
         </table>
       </ResponsiveTable>
+
+      <ClaimDisclaimer />
 
       {/* Next Actions CTA */}
       <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-2xl bg-cyan-950/40 border border-cyan-500/30">
@@ -183,7 +237,7 @@ export default function SelfVoltArchitecturePage() {
             Explore Next: Energy Recovery &amp; PMG Dynamics
           </h4>
           <p className="text-xs text-slate-300">
-            Dive into the electromechanical equations governing permanent magnet kinetic recoup.
+            Examine decelerative recovery regimes and real-time bench instrumentation concepts.
           </p>
         </div>
         <Link

@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { Zap, Layers, Shield, Cpu, Gauge, BatteryCharging, ArrowRight, RefreshCw, Sparkles, CheckCircle2 } from "lucide-react";
+import { Zap, Layers, Shield, Cpu, ArrowRight, CheckCircle2 } from "lucide-react";
+import { PATENT_STATEMENT } from "@/lib/claims";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 const SelfVoltVisualizer = dynamic(
   () => import("@/components/SelfVoltVisualizer").then((mod) => mod.SelfVoltVisualizer),
@@ -16,13 +18,13 @@ const SelfVoltVisualizer = dynamic(
 
 export const metadata = {
   title: "Technology & Engineering Pillars | BRC STAR Self Volt EV",
-  description: "Explore BRC STAR's deep-tech engineering: Self-Volt dual-pack kinetic energy recovery, Alternator Control Modules, and Indian Patent Application No. 202511050655.",
+  description: `Explore BRC STAR's TRL 3/4 R&D engineering: Self-Volt dual-pack kinetic energy recovery, Alternator Control Modules, and ${PATENT_STATEMENT}`,
   alternates: {
     canonical: "https://www.brcstar.in/technology",
   },
   openGraph: {
     title: "Technology & Engineering Pillars | BRC STAR",
-    description: "Deep-tech kinetic energy recovery and dual-pack powertrain architecture for electric mobility.",
+    description: "Dual-pack kinetic energy recovery R&D architecture for electric mobility.",
     url: "https://www.brcstar.in/technology",
     type: "website",
   },
@@ -33,26 +35,30 @@ export default function TechnologyOverviewPage() {
     {
       title: "Self Volt Dual-Pack Architecture",
       href: "/technology/self-volt",
-      badge: "Proprietary Architecture",
+      badge: "TRL 3/4 Target",
       icon: Zap,
-      desc: "Our dual-pack system decouples discharge load from simultaneous kinetic charging, eliminating thermal bottlenecks and delivering up to 850 km target range.",
-      specs: ["400V Dual-Bus Topology", "Kinetic Energy Recovery", "TRL 3/4 Test Bench Validated"],
+      desc: "Our dual-pack system separates traction discharge load from decelerative kinetic charging, designed to reduce thermal stress and target up to 850 km simulated range.",
+      specs: ["Dual 400V / 800V Architecture Target", "Isolated Buffer Pack Switching", "Simulation & Test Bench R&D"],
     },
     {
       title: "Energy Recovery & Kinetic PMG",
       href: "/technology/energy-recovery",
-      badge: "Electromechanical Link",
+      badge: "Stage 1 ACM Bench",
       icon: Layers,
-      desc: "Permanent magnet generator kinetic recovery converts vehicle momentum and deceleration into high-amp electrical replenishment.",
-      specs: ["Kinetic Glide Recoup", "98.4% ACM Inverter Efficiency (Lab)", "Multi-Stage Retarder"],
+      desc: "Permanent magnet generator (PMG) kinetic recovery captures vehicle deceleration and downhill momentum into auxiliary battery storage.",
+      specs: ["Deceleration & Glide Recoup", "98.4% ACM Rig Efficiency (Stage 1 Bench)", "Drive-Cycle Dependent Gain"],
     },
     {
       title: "Patent & Intellectual Property",
       href: "/technology/patent-ip",
-      badge: "IPO Filing",
+      badge: "Patent-Pending",
       icon: Shield,
-      desc: "Intellectual property foundation centered on Indian Patent Application No. 202511050655 with international PCT application details pending.",
-      specs: ["Indian Patent App No. 202511050655", "[PCT details pending]", "22 Utility Claims"],
+      desc: PATENT_STATEMENT,
+      specs: [
+        "Indian Patent App No. 202511050655",
+        "24 claims as filed (subject to exam)",
+        "Not yet published or granted",
+      ],
     },
   ];
 
@@ -62,13 +68,13 @@ export default function TechnologyOverviewPage() {
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-xs font-mono text-cyan-300">
           <Cpu className="w-3.5 h-3.5 text-cyan-400" />
-          <span>02 TECHNOLOGY PLATFORM</span>
+          <span>02 TECHNOLOGY PLATFORM • TRL 3/4 R&amp;D</span>
         </div>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-          Deep-Tech Engineering for the Next Century of Clean Motion
+          Deep-Tech Powertrain Engineering for Clean Motion
         </h1>
         <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-          BRC STAR has engineered an end-to-end proprietary powertrain platform that reimagines how energy flows through an electric vehicle.
+          BRC STAR is developing a dual-pack energy-management architecture to reduce battery thermal stress and maximize kinetic energy recovery during deceleration and grade duty cycles.
         </p>
       </div>
 
@@ -116,7 +122,7 @@ export default function TechnologyOverviewPage() {
                 href={pillar.href}
                 className="w-full py-2.5 px-4 rounded-xl font-mono text-xs font-bold text-slate-200 hover:text-white bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 transition-all text-center flex items-center justify-center gap-2"
               >
-                <span>Read Full Engineering Docs</span>
+                <span>Read Engineering Overview</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -124,12 +130,7 @@ export default function TechnologyOverviewPage() {
         })}
       </div>
 
-      {/* Regulatory & Real-World Results Disclaimer */}
-      <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs font-mono text-slate-400">
-        <p>
-          <span className="text-cyan-400 font-semibold">Engineering Notice:</span> All powertrain performance metrics, efficiency gains, and operational ranges are laboratory-simulated and bench-validated at TRL 3/4. Figures simulated/lab-validated; real-world results vary depending on driving cycles, vehicle payload, environmental temperatures, and production homologation.
-        </p>
-      </div>
+      <ClaimDisclaimer />
     </div>
   );
 }

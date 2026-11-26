@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { Zap, Activity, RefreshCw, ArrowRight, ShieldCheck, Cpu, BatteryCharging, Gauge } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 type OperationMode = "GLIDE_HARVEST" | "HIGH_TORQUE_ACCEL" | "HEAVY_REGEN_BRAKE" | "PACK_BALANCING";
 
@@ -60,32 +62,32 @@ export const SelfVoltVisualizer = () => {
 
   const modeDetails = {
     GLIDE_HARVEST: {
-      title: "Closed-Loop Glide Kinetic Harvest",
-      desc: "Battery Pack A drives high-efficiency PMSM while kinetic rotation through the Permanent Magnet Generator (PMG) continuously charges Battery Pack B via the ACM controller.",
+      title: "Modeled Glide Kinetic Recovery",
+      desc: "Battery Pack A supplies primary traction while decelerative/glide kinetic recovery through the Permanent Magnet Generator (PMG) routes charge into Battery Pack B via the ACM controller (note: kinetic recovery imposes drivetrain drag; net benefit depends on drive cycle).",
       flowColor: "text-cyan-400",
       accentBorder: "border-cyan-500/40",
-      badge: "Normal Highway Glide",
+      badge: "Modeled Highway Glide",
     },
     HIGH_TORQUE_ACCEL: {
-      title: "Dual-Pack Parallel Power Boost",
-      desc: "Bidirectional Drive Assist (BDA) couples both Pack A and Pack B in sub-millisecond parallel synchronization to deliver maximum 760 Nm instant torque with zero thermal lag.",
+      title: "Dual-Pack Parallel Power Target",
+      desc: "Bidirectional Drive Assist (BDA) couples Pack A and Pack B in parallel bus switching simulation to deliver combined tractive power targets under acceleration demand.",
       flowColor: "text-amber-400",
       accentBorder: "border-amber-500/40",
-      badge: "Peak Acceleration / Overtake",
+      badge: "Target Acceleration Boost",
     },
     HEAVY_REGEN_BRAKE: {
-      title: "High-Amp Kinetic Recovery Surge",
-      desc: "During deceleration, electromagnetic retarder and dual axle harvesters surge up to 65+ kW back into the secondary cell matrix, eliminating brake pad wear and extending driving range.",
+      title: "Deceleration Kinetic Recovery",
+      desc: "During braking and downhill deceleration, controlled recovery targets transient charge pulses (up to +42 kW peak system target) into the auxiliary pack while helping reduce mechanical brake wear.",
       flowColor: "text-emerald-400",
       accentBorder: "border-emerald-500/40",
       badge: "Deceleration & Downhill",
     },
     PACK_BALANCING: {
-      title: "Smart Thermochemical Equalization",
-      desc: "Dynamic solid-state switching redirects auxiliary load, balancing state-of-charge (SOC) and thermal gradients across both packs without any mechanical disconnect.",
+      title: "Simulated State-of-Charge Equalization",
+      desc: "Solid-state switching model alternates load assignments between Pack A and Pack B to balance thermal stress and SOC equilibrium across both packs.",
       flowColor: "text-blue-400",
       accentBorder: "border-blue-500/40",
-      badge: "Active Battery Balancing",
+      badge: "Pack Balancing Model",
     },
   };
 
@@ -250,17 +252,23 @@ export const SelfVoltVisualizer = () => {
 
       {/* Mode Narrative Card */}
       <div className={cn("mt-6 p-4 rounded-xl bg-slate-900/70 border transition-all duration-300", modeDetails[activeMode].accentBorder)}>
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">
-            {modeDetails[activeMode].badge}
-          </span>
-          <span className="text-sm font-bold text-white font-mono">
-            {modeDetails[activeMode].title}
-          </span>
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">
+              {modeDetails[activeMode].badge}
+            </span>
+            <span className="text-sm font-bold text-white font-mono">
+              {modeDetails[activeMode].title}
+            </span>
+          </div>
+          <EvidenceBadge status="simulated" />
         </div>
         <p className="text-xs text-slate-300 leading-relaxed">
           {modeDetails[activeMode].desc}
         </p>
+      </div>
+      <div className="mt-4">
+        <ClaimDisclaimer variant="compact" />
       </div>
     </div>
   );

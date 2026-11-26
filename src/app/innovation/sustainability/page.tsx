@@ -1,16 +1,19 @@
 import React from "react";
 import Link from "next/link";
-import { Leaf, Zap, RefreshCw, Globe, CheckCircle2, ChevronRight, ArrowRight } from "lucide-react";
+import { Leaf, Zap, RefreshCw, Globe, ChevronRight } from "lucide-react";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
   title: "Sustainability & Circular ESG Roadmap | BRC STAR EV",
-  description: "Carbon lifecycle reduction targets, circular second-life battery stewardship, sustainable Indian supply chain, and net-zero manufacturing at BRC STAR.",
+  description:
+    "Decarbonization targets, circular second-life battery stewardship concepts, and battery longevity R&D goals at BRC STAR.",
   alternates: {
     canonical: "https://www.brcstar.in/innovation/sustainability",
   },
   openGraph: {
     title: "Sustainability & Circular ESG Roadmap | BRC STAR",
-    description: "BRC STAR sustainability commitments and circular lifecycle targets.",
+    description: "BRC STAR sustainability commitments and circular battery lifecycle targets.",
     url: "https://www.brcstar.in/innovation/sustainability",
     type: "website",
   },
@@ -32,13 +35,13 @@ export default function SustainabilityPage() {
         <div className="max-w-4xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-mono text-emerald-300">
             <Leaf className="w-3.5 h-3.5 text-emerald-400" />
-            <span>CIRCULAR BATTERY LIFECYCLE &amp; NET-ZERO IMPACT</span>
+            <span>CIRCULAR BATTERY STEWARDSHIP &amp; ESG TARGETS</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Clean Motion Engineered for True Ecological Harmony
+            Designing High-Durability Powertrains for Reduced Lifecycle Waste
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Sustainability at BRC STAR goes beyond zero tailpipe exhaust. By recouping kinetic energy, reducing grid power consumption by up to 35%, and extending cell longevity to 4,500+ cycles, we minimize global lithium-ion mining demand.
+            Sustainability goals at BRC STAR focus on mitigating tailpipe emissions while targeting reduced thermal cycling stress across dual battery packs to lower long-term cell replacement demand (design targets at TRL 3/4; independent lifecycle audit pending).
           </p>
         </div>
       </div>
@@ -46,41 +49,52 @@ export default function SustainabilityPage() {
       {/* 3 Core ESG Pillars */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-          <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-            <Zap className="w-5 h-5" />
+          <div className="flex items-center justify-between">
+            <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <Zap className="w-5 h-5" />
+            </div>
+            <EvidenceBadge status="simulated" />
           </div>
           <h3 className="text-base font-bold text-white font-mono">
-            1. Grid Power Decoupling
+            1. Grid Demand Relief Target
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            By generating kinetic recharge while in transit, BRC STAR vehicles require fewer grid megawatt-hours per 100,000 km, easing load on national electrical transmission grids.
+            By pairing regenerative braking recovery with glide energy management, the dual-pack architecture targets lower net grid charging demand across urban stop-go commercial duty cycles (drive-cycle dependent; under bench quantification).
           </p>
         </div>
 
         <div className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-          <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-cyan-400">
-            <RefreshCw className="w-5 h-5" />
+          <div className="flex items-center justify-between">
+            <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-cyan-400">
+              <RefreshCw className="w-5 h-5" />
+            </div>
+            <EvidenceBadge status="target" />
           </div>
           <h3 className="text-base font-bold text-white font-mono">
-            2. Dual-Pack 4,500 Cycle Longevity
+            2. Dual-Pack Longevity Target
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Dividing charge/discharge fatigue across Pack A and Pack B triples usable battery lifespan (&gt;1.2 Million Kilometers), eliminating premature cell degradation and battery replacement waste.
+            Separating discharge and recharge surges across Pack A and Pack B is designed to reduce thermal stress and extend pack durability (4,500+ cycle design target — depends on chemistry, duty cycle &amp; thermal management; not yet tested).
           </p>
         </div>
 
         <div className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-          <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-amber-400">
-            <Globe className="w-5 h-5" />
+          <div className="flex items-center justify-between">
+            <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-amber-400">
+              <Globe className="w-5 h-5" />
+            </div>
+            <EvidenceBadge status="planned" />
           </div>
           <h3 className="text-base font-bold text-white font-mono">
-            3. Circular Second-Life Storage
+            3. Planned Second-Life Storage
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            At end-of-vehicle duty, battery modules transition directly into stationary solar energy storage microgrids before undergoing hydrometallurgical closed-loop recycling.
+            Future circularity roadmap envisions transitioning end-of-mobility modules into stationary solar microgrids prior to certified mineral recycling partners.
           </p>
         </div>
       </div>
+
+      <ClaimDisclaimer />
     </div>
   );
 }

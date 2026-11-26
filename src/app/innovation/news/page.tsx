@@ -1,17 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import { Newspaper, FileText, Download, ArrowRight, ChevronRight, Calendar, ExternalLink } from "lucide-react";
+import { Newspaper, ChevronRight, Calendar, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
+import { PATENT_STATEMENT } from "@/lib/claims";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata: Metadata = {
   title: "Newsroom & Corporate Announcements | BRC STAR",
-  description: "Official corporate news, press statements, leadership updates, and media kit from BRC STAR electric vehicle startup.",
+  description:
+    "Corporate announcements, TRL 3/4 R&D milestones, and patent filing notices from BRC STAR (OPC) PRIVATE LIMITED.",
   alternates: {
     canonical: "https://www.brcstar.in/innovation/news",
   },
   openGraph: {
     title: "Newsroom & Corporate Announcements | BRC STAR",
-    description: "Official press announcements and media statements from BRC STAR.",
+    description: "Official corporate updates from BRC STAR (OPC) PRIVATE LIMITED.",
     url: "https://www.brcstar.in/innovation/news",
     type: "website",
   },
@@ -20,24 +23,29 @@ export const metadata: Metadata = {
 export default function NewsMediaPage() {
   const pressReleases = [
     {
-      title: "BRC STAR Advances TRL 3/4 Laboratory Dynamometer Simulation of Kinetic Recovery System",
-      date: "August 2026",
-      source: "Official Newsroom",
-      summary: "Empirical bench telemetry indicates a 32.8% simulated reduction in net battery draw across modeled urban and highway driving drive cycles.",
+      title:
+        "BRC STAR Conducts Stage 1 ACM Laboratory Bench & Simulation Validation (TRL 3/4)",
+      date: "2026 Milestone",
+      source: "R&D Engineering Desk",
+      summary:
+        "Completed Stage 1 Alternator Control Module (ACM) laboratory bench rig testing while evaluating dual-pack bus simulation models (net vehicle range benefit remains drive-cycle dependent and pending independent track verification).",
       category: "Technology Milestone",
     },
     {
-      title: "Indian Patent Office Publishes BRC STAR Dual-Pack Kinetic Recovery Patent Application",
-      date: "March 2025",
+      title:
+        "Indian Patent Application No. 202511050655 Filed with Indian Patent Office",
+      date: "May 2025 (Filing)",
       source: "IP Regulatory Desk",
-      summary: "Publication of Indian Patent Application No. 202511050655 marks formal IPO examination for dual-pack kinetic energy recovery and alternator routing.",
-      category: "Patent & IP",
+      summary: PATENT_STATEMENT,
+      category: "Patent-Pending Filing",
     },
     {
-      title: "Commercial Fleet Demonstrator Concept & Expression of Interest Framework Announced",
-      date: "January 2026",
+      title:
+        "Exploratory Fleet & Dealership Interest Framework Initiated",
+      date: "2026 Initiative",
       source: "Corporate Partnerships",
-      summary: "Framework for logistics demonstration pilots and fleet feasibility studies [Discussion stage / Available in data room].",
+      summary:
+        "Non-binding dealership and commercial fleet exploratory framework initiated for post-homologation evaluation [Non-binding inquiries logged].",
       category: "Commercial Partnerships",
     },
   ];
@@ -57,20 +65,20 @@ export default function NewsMediaPage() {
         <div className="max-w-4xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-xs font-mono text-cyan-300">
             <Newspaper className="w-3.5 h-3.5 text-cyan-400" />
-            <span>OFFICIAL PRESS RELEASES &amp; MEDIA KIT</span>
+            <span>OFFICIAL ANNOUNCEMENTS &amp; MILESTONES</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Newsroom &amp; Corporate Announcements
+            Newsroom &amp; Corporate Disclosures
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Stay informed on our verified engineering milestones, patent examination disclosures, executive updates, and technical disclosures.
+            Follow our transparent engineering milestones, patent-pending filing updates, and corporate notices.
           </p>
         </div>
       </div>
 
       {/* Press Releases List */}
       <div className="space-y-6">
-        <h2 className="text-xl font-bold text-white font-mono">Latest Official Releases</h2>
+        <h2 className="text-xl font-bold text-white font-mono">Latest Disclosures</h2>
         <div className="space-y-4">
           {pressReleases.map((release) => (
             <div
@@ -95,43 +103,18 @@ export default function NewsMediaPage() {
               </div>
 
               <Link
-                href="/docs"
+                href="/evidence"
                 className="px-4 py-2 rounded-xl font-mono text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors flex items-center gap-1.5 shrink-0 self-start md:self-center"
               >
-                <span>Read in Docs</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Evidence Ledger</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Media Kit Download Banner */}
-      <div className="p-8 rounded-2xl bg-gradient-to-r from-cyan-950/80 via-[#050814] to-slate-950 border border-cyan-500/40 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div>
-          <h3 className="text-xl font-bold text-white font-mono">
-            Official BRC STAR Press &amp; Media Kit
-          </h3>
-          <p className="text-xs text-slate-300 mt-1">
-            High-resolution brand logos, executive biographies, vehicle rendered concept assets, and verified corporate disclosures.
-          </p>
-        </div>
-
-        <Link
-          href="/contact?intent=press"
-          className="px-6 py-3 rounded-xl font-mono text-xs font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors flex items-center gap-2 shadow-lg shadow-cyan-500/20 shrink-0"
-        >
-          <Download className="w-4 h-4" />
-          <span>Request Media Kit</span>
-        </Link>
-      </div>
-
-      {/* Engineering Disclaimer */}
-      <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs font-mono text-slate-400">
-        <p>
-          <span className="text-cyan-400 font-semibold">Regulatory Disclosure:</span> All efficiency comparisons, mileage simulations, and performance metrics reflect controlled laboratory test-bench and dynamometer simulations. Figures simulated/lab-validated; real-world results vary.
-        </p>
-      </div>
+      <ClaimDisclaimer />
     </div>
   );
 }
