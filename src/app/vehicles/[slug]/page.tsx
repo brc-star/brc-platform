@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Metadata } from "next";
 import { Car, Zap, Gauge, Compass, ShieldCheck, ArrowRight, ChevronRight, CheckCircle2, Layers } from "lucide-react";
-import { VEHICLES_DATA, VehicleModelData } from "@/lib/data";
+import { VEHICLES_DATA, COMMON_DISCLAIMERS } from "@/lib/data";
 import { formatInr } from "@/lib/utils";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -74,11 +76,11 @@ export default async function VehicleDetailPage({ params }: PageProps) {
 
           <div className="text-left md:text-right">
             <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
-              INDICATIVE EX-SHOWROOM (ESTIMATED)
+              {COMMON_DISCLAIMERS.priceLabel}
             </span>
             <span className="text-3xl font-extrabold text-white font-mono">{formatInr(vehicle.basePriceInr)}</span>
             <span className="text-[10px] font-mono text-slate-500 block">
-              Subject to homologation &amp; prototype validation
+              {COMMON_DISCLAIMERS.homologationNotice}
             </span>
           </div>
         </div>
@@ -86,21 +88,25 @@ export default async function VehicleDetailPage({ params }: PageProps) {
 
       {/* Main Highlights Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-center">
-        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div className="text-[10px] text-slate-400 uppercase">Acceleration</div>
-          <div className="text-xl font-bold text-white mt-1">{vehicle.acceleration}</div>
+        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+          <div className="text-[10px] text-slate-400 uppercase">Acceleration Target</div>
+          <div className="text-base sm:text-lg font-bold text-white mt-1">{vehicle.acceleration}</div>
+          <EvidenceBadge status="target" />
         </div>
-        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div className="text-[10px] text-slate-400 uppercase">Self-Volt Range</div>
-          <div className="text-xl font-bold text-cyan-400 mt-1">{vehicle.ratedRangeKm} km</div>
+        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+          <div className="text-[10px] text-slate-400 uppercase">Target Range</div>
+          <div className="text-base sm:text-lg font-bold text-cyan-400 mt-1">{vehicle.ratedRangeKm} km</div>
+          <EvidenceBadge status="simulated" />
         </div>
-        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div className="text-[10px] text-slate-400 uppercase">Kinetic Recoup</div>
-          <div className="text-xl font-bold text-emerald-400 mt-1">+{vehicle.selfVoltRegenKw} kW</div>
+        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+          <div className="text-[10px] text-slate-400 uppercase">Peak Decel Recoup</div>
+          <div className="text-base sm:text-lg font-bold text-emerald-400 mt-1">+{vehicle.selfVoltRegenKw} kW</div>
+          <EvidenceBadge status="target" />
         </div>
-        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div className="text-[10px] text-slate-400 uppercase">Drag Index</div>
-          <div className="text-xl font-bold text-amber-400 mt-1">{vehicle.dragCoefficientCd}</div>
+        <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+          <div className="text-[10px] text-slate-400 uppercase">Drag Target (CFD)</div>
+          <div className="text-base sm:text-lg font-bold text-amber-400 mt-1">{vehicle.dragCoefficientCd}</div>
+          <EvidenceBadge status="simulated" />
         </div>
       </div>
 
@@ -144,11 +150,10 @@ export default async function VehicleDetailPage({ params }: PageProps) {
       </div>
 
       {/* Disclaimers */}
-      <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs font-mono text-slate-400">
-        <p>
-          <span className="text-cyan-400 font-semibold">Pricing &amp; Performance Disclaimer:</span> All prices are indicative ex-showroom estimates and subject to final prototype homologation. Range and acceleration figures are target simulations; real-world values may vary. Priority pre-booking token of ₹25,000 is 100% refundable at any time prior to VIN allocation.
-        </p>
-      </div>
+      <ClaimDisclaimer />
+      <p className="text-center text-[11px] font-mono text-slate-500">
+        All listed vehicle figures represent CAD/CFD concept targets; no commercial production vehicle exists yet. Priority ₹25,000 token is a non-binding expression of interest 100% refundable prior to invoicing.
+      </p>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, ChevronRight, Zap, CheckCircle2, Clock, AlertCircle, HelpCircle } from "lucide-react";
+import { ShieldCheck, ChevronRight } from "lucide-react";
 import { PreBookClient } from "@/components/PreBookClient";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata: Metadata = {
   title: "Vehicle Pre-Booking & Priority Waitlist Allocation",
@@ -52,46 +53,49 @@ export default function PreBookPage() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-900 dark:text-white">
               <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <span>TRANSPARENT RESERVATION TERMS &amp; REFUND GUARANTEE</span>
+              <span>TRANSPARENT INTEREST ALLOCATION &amp; REFUND TERMS</span>
             </div>
             <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-              Indian Patent App No. 202511050655
+              Indian Patent App No. 202511050655 (Patent-Pending)
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
             <div className="space-y-1">
-              <span className="font-mono text-slate-500 dark:text-slate-400 block uppercase text-[10px]">Deposit Amount</span>
-              <span className="font-bold text-slate-900 dark:text-white text-sm font-mono">₹25,000 Token</span>
+              <span className="font-mono text-slate-500 dark:text-slate-400 block uppercase text-[10px]">Deposit Allocation</span>
+              <span className="font-bold text-slate-900 dark:text-white text-sm font-mono">₹25,000 Interest Token</span>
               <p className="text-slate-600 dark:text-slate-400 text-[11px] leading-relaxed">
-                Held in designated escrow accounts. Not a final purchase agreement.
+                No commercial vehicle exists yet; non-binding expression of interest held by BRC STAR (OPC) PRIVATE LIMITED.
               </p>
             </div>
 
             <div className="space-y-1">
               <span className="font-mono text-slate-500 dark:text-slate-400 block uppercase text-[10px]">Refund Policy</span>
-              <span className="font-bold text-emerald-600 dark:text-emerald-400 text-sm font-mono">100% Unconditional Refund</span>
+              <span className="font-bold text-emerald-600 dark:text-emerald-400 text-sm font-mono">100% Refundable Prior to Invoice</span>
               <p className="text-slate-600 dark:text-slate-400 text-[11px] leading-relaxed">
-                Full refund anytime prior to final VIN allocation. 7–10 day banking turnaround.
+                Full refund anytime before final vehicle invoicing (7-business-day bank refund).{" "}
+                <Link href="/terms" className="underline text-cyan-700 dark:text-cyan-400">View Terms</Link>.
               </p>
             </div>
 
             <div className="space-y-1">
-              <span className="font-mono text-slate-500 dark:text-slate-400 block uppercase text-[10px]">Indicative Pricing</span>
-              <span className="font-bold text-slate-900 dark:text-white text-sm font-mono">Subject to Homologation</span>
+              <span className="font-mono text-slate-500 dark:text-slate-400 block uppercase text-[10px]">Indicative Target Price</span>
+              <span className="font-bold text-slate-900 dark:text-white text-sm font-mono">Not a Binding Quotation</span>
               <p className="text-slate-600 dark:text-slate-400 text-[11px] leading-relaxed">
-                Base ₹16.5L (StarCraft GT) indicative ex-showroom, subject to final ARAI/ICAT certification.
+                Base ₹16.5L target (StarCraft GT concept) subject to prototype validation and ARAI/ICAT certification.
               </p>
             </div>
 
             <div className="space-y-1">
               <span className="font-mono text-slate-500 dark:text-slate-400 block uppercase text-[10px]">Target Timeline</span>
-              <span className="font-bold text-cyan-600 dark:text-cyan-400 text-sm font-mono">2026–2027 Rollout</span>
+              <span className="font-bold text-cyan-600 dark:text-cyan-400 text-sm font-mono">2027 Indicative Target</span>
               <p className="text-slate-600 dark:text-slate-400 text-[11px] leading-relaxed">
-                Manufacturing queue prioritized by verified reservation timestamp.
+                Queue prioritized by registration timestamp; priority waitlist requires zero payment today.
               </p>
             </div>
           </div>
+
+          <ClaimDisclaimer variant="compact" className="pt-2 border-t border-slate-200 dark:border-slate-800" />
         </div>
       </div>
 

@@ -64,11 +64,11 @@ export const VehiclePortfolioNoImage = () => {
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
             <h3 className="text-lg sm:text-xl font-bold font-mono text-white">
-              Featured Flagship Vehicles (Priority Pre-Booking)
+              Priority Concept Architecture Lineup (Interest Allocation)
             </h3>
           </div>
           <span className="text-xs font-mono text-cyan-400">
-            3 Models Active
+            3 Concept Models
           </span>
         </div>
 
@@ -85,7 +85,7 @@ export const VehiclePortfolioNoImage = () => {
               <div className="space-y-4 relative z-10">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-bold text-cyan-400/90 bg-cyan-950/70 border border-cyan-500/40 px-2.5 py-0.5 rounded-md">
-                    Hero Model • {String(index + 1).padStart(2, "0")}
+                    Concept • {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-slate-300">
                     {vehicle.segmentBadge || vehicle.category}
@@ -183,7 +183,7 @@ export const VehiclePortfolioNoImage = () => {
             </h3>
           </div>
           <span className="text-xs font-mono text-amber-400/90">
-            Scheduled Post-Homologation
+            Concept — Not in Development Stage
           </span>
         </div>
 
@@ -196,7 +196,7 @@ export const VehiclePortfolioNoImage = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/60 border border-amber-500/30 text-amber-300">
-                    Roadmap
+                    Concept Only
                   </span>
                   <span className="text-[10px] font-mono text-slate-400">
                     {vehicle.category}

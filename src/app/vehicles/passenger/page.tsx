@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { Car, Zap, Gauge, Compass, ShieldCheck, ArrowRight, ChevronRight, CheckCircle2 } from "lucide-react";
-import { VEHICLES_DATA } from "@/lib/data";
+import { VEHICLES_DATA, COMMON_DISCLAIMERS } from "@/lib/data";
 import { formatInr } from "@/lib/utils";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
   title: "Passenger Electric Vehicles | StarCraft GT & StarPulse | BRC STAR",
@@ -42,7 +43,7 @@ export default function PassengerVehiclesPage() {
             StarCraft GT Hyper-Sedan &amp; StarPulse Luxury SUV
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Crafted for discerning drivers who demand aerospace aerodynamics, sub-3.5s acceleration, and peerless intercity endurance unlocked by BRC STAR Self Volt closed-loop regeneration.
+            CAD/CFD concept passenger lineup targeting aerodynamic efficiency and extended highway range via BRC STAR Dual-Pack Kinetic Recovery (concept models at TRL 3/4; not yet track-tested or homologated).
           </p>
         </div>
       </div>
@@ -124,13 +125,13 @@ export default function PassengerVehiclesPage() {
               <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-[10px] font-mono text-slate-400 uppercase block tracking-wider">
-                    INDICATIVE EX-SHOWROOM (ESTIMATED)
+                    {COMMON_DISCLAIMERS.priceLabel}
                   </span>
                   <span className="text-2xl font-bold text-white font-mono">
                     {formatInr(vehicle.basePriceInr)}
                   </span>
                   <span className="text-[9px] font-mono text-slate-500 block">
-                    Subject to homologation &amp; prototype validation
+                    {COMMON_DISCLAIMERS.homologationNotice}
                   </span>
                 </div>
 
@@ -154,6 +155,8 @@ export default function PassengerVehiclesPage() {
           </div>
         ))}
       </div>
+
+      <ClaimDisclaimer />
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { Bus, Zap, Gauge, Compass, ShieldCheck, ArrowRight, ChevronRight, CheckCircle2 } from "lucide-react";
-import { VEHICLES_DATA } from "@/lib/data";
+import { VEHICLES_DATA, COMMON_DISCLAIMERS } from "@/lib/data";
 import { formatInr } from "@/lib/utils";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
   title: "Electric Bus Mobility | StarTransit 12M | BRC STAR",
@@ -42,7 +43,7 @@ export default function BusVehiclesPage() {
             BRC StarTransit 12M: Closed-Loop Electric Transit Coach
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Engineered for high passenger density, zero tailpipe emissions, and continuous 18-hour daily municipal duty cycles. Features heavy-duty dual-axle PMG kinetic harvesters that recoup energy on frequent city bus stops.
+            Concept 12-meter transit coach (not yet in physical development stage), targeting zero tailpipe exhaust and urban kinetic stop-go braking recovery across daily municipal routes.
           </p>
         </div>
       </div>
@@ -94,7 +95,7 @@ export default function BusVehiclesPage() {
           </div>
 
           <div className="space-y-2">
-            <div className="text-xs font-mono text-slate-400 uppercase">Compliance &amp; Systems:</div>
+            <div className="text-xs font-mono text-slate-400 uppercase">Target Systems &amp; Planned Standards (Not Certified):</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-slate-300">
               {busVehicle.features.map((feat) => (
                 <div key={feat} className="flex items-center gap-2">
@@ -107,9 +108,9 @@ export default function BusVehiclesPage() {
 
           <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
             <div>
-              <span className="text-[10px] font-mono text-slate-400 uppercase block tracking-wider">INDICATIVE EX-SHOWROOM (ESTIMATED)</span>
+              <span className="text-[10px] font-mono text-slate-400 uppercase block tracking-wider">{COMMON_DISCLAIMERS.priceLabel}</span>
               <span className="text-2xl font-bold text-white font-mono">{formatInr(busVehicle.basePriceInr)}</span>
-              <span className="text-[9px] font-mono text-slate-500 block">Subject to homologation &amp; prototype validation</span>
+              <span className="text-[9px] font-mono text-slate-500 block">{COMMON_DISCLAIMERS.homologationNotice}</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -124,6 +125,8 @@ export default function BusVehiclesPage() {
           </div>
         </div>
       </div>
+
+      <ClaimDisclaimer />
     </div>
   );
 }

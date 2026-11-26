@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { Truck, Zap, Gauge, Compass, ShieldCheck, ArrowRight, ChevronRight, CheckCircle2, TrendingDown, Box, BatteryCharging } from "lucide-react";
-import { VEHICLES_DATA } from "@/lib/data";
+import { VEHICLES_DATA, COMMON_DISCLAIMERS } from "@/lib/data";
 import { formatInr } from "@/lib/utils";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
   title: "Commercial Electric Mobility | StarFleet, StarHauler & StarTitan Semi-Truck | BRC STAR",
@@ -42,7 +43,7 @@ export default function CommercialVehiclesPage() {
             Commercial Electric Fleet &amp; Heavy Freight Trucks
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            From urban last-mile delivery platforms to heavy-duty multi-axle intercity cargo haulers and cross-country semi-trailers. Powered by BRC STAR Self-Volt closed-loop energy harvesting, reducing commercial fleet OPEX by up to 52% below diesel parity.
+            Concept logistics and heavy freight platforms (not yet in production). Incorporates decelerative kinetic recovery targeting lower fleet energy operating cost (illustrative estimates subject to route duty, diesel price ₹95/L vs grid tariff ₹8/kWh assumptions).
           </p>
         </div>
       </div>
@@ -106,13 +107,13 @@ export default function CommercialVehiclesPage() {
                   </div>
                 </div>
                 <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                  <div className="text-[10px] text-slate-400 uppercase">Annual TCO Gain</div>
+                  <div className="text-[10px] text-slate-400 uppercase">Illustrative Savings*</div>
                   <div className="text-base font-bold text-emerald-400 mt-0.5">
                     {vehicle.slug === "startitan-semi-truck"
-                      ? "₹21.5 Lakhs"
+                      ? "~₹21.5L/yr (Illus.)"
                       : vehicle.slug === "starhauler-truck"
-                      ? "₹11.2 Lakhs"
-                      : "₹4.8 Lakhs"}
+                      ? "~₹11.2L/yr (Illus.)"
+                      : "~₹4.8L/yr (Illus.)"}
                   </div>
                 </div>
               </div>
@@ -131,9 +132,9 @@ export default function CommercialVehiclesPage() {
 
               <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
                 <div>
-                  <span className="text-[10px] font-mono text-slate-400 uppercase block tracking-wider">INDICATIVE EX-SHOWROOM (ESTIMATED)</span>
+                  <span className="text-[10px] font-mono text-slate-400 uppercase block tracking-wider">{COMMON_DISCLAIMERS.priceLabel}</span>
                   <span className="text-2xl font-bold text-white font-mono">{formatInr(vehicle.basePriceInr)}</span>
-                  <span className="text-[9px] font-mono text-slate-500 block">Subject to homologation &amp; prototype validation</span>
+                  <span className="text-[9px] font-mono text-slate-500 block">{COMMON_DISCLAIMERS.homologationNotice}</span>
                 </div>
 
                 <div className="flex items-center gap-3">
@@ -156,6 +157,8 @@ export default function CommercialVehiclesPage() {
           </div>
         ))}
       </div>
+
+      <ClaimDisclaimer />
     </div>
   );
 }

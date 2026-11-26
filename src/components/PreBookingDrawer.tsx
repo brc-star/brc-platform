@@ -253,24 +253,27 @@ export function PreBookingDrawer() {
             </div>
           </div>
 
-          {/* Guarantees & Compliance */}
+          {/* Interest Terms, Refund Policy & Compliance */}
           <ul className="space-y-2 text-[11px] text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-[#0A0E1A] p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
               <span>
-                Priority manufacturing queue allocation ({COMMON_DISCLAIMERS.targetDelivery}).
+                <strong>Expression of Interest:</strong> No commercial vehicle exists yet; indicative prices are not a binding quotation ({COMMON_DISCLAIMERS.targetDelivery}).
               </span>
             </li>
             <li className="flex items-start gap-2">
               <ShieldCheck className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
               <span>
-                100% refundable ₹25,000 token within 7 business days upon cancellation request.
+                <strong>Refund Policy:</strong> Held by BRC STAR (OPC) PRIVATE LIMITED and 100% refundable within 7 business days prior to final VIN allocation. See{" "}
+                <Link href="/terms" onClick={closeDrawer} className="underline text-cyan-700 dark:text-cyan-400">
+                  Terms &amp; Refund Policy
+                </Link>.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <Lock className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
               <span>
-                Processed in compliance with India DPDPA 2023. {COMMON_DISCLAIMERS.homologationNotice}.
+                Processed under India DPDPA 2023. {COMMON_DISCLAIMERS.homologationNotice}.
               </span>
             </li>
           </ul>

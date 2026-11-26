@@ -297,12 +297,12 @@ function PreBookContent() {
             </div>
           </div>
 
-          {/* Legal Escrow Guarantee Clause */}
+          {/* Refundable Interest Policy Clause */}
           <div className="p-3.5 rounded-xl bg-cyan-50/60 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-500/30 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed text-left flex items-start gap-2.5">
             <ShieldCheck className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
             <div>
-              <strong className="text-slate-800 dark:text-slate-200 block mb-0.5">Statutory RBI Escrow Guarantee:</strong>
-              This token is protected under Indian Consumer Protection Act 2019 and held in designated escrow. 100% refundable anytime prior to vehicle VIN chassis assignment upon single-click request via the customer portal within 48 banking hours.
+              <strong className="text-slate-800 dark:text-slate-200 block mb-0.5">100% Refundable Interest Policy:</strong>
+              No commercial vehicle exists yet; this expression-of-interest allocation is held by BRC STAR (OPC) PRIVATE LIMITED and is 100% refundable prior to vehicle invoicing within 7 business days upon cancellation request.
             </div>
           </div>
 
@@ -731,9 +731,9 @@ function PreBookContent() {
               )}
             </div>
 
-            {/* Escrow Guarantee Disclaimer */}
+            {/* Refundable Token Disclaimer */}
             <div className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed text-center font-sans border-t border-slate-200 dark:border-slate-800 pt-3">
-              By authorizing, you securely transfer ₹25,000 into the designated BRC STAR escrow pool. 100% refundable on demand per Indian Consumer Protection Guidelines.
+              Expression of interest only; no vehicle exists yet. 100% refundable within 7 business days prior to invoicing by BRC STAR (OPC) PRIVATE LIMITED.
             </div>
 
             {/* Complete Escrow Button */}

@@ -7,6 +7,7 @@ import { VehiclePortfolioVideoContainer } from "@/components/VehiclePortfolioVid
 import { VehiclePortfolioNoImage } from "@/components/VehiclePortfolioNoImage";
 import { VEHICLES_DATA } from "@/lib/data";
 import { formatInr } from "@/lib/utils";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
   title: "Vehicle Portfolio | BRC STAR Self Volt Electric Vehicles",
@@ -63,11 +64,11 @@ export default function VehiclesPage() {
               StarCraft GT &amp; StarPulse SUV
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Designed for extreme highway range, 0-100 in 3.2s acceleration, and zero range anxiety with dual-pack continuous recoup.
+              CAD/CFD passenger concept lineup targeting high intercity range and 0–100 km/h in 3.2 s acceleration with dual-pack deceleration recoup (simulation target).
             </p>
             <div className="text-xs font-mono text-slate-400 space-y-1 pt-2 border-t border-slate-800">
-              <div>• Starting from {formatInr(1650000)}</div>
-              <div>• Up to 850 km Self-Volt Range</div>
+              <div>• Indicative target from {formatInr(1650000)} (Not binding)</div>
+              <div>• Up to 850 km Target Range (Simulated)</div>
             </div>
           </div>
           <Link
@@ -83,17 +84,17 @@ export default function VehiclesPage() {
         <div className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between space-y-6">
           <div className="space-y-3">
             <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/30">
-              Commercial Fleet
+              Commercial Concept
             </span>
             <h3 className="text-xl font-bold text-white font-mono">
               StarFleet &amp; StarHauler Heavy Trucks
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Engineered for enterprise logistics, cold chain, and multi-axle freight haulage. Up to 44% lower operating expense than diesel.
+              Concept commercial platforms targeting illustrative operating cost reductions vs diesel benchmarks (subject to fleet tariff &amp; utilization assumptions).
             </p>
             <div className="text-xs font-mono text-slate-400 space-y-1 pt-2 border-t border-slate-800">
-              <div>• Starting from {formatInr(2450000)}</div>
-              <div>• Up to 8,500 kg High-Tonnage Payload</div>
+              <div>• Indicative target from {formatInr(2450000)} (Not binding)</div>
+              <div>• Up to 8,500 kg Payload Target</div>
             </div>
           </div>
           <Link
@@ -131,6 +132,8 @@ export default function VehiclesPage() {
           </Link>
         </div>
       </div>
+
+      <ClaimDisclaimer />
     </div>
   );
 }

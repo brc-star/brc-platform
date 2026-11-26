@@ -13,10 +13,10 @@ export const VehiclesCTA: React.FC = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-400/10 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-3xl mx-auto space-y-3 relative z-10">
-        {/* Badge: ZERO EMISSION ECOSYSTEM */}
+        {/* Badge: CONCEPT MOBILITY ARCHITECTURE */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-100/80 text-cyan-800 border border-cyan-300/60 dark:bg-cyan-950/60 dark:text-cyan-300 dark:border-cyan-500/30 shadow-sm transition-colors">
           <Zap className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-          <span>ZERO EMISSION ECOSYSTEM</span>
+          <span>ZERO-TAILPIPE EV ARCHITECTURE</span>
         </div>
 
         {/* Main Heading */}

@@ -30,6 +30,8 @@ import {
 } from "@/data/vehicles";
 import { cn, formatInr } from "@/lib/utils";
 import { usePreBookDrawer } from "@/components/PreBookContext";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 // Filter out alias entries
 const PRIMARY_VEHICLES = VEHICLES_DATA.filter((v) => v.slug !== "starfleet-logistic");
@@ -94,45 +96,45 @@ const XRAY_HOTSPOTS: XRayHotspot[] = [
     name: "Front Axial Flux PMSM Motor",
     xPct: 22,
     yPct: 56,
-    patentRef: "Claim 1: High-Torque Synchronous Drive",
-    description: "Direct-drive permanent magnet motor providing instant torque vectoring.",
-    spec: "240 kW • 480 Nm • 97.4% Efficiency",
+    patentRef: "Concept Subsystem: Synchronous Traction Drive",
+    description: "Direct-drive permanent magnet motor targeting responsive torque vectoring (CAD/CFD Concept).",
+    spec: "240 kW • 480 Nm • Target Spec",
   },
   {
     id: "acm-shunt",
     name: "ACM Alternator Control Module",
     xPct: 38,
     yPct: 44,
-    patentRef: "Patent App No. 202511050655 (Core)",
-    description: "Kinetic energy recovery module (Patent application filed) converting rotor inertia into continuous DC reserve charge.",
-    spec: "+42 kW Peak Harvest • 98.4% Inverter Yield",
+    patentRef: "Patent App No. 202511050655 (Pending)",
+    description: "Kinetic energy recovery module converting deceleration/glide momentum into regulated DC reserve charge.",
+    spec: "+42 kW Peak Decel Target • 98.4% Lab-Rig Yield",
   },
   {
     id: "pack-a",
     name: "Solid-State Pack A (Primary Drive)",
     xPct: 52,
     yPct: 62,
-    patentRef: "Claim 2: Dual Solid-State Architecture",
-    description: "Underbody structural battery pack powering front/rear high-voltage inverters.",
-    spec: "400V Nominal • Immersion Thermal Cooling",
+    patentRef: "Concept Subsystem: Primary Traction Storage",
+    description: "Underbody structural battery pack powering high-voltage traction inverters.",
+    spec: "400V Nominal • Dielectric Liquid Cooling Concept",
   },
   {
     id: "pack-b",
-    name: "Solid-State Pack B (Harvest Buffer)",
+    name: "Solid-State Pack B (Recovery Buffer)",
     xPct: 68,
     yPct: 62,
-    patentRef: "Claim 3: Autonomous Closed-Loop Bus Switching",
-    description: "Dedicated kinetic harvest buffer that receives ACM energy without degrading primary cells.",
-    spec: "400V Nominal • Zero-Thermal Strain Shunt",
+    patentRef: "Dual-Pack Bus Switching Architecture",
+    description: "Isolated recovery buffer receiving ACM kinetic energy to reduce thermal load on Pack A (Simulated).",
+    spec: "400V Nominal • Isolated Buffer Pack",
   },
   {
     id: "rear-diffuser",
     name: "Active Aero Vortex Diffuser",
     xPct: 84,
     yPct: 54,
-    patentRef: "Aerodynamic Drag Minimization",
-    description: "Venturi undertray with dynamic flap actuators suppressing high-speed turbulence.",
-    spec: "0.19 Cd • 185 kg Downforce @ 160 km/h",
+    patentRef: "Aerodynamic Drag Target",
+    description: "CFD-modeled underbody diffuser designed to reduce high-speed drag turbulence.",
+    spec: "0.198 Cd (CFD) • 104 kg Downforce Target",
   },
 ];
 
@@ -504,10 +506,10 @@ export const Vehicle3DDigitalTwin = () => {
 
               <div className="text-right pointer-events-auto">
                 <span className="text-[10px] font-mono text-emerald-400 block font-semibold">
-                  +42 kW ACM Continuous Recoup
+                  +42 kW Peak Decel Recoup Target
                 </span>
                 <span className="text-[11px] text-slate-400 font-mono">
-                  Downforce: {Math.round(185 * Math.pow(windTunnelSpeed / 160, 2))} kg @ {windTunnelSpeed} km/h
+                  CFD Simulated Downforce: {Math.round(104 * Math.pow(windTunnelSpeed / 160, 2))} kg @ {windTunnelSpeed} km/h
                 </span>
               </div>
             </div>
@@ -515,23 +517,26 @@ export const Vehicle3DDigitalTwin = () => {
 
           {/* Quick HUD Telemetry Bar */}
           <div className="grid grid-cols-3 gap-2 text-center font-mono">
-            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors">
-              <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">0-100 km/h</span>
+            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors flex flex-col items-center">
+              <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">0-100 km/h Target</span>
               <span className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
                 {selectedTrim === "performance" ? "2.9s" : (currentVehicle.acceleration.match(/\d+(\.\d+)?s/)?.[0] || "3.2s")}
               </span>
+              <EvidenceBadge status="target" className="mt-1" />
             </div>
-            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors">
+            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors flex flex-col items-center">
               <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">Target Range (Sim.)</span>
               <span className="text-sm sm:text-base font-bold text-cyan-600 dark:text-cyan-400">
                 {calculatedRange} km
               </span>
+              <EvidenceBadge status="simulated" className="mt-1" />
             </div>
-            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors">
-              <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">Weight Dist.</span>
+            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors flex flex-col items-center">
+              <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">Weight Dist. (CAD)</span>
               <span className="text-sm sm:text-base font-bold text-emerald-600 dark:text-emerald-400">
                 49:51 F/R
               </span>
+              <EvidenceBadge status="simulated" className="mt-1" />
             </div>
           </div>
         </div>
@@ -661,7 +666,7 @@ export const Vehicle3DDigitalTwin = () => {
                   {formatInr(calculatedPrice)}
                 </span>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 block">
-                  Ex-Showroom + Indian FAME III Green Subsidy Applicable
+                  Not a binding quotation • Subsidy eligibility to be confirmed at launch
                 </span>
               </div>
               <div className="text-right">
@@ -671,6 +676,8 @@ export const Vehicle3DDigitalTwin = () => {
                 <span className="text-[11px] text-slate-500 dark:text-slate-400">{COMMON_DISCLAIMERS.targetDelivery}</span>
               </div>
             </div>
+
+            <ClaimDisclaimer variant="compact" />
 
             {/* Action Buttons */}
             <div className="flex items-center gap-2">
