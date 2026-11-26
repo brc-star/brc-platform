@@ -23,6 +23,9 @@ import { VehiclePortfolioNoImage } from "@/components/VehiclePortfolioNoImage";
 import { PatentShowcase } from "@/components/PatentShowcase";
 import { PreBookTriggerButton } from "@/components/PreBookTriggerButton";
 import { FounderSection } from "@/components/FounderSection";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
+import { PATENT_STATEMENT, CLAIMS_REGISTRY } from "@/lib/claims";
 import { INVESTOR_METRICS, RND_METRICS } from "@/lib/data";
 import { Metadata } from "next";
 
@@ -79,7 +82,7 @@ export default function HomePage() {
             How Self Volt Revolutionizes Electric Range
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
-            Conventional EVs suffer continuous single-battery drain. BRC STAR implements a dual-pack closed-loop architecture that routes kinetic PMG regeneration into secondary reserve cells while driving.
+            Conventional EVs route regenerative pulses back into the active traction pack. BRC STAR evaluates a dual-pack architecture that routes decelerative kinetic recovery into an isolated buffer pack during driving.
           </p>
         </div>
 
@@ -96,8 +99,11 @@ export default function HomePage() {
               Dual-Pack A/B Switching
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Dynamically isolates discharge current and charge surges, eliminating battery thermal runaway risks and extending cell life to 4,500+ cycles.
+              Dynamically separates discharge current and kinetic recovery surges, designed to reduce thermal stress and target extended cell life (4,500+ cycle design target — not yet accelerated-life tested).
             </p>
+            <div className="pt-1">
+              <EvidenceBadge status={CLAIMS_REGISTRY.pack_cycle_life_target.status} />
+            </div>
             <Link
               href="/technology/self-volt"
               className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 pt-2"
@@ -115,8 +121,11 @@ export default function HomePage() {
               ACM Intelligent Controller
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Patent-pending Alternator Control Module converts variable rotor RPM into ultra-stable 400V DC harvest with 98.4% peak inverter efficiency (Simulated).
+              Patent-pending Alternator Control Module converts variable rotor RPM into regulated 400V DC harvest targeting up to 98.4% peak inverter efficiency (Stage 1 bench-tested; TODO_FOUNDER_EVIDENCE).
             </p>
+            <div className="pt-1">
+              <EvidenceBadge status={CLAIMS_REGISTRY.acm_bench_efficiency.status} />
+            </div>
             <Link
               href="/technology/energy-recovery"
               className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 pt-2"
@@ -131,16 +140,19 @@ export default function HomePage() {
               <Shield className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-white font-mono">
-              Defensible Patent Moat
+              Patent Application Filed
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Indian Patent Application No. 202511050655 filed/published with the Indian Patent Office. PCT details pending.
+              {PATENT_STATEMENT}
             </p>
+            <div className="pt-1">
+              <EvidenceBadge status={CLAIMS_REGISTRY.patent_app_202511050655.status} />
+            </div>
             <Link
               href="/technology/patent-ip"
               className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 pt-2"
             >
-              <span>Inspect Patent Claims</span>
+              <span>View application summary</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -262,7 +274,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-[11px] text-slate-500 font-mono border-t border-slate-800/80 pt-4 text-center">
-            *Visuals and representations labeled as &ldquo;Rendered concept&rdquo; represent CAD models and laboratory simulations. Real physical test mule track photography will be published post-homologation.
+            *Visuals and representations labeled as &ldquo;Rendered concept&rdquo; represent CAD models and engineering simulations. Physical test mule photography will follow post-fabrication and homologation.
           </div>
         </div>
       </section>
@@ -279,29 +291,32 @@ export default function HomePage() {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-xs font-mono text-cyan-300">
                 <TrendingUp className="w-3.5 h-3.5 text-cyan-400" />
-                <span>05 INVESTOR OPPORTUNITY</span>
+                <span>07 INVESTOR OPPORTUNITY</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                Capturing the $50 Billion+ Clean EV Transition
+                Targeting India&apos;s Growing EV Market
               </h2>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                BRC STAR is positioned at the intersection of deep-tech engineering and high-volume commercial scalability. We are currently raising Seed / Pre-Series A capital to complete track durability validation and tooling deployment.
+                BRC STAR is developing indigenous deep-tech powertrain architectures at TRL 3/4. We are raising early-stage Seed capital to progress toward full hardware-in-loop integration, mule fabrication, and certification testing.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2 font-mono">
-                <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div className="text-[10px] text-slate-400 uppercase">Target TAM</div>
-                  <div className="text-lg font-bold text-cyan-400 mt-0.5">$50B+</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 font-mono">
+                <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+                  <div className="text-[10px] text-slate-400 uppercase">Market Focus</div>
+                  <div className="text-sm font-bold text-cyan-400 mt-0.5">India EV Ecosystem</div>
+                  <span className="text-[10px] text-slate-500 block">TAM source pending citation</span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
                   <div className="text-[10px] text-slate-400 uppercase">Current Stage</div>
-                  <div className="text-lg font-bold text-white mt-0.5">TRL 3/4</div>
+                  <div className="text-sm font-bold text-white mt-0.5">TRL 3/4 Lab Bench</div>
+                  <EvidenceBadge status="bench" />
                 </div>
-                <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div className="text-[10px] text-slate-400 uppercase">Projected Margin</div>
-                  <div className="text-lg font-bold text-emerald-400 mt-0.5">28.5%</div>
+                <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+                  <div className="text-[10px] text-slate-400 uppercase">Phase-2 Margin Assumption</div>
+                  <div className="text-sm font-bold text-emerald-400 mt-0.5">28.5% (Illustrative)</div>
+                  <span className="text-[10px] text-slate-500 block">Not a forecast • Unaudited</span>
                 </div>
               </div>
 
@@ -330,22 +345,23 @@ export default function HomePage() {
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">TRL 3/4 Dynamometer Validated:</strong> 32.8% auxiliary energy gain (Simulated / Lab Test Bench).
+                    <strong className="text-white">ACM Rig Bench-Tested (Stage 1):</strong> ACM hardware test rig bench-evaluated. Full vehicle energy-gain model: simulation only — independent track test pending.
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Patent Examination Progress:</strong> Indian Patent Application No. 202511050655 filed with IPO.
+                    <strong className="text-white">Patent Application Status:</strong> {PATENT_STATEMENT}
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Dealer Network Interest:</strong> 18+ franchise expressions of interest [Available in data room].
+                    <strong className="text-white">Dealer Network Interest:</strong> Informal expressions of interest, non-binding (18+ exploratory inquiries; TODO_FOUNDER_EVIDENCE).
                   </div>
                 </div>
               </div>
+              <ClaimDisclaimer variant="compact" className="pt-2 border-t border-slate-800" />
             </div>
           </div>
         </div>
@@ -356,7 +372,7 @@ export default function HomePage() {
         <div className="bg-gradient-to-r from-cyan-950/80 via-[#050814] to-blue-950/80 border border-cyan-500/40 rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Join the Self-Volt Revolution.
+              Partner With Self-Volt Engineering.
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
               Whether you are an institutional investor seeking deep-tech alpha, an enterprise logistics operator cutting fleet TCO, a dealership franchise partner, or an early adopter driver — connect with BRC STAR today.

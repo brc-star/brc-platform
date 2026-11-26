@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { Calculator, TrendingUp, Leaf, Zap, ArrowRight } from "lucide-react";
 import { formatInr, formatNumber } from "@/lib/utils";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const RangeRoiCalculator = () => {
   const [dailyKm, setDailyKm] = useState<number>(80);
@@ -16,7 +18,7 @@ export const RangeRoiCalculator = () => {
   const petrolMileageKmPerLiter = 13.5;
   const dieselMileageKmPerLiter = 16.0;
   const standardEvKwhPer100Km = 17.5;
-  const selfVoltKwhPer100Km = 11.2; // 36% more efficient with closed-loop regeneration
+  const selfVoltKwhPer100Km = 11.2; // Illustrative modeled efficiency target with kinetic recovery
 
   // Cost calculations
   let annualBaselineCost = 0;
@@ -121,9 +123,9 @@ export const RangeRoiCalculator = () => {
           <div className="bg-gradient-to-br from-cyan-950/60 via-[#090d1f] to-slate-950 border border-cyan-500/40 rounded-2xl p-6 relative overflow-hidden shadow-xl">
             <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-1 flex items-center justify-between">
-              <span>Projected Annual Net Savings</span>
-              <TrendingUp className="w-4 h-4 text-emerald-400" />
+            <div className="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-1 flex items-center justify-between gap-2">
+              <span>Illustrative Annual Savings Estimate</span>
+              <EvidenceBadge status="simulated" />
             </div>
 
             <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight">
@@ -133,24 +135,28 @@ export const RangeRoiCalculator = () => {
 
             <div className="mt-4 pt-4 border-t border-slate-800/80 grid grid-cols-2 gap-4">
               <div>
-                <span className="text-[10px] font-mono uppercase text-slate-400 block">5-Year TCO Benefit</span>
+                <span className="text-[10px] font-mono uppercase text-slate-400 block">5-Year Estimate</span>
                 <span className="text-lg font-bold text-emerald-400 font-mono">
                   {formatInr(fiveYearSavingsInr)}
                 </span>
               </div>
               <div>
-                <span className="text-[10px] font-mono uppercase text-slate-400 block">Kinetic Energy Recouped</span>
+                <span className="text-[10px] font-mono uppercase text-slate-400 block">Modeled Kinetic Recoup</span>
                 <span className="text-lg font-bold text-cyan-300 font-mono">
                   {formatNumber(regenKwhHarvestedPerYear)} kWh
                 </span>
               </div>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-300">
-              <span className="flex items-center gap-1.5 text-emerald-400">
-                <Leaf className="w-4 h-4" />
-                <span>{co2AvoidedTonsPerYear} MT CO₂ emissions prevented/yr</span>
-              </span>
+            <div className="mt-4 pt-4 border-t border-slate-800/80 space-y-2 text-xs font-mono text-slate-300">
+              <div className="flex items-center gap-1.5 text-emerald-400">
+                <Leaf className="w-4 h-4 shrink-0" />
+                <span>{co2AvoidedTonsPerYear} MT CO₂ tailpipe offset/yr (Illustrative)</span>
+              </div>
+              <p className="text-[11px] text-amber-300/90 leading-relaxed">
+                Illustrative estimate based on assumed inputs ({dailyKm} km/day, 340 days/yr, ₹{electricTariffPerKwh}/kWh tariff); not a measured result.
+              </p>
+              <ClaimDisclaimer variant="compact" className="pt-1" />
             </div>
           </div>
         </div>

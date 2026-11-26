@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Zap, Shield, FileText, Lock, Globe, Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { PATENT_STATEMENT } from "@/lib/claims";
 
 export const Footer = () => {
   return (
@@ -37,7 +38,7 @@ export const Footer = () => {
             </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Building a new energy architecture for electric mobility—engineered in India for a world in motion. Powered by patent-pending tri-alternator kinetic energy recovery and closed-loop dual-battery switching (Indian Patent Application No. 202511050655, filed/published).
+              Building an indigenous energy-management architecture for electric mobility—engineered in India for high-duty fleets. Powered by patent-pending kinetic energy recovery and dual-battery switching ({PATENT_STATEMENT}).
             </p>
 
             <div className="pt-2 space-y-2 text-xs font-mono text-slate-400">
@@ -84,7 +85,12 @@ export const Footer = () => {
               </li>
               <li>
                 <Link href="/technology/patent-ip" className="hover:text-cyan-300 transition-colors">
-                  Patent &amp; IP Claims
+                  Patent &amp; IP
+                </Link>
+              </li>
+              <li>
+                <Link href="/evidence" className="hover:text-cyan-300 transition-colors text-cyan-300 font-medium">
+                  Evidence &amp; Status
                 </Link>
               </li>
               <li>
@@ -223,7 +229,7 @@ export const Footer = () => {
               <span>INTELLECTUAL PROPERTY &amp; REGISTERED ENTITY</span>
             </div>
             <p className="leading-relaxed">
-              <strong>BRC STAR (OPC) PRIVATE LIMITED</strong> (CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7). Key innovations including dual-pack closed-loop battery switching, Alternator Control Modules (ACM), and Permanent Magnet kinetic harvesting are covered by Indian Patent Application No. 202511050655 (filed/published). PCT details pending.
+              <strong>BRC STAR (OPC) PRIVATE LIMITED</strong> (CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7). Key innovations including dual-pack battery switching, Alternator Control Modules (ACM), and Permanent Magnet kinetic harvesting are covered by {PATENT_STATEMENT} All technical metrics remain at TRL 3/4 bench or simulation stage.
             </p>
           </div>
           <div className="space-y-1.5 bg-slate-900/40 p-3.5 rounded-lg border border-slate-800">
@@ -252,8 +258,11 @@ export const Footer = () => {
             <Link href="/technology/patent-ip" className="hover:text-cyan-400 transition-colors">
               Patent &amp; IP
             </Link>
+            <Link href="/evidence" className="hover:text-cyan-400 transition-colors">
+              Evidence Ledger
+            </Link>
             <Link href="/docs" className="hover:text-cyan-400 transition-colors">
-              Safety &amp; Compliance
+              Technical Docs
             </Link>
             <Link href="/invest/pitch-deck" className="hover:text-cyan-400 transition-colors">
               NDA Portal

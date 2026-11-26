@@ -6,6 +6,9 @@ import dynamic from "next/dynamic";
 import { ArrowRight, ChevronRight, Lock } from "lucide-react";
 import { PitchDeckModal } from "./PitchDeckModal";
 import { usePreBookDrawer } from "@/components/PreBookContext";
+import { CLAIMS_REGISTRY } from "@/lib/claims";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 const LiveTelemetryWidget = dynamic(
   () => import("./LiveTelemetryWidget").then((mod) => mod.LiveTelemetryWidget),
@@ -60,9 +63,8 @@ export const HeroSection: React.FC = () => {
           </h1>
 
           <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-xl mx-auto mb-5 leading-relaxed font-sans font-normal transition-colors">
-            Pioneering auxiliary mechanical harvesting with isolated secondary-pack dynamic switching. 
-            Mitigating highway range degradation and single-battery thermal stress via proprietary 
-            Alternator Control Module (ACM) power routing.
+            Pioneering auxiliary mechanical kinetic recovery with isolated secondary-pack dynamic switching.
+            Designed to reduce highway range degradation and single-battery thermal stress (target; under bench validation) via proprietary Alternator Control Module (ACM) power routing.
           </p>
 
           {/* Action CTAs Group */}
@@ -97,52 +99,44 @@ export const HeroSection: React.FC = () => {
 
         {/* Mobile-First 2x2 to Desktop 4-Col Performance HUD Spec Strip */}
         <div className="grid grid-cols-2 gap-2.5 w-full max-w-md mx-auto mb-4 md:grid-cols-4 md:gap-4 md:max-w-4xl">
-          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center transition-all">
+          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center items-center transition-all">
             <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
-              Target Range
+              {CLAIMS_REGISTRY.range_starcraft_gt.label}
             </span>
             <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-cyan-600 dark:text-cyan-300 mt-0.5 sm:mt-1">
               850 km
             </span>
-            <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
-              Dual-Pack (Simulated)
-            </span>
+            <EvidenceBadge status={CLAIMS_REGISTRY.range_starcraft_gt.status} className="mt-1.5" />
           </div>
 
-          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center transition-all">
+          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center items-center transition-all">
             <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
-              0-100 km/h
+              0-100 km/h Target
             </span>
             <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-slate-900 dark:text-white mt-0.5 sm:mt-1">
               3.2 s
             </span>
-            <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
-              StarCraft GT AWD
-            </span>
+            <EvidenceBadge status={CLAIMS_REGISTRY.accel_starcraft_gt.status} className="mt-1.5" />
           </div>
 
-          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center transition-all">
+          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center items-center transition-all">
             <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
-              Aux Harvest
+              Peak Decel Recoup
             </span>
             <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-emerald-600 dark:text-emerald-400 mt-0.5 sm:mt-1">
               +42 kW
             </span>
-            <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
-              Peak Kinetic Inflow
-            </span>
+            <EvidenceBadge status={CLAIMS_REGISTRY.acm_peak_recoup.status} className="mt-1.5" />
           </div>
 
-          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center transition-all">
+          <div className="bg-white/80 border border-slate-200/80 shadow-sm backdrop-blur-md dark:bg-slate-900/60 dark:border-slate-800/80 dark:shadow-none p-2.5 sm:p-3.5 rounded-xl text-center flex flex-col justify-center items-center transition-all">
             <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
-              HV Architecture
+              System Architecture
             </span>
             <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-amber-600 dark:text-amber-400 mt-0.5 sm:mt-1">
               800V
             </span>
-            <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
-              Dual Solid-State Bus
-            </span>
+            <EvidenceBadge status={CLAIMS_REGISTRY.dual_bus_architecture.status} className="mt-1.5" />
           </div>
         </div>
 
@@ -152,9 +146,9 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Real-world variance disclaimer */}
-        <p className="mt-3 text-center text-[10px] sm:text-[11px] font-mono text-slate-500 dark:text-slate-500 max-w-2xl mx-auto">
-          *Performance and range figures are simulated and bench-validated under laboratory test cycles. Real-world results vary with payload, terrain, and operational conditions.
-        </p>
+        <div className="mt-4 max-w-3xl mx-auto">
+          <ClaimDisclaimer variant="compact" className="text-center" />
+        </div>
       </div>
 
       {/* DPDPA-Compliant Pitch Deck Modal Gateway */}

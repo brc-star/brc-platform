@@ -6,6 +6,7 @@ import ChatbotWrapper from "@/components/ChatbotWrapper";
 import { MobileAppBridge } from "@/components/MobileAppBridge";
 import { PreBookProvider } from "@/components/PreBookContext";
 import { PreBookingDrawer } from "@/components/PreBookingDrawer";
+import { PATENT_STATEMENT } from "@/lib/claims";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -34,9 +35,9 @@ export const metadata: Metadata = {
     template: "%s | BRC STAR",
   },
   description:
-    "BRC STAR (OPC) PRIVATE LIMITED — Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical harvesting, closed-loop dynamic battery switching, and high-uptime commercial powertrains.",
+    `BRC STAR (OPC) PRIVATE LIMITED — Deep-tech electric vehicle R&D architecture. ${PATENT_STATEMENT} Auxiliary kinetic energy recovery and dynamic dual-pack power routing.`,
   authors: [{ name: "BRC STAR (OPC) PRIVATE LIMITED", url: "https://www.brcstar.in" }],
-  creator: "Dr. B. Chauhan",
+  creator: "Bishna Ram",
   publisher: "BRC STAR (OPC) PRIVATE LIMITED",
   alternates: {
     canonical: "https://www.brcstar.in",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
     description:
-      "Deep-tech electric vehicle architecture filed under Indian Patent Application No. 202511050655. Auxiliary mechanical kinetic energy recovery with dynamic dual-pack bus switching.",
+      `Deep-tech electric vehicle R&D architecture. ${PATENT_STATEMENT}`,
     url: "https://www.brcstar.in",
     siteName: "BRC STAR Deep-Tech Mobility",
     images: [
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BRC STAR | Dual-Pack Kinetic Energy Recovery Architecture",
-    description: "Deep-tech electric mobility filed under Indian Patent Application No. 202511050655.",
+    description: PATENT_STATEMENT,
     images: ["https://www.brcstar.in/og-image.png"],
   },
   robots: {
@@ -124,7 +125,7 @@ export default function RootLayout({
           "Kinetic Energy Recovery Systems (KERS)",
           "Dual-Pack Battery Bus Dynamic Switching",
           "Permanent Magnet Generator Auxiliary Harvesting",
-          "Indian Patent Application No. 202511050655",
+          "Indian Patent Application No. 202511050655 (patent-pending)",
         ],
       },
       {

@@ -105,10 +105,16 @@ export const Navbar = () => {
           icon: Cpu,
         },
         {
-          name: "Patent & IP Portfolio",
-          desc: "Indian Patent Application No. 202511050655 & IP moat",
+          name: "Patent & IP Application",
+          desc: "Indian Patent Application No. 202511050655 (patent-pending)",
           href: "/technology/patent-ip",
           icon: Shield,
+        },
+        {
+          name: "Evidence & Status",
+          desc: "Verification ledger for bench, simulation & target claims",
+          href: "/evidence",
+          icon: CheckCircle2,
         },
       ],
     },
@@ -142,19 +148,19 @@ export const Navbar = () => {
       sublinks: [
         {
           name: "About Us & Story",
-          desc: "Founder Bishna Chauhan, DPIIT & iStart journey since 2019",
+          desc: "Founder Bishna Ram, DPIIT & iStart journey since 2019",
           href: "/about",
           icon: Users,
         },
         {
           name: "R&D & Test Rigs",
-          desc: "Simulation test-beds, dynamometer metrics & TRL 3/4 lab data",
+          desc: "Simulation test-beds, bench validation & TRL 3/4 lab data",
           href: "/innovation/rnd",
           icon: Layers,
         },
         {
           name: "Sustainability & ESG",
-          desc: "Net-zero lifecycle, green supply chain & battery circularity",
+          desc: "Battery circularity, lifecycle decarbonization & ESG targets",
           href: "/innovation/sustainability",
           icon: Leaf,
         },
@@ -169,11 +175,11 @@ export const Navbar = () => {
     {
       title: "Invest",
       href: "/invest",
-      badge: "Series A",
+      badge: "Seed",
       sublinks: [
         {
           name: "Investor Relations",
-          desc: "Vision, $50B+ TAM market capture, and capital roadmap",
+          desc: "India EV market focus, TRL 3/4 roadmap & evidence ledger",
           href: "/invest",
           icon: TrendingUp,
         },
