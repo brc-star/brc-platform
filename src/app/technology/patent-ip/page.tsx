@@ -52,7 +52,9 @@ export default function PatentIpPage() {
             <FileText className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
             <span>Official Filing Status Summary</span>
           </div>
-          <EvidenceBadge status="verified" size="sm" />
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-200/80 text-slate-800 border border-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700">
+            Patent-Pending • Date Confirmation Under NDA
+          </span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-mono text-xs">

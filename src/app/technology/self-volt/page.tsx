@@ -16,6 +16,7 @@ import { EvidenceBadge } from "@/components/EvidenceBadge";
 import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 import {
   PATENT_STATEMENT_SHORT,
+  SYSTEM_VOLTAGES,
   VOLTAGE_ARCHITECTURE_EXPLAINER,
   ENERGY_PHYSICS_NOTE,
   CLAIMS_REGISTRY,
@@ -119,10 +120,10 @@ export default function SelfVoltArchitecturePage() {
               Dual-Pack (A/B) Matrix Isolation
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Dividing storage capacity into two isolated 400V packs allows Pack A to supply traction discharge while Pack B receives decelerative/glide kinetic recovery, designed to reduce thermal stress compared with simultaneous bi-directional cycling on a single pack.
+              Dividing storage capacity into two isolated {SYSTEM_VOLTAGES.packNominal} packs ({SYSTEM_VOLTAGES.systemArchitecture} system architecture) allows Pack A to supply traction discharge while Pack B receives decelerative/glide kinetic recovery, designed to reduce thermal stress compared with simultaneous bi-directional cycling on a single pack.
             </p>
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>• Solid-state bus switching (&lt; 2.4 ms simulated)</div>
+              <div>• Solid-state bus switching ({CLAIMS_REGISTRY.bus_switching_latency.metric} simulated)</div>
               <div>• Dielectric liquid thermal isolation concept (Simulated)</div>
             </div>
           </div>
@@ -140,12 +141,15 @@ export default function SelfVoltArchitecturePage() {
               Alternator Control Module (ACM)
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Silicon-Carbide (SiC) active rectifier and boost stage targeting up to 98.4% peak lab-rig conversion efficiency (Stage 1 ACM bench test; TODO_FOUNDER_EVIDENCE), regulating variable AC generator input into a controlled 400V DC bus matching Pack B.
+              Silicon-Carbide (SiC) active rectifier and boost stage targeting up to {CLAIMS_REGISTRY.acm_bench_efficiency.metric} peak lab-rig conversion efficiency (Evidence available under NDA), regulating variable AC generator input into a controlled {SYSTEM_VOLTAGES.acmHarvestBus} DC bus matching Pack B.
             </p>
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>• 1200V-rated Silicon-Carbide MOSFET stage</div>
+              <div>• {SYSTEM_VOLTAGES.sicSwitchRating}-rated Silicon-Carbide MOSFET stage</div>
               <div>• Adaptive impedance matching algorithms (Confidential know-how)</div>
             </div>
+            <p className="text-[11px] text-slate-400 pt-2 border-t border-slate-800/80 leading-relaxed">
+              {VOLTAGE_ARCHITECTURE_EXPLAINER}
+            </p>
           </div>
 
           {/* Subsystem 3: BDA */}
@@ -161,7 +165,7 @@ export default function SelfVoltArchitecturePage() {
               Bidirectional Drive Assist (BDA)
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Designed to coordinate torque handoff and parallel discharge. Under peak acceleration demand, BDA commands parallel draw from Pack A and Pack B, targeting 0–100 km/h in 3.2 s on the StarCraft GT concept (simulation target; not yet track-tested).
+              Designed to coordinate torque handoff and parallel discharge. Under peak acceleration demand, BDA commands parallel draw from Pack A and Pack B, targeting 0–100 km/h in {CLAIMS_REGISTRY.accel_starcraft_gt.metric} on the StarCraft GT concept (simulation target; not yet track-tested).
             </p>
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
               <div>• Parallel torque discharge coordination target</div>
@@ -214,7 +218,7 @@ export default function SelfVoltArchitecturePage() {
               <td className="py-3 px-4 font-bold text-white">Battery Cycle Life</td>
               <td className="py-3 px-4">Chemistry &amp; thermal dependent (1,500–3,000+ LFP/NMC)</td>
               <td className="py-3 px-4 font-bold text-cyan-400 bg-cyan-950/20">
-                Design target: 4,500+ cycles (depends on chemistry, duty cycle &amp; thermal management; not yet tested)
+                Design target: {CLAIMS_REGISTRY.pack_cycle_life_target.metric} (not yet tested; depends on chemistry, duty cycle &amp; thermal management)
               </td>
             </tr>
             <tr>

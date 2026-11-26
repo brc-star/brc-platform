@@ -51,7 +51,7 @@ export const InvestorDataRoomGate = () => {
   const confidentialDocuments = [
     {
       title: "BRC STAR Seed Overview & R&D Pitch Deck",
-      type: "PDF Presentation (TODO_FOUNDER_VERIFY page count)",
+      type: "PDF Presentation (Seed Deck — NDA Copy)",
       tier: "Tier 1: Vision & R&D Roadmap",
       size: "TBD",
       watermark: "CONFIDENTIAL - AUTHORIZED INVESTOR COPY",

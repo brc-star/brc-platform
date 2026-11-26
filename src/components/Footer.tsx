@@ -229,7 +229,7 @@ export const Footer = () => {
               <span>INTELLECTUAL PROPERTY &amp; REGISTERED ENTITY</span>
             </div>
             <p className="leading-relaxed">
-              <strong>BRC STAR (OPC) PRIVATE LIMITED</strong> (CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7). Key innovations including dual-pack battery switching, Alternator Control Modules (ACM), and Permanent Magnet kinetic harvesting are covered by {PATENT_STATEMENT} All technical metrics remain at TRL 3/4 bench or simulation stage.
+              <strong>BRC STAR (OPC) PRIVATE LIMITED</strong> (CIN: U34100RJ2019OPC066948 • GSTIN: 08AAICB7401R1Z7). Key innovations including dual-pack battery switching, Alternator Control Modules (ACM), and Permanent Magnet kinetic harvesting are the subject of {PATENT_STATEMENT} All technical metrics remain at TRL 3/4 bench or simulation stage.
             </p>
           </div>
           <div className="space-y-1.5 bg-slate-900/40 p-3.5 rounded-lg border border-slate-800">

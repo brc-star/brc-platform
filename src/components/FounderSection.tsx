@@ -40,7 +40,7 @@ const founder = {
     },
   ],
   links: {
-    // linkedin: "TODO_FOUNDER", // Add verified LinkedIn profile URL when ready
+    // LinkedIn icon hidden until a verified profile URL is added (see FOUNDER_TODO.md)
     email: "mailto:contact@brcstar.in",
     pitch: "/invest/pitch-deck",
     about: "/about",

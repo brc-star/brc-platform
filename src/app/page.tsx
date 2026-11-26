@@ -79,7 +79,7 @@ export default function HomePage() {
             <span>02 TECHNOLOGY BREAKTHROUGH</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            How Self Volt Targets Extended Electric Range
+            How Self Volt Aims to Improve Electric Range
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
             Conventional EVs route regenerative pulses back into the active traction pack. BRC STAR evaluates a dual-pack architecture that routes decelerative kinetic recovery into an isolated buffer pack during driving.
@@ -99,7 +99,7 @@ export default function HomePage() {
               Dual-Pack A/B Switching
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Dynamically separates discharge current and kinetic recovery surges, designed to reduce thermal stress and target extended cell life (4,500+ cycle design target — not yet accelerated-life tested).
+              Dynamically separates discharge current and kinetic recovery surges, designed to reduce thermal stress (target, not yet tested) and target extended cell life ({CLAIMS_REGISTRY.pack_cycle_life_target.metric} design target).
             </p>
             <div className="pt-1">
               <EvidenceBadge status={CLAIMS_REGISTRY.pack_cycle_life_target.status} />
@@ -121,7 +121,7 @@ export default function HomePage() {
               ACM Intelligent Controller
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Patent-pending Alternator Control Module converts variable rotor RPM into regulated 400V DC harvest targeting up to 98.4% peak inverter efficiency (Stage 1 bench-tested; TODO_FOUNDER_EVIDENCE).
+              Patent-pending Alternator Control Module converts variable rotor RPM into regulated DC harvest targeting up to {CLAIMS_REGISTRY.acm_bench_efficiency.metric} peak inverter efficiency (Evidence available under NDA).
             </p>
             <div className="pt-1">
               <EvidenceBadge status={CLAIMS_REGISTRY.acm_bench_efficiency.status} />
@@ -247,7 +247,7 @@ export default function HomePage() {
                 Dual-Pack Solid-State Commutator
               </h3>
               <p className="text-slate-400 text-[11px] font-sans leading-relaxed">
-                Silicon Carbide (SiC) semiconductor bus-switching matrix with sub-2.4ms role transition latency between Pack A and Pack B.
+                Silicon Carbide (SiC) semiconductor bus-switching matrix with {CLAIMS_REGISTRY.bus_switching_latency.metric} simulated role transition latency between Pack A and Pack B.
               </p>
               <div className="pt-2 text-[10px] text-amber-400/90 font-mono">
                 [Rendered concept / Hardware logic]
@@ -304,19 +304,21 @@ export default function HomePage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 font-mono">
                 <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                  <div className="text-[10px] text-slate-400 uppercase">Market Focus</div>
-                  <div className="text-sm font-bold text-cyan-400 mt-0.5">India EV Ecosystem</div>
-                  <span className="text-[10px] text-slate-500 block">TAM source pending citation</span>
+                  <div className="text-[10px] text-slate-400 uppercase">Target EV Segment</div>
+                  <div className="text-sm font-bold text-cyan-400 mt-0.5">Fleet &amp; Passenger EV</div>
+                  <EvidenceBadge status="target" />
                 </div>
                 <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
                   <div className="text-[10px] text-slate-400 uppercase">Current Stage</div>
-                  <div className="text-sm font-bold text-white mt-0.5">TRL 3/4 Lab Bench</div>
-                  <EvidenceBadge status="bench" />
+                  <div className="text-sm font-bold text-white mt-0.5">TRL 3/4 R&amp;D Stage</div>
+                  <EvidenceBadge status="simulated" />
                 </div>
                 <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                  <div className="text-[10px] text-slate-400 uppercase">Phase-2 Margin Assumption</div>
-                  <div className="text-sm font-bold text-emerald-400 mt-0.5">28.5% (Illustrative)</div>
-                  <span className="text-[10px] text-slate-500 block">Not a forecast • Unaudited</span>
+                  <div className="text-[10px] text-slate-400 uppercase">Phase-2 Gross Margin Assumption</div>
+                  <div className="text-sm font-bold text-emerald-400 mt-0.5">{CLAIMS_REGISTRY.phase2_gross_margin.metric} (Illustrative)</div>
+                  <Link href="/evidence#phase2_gross_margin" className="text-[10px] text-cyan-400 hover:underline block">
+                    Illustrative, unaudited • View assumptions →
+                  </Link>
                 </div>
               </div>
 
@@ -345,7 +347,7 @@ export default function HomePage() {
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">ACM Rig Bench-Tested (Stage 1):</strong> ACM hardware test rig bench-evaluated. Full vehicle energy-gain model: simulation only — independent track test pending.
+                    <strong className="text-white">ACM Hardware Rig (Stage 1):</strong> ACM hardware rig evaluation modeled alongside vehicle energy-recoup simulation (up to {CLAIMS_REGISTRY.aux_energy_gain_sim.metric} simulation only — bench log &amp; track validation pending).
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
@@ -357,7 +359,7 @@ export default function HomePage() {
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Dealer Network Interest:</strong> Informal expressions of interest, non-binding (18+ exploratory inquiries; TODO_FOUNDER_EVIDENCE).
+                    <strong className="text-white">Dealer Network Interest:</strong> Informal expressions of interest, non-binding ({CLAIMS_REGISTRY.dealer_eois_nonbinding.metric} exploratory; evidence available under NDA).
                   </div>
                 </div>
               </div>
@@ -372,7 +374,7 @@ export default function HomePage() {
         <div className="bg-gradient-to-r from-cyan-950/80 via-[#050814] to-blue-950/80 border border-cyan-500/40 rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Partner With Self-Volt Engineering.
+              Partner with BRC STAR
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
               Whether you are an institutional investor seeking deep-tech alpha, an enterprise logistics operator cutting fleet TCO, a dealership franchise partner, or an early adopter driver — connect with BRC STAR today.

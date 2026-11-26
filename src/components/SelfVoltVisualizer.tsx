@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Zap, Activity, RefreshCw, ArrowRight, ShieldCheck, Cpu, BatteryCharging, Gauge } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SYSTEM_VOLTAGES, CLAIMS_REGISTRY } from "@/lib/claims";
 import { EvidenceBadge } from "@/components/EvidenceBadge";
 import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
@@ -77,7 +78,7 @@ export const SelfVoltVisualizer = () => {
     },
     HEAVY_REGEN_BRAKE: {
       title: "Deceleration Kinetic Recovery",
-      desc: "During braking and downhill deceleration, controlled recovery targets transient charge pulses (up to +42 kW peak system target) into the auxiliary pack while helping reduce mechanical brake wear.",
+      desc: `During braking and downhill deceleration, controlled recovery targets transient charge pulses (up to ${CLAIMS_REGISTRY.acm_peak_recoup.metric} peak system target) into the auxiliary pack while helping reduce mechanical brake wear.`,
       flowColor: "text-emerald-400",
       accentBorder: "border-emerald-500/40",
       badge: "Deceleration & Downhill",
@@ -162,7 +163,7 @@ export const SelfVoltVisualizer = () => {
               <span className="text-cyan-400 font-bold">{packASoc}% SOC</span>
             </div>
             <div className="mt-2 text-lg font-bold text-white font-mono">
-              400V Solid-State Matrix
+              {SYSTEM_VOLTAGES.packNominal} Solid-State Matrix
             </div>
             <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
               Main discharge stream supplying primary inverter and high-voltage bus.
@@ -234,7 +235,7 @@ export const SelfVoltVisualizer = () => {
               <span className="text-emerald-400 font-bold">{packBSoc}% SOC</span>
             </div>
             <div className="mt-2 text-lg font-bold text-white font-mono">
-              400V Harvest Array
+              {SYSTEM_VOLTAGES.acmHarvestBus} Harvest Array
             </div>
             <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
               Dynamically receives PMG alternator energy flow and decelerative recovery.

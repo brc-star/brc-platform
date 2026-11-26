@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { TrendingUp, Lock, ArrowRight } from "lucide-react";
-import { PATENT_STATEMENT } from "@/lib/claims";
+import { PATENT_STATEMENT, CLAIMS_REGISTRY } from "@/lib/claims";
 import { EvidenceBadge } from "@/components/EvidenceBadge";
 import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
@@ -38,13 +38,7 @@ export default function InvestorRelationsPage() {
       </div>
 
       {/* Financial & Market Highlights */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-center">
-        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
-          <div className="text-[10px] text-slate-400 uppercase">Target Market Focus</div>
-          <div className="text-lg font-bold text-cyan-400 mt-1">India EV Transition</div>
-          <div className="text-[10px] text-slate-500">TAM source pending citation</div>
-          <EvidenceBadge status="target" />
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-center">
         <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
           <div className="text-[10px] text-slate-400 uppercase">Primary Segments</div>
           <div className="text-lg font-bold text-white mt-1">Fleet &amp; Passenger</div>
@@ -52,10 +46,14 @@ export default function InvestorRelationsPage() {
           <EvidenceBadge status="target" />
         </div>
         <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
-          <div className="text-[10px] text-slate-400 uppercase">Gross Margin Assumption</div>
-          <div className="text-lg font-bold text-emerald-400 mt-1">28.5% (Illustrative)</div>
-          <div className="text-[10px] text-slate-500">Phase-2 target; not a forecast</div>
-          <EvidenceBadge status="target" />
+          <div className="text-[10px] text-slate-400 uppercase">Phase-2 Gross Margin Assumption</div>
+          <div className="text-lg font-bold text-emerald-400 mt-1">{CLAIMS_REGISTRY.phase2_gross_margin.metric} (Illustrative, Unaudited)</div>
+          <div className="text-[10px] text-slate-500">Not a forecast •{" "}
+            <Link href="/evidence#phase2_gross_margin" className="text-cyan-400 underline">
+              Assumptions
+            </Link>
+          </div>
+          <EvidenceBadge status={CLAIMS_REGISTRY.phase2_gross_margin.status} />
         </div>
         <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
           <div className="text-[10px] text-slate-400 uppercase">Current Round</div>

@@ -104,7 +104,7 @@ export const HeroSection: React.FC = () => {
               {CLAIMS_REGISTRY.range_starcraft_gt.label}
             </span>
             <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-cyan-600 dark:text-cyan-300 mt-0.5 sm:mt-1">
-              850 km
+              {CLAIMS_REGISTRY.range_starcraft_gt.metric}
             </span>
             <EvidenceBadge status={CLAIMS_REGISTRY.range_starcraft_gt.status} className="mt-1.5" />
           </div>
@@ -114,7 +114,7 @@ export const HeroSection: React.FC = () => {
               0-100 km/h Target
             </span>
             <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-slate-900 dark:text-white mt-0.5 sm:mt-1">
-              3.2 s
+              {CLAIMS_REGISTRY.accel_starcraft_gt.metric}
             </span>
             <EvidenceBadge status={CLAIMS_REGISTRY.accel_starcraft_gt.status} className="mt-1.5" />
           </div>
@@ -124,7 +124,7 @@ export const HeroSection: React.FC = () => {
               Peak Decel Recoup
             </span>
             <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-emerald-600 dark:text-emerald-400 mt-0.5 sm:mt-1">
-              +42 kW
+              {CLAIMS_REGISTRY.acm_peak_recoup.metric}
             </span>
             <EvidenceBadge status={CLAIMS_REGISTRY.acm_peak_recoup.status} className="mt-1.5" />
           </div>
@@ -134,7 +134,7 @@ export const HeroSection: React.FC = () => {
               System Architecture
             </span>
             <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight font-mono text-amber-600 dark:text-amber-400 mt-0.5 sm:mt-1">
-              800V
+              {CLAIMS_REGISTRY.dual_bus_architecture.metric}
             </span>
             <EvidenceBadge status={CLAIMS_REGISTRY.dual_bus_architecture.status} className="mt-1.5" />
           </div>

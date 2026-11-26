@@ -211,7 +211,7 @@ export const PatentShowcase = () => {
                   <span className="text-cyan-700 dark:text-cyan-400 font-bold">
                     {pat.refNumber}
                   </span>
-                  <EvidenceBadge status={idx === 0 ? "verified" : "planned"} />
+                  <EvidenceBadge status="planned" />
                 </div>
                 <h5 className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm line-clamp-2">
                   {pat.title}
