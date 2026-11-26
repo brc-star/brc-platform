@@ -5,7 +5,8 @@
   "description": "Production-grade digital enterprise platform for BRC STAR OPC PRIVATE LIMITED (BRC STAR Self Volt Electric Vehicle Technology)",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/check-claims.js",
+    "check:claims": "node scripts/check-claims.js",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",

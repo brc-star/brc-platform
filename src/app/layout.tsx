@@ -125,7 +125,7 @@ export default function RootLayout({
           "Kinetic Energy Recovery Systems (KERS)",
           "Dual-Pack Battery Bus Dynamic Switching",
           "Permanent Magnet Generator Auxiliary Harvesting",
-          "Indian Patent Application No. 202511050655 (patent-pending)",
+          PATENT_STATEMENT,
         ],
       },
       {
