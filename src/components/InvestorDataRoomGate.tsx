@@ -50,32 +50,32 @@ export const InvestorDataRoomGate = () => {
 
   const confidentialDocuments = [
     {
-      title: "BRC STAR Master Series-A Pitch Deck (2026-2030)",
-      type: "PDF Presentation (38 Pages)",
-      tier: "Tier 1: Overview & Market",
-      size: "8.4 MB",
+      title: "BRC STAR Seed Overview & R&D Pitch Deck",
+      type: "PDF Presentation (TODO_FOUNDER_VERIFY page count)",
+      tier: "Tier 1: Vision & R&D Roadmap",
+      size: "TBD",
       watermark: "CONFIDENTIAL - AUTHORIZED INVESTOR COPY",
     },
     {
-      title: "5-Year Unit Economics & Manufacturing Financial Model",
-      type: "Audited Financial Forecast (XLSX/PDF)",
-      tier: "Tier 2: Financials & Cap Table",
-      size: "3.2 MB",
-      watermark: "CONFIDENTIAL - AUDITED PROJECTIONS",
+      title: "5-Year Financial Model & Operating Assumptions",
+      type: "Financial Model & Assumptions (Unaudited)",
+      tier: "Tier 2: Unaudited Financial Projections",
+      size: "TBD",
+      watermark: "CONFIDENTIAL - UNAUDITED ASSUMPTIONS",
     },
     {
-      title: "Self-Volt Dual-Pack Patent Claims & IP Defensibility Report",
-      type: "Legal IP Dossier & IPO Filing Certified Copy",
-      tier: "Tier 3: Deep-Tech IP",
-      size: "14.8 MB",
-      watermark: "CONFIDENTIAL - IPO APPLICATION",
+      title: "Indian Patent Application No. 202511050655 Dossier",
+      type: "Patent Specification & Claim Summary (Under NDA)",
+      tier: "Tier 3: Unpublished Patent-Pending IP",
+      size: "TBD",
+      watermark: "CONFIDENTIAL - UNPUBLISHED IPO APPLICATION",
     },
     {
-      title: "Dynamometer Rig 4 Testing & Track Validation Logs",
-      type: "Empirical Sensor Telemetry & Efficiency Logs",
-      tier: "Tier 3: Engineering R&D",
-      size: "22.1 MB",
-      watermark: "CONFIDENTIAL - TRL 3/4 BENCHMARK",
+      title: "Stage 1 ACM Bench Rig & Simulation Modeling Logs",
+      type: "TRL 3/4 Workbench & Numerical Simulation Data",
+      tier: "Tier 3: Engineering Evidence",
+      size: "TBD",
+      watermark: "CONFIDENTIAL - TRL 3/4 EVALUATION",
     },
   ];
 
@@ -129,15 +129,15 @@ export const InvestorDataRoomGate = () => {
             <div className="space-y-2 text-xs text-slate-400 font-mono">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Complete 38-Page Master Pitch Deck with $50B TAM &amp; Roadmap</span>
+                <span>Seed Investor Overview Deck &amp; Development Roadmap</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Financial Forecast, BOM Margins &amp; Cap Table Architecture</span>
+                <span>Unaudited Financial Model, BOM Assumptions &amp; Cap Table</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                <span>TRL 3/4 Test-Bench Validation &amp; Patent Claims Dossier</span>
+                <span>TRL 3/4 Bench Simulation Data &amp; Unpublished Claim Summary</span>
               </div>
             </div>
           </div>

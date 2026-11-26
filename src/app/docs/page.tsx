@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { FileText, Download, ShieldCheck, ChevronRight, ArrowRight, BookOpen, Lock, Cpu, Zap, Layers, CheckCircle2 } from "lucide-react";
+import { PATENT_STATEMENT, PATENT_STATUS_BOX } from "@/lib/claims";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata: Metadata = {
   title: "Technical Documentation & Technology Summary | BRC STAR",
@@ -41,10 +43,10 @@ export default function TechnicalDocsPage() {
       isPublic: true,
     },
     {
-      title: "Confidential TRL 3/4 Dynamometer Logs & Thermal Stress Testing",
-      abstract: "Laboratory test-bench sensor records, EIS electrochemical impedance logs, and thermal runaway prevention test files.",
+      title: "Stage 1 ACM Bench Rig & Thermal Simulation Logs",
+      abstract: "Laboratory test-bench sensor notes, EIS electrochemical impedance simulation files, and thermal balance models.",
       version: "v1.0 (NDA Required)",
-      fileSize: "18.4 MB PDF",
+      fileSize: "NDA Data Room",
       isPublic: false,
     },
   ];
@@ -68,7 +70,7 @@ export default function TechnicalDocsPage() {
             Engineering Whitepapers &amp; Technology Summary
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Access validated technical publications, kinetic equations, and system architecture blueprints authored by the BRC STAR engineering team.
+            Access architectural preprints, system design notes, and public R&amp;D briefs authored by the BRC STAR engineering team.
           </p>
         </div>
       </div>
@@ -127,8 +129,8 @@ export default function TechnicalDocsPage() {
               The proprietary ACM employs high-speed Silicon-Carbide (SiC) MOSFET bridge rectifiers that convert erratic multi-pole generator AC voltages into stabilized high-voltage DC for seamless auxiliary pack replenishment across low-speed gliding and heavy braking.
             </p>
             <div className="pt-2 text-[11px] font-mono text-slate-400 border-t border-slate-800/80">
-              • 98.4% Peak Rectification Efficiency (Lab)<br />
-              • CAN 2.0B / CAN-FD Vehicle Integration
+              • Up to 98.4% Peak Rectification Yield (Stage 1 Rig Target)<br />
+              • CAN 2.0B / CAN-FD Integration Concept
             </div>
           </div>
 
@@ -136,32 +138,28 @@ export default function TechnicalDocsPage() {
           <div className="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-3">
             <div className="flex items-center gap-2 text-cyan-400 text-xs font-mono font-bold uppercase">
               <ShieldCheck className="w-4 h-4" />
-              <span>3. Defensible IP Foundation</span>
+              <span>3. Patent-Pending IP Status</span>
             </div>
             <h3 className="text-base font-bold text-white font-mono">
-              Patent Application &amp; Prior Art
+              Application Filing Summary
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Filed with the Indian Patent Office under Application No. 202511050655 (Published &amp; under examination). Encompasses dual-pack switching logic, alternator electromechanical kinetics, and dynamic load-transfer algorithms [PCT details pending].
+              {PATENT_STATEMENT} Covers dual-pack sequential routing architecture and adaptive Alternator Control Module control concepts.
             </p>
             <div className="pt-2 text-[11px] font-mono text-slate-400 border-t border-slate-800/80">
-              • Priority Date: 2025-03-14<br />
-              • Status: Published &amp; In Formal Examination
+              • Filing Date: {PATENT_STATUS_BOX.filingDate}<br />
+              • Publication: {PATENT_STATUS_BOX.publicationStatus}
             </div>
           </div>
         </div>
 
         {/* Engineering Notice */}
-        <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center text-xs font-mono text-slate-400">
-          <p>
-            <span className="text-cyan-400 font-semibold">Engineering Disclaimer:</span> All technical data, simulation runs, and kinetic recoup specifications reflect laboratory bench test-bed setups at TRL 3/4. Figures simulated/lab-validated; real-world results vary with driving style, climate, and production configuration.
-          </p>
-        </div>
+        <ClaimDisclaimer />
       </section>
 
       {/* Whitepaper Document Cards */}
       <div className="space-y-6">
-        <h2 className="text-xl font-bold text-white font-mono">Published Whitepapers &amp; Specifications</h2>
+        <h2 className="text-xl font-bold text-white font-mono">Technical Notes &amp; Whitepapers (Requests)</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {whitepapers.map((doc) => (
             <div

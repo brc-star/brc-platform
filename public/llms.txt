@@ -1,43 +1,44 @@
 # BRC STAR (OPC) PRIVATE LIMITED — Technical Knowledge Base
 
-> BRC STAR is an Indian deep-tech electric mobility startup pioneering auxiliary mechanical kinetic energy recovery and closed-loop dual-battery switching architectures.
+> BRC STAR is an Indian deep-tech electric mobility startup researching auxiliary mechanical kinetic energy recovery and closed-loop dual-battery switching architectures.
 
 ## Corporate Identity & Governance
 - **Legal Entity**: BRC STAR (OPC) PRIVATE LIMITED
 - **Corporate Identification Number (CIN)**: U34100RJ2019OPC066948
+- **GSTIN**: 08AAICB7401R1Z7
 - **Date of Incorporation**: November 2019
-- **Founder & Managing Director**: Dr. B. Chauhan (Bishna Chauhan)
+- **Founder & CEO**: Bishna Ram
 - **Registered Headquarters**: 7SJM-A, Anupgarh, Ganganagar, Rajasthan 335701, India
 - **Incubation & Recognition**: iStart Rajasthan (Government of Rajasthan) and DPIIT Startup India Recognized Startup
 
-## Intellectual Property & Patent Architecture
-- **Primary Patent Filing**: Indian Patent Application No. 202511050655
-- **Jurisdiction**: Indian Patent Office (IPO), New Delhi / Kolkata
+## Intellectual Property & Patent Status
+- **Primary Filing**: Indian Patent Application No. 202511050655 (patent-pending, filed with the Indian Patent Office; not yet published or granted).
 - **Title**: Closed-Loop Dual-Pack Kinetic Energy Recovery Architecture and Adaptive Alternator Control System for Electric Vehicles
-- **International Priority**: [PCT details pending]
-- **Technology Readiness Level (TRL)**: TRL 3/4 (Laboratory Simulation & Proof-of-Concept Test Bench Validation)
+- **International (PCT) Filing**: Status to be confirmed (no country-level foreign grant claimed).
+- **Technology Readiness Level (TRL)**: TRL 3/4 (Stage 1 ACM Lab Bench; Dual-Pack Switcher Simulation; Vehicle CAD/CFD Concept).
 
 ## Core Technical Architecture: Self Volt
-1. **Dual-Pack Sequential Topology**: Physically decouples active propulsion draw (Pack A) from kinetic harvesting absorption (Pack B), reducing single-pack thermal stress and mitigating localized micro-heating.
-2. **Alternator Control Module (ACM)**: High-frequency active boost rectification converting variable rotational momentum (300 RPM to 9,500 RPM) into stabilized 400V DC charge current.
-3. **Solid-State SiC Commutation**: Sub-2.4ms switching handover between battery packs without interruption to wheel tractive torque (Simulated).
-4. **Safety & Standards Alignment**: Designed around Indian AIS-038 Rev 2 and AIS-156 traction battery safety standards, incorporating dielectric immersion cooling paths.
+1. **Dual-Pack Sequential Topology**: Physically separates primary traction discharge (Pack A) from kinetic recovery capture (Pack B), designed to reduce thermal stress on active cells.
+2. **Alternator Control Module (ACM)**: Variable-frequency active rectifier stage evaluated at Stage 1 lab bench targeting up to 98.4% peak conversion yield.
+3. **Solid-State SiC Commutation**: Simulation model targeting < 2.4 ms bus transition handover without mechanical relay arcing.
+4. **Safety & Standards Roadmap (Planned)**: Conceptual systems are designed to target Indian AIS-038 Rev 2, AIS-052, AIS-153, AIS-156, and UN ECE R100 frameworks; formal certification testing has not yet started or been obtained.
 
-## Vehicle Portfolio & Indicative Specifications
-- **StarCraft GT**: Performance electric sedan. Indicative base price ₹16,50,000. Simulated range up to 850 km target (Dual-pack). Acceleration 0-100 km/h in 3.2s.
-- **StarFleet**: Commercial electric delivery van. Indicative base price ₹18,50,000. Designed for last-mile and regional delivery fleets.
-- **StarTransit**: Urban transit electric bus. Indicative base price ₹28,00,000. High-uptime fleet architecture.
-*Disclaimer: All pricing and performance metrics are indicative and simulated, subject to final ARAI/ICAT statutory homologation.*
+## Vehicle Concepts & Indicative Targets (Not Binding Quotations)
+- **StarCraft GT**: Aerodynamic electric sedan CAD/CFD concept. Indicative target price ₹16,50,000. Modeled range target up to 850 km (simulated). Acceleration target 0–100 km/h in 3.2 s.
+- **StarFleet**: Commercial electric delivery concept. Indicative target price ₹24,50,000.
+- **StarTransit**: Urban transit 12M coach concept. Indicative target price ₹65,00,000.
+*Disclaimer: Figures are simulated, bench-tested or target values at TRL 3/4. Real-world results will vary. Not a commitment of performance, delivery or price.*
 
-## Pre-Booking Terms & Consumer Protection
-- **Reservation Token**: ₹25,000 fully refundable priority allocation token held in dedicated escrow.
-- **Refund Policy**: 100% unconditional refund available at any time prior to final vehicle VIN allocation.
-- **Compliance**: Fully compliant with Indian Consumer Protection Act 2019 and Digital Personal Data Protection Act (DPDPA) 2023.
+## Pre-Booking Interest Terms & Governance
+- **Interest Token**: ₹25,000 100% refundable expression-of-interest allocation held by BRC STAR (OPC) PRIVATE LIMITED (no commercial production vehicle exists yet).
+- **Refund Policy**: 100% refundable prior to final vehicle invoicing within 7 business days upon cancellation request.
+- **Data Governance**: Processed in compliance with India DPDPA 2023.
 
 ## Official Web Links
 - Website: https://www.brcstar.in
 - Technology: https://www.brcstar.in/technology/self-volt
 - Patent & IP: https://www.brcstar.in/technology/patent-ip
+- Evidence & Status Ledger: https://www.brcstar.in/evidence
 - Vehicles: https://www.brcstar.in/vehicles
 - Pre-Book: https://www.brcstar.in/pre-book
 - Investor Relations: https://www.brcstar.in/invest

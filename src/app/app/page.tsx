@@ -134,7 +134,7 @@ export default function CustomerPlatformPage() {
                   1,482 kWh
                 </div>
                 <div className="text-[11px] text-slate-500 dark:text-slate-400">
-                  Equivalent to ₹11,850 in grid electricity saved with zero degradation.
+                  Simulated kinetic energy recovery estimate (demo preview).
                 </div>
               </div>
 
@@ -201,16 +201,16 @@ export default function CustomerPlatformPage() {
         {activeTab === "service" && (
           <div className="p-6 sm:p-8 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-6 transition-colors">
             <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-mono">
-              Schedule Certified High-Voltage &amp; ACM Maintenance
+              Schedule Scheduled High-Voltage &amp; ACM Inspection (Preview)
             </h3>
             {bookingConfirmed ? (
               <div className="p-6 rounded-xl bg-emerald-50 border border-emerald-300 dark:bg-emerald-950/60 dark:border-emerald-500/40 text-center space-y-2">
                 <div className="text-emerald-700 dark:text-emerald-400 font-mono font-bold text-lg flex items-center justify-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                  Service Appointment Reserved: Ticket #BRC-SRV-2026-089
+                  Service Request Logged (Demo Preview): #BRC-SRV-2026-089
                 </div>
                 <p className="text-xs text-slate-700 dark:text-slate-300">
-                  A certified High-Voltage BRC technician will service your vehicle at Bengaluru Flagship Hub.
+                  Demo booking confirmation only — commercial service stations launch post-homologation.
                 </p>
               </div>
             ) : (

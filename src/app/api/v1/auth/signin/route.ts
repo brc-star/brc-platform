@@ -10,7 +10,7 @@ const SignInSchema = z.object({
 
 // Demo accounts for seamless evaluation
 const DEMO_USERS: Record<string, { name: string; role: UserRole; org: string }> = {
-  "founder@brcstar.in": { name: "Dr. B. Chauhan", role: "ADMIN", org: "BRC STAR Executive Board" },
+  "founder@brcstar.in": { name: "Bishna Ram", role: "ADMIN", org: "BRC STAR Executive Board" },
   "admin@brcstar.in": { name: "Chief Operations Officer", role: "ENTERPRISE_STAFF", org: "BRC Operations Desk" },
   "investor@brcstar.in": { name: "Siddharth Menon", role: "INVESTOR", org: "Nexus Deep-Tech Fund" },
   "dealer@brcstar.in": { name: "Rajesh Automotive Ventures", role: "DEALER", org: "Southern Hub Dealership" },

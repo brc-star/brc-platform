@@ -24,7 +24,7 @@ BRCSTAR.IN
 ├── 02 TECHNOLOGY (/technology)
 │   ├── Self Volt Architecture (/technology/self-volt) — Dual-pack closed loop, ACM & BDA dynamics
 │   ├── Energy Recovery (/technology/energy-recovery) — PMG alternator kinetic recoup, braking dynamics
-│   └── Patent & IP (/technology/patent-ip) — Patent claims registry, defensibility moat, certified filings
+│   └── Patent & IP (/technology/patent-ip) — Patent-pending application summary (App No. 202511050655), NDA IP room
 │
 ├── 03 VEHICLES (/vehicles)
 │   ├── Vehicle Portfolio / Passenger EV (/vehicles/passenger) — StarCraft GT hyper-sedan & StarPulse SUV
@@ -33,11 +33,11 @@ BRCSTAR.IN
 │
 ├── 04 INNOVATION (/innovation)
 │   ├── R&D (/innovation/rnd) — Simulation test-rigs, dynamometer data, internal R&D gate
-│   ├── Sustainability (/innovation/sustainability) — Net-zero lifecycle, battery circularity, ESG
-│   └── News & Media (/innovation/news) — Official press releases, executive news, media kit
+│   ├── Sustainability (/innovation/sustainability) — Battery circularity targets, ESG roadmap
+│   └── News & Media (/innovation/news) — Official corporate disclosures & announcements
 │
 └── 05 INVEST (/invest)
-    ├── Investor Relations (/invest) — Vision, $50B+ TAM opportunity, capital allocation roadmap
+    ├── Investor Relations (/invest) — India EV market focus, TRL 3/4 capital roadmap, evidence ledger
     ├── Pitch Deck Request (/invest/pitch-deck) — Digital NDA signature gate & instant data room access
     └── Dealer & Strategic Partners (/invest/partners) — Dealership franchise tiers & ROI calculator
 │

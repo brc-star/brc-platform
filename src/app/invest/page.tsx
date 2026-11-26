@@ -1,18 +1,21 @@
 import React from "react";
 import Link from "next/link";
-import { TrendingUp, ShieldCheck, Lock, CheckCircle2, ArrowRight, DollarSign, Target, PieChart, FileText } from "lucide-react";
-import { INVESTOR_METRICS } from "@/lib/data";
+import { TrendingUp, Lock, ArrowRight } from "lucide-react";
+import { PATENT_STATEMENT } from "@/lib/claims";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
-  title: "Investor Relations & Capital Opportunity",
+  title: "Investor Relations & Seed Capital Opportunity | BRC STAR",
   description:
-    "BRC STAR investor relations: market TAM ($50B+ Indian & global clean mobility transition), unit economics, capital allocation roadmap, and cap table overview.",
+    "BRC STAR investor relations: early-stage deep-tech EV architecture seeking seed funding (TRL 3/4), capital roadmap, and engineering evidence ledger.",
   alternates: {
     canonical: "https://www.brcstar.in/invest",
   },
   openGraph: {
-    title: "Investor Relations & Capital Opportunity | BRC STAR",
-    description: "BRC STAR investor relations: market TAM ($50B+), unit economics, capital allocation roadmap.",
+    title: "Investor Relations & Seed Capital Opportunity | BRC STAR",
+    description:
+      "Early-stage deep-tech EV powertrain architecture at TRL 3/4 seeking seed capital.",
     url: "https://www.brcstar.in/invest",
   },
 };
@@ -24,37 +27,41 @@ export default function InvestorRelationsPage() {
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-xs font-mono text-cyan-300">
           <TrendingUp className="w-3.5 h-3.5 text-cyan-400" />
-          <span>05 INVESTOR RELATIONS &amp; CAPITAL</span>
+          <span>05 INVESTOR RELATIONS &amp; SEED CAPITAL</span>
         </div>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-          Backing the Definitive EV Architecture of the Next Decade
+          Early-Stage Deep-Tech EV Architecture — Seeking Seed Funding
         </h1>
         <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-          BRC STAR combines proprietary hardware IP (Indian Patent App No. 202511050655), high projected gross margins, and massive $50B+ market tailwinds across the Indian clean mobility transition.
+          {PATENT_STATEMENT} Built bootstrapped from Anupgarh, Rajasthan, combining Stage 1 ACM lab-rig validation and dual-pack powertrain simulation toward India&apos;s expanding EV ecosystem.
         </p>
       </div>
 
-      {/* Financial & TAM Highlights */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-center">
-        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
-          <div className="text-[10px] text-slate-400 uppercase">Indian EV TAM (2030)</div>
-          <div className="text-2xl font-bold text-cyan-400 mt-1">$50B+</div>
-          <div className="text-[10px] text-slate-500 mt-0.5">Total Addressable Market</div>
+      {/* Financial & Market Highlights */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-center">
+        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+          <div className="text-[10px] text-slate-400 uppercase">Target Market Focus</div>
+          <div className="text-lg font-bold text-cyan-400 mt-1">India EV Transition</div>
+          <div className="text-[10px] text-slate-500">TAM source pending citation</div>
+          <EvidenceBadge status="target" />
         </div>
-        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
-          <div className="text-[10px] text-slate-400 uppercase">Serviceable Market (SAM)</div>
-          <div className="text-2xl font-bold text-white mt-1">$12.4B</div>
-          <div className="text-[10px] text-slate-500 mt-0.5">Passenger &amp; Commercial</div>
+        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+          <div className="text-[10px] text-slate-400 uppercase">Primary Segments</div>
+          <div className="text-lg font-bold text-white mt-1">Fleet &amp; Passenger</div>
+          <div className="text-[10px] text-slate-500">Assumptions unaudited</div>
+          <EvidenceBadge status="target" />
         </div>
-        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
-          <div className="text-[10px] text-slate-400 uppercase">Projected Gross Margin</div>
-          <div className="text-2xl font-bold text-emerald-400 mt-1">28.5%</div>
-          <div className="text-[10px] text-slate-500 mt-0.5">Target at Phase 2 Scale</div>
+        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+          <div className="text-[10px] text-slate-400 uppercase">Gross Margin Assumption</div>
+          <div className="text-lg font-bold text-emerald-400 mt-1">28.5% (Illustrative)</div>
+          <div className="text-[10px] text-slate-500">Phase-2 target; not a forecast</div>
+          <EvidenceBadge status="target" />
         </div>
-        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
-          <div className="text-[10px] text-slate-400 uppercase">Active Round Target</div>
-          <div className="text-2xl font-bold text-amber-400 mt-1">$3.5M - $5.0M</div>
-          <div className="text-[10px] text-slate-500 mt-0.5">Seed / Pre-Series A</div>
+        <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+          <div className="text-[10px] text-slate-400 uppercase">Current Round</div>
+          <div className="text-lg font-bold text-amber-400 mt-1">Seed Funding</div>
+          <div className="text-[10px] text-slate-500">Subject to change; not an offer</div>
+          <EvidenceBadge status="planned" />
         </div>
       </div>
 
@@ -63,30 +70,30 @@ export default function InvestorRelationsPage() {
         <div className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
           <div className="text-xs font-mono uppercase text-cyan-400">Pillar 1</div>
           <h3 className="text-lg font-bold text-white font-mono">
-            Defensible IP &amp; High Moat
+            Patent Application Filed
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Proprietary dual-pack closed-loop kinetic harvesting filed under Indian Patent Application No. 202511050655 [PCT details pending], establishing clear technological differentiation.
+            {PATENT_STATEMENT} Patent application filed; scope subject to examination (no granted or exclusive rights implied).
           </p>
         </div>
 
         <div className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
           <div className="text-xs font-mono uppercase text-cyan-400">Pillar 2</div>
           <h3 className="text-lg font-bold text-white font-mono">
-            Capital-Efficient Manufacturing
+            Capital-Efficient R&amp;D
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            We utilize contract manufacturing for high-tonnage stamping while retaining high-margin powertrain assembly, ACM inverter production, and BMS firmware calibration in-house.
+            Bootstrapped execution focused on core dual-pack bus topology, ACM power electronics, and software estimation know-how while utilizing partner contract fabrication at manufacturing scale.
           </p>
         </div>
 
         <div className="p-7 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
           <div className="text-xs font-mono uppercase text-cyan-400">Pillar 3</div>
           <h3 className="text-lg font-bold text-white font-mono">
-            Commercial Fleet Interest
+            Exploratory Commercial Interest
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Fleet operators face high operating fuel expenses. StarFleet commercial delivery vans are designed to reduce total cost of ownership by up to ₹4.8 Lakhs annually (simulated models available in data room).
+            Fleet logistics concepts target lower energy operating cost under illustrative tariff models (unaudited assumptions and preliminary inquiry logs accessible inside the NDA data room).
           </p>
         </div>
       </div>
@@ -99,10 +106,10 @@ export default function InvestorRelationsPage() {
             <span>CONFIDENTIAL INVESTOR DATA ROOM</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Access Financial Model &amp; Master Pitch Deck
+            Access Financial Model &amp; Investor Pitch Deck
           </h2>
           <p className="text-xs sm:text-sm text-slate-300">
-            Sign our digital bilateral NDA to review the Master Pitch Deck, Cap Table schedule, and unit economics projections. [Financial projections are internal models subject to homologation].
+            Execute a digital bilateral NDA to review our Seed overview pitch deck, unaudited financial assumptions, and unpublished patent application summary.
           </p>
         </div>
 
@@ -115,13 +122,16 @@ export default function InvestorRelationsPage() {
             <span>Sign NDA &amp; Access Data Room</span>
           </Link>
           <Link
-            href="/invest/partners"
-            className="px-7 py-3.5 rounded-xl font-mono text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 transition-colors"
+            href="/evidence"
+            className="px-7 py-3.5 rounded-xl font-mono text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 transition-colors inline-flex items-center gap-1.5"
           >
-            Explore Franchise Dealerships
+            <span>View Evidence Ledger</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>
+
+      <ClaimDisclaimer variant="investor" />
     </div>
   );
 }

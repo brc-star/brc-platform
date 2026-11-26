@@ -7,7 +7,7 @@ import { DealershipApplicationForm } from "@/components/DealershipApplicationFor
 
 export const metadata: Metadata = {
   title: "Franchise Dealership Network & Territory Expansion | BRC STAR",
-  description: "Secure exclusive territory rights for BRC STAR Flagship Experience Centers and certified Self-Volt service hubs.",
+  description: "Explore regional territory frameworks for BRC STAR Flagship Experience Centers and authorized Self-Volt service hubs.",
   alternates: {
     canonical: "https://www.brcstar.in/invest/partners",
   },
@@ -41,7 +41,7 @@ export default function DealerPartnersPage() {
             Partner with India&apos;s Deep-Tech Electric Mobility Pioneer
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Secure exclusive territory rights for BRC STAR Flagship Experience Centers and certified Self-Volt high-voltage service hubs across key commercial corridors.
+            Apply for non-binding territory qualification across BRC STAR Flagship Experience Centers and planned Self-Volt high-voltage service hubs.
           </p>
         </div>
       </div>

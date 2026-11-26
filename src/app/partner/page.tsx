@@ -88,7 +88,7 @@ const FRANCHISE_TIERS = [
     targetVolume: "Commercial Fleet Support",
     marginPerVehicle: "Per-km Maintenance & Spares Margin",
     badge: "B2B LOGISTICS PARTNER",
-    desc: "Dedicated staging center supporting StarFleet cargo haulers, transit fleet charging, and certified technician dispatch.",
+    desc: "Dedicated staging center supporting StarFleet cargo haulers, transit fleet charging, and trained technician dispatch (planned).",
   },
 ];
 
@@ -217,24 +217,24 @@ export default function PartnerDealershipPage() {
             {/* Franchise Economics Summary HUD */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 font-mono text-center">
               <div className="p-4 sm:p-5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800">
-                <span className="text-[10px] sm:text-xs uppercase text-slate-500 dark:text-slate-400 font-medium">Territory Payback Window</span>
+                <span className="text-[10px] sm:text-xs uppercase text-slate-500 dark:text-slate-400 font-medium">Indicative Payback Target</span>
                 <div className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1">14 – 18 Months</div>
-                <span className="text-[9px] text-slate-500 mt-0.5 block">IRR: 34.2% (Audited Model)</span>
+                <span className="text-[9px] text-slate-500 mt-0.5 block">IRR: 34.2% (Unaudited Illustrative Model)</span>
               </div>
               <div className="p-4 sm:p-5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800">
-                <span className="text-[10px] sm:text-xs uppercase text-slate-500 dark:text-slate-400 font-medium">Gross Vehicle Margins</span>
+                <span className="text-[10px] sm:text-xs uppercase text-slate-500 dark:text-slate-400 font-medium">Target Vehicle Margins</span>
                 <div className="text-xl sm:text-2xl font-bold text-cyan-600 dark:text-cyan-300 mt-1">6.5% – 8.2%</div>
-                <span className="text-[9px] text-slate-500 mt-0.5 block">+ Recurring Software Share</span>
+                <span className="text-[9px] text-slate-500 mt-0.5 block">Illustrative post-launch structure</span>
               </div>
               <div className="p-4 sm:p-5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800">
-                <span className="text-[10px] sm:text-xs uppercase text-slate-500 dark:text-slate-400 font-medium">Security Escrow Token</span>
+                <span className="text-[10px] sm:text-xs uppercase text-slate-500 dark:text-slate-400 font-medium">Proposed Territory Commitment</span>
                 <div className="text-xl sm:text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">₹8.0L – ₹15.0L</div>
-                <span className="text-[9px] text-slate-500 mt-0.5 block">100% Refundable Deposit</span>
+                <span className="text-[9px] text-slate-500 mt-0.5 block">Collected only post-formal agreement</span>
               </div>
               <div className="p-4 sm:p-5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800">
-                <span className="text-[10px] sm:text-xs uppercase text-slate-500 dark:text-slate-400 font-medium">Network Expansion Slots</span>
-                <div className="text-xl sm:text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1">18 Regional Hubs</div>
-                <span className="text-[9px] text-slate-500 mt-0.5 block">Phase-1 Allocation Active</span>
+                <span className="text-[10px] sm:text-xs uppercase text-slate-500 dark:text-slate-400 font-medium">Planned Expansion Focus</span>
+                <div className="text-xl sm:text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1">18 Target Hubs</div>
+                <span className="text-[9px] text-slate-500 mt-0.5 block">Non-binding EOIs active</span>
               </div>
             </div>
 

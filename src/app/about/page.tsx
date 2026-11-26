@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "About BRC STAR | Founder Journey & Deep-Tech Mission",
   description:
-    "Founded by Bishna Chauhan in November 2019, BRC STAR (OPC) PRIVATE LIMITED is an Indian deep-tech EV startup incubated by iStart Rajasthan and recognized by DPIIT.",
+    "Founded by Bishna Ram in November 2019, BRC STAR (OPC) PRIVATE LIMITED is an Indian deep-tech EV startup incubated by iStart Rajasthan and recognized by DPIIT.",
   alternates: {
     canonical: "https://www.brcstar.in/about",
   },
@@ -100,7 +100,7 @@ export default function AboutPage() {
               <div className="w-full h-full rounded-2xl bg-slate-100 dark:bg-[#050814] flex flex-col items-center justify-center border border-slate-200 dark:border-slate-800 overflow-hidden relative group">
                 <Image
                   src="/founder.jpg"
-                  alt="Bishna Chauhan - Founder & CEO, BRC STAR"
+                  alt="Bishna Ram - Founder & CEO, BRC STAR"
                   fill
                   className="object-cover object-top"
                 />
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
             <div>
               <h3 className="text-lg font-bold text-slate-900 dark:text-white font-display">
-                Bishna Chauhan (Dr. B. Chauhan)
+                Bishna Ram
               </h3>
               <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400 block">
                 Founder &amp; CEO
@@ -125,10 +125,10 @@ export default function AboutPage() {
               The Founder&apos;s Mission
             </h2>
             <p>
-              In November 2019, Bishna Chauhan established BRC STAR with a fundamental engineering question: <em>Why should an electric vehicle rely entirely on static grid charging when continuous kinetic momentum can be recovered and managed across dual storage reservoirs?</em>
+              In November 2019, Bishna Ram established BRC STAR with a fundamental engineering question: <em>Why should an electric vehicle rely entirely on static grid charging when decelerative and glide kinetic momentum can be recovered across dual storage reservoirs?</em>
             </p>
             <p>
-              Operating from Anupgarh, Rajasthan, with background ties connecting Surat&apos;s industry, BRC STAR was built without external venture funding to solve highway range degradation and single-battery thermal stress through auxiliary kinetic energy harvesting.
+              Operating from Anupgarh, Rajasthan, with background ties connecting Surat&apos;s industry, BRC STAR was built without external venture funding to address highway range degradation and single-battery thermal stress through auxiliary kinetic energy recovery.
             </p>
             <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 font-mono text-xs text-slate-700 dark:text-slate-400">
               <strong>Executive Statement:</strong> &ldquo;We are building patiently and transparently: every number we publish is labelled simulated, bench-validated, or target, until the track proves it.&rdquo;

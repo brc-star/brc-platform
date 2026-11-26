@@ -114,7 +114,7 @@ export const AccessRequestModal: React.FC<AccessRequestModalProps> = ({
                 Verification Request Logged
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
-                Your request has been routed to the BRC STAR Compliance &amp; Enterprise Triage Queue.
+                Your request has been routed to the BRC STAR Enterprise &amp; Diligence Triage Queue.
               </p>
             </div>
 

@@ -68,17 +68,17 @@ export const PitchDeckModal: React.FC<PitchDeckModalProps> = ({ isOpen, onClose 
       });
 
       const data = await res.json();
-      if (res.ok && data.success) {
-        setSessionToken(data.sessionKey || `BRC-CLEARANCE-${Math.random().toString(36).substring(2, 9).toUpperCase()}`);
+        if (res.ok && data.success) {
+          setSessionToken(data.sessionKey || `BRC-NDA-${Math.random().toString(36).substring(2, 9).toUpperCase()}`);
+          setStatus("success");
+        } else {
+          throw new Error(data.message || "Failed to process NDA request.");
+        }
+      } catch {
+        // Local fallback access token for preview experience
+        setSessionToken(`BRC-NDA-${Math.random().toString(36).substring(2, 9).toUpperCase()}`);
         setStatus("success");
-      } else {
-        throw new Error(data.message || "Failed to process security clearance.");
       }
-    } catch {
-      // Local fallback clearance token for resilient presentation
-      setSessionToken(`BRC-CLEARANCE-${Math.random().toString(36).substring(2, 9).toUpperCase()}`);
-      setStatus("success");
-    }
   };
 
   return (
@@ -105,10 +105,10 @@ export const PitchDeckModal: React.FC<PitchDeckModalProps> = ({ isOpen, onClose 
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-white font-mono">Confidential Clearance Granted</h3>
+              <h3 className="text-xl font-bold text-white font-mono">NDA Access Logged</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Clearance Session: <span className="text-cyan-300 font-mono font-bold">{sessionToken}</span>. 
-                The Series-A deck and dynamometer track dossier have been dispatched to <strong className="text-white">{formData.workEmail}</strong>.
+                NDA Reference: <span className="text-cyan-300 font-mono font-bold">{sessionToken}</span>.
+                Your request for the Seed overview deck and TRL 3/4 bench dossier has been logged for <strong className="text-white">{formData.workEmail}</strong>.
               </p>
             </div>
             <button
@@ -127,10 +127,10 @@ export const PitchDeckModal: React.FC<PitchDeckModalProps> = ({ isOpen, onClose 
                 <span>CONFIDENTIAL DATA ROOM VETTING</span>
               </div>
               <h2 id="modal-title" className="text-xl font-bold text-white tracking-tight">
-                Institutional Pitch Deck Clearance
+                Institutional Pitch Deck NDA Access
               </h2>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Authorized access to BRC STAR 5-Year Financial Model, Cap Table, and Patent IP Claims.
+                Authorized access to BRC STAR Unaudited Financial Assumptions, Cap Table Overview, and Unpublished Patent Summary.
               </p>
             </div>
 
@@ -227,7 +227,7 @@ export const PitchDeckModal: React.FC<PitchDeckModalProps> = ({ isOpen, onClose 
                 </>
               ) : (
                 <>
-                  <span>Request Digital Clearance</span>
+                  <span>Request NDA Access</span>
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}

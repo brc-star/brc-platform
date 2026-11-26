@@ -31,10 +31,10 @@ export const DealerRoiCalculator = () => {
         <span>Franchise &amp; Territory Investment Economics</span>
       </div>
       <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2">
-        Dealer Network ROI &amp; Cash Flow Simulator
+        Dealer Network Illustrative Financial Model
       </h3>
       <p className="text-xs sm:text-sm text-slate-400 mb-8 max-w-2xl">
-        Partner with BRC STAR to establish exclusive regional experience hubs and certified Self-Volt service stations across high-growth Indian metro and tier-2 markets.
+        Partner with BRC STAR to establish regional experience hubs and authorized Self-Volt service centers across target Indian hubs (illustrative unaudited projections).
       </p>
 
       {/* Tier Tabs */}

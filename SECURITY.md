@@ -9,8 +9,8 @@ BRC STAR enforces a strict cryptographic boundary separating public educational/
 | Asset Type | Public Classification | Confidential Classification |
 | :--- | :--- | :--- |
 | **Powertrain Specs** | High-level range, top speed, acceleration | Silicon-Carbide MOSFET schematics, firmware algorithms |
-| **Patent Information** | Filed patent numbers, title, public abstract | Full claim dossiers, prior art clearance, raw simulation logs |
-| **Financials** | Indicative starting pricing, market TAM ($50B) | Audited financial models, Cap Table allocations, unit BOM |
+| **Patent Information** | Filed patent application number (patent-pending), public summary | Full unpublished patent specification, claim summary, raw lab logs |
+| **Financials** | Indicative target pricing, market thesis summary | Unaudited financial models, Cap Table allocations, unit BOM |
 | **Vehicle Telemetry** | Simulated demonstration stream | Live production CAN-Bus telemetry, customer GPS coordinates |
 
 ---

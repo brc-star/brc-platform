@@ -6,7 +6,7 @@
 - [x] Next.js 16.3.1 App Router & React 19 deep-tech frontend
 - [x] 5 Public Pillar sitemap structure with 15 specialized technical pages
 - [x] Interactive Self-Volt Energy-Flow Visualizer & Vehicle 3D Configurator Studio
-- [x] TCO/ROI Economic Calculator & Defensible Patent Registry
+- [x] TCO/ROI Illustrative Calculator & Patent Application Filing Summary (`/technology/patent-ip`) & Evidence Ledger (`/evidence`)
 - [x] Gated Investor Data Room with digital bilateral NDA signature workflow
 - [x] Dealer territory franchise application engine & ROI simulator
 - [x] Vehicle Pre-Booking custom order checkout & reference certificate generator

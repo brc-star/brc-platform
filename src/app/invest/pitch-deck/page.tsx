@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { FileText, Lock, ChevronRight } from "lucide-react";
+import { Lock, ChevronRight } from "lucide-react";
 import { InvestorDataRoomGate } from "@/components/InvestorDataRoomGate";
+import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
   title: "Investor Pitch Deck Request & Data Room | BRC STAR",
-  description: "Secure NDA digital signature gateway for authorized institutional investors, venture funds, and family offices to access BRC STAR Series-A pitch deck and financial models.",
+  description:
+    "Digital NDA gateway for accredited investors and strategic partners requesting BRC STAR's seed overview deck, financial model (unaudited), and patent summary.",
   alternates: {
     canonical: "https://www.brcstar.in/invest/pitch-deck",
   },
@@ -33,19 +35,21 @@ export default function PitchDeckRequestPage() {
         <div className="max-w-4xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-xs font-mono text-cyan-300">
             <Lock className="w-3.5 h-3.5 text-cyan-400" />
-            <span>CONFIDENTIAL INVESTOR CLEARANCE</span>
+            <span>CONFIDENTIAL INVESTOR NDA GATEWAY</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Institutional Investor Pitch Deck &amp; Data Room
+            Investor Pitch Deck &amp; Confidential Data Room
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Please execute the digital Non-Disclosure Agreement below to instantly generate a secure session key and unlock financial models, TRL 3/4 test-bench simulation logs, and the Master Series-A deck.
+            Execute the digital Non-Disclosure Agreement below to unlock our Seed investor overview deck, unaudited financial model assumptions, TRL 3/4 bench simulation logs, and unpublished patent application summary.
           </p>
         </div>
       </div>
 
       {/* Interactive Gated Data Room Component */}
       <InvestorDataRoomGate />
+
+      <ClaimDisclaimer variant="investor" />
     </div>
   );
 }
