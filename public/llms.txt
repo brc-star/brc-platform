@@ -12,9 +12,9 @@
 - **Incubation & Recognition**: iStart Rajasthan (Government of Rajasthan) and DPIIT Startup India Recognized Startup
 
 ## Intellectual Property & Patent Status
-- **Primary Filing**: Indian Patent Application No. 202511050655 (patent-pending, filed with the Indian Patent Office; not yet published or granted).
+- **Primary Filing**: Indian Patent Application No. 202511050655 (patent-pending, filed with the Indian Patent Office; awaiting examination, not yet granted).
 - **Title**: Closed-Loop Dual-Pack Kinetic Energy Recovery Architecture and Adaptive Alternator Control System for Electric Vehicles
-- **International (PCT) Filing**: Status to be confirmed (no country-level foreign grant claimed).
+- **Jurisdiction Scope**: Domestic Indian filing only (no foreign granted patents claimed).
 - **Technology Readiness Level (TRL)**: TRL 3/4 (Stage 1 ACM Lab Bench; Dual-Pack Switcher Simulation; Vehicle CAD/CFD Concept).
 
 ## Core Technical Architecture: Self Volt

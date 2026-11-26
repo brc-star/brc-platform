@@ -68,7 +68,7 @@ export const ViraChatbot = () => {
     {
       id: "welcome-1",
       sender: "vira",
-      text: "Namaste & Welcome to BRC STAR! ⚡\n\nI am **BRC ViraBot**, equipped with our **TRL 3/4 Architecture & Compliance Summary Engine** (Indian Patent Application No. 202511050655, patent-pending, not yet published). Ask about our dual-pack topology, vehicle specs, dealership expansion, or evidence status.",
+      text: "Namaste & Welcome to BRC STAR! ⚡\n\nI am **BRC ViraBot**, equipped with our **TRL 3/4 Architecture & Compliance Summary Engine** (Indian Patent Application No. 202511050655, patent-pending, filed with the Indian Patent Office). Ask about our dual-pack topology, vehicle specs, dealership expansion, or evidence status.",
       timestamp: "Just now",
       links: [
         { label: "View IP Filing Summary", url: "/technology/patent-ip" },

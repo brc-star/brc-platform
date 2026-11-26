@@ -578,3 +578,20 @@ A total of **246 target claim occurrences** were identified and audited against 
 - Define single source of truth for all numeric performance and range figures.
 - Provide unified visual status pills (`Verified`, `Bench-tested`, `Simulated`, `Target`, `Planned`).
 - Stand up dedicated `/evidence` route showcasing transparent testing methodologies and documentation status for investors.
+
+---
+
+## Post-Remediation Status (Before vs. After)
+
+| Remediation Area | Before Audit (Risky / Inconsistent) | After Remediation (`fix/claims-compliance`) |
+| :--- | :--- | :--- |
+| **Patent Filing Status & Publication** | Described as `filed/published`, `"Patent Fortress"`, `"Defensible Moat"`, and `"Protected under"` with verbatim claim spoilers. | Standardized to `"Indian Patent Application No. 202511050655 (patent-pending, filed with the Indian Patent Office; awaiting examination, not yet granted)"` via `src/lib/claims.ts`. Removed all `published` / `publication` / `filed/published` / `moat` / `fortress` terms. |
+| **PCT & Foreign Jurisdictions** | Claimed international PCT coverage across North America, Europe, East Asia, and ASEAN. | Removed all PCT and foreign territorial coverage claims; replaced with `"India (Indian Patent Office filing only; no granted foreign patent rights)"`. |
+| **Prior-Art & Competitor Patents** | Publicly cited Tesla (`9,180,782`) and Toyota (`8,818,597`) patents and claimed clearance/prior-art superiority. | Deleted competitor patent citations and clearance claims across `src/lib/patent-knowledge.ts`, `src/components/PatentShowcase.tsx`, `src/app/technology/patent-ip/page.tsx`, `ViraChatbot.tsx`, and API routes. |
+| **Readiness Level (TRL) & Validation** | Conflicted between `"TRL 3/4"`, `"Dynamometer Validated"`, `"14 Test Mules & Track Prototypes"`, and `"Bengaluru R&D facility"`. | Harmonized strictly to **TRL 3/4** (`Stage 1 ACM Lab Bench`, `Dual-Pack Bus Switcher Simulation`, `Vehicle CAD/CFD Concept`). Portal preview routes (`/app`, `/operations`, `/dashboard`) clearly labeled as UI previews / sample records. |
+| **Physics & Battery Safety Language** | Referenced `"self-generating"`, continuous harvest without drag, `"74% drag"`, `"Thermal Runaway Risk"` comparison row, and `"0% thermal propagation"`. | Replaced with `ENERGY_PHYSICS_NOTE` & `VOLTAGE_ARCHITECTURE_EXPLAINER` clarifying deceleration/downhill/glide kinetic recovery and charge-acceptance decoupling. |
+| **Vehicle Specs, Subsidies & Booking** | Listed `"FAME III Green Subsidy"`, unqualified `850 km` / `3.2 s` / `+42 kW`, `"AIS/UN ECE compliance"`, and `"Statutory RBI Escrow Guarantee"`. | Added `<EvidenceBadge />` (`verified` / `bench` / `simulated` / `target` / `planned`), `<ClaimDisclaimer />`, `"Not a binding quotation"`, `"100% refundable expression of interest"`, and planned AIS/UN ECE status. |
+| **Financial & Corporate Identity** | Included Series-A data room text, `"Audited Financial Forecast"`, `"65% Committed"`, `"$50B+ TAM"`, `"Dr. B. Chauhan"`, and `YOUR-HANDLE`. | Replaced with Seed-stage unaudited/illustrative labels, anonymized sample UI disclosures, verified **Bishna Ram** founder identity, and `FOUNDER_TODO.md` evidence checklist. |
+| **Single Source of Truth (`/evidence`)** | Hardcoded, unbadged numeric metrics duplicated across marketing pages. | Centralized into `src/lib/claims.ts` (`CLAIMS_REGISTRY`, `ALL_CLAIMS_LIST`), rendered via `<EvidenceBadge />`, `<ClaimDisclaimer />`, and interactive `/evidence` page (`sitemap.ts` updated). |
+
+*All founder verification items requiring documentary evidence (`TODO_FOUNDER_VERIFY` / `TODO_FOUNDER_EVIDENCE`) are tracked in [`FOUNDER_TODO.md`](./FOUNDER_TODO.md).*

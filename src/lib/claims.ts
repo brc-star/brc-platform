@@ -26,20 +26,20 @@ export interface Claim {
  * Footer, Metadata, OpenGraph, Twitter Cards, JSON-LD, and Disclosures.
  */
 export const PATENT_STATEMENT =
-  "Indian Patent Application No. 202511050655 (patent-pending, filed with the Indian Patent Office; not yet published or granted)." as const;
+  "Indian Patent Application No. 202511050655 (patent-pending, filed with the Indian Patent Office; awaiting examination, not yet granted)." as const;
 
 export const PATENT_STATEMENT_SHORT =
-  "Indian Patent Application No. 202511050655 (patent-pending, filed with IPO; not yet published)" as const;
+  "Indian Patent Application No. 202511050655 (patent-pending, filed with IPO)" as const;
 
 export const PATENT_STATUS_BOX = {
   applicationNumber: "202511050655",
   applicant: "BRC STAR (OPC) PRIVATE LIMITED",
   filingDate: "May 2025 (Exact date: TODO_FOUNDER_VERIFY)",
   claimCountSummary: "24 claims as filed (subject to examination; scope may change or be rejected — TODO_FOUNDER_VERIFY exact count)",
-  publicationStatus: "Not yet published",
+  disclosureStatus: "Confidential — Awaiting IPO statutory disclosure",
   examinationStatus: "TODO_FOUNDER_VERIFY (Form 18 examination status pending confirmation)",
   grantStatus: "Not granted (Application Pending)",
-  pctStatus: "International (PCT) filing: status to be confirmed (12-month priority window lapsed May 2026 unless confirmed)",
+  jurisdictionScope: "India (Indian Patent Office filing only; no granted foreign patent rights)",
 } as const;
 
 export const VOLTAGE_ARCHITECTURE_EXPLAINER =
@@ -65,8 +65,8 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     date: "May 2025 (TODO_FOUNDER_VERIFY exact date)",
     source: "Indian Patent Office (IPO) Filing Record",
     docLink: "/invest/pitch-deck",
-    note: "Application is patent-pending. Not yet published and not granted.",
-    nextMilestone: "18-month IPO publication / Form 18 Examination",
+    note: "Application is patent-pending. Not open to public inspection and not granted.",
+    nextMilestone: "Indian Patent Office statutory disclosure / Form 18 Examination",
   },
   corporate_recognition: {
     id: "corporate_recognition",
@@ -243,10 +243,10 @@ export const CLAIMS_REGISTRY: Record<string, Claim> = {
     label: "Phase-2 Gross Margin Assumption",
     value: "28.5% (Illustrative)",
     status: "target",
-    methodology: "Unaudited internal bill-of-materials target at scaled volume",
-    source: "Unaudited Internal Model (TODO_FOUNDER_EVIDENCE)",
+    methodology: "Internal pre-seed bill-of-materials target at scaled volume",
+    source: "Unverified Internal Model (TODO_FOUNDER_EVIDENCE)",
     docLink: "/invest",
-    note: "Illustrative Phase-2 gross-margin assumption (not a financial forecast or audited figure).",
+    note: "Illustrative Phase-2 gross-margin assumption (unverified; not a financial forecast).",
     nextMilestone: "Component vendor RFQs & CA-reviewed unit economics",
   },
   dealer_eois_nonbinding: {

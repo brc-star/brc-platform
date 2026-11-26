@@ -39,20 +39,20 @@ function PreBookSuccessContent() {
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-500/30 text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300">
-            <span>Priority Build Slot Confirmed</span>
+            <span>Priority Waitlist Registration Recorded</span>
           </div>
 
           <h1 className="font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Your BRC STAR Priority Reservation is Locked
+            Your BRC STAR Expression of Interest is Recorded
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Thank you for reserving a priority manufacturing build slot with{" "}
-            <strong className="text-slate-900 dark:text-white">BRC STAR (OPC) PRIVATE LIMITED</strong>. Your{" "}
+            Thank you for submitting a priority waitlist registration with{" "}
+            <strong className="text-slate-900 dark:text-white">BRC STAR (OPC) PRIVATE LIMITED</strong>. Concept vehicles are currently at TRL 3/4 R&amp;D (no commercial production vehicle exists yet). Your{" "}
             <strong className="text-emerald-700 dark:text-emerald-400">
               {formatInr(PREBOOK_TOKEN_AMOUNT_INR)}
             </strong>{" "}
-            booking token is protected under our 100% refundable escrow policy.
+            expression-of-interest allocation is 100% refundable upon request under our terms.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ function PreBookSuccessContent() {
 
           <div>
             <span className="text-[10px] uppercase tracking-wider text-slate-500 block mb-1">
-              Delivery Window
+              Target Roadmap Milestone
             </span>
             <span className="font-bold text-slate-900 dark:text-white inline-flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
@@ -112,9 +112,9 @@ function PreBookSuccessContent() {
               <span>100% Refundable Token Terms</span>
             </div>
             <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-              Your ₹25,000 priority booking token confers a non-binding manufacturing queue allocation and is{" "}
+              Your ₹25,000 priority expression-of-interest token confers a non-binding waitlist queue record and is{" "}
               <strong>100% refundable at any time prior to vehicle invoicing</strong>. Refund requests are processed back to the original payment source within{" "}
-              <strong>7 business days</strong> with zero cancellation fees, subject to ARAI / ICAT homologation schedules.
+              <strong>7 business days</strong> without cancellation penalties, subject to prototype validation and future homologation timelines.
             </p>
           </div>
 

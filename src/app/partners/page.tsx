@@ -25,11 +25,11 @@ export default function PartnersPage() {
           </div>
 
           <h1 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Own the Self-Volt EV Corridor in Your City
+            Express Interest in Regional EV Distribution
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Apply for exclusive territorial rights across India&apos;s golden industrial and expressway hubs with high-margin service bay recurring revenue and zero-range-anxiety fleet demand.
+            Submit a non-binding expression of interest for future regional dealership and service hubs ahead of vehicle commercialization (currently TRL 3/4 R&amp;D — no active commercial franchise sales yet).
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left">

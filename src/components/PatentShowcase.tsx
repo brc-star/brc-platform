@@ -176,7 +176,7 @@ export const PatentShowcase = () => {
               <div className="flex items-start gap-2 text-[11px] text-amber-950 dark:text-amber-200">
                 <Lock className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400 shrink-0 mt-0.5" />
                 <span>
-                  Application No. 202511050655 is <strong>not yet published</strong>. Formal legal claim text (24 claims as filed; subject to examination) is disclosed strictly under bilateral NDA.
+                  Application No. 202511050655 is <strong>in confidential pre-disclosure status</strong>. Formal legal claim text (24 claims as filed; subject to examination) is disclosed strictly under bilateral NDA.
                 </span>
               </div>
               <Link
@@ -231,10 +231,10 @@ export const PatentShowcase = () => {
               <div className="grid grid-cols-1 gap-1.5 text-slate-600 dark:text-slate-400">
                 <div>Application No.: <strong className="text-slate-900 dark:text-white">{PATENT_STATUS_BOX.applicationNumber}</strong></div>
                 <div>Filing Date: <strong className="text-slate-900 dark:text-white">{PATENT_STATUS_BOX.filingDate}</strong></div>
-                <div>Publication: <strong className="text-amber-700 dark:text-amber-300">{PATENT_STATUS_BOX.publicationStatus}</strong></div>
+                <div>Disclosure: <strong className="text-amber-700 dark:text-amber-300">{PATENT_STATUS_BOX.disclosureStatus}</strong></div>
                 <div>Examination: <strong className="text-slate-900 dark:text-white">{PATENT_STATUS_BOX.examinationStatus}</strong></div>
                 <div>Grant Status: <strong className="text-amber-700 dark:text-amber-300">{PATENT_STATUS_BOX.grantStatus}</strong></div>
-                <div>PCT Status: <strong className="text-slate-700 dark:text-slate-300">{PATENT_STATUS_BOX.pctStatus}</strong></div>
+                <div>Jurisdiction: <strong className="text-slate-700 dark:text-slate-300">{PATENT_STATUS_BOX.jurisdictionScope}</strong></div>
               </div>
             </div>
           </div>

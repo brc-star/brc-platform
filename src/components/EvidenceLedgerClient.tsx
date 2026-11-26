@@ -86,7 +86,7 @@ export function EvidenceLedgerClient() {
           <thead>
             <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/70 text-[11px] font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400">
               <th className="py-3.5 px-4">Claim / Parameter</th>
-              <th className="py-3.5 px-4">Published Value</th>
+              <th className="py-3.5 px-4">Stated Value</th>
               <th className="py-3.5 px-4">Evidence Status</th>
               <th className="py-3.5 px-4">Testing Methodology / Basis</th>
               <th className="py-3.5 px-4">Source / Date</th>

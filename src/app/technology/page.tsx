@@ -57,7 +57,7 @@ export default function TechnologyOverviewPage() {
       specs: [
         "Indian Patent App No. 202511050655",
         "24 claims as filed (subject to exam)",
-        "Not yet published or granted",
+        "Awaiting examination; not yet granted",
       ],
     },
   ];

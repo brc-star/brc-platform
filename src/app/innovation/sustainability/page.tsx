@@ -89,7 +89,7 @@ export default function SustainabilityPage() {
             3. Planned Second-Life Storage
           </h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Future circularity roadmap envisions transitioning end-of-mobility modules into stationary solar microgrids prior to certified mineral recycling partners.
+            Future circularity roadmap envisions transitioning end-of-mobility modules into stationary solar microgrids prior to authorized mineral recycling partners.
           </p>
         </div>
       </div>

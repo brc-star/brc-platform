@@ -49,13 +49,13 @@ export default function CustomerPlatformPage() {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-white/90 border border-slate-200/90 shadow-sm backdrop-blur-xl dark:bg-slate-900/60 dark:border-slate-800 p-5 sm:p-6 rounded-2xl transition-colors">
           <div>
             <div className="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-bold uppercase tracking-wider">
-              CHASSIS VIN: BRC-2026-ST-0042 • STATUS: TELEMETRY STREAMING
+              SIMULATED PROFILE: BRC-SIM-ST-0042 • STATUS: TELEMETRY UI PREVIEW
             </div>
             <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white font-mono mt-1">
-              StarCraft GT — Cosmic Obsidian (Track Mule 02)
+              StarCraft GT — Concept Profile (Simulated UI Demo)
             </h1>
             <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
-              Firmware: BRC-OS 1.0.4-LTS • Battery Health: 99.8% Solid-State • Warranty: Active (8 Years / 200,000 km)
+              Demo UI Preview Only • Dual-Pack Telemetry Simulation (No Commercial Production Vehicle Exists Yet)
             </p>
           </div>
 

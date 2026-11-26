@@ -11,8 +11,8 @@ export const PATENTS_DATA = [
     title:
       "Dual-Pack Kinetic Energy Recovery Architecture & Alternator Energy Harvesting System for Electric Vehicles",
     abstract:
-      "High-level public architectural summary: An electric powertrain energy-management system comprising Dual Battery Packs (Pack A & Pack B), an Alternator Control Module (ACM), and solid-state bus switching configured to decouple tractive discharge loads from decelerative and glide kinetic recovery currents (full unpublished claims available under NDA).",
-    status: "Patent-Pending (Filed with Indian Patent Office; Not yet published or granted)",
+      "High-level public architectural summary: An electric powertrain energy-management system comprising Dual Battery Packs (Pack A & Pack B), an Alternator Control Module (ACM), and solid-state bus switching configured to decouple tractive discharge loads from decelerative and glide kinetic recovery currents (full pre-disclosure claims available under NDA).",
+    status: "Patent-Pending (Filed with Indian Patent Office; Awaiting examination, not yet granted)",
     category: "Dual-Pack Power Management",
     claimsSummary: "24 claims as filed (subject to examination — TODO_FOUNDER_VERIFY)",
     filingDate: "May 2025 (Exact date: TODO_FOUNDER_VERIFY)",

@@ -24,9 +24,9 @@ export default function EnterpriseOperationsPage() {
   const bomComponents = [
     { partNumber: "BRC-ACM-700V-01", name: "Alternator Control Module (SiC Inverter)", stock: 120, reorder: 50, cost: 48000, supplier: "Semiconductor Foundry" },
     { partNumber: "BRC-PMG-42KW-02", name: "Permanent Magnet Generator Rotor Assembly", stock: 85, reorder: 40, cost: 62000, supplier: "Electromechanical Works" },
-    { partNumber: "BRC-BAT-400V-A", name: "Primary 400V Solid-State Pack A Module", stock: 64, reorder: 30, cost: 285000, supplier: "Battery Cell Matrix" },
-    { partNumber: "BRC-BAT-400V-B", name: "Secondary 400V Recovery Pack B Module", stock: 64, reorder: 30, cost: 240000, supplier: "Battery Cell Matrix" },
-    { partNumber: "BRC-BMS-NEURAL-01", name: "Smart Thermochemical EIS BMS Controller", stock: 210, reorder: 100, cost: 18500, supplier: "Edge Silicon Labs" },
+    { partNumber: "BRC-BAT-400V-A", name: "Primary 400V Traction Pack A Module (Concept BOM)", stock: 0, reorder: 10, cost: 285000, supplier: "Planned Cell Supplier" },
+    { partNumber: "BRC-BAT-400V-B", name: "Secondary 400V Recovery Pack B Module (Concept BOM)", stock: 0, reorder: 10, cost: 240000, supplier: "Planned Cell Supplier" },
+    { partNumber: "BRC-BMS-CTRL-01", name: "Embedded Dual-Pack Controller Assembly", stock: 4, reorder: 10, cost: 18500, supplier: "R&D PCB Assembly" },
   ];
 
   const sopDocuments = [
@@ -42,6 +42,10 @@ export default function EnterpriseOperationsPage() {
       roleBadge="EXECUTIVE / CTO / OPERATIONS"
     >
       <div className="space-y-8">
+        <div className="p-4 rounded-xl bg-amber-950/40 border border-amber-500/40 text-xs font-mono text-amber-200">
+          <strong>UI Architecture Preview (Sample Mock Data):</strong> The CRM, BOM, SOP, and telemetry modules below demonstrate planned digital workflow views. Metrics displayed are illustrative UI placeholders and do not reflect commercial vehicle deliveries, inventory, or binding pre-order revenue.
+        </div>
+
         {/* Module Switcher Tabs */}
         <div className="flex flex-wrap items-center gap-2 border-b border-slate-800 pb-4">
           {[
@@ -69,47 +73,47 @@ export default function EnterpriseOperationsPage() {
           <div className="space-y-6">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-center">
               <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                <div className="text-[10px] text-slate-400 uppercase">Total Inbound Leads</div>
-                <div className="text-2xl font-bold text-cyan-400 mt-1">1,248</div>
+                <div className="text-[10px] text-slate-400 uppercase">Sample Inbound Leads</div>
+                <div className="text-2xl font-bold text-cyan-400 mt-1">Demo</div>
               </div>
               <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                <div className="text-[10px] text-slate-400 uppercase">Test Drives Scheduled</div>
-                <div className="text-2xl font-bold text-white mt-1">312</div>
+                <div className="text-[10px] text-slate-400 uppercase">Concept Inquiries</div>
+                <div className="text-2xl font-bold text-white mt-1">TRL 3/4</div>
               </div>
               <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                <div className="text-[10px] text-slate-400 uppercase">Pre-Booking Orders</div>
-                <div className="text-2xl font-bold text-emerald-400 mt-1">428 Units</div>
+                <div className="text-[10px] text-slate-400 uppercase">EOI Waitlist Mode</div>
+                <div className="text-2xl font-bold text-emerald-400 mt-1">Non-Binding</div>
               </div>
               <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                <div className="text-[10px] text-slate-400 uppercase">Gross Pipeline Value</div>
-                <div className="text-2xl font-bold text-amber-400 mt-1">₹142.6 Cr</div>
+                <div className="text-[10px] text-slate-400 uppercase">Commercial Deliveries</div>
+                <div className="text-2xl font-bold text-amber-400 mt-1">Planned</div>
               </div>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
               <h3 className="text-base font-bold text-white font-mono">
-                Enterprise Sales Flow: Lead → Enquiry → Test Drive → Booking → Delivery
+                Planned Enterprise Sales Flow (Sample Workflow): Lead → Enquiry → Prototype Demo → Booking → Delivery
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 text-xs font-mono text-center">
                 <div className="p-3 rounded-lg bg-slate-950 border border-slate-800">
                   <div className="text-cyan-400 font-bold">1. Inbound Leads</div>
-                  <div className="text-slate-400 mt-1">508 Unassigned</div>
+                  <div className="text-slate-400 mt-1">Waitlist Triage</div>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-950 border border-slate-800">
                   <div className="text-cyan-400 font-bold">2. Qualified</div>
-                  <div className="text-slate-400 mt-1">312 In Evaluation</div>
+                  <div className="text-slate-400 mt-1">In Evaluation</div>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-950 border border-slate-800">
-                  <div className="text-cyan-400 font-bold">3. Test Drives</div>
-                  <div className="text-slate-400 mt-1">94 This Week</div>
+                  <div className="text-cyan-400 font-bold">3. Prototype Demo</div>
+                  <div className="text-slate-400 mt-1">Future TRL-7 Milestone</div>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-950 border border-slate-800">
-                  <div className="text-emerald-400 font-bold">4. Token Paid</div>
-                  <div className="text-slate-400 mt-1">428 Reservations</div>
+                  <div className="text-emerald-400 font-bold">4. Refundable EOI</div>
+                  <div className="text-slate-400 mt-1">Queue Placeholder</div>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-950 border border-slate-800">
-                  <div className="text-amber-400 font-bold">5. Production Allocated</div>
-                  <div className="text-slate-400 mt-1">Target Batch 2027</div>
+                  <div className="text-amber-400 font-bold">5. Pilot Delivery</div>
+                  <div className="text-slate-400 mt-1">Post-Homologation</div>
                 </div>
               </div>
             </div>
@@ -208,7 +212,7 @@ export default function EnterpriseOperationsPage() {
                 Fleet Edge Telemetry Broker &amp; API Ingestion Gateway
               </h3>
               <p className="text-xs text-slate-300">
-                Connected Vehicle Instances: <strong>14 Test Mules &amp; Track Prototypes</strong> • Data Ingestion Latency: <strong>&lt;45 ms</strong>
+                Connected Nodes: <strong>TRL 3/4 Lab Bench &amp; Simulation Preview (Mock UI)</strong> • Ingestion Latency Target: <strong>&lt;45 ms</strong>
               </p>
             </div>
           </div>

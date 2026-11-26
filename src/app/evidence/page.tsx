@@ -43,7 +43,7 @@ export default function EvidenceStatusPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-            Every technical, performance, IP, and market figure published by BRC STAR is centrally governed in this ledger and explicitly classified by verification stage—ensuring institutional clarity between verified registry records, Stage 1 bench testing, computer simulation, and planned targets.
+            Every technical, performance, IP, and market figure presented by BRC STAR is centrally governed in this ledger and explicitly classified by verification stage—ensuring institutional clarity between verified registry records, Stage 1 bench testing, computer simulation, and planned targets.
           </p>
 
           <p className="text-xs font-mono text-slate-600 dark:text-slate-400 p-3.5 rounded-xl bg-white dark:bg-[#0A0E1A] border border-slate-200 dark:border-slate-800">

@@ -84,7 +84,7 @@ export default function AuthenticatedDashboardPage() {
       icon: TrendingUp,
       color: "blue",
       badge: "Gated NDA",
-      desc: "Series-A financial models, $50B TAM market capture, patent dossiers, and Cap Table data.",
+      desc: "Seed-stage financial assumptions (unaudited), India EV market sizing, patent filing summary, and governance overview.",
       allowedRoles: ["INVESTOR", "ENTERPRISE_STAFF", "ADMIN"],
       metrics: "Tier 3 Data Room • SHA-256 Watermarked",
     },
@@ -110,7 +110,7 @@ export default function AuthenticatedDashboardPage() {
       badge: "Mission Control",
       desc: "Unified customer pipeline, SiC inverter & battery BOM inventory, and technician SOP revision audits.",
       allowedRoles: ["ENTERPRISE_STAFF", "ADMIN"],
-      metrics: "12-Domain Monolith • ISO 26262 Rig",
+      metrics: "12-Domain Monolith • Engineering Workflow Preview",
     },
   ];
 

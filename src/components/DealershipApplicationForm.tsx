@@ -591,7 +591,7 @@ export function DealershipApplicationForm() {
           <span className="inline-flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>
-              Non-binding franchise evaluation • Protected under{" "}
+              Non-binding franchise evaluation • Processed in accordance with{" "}
               <Link
                 href="/privacy"
                 className="text-cyan-700 dark:text-cyan-400 underline"

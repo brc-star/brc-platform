@@ -20,15 +20,15 @@ export default function InvestorPortalPage() {
             <div>
               <div className="text-xs font-mono text-cyan-400">ACTIVE FINANCING ROUND</div>
               <h2 className="text-2xl font-bold text-white font-mono mt-0.5">
-                Seed / Pre-Series A ($3.5M - $5.0M Target)
+                Seed Stage Financing Overview (Target To Be Confirmed)
               </h2>
             </div>
-            <div className="text-xs font-mono text-emerald-400 px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/30">
-              Allocation Status: 65% Committed
+            <div className="text-xs font-mono text-cyan-300 px-3 py-1.5 rounded-lg bg-cyan-950/60 border border-cyan-500/30">
+              Allocation Status: Open for Seed Discussions (Indicative)
             </div>
           </div>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Funds are earmarked for: Track durability testing certification (40%), pilot production tooling &amp; PCB assembly line (35%), and key engineering talent expansion (25%).
+            Illustrative use-of-proceeds plan: TRL 4-to-6 prototype fabrication &amp; bench-to-track validation (40%), pilot electronics &amp; assembly preparation (35%), and core powertrain engineering hiring (25%). All financial terms subject to NDA term-sheet review.
           </p>
         </div>
 

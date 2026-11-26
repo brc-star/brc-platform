@@ -79,7 +79,7 @@ export default function HomePage() {
             <span>02 TECHNOLOGY BREAKTHROUGH</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            How Self Volt Revolutionizes Electric Range
+            How Self Volt Targets Extended Electric Range
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
             Conventional EVs route regenerative pulses back into the active traction pack. BRC STAR evaluates a dual-pack architecture that routes decelerative kinetic recovery into an isolated buffer pack during driving.

@@ -148,7 +148,7 @@ export default function TechnicalDocsPage() {
             </p>
             <div className="pt-2 text-[11px] font-mono text-slate-400 border-t border-slate-800/80">
               • Filing Date: {PATENT_STATUS_BOX.filingDate}<br />
-              • Publication: {PATENT_STATUS_BOX.publicationStatus}
+              • Disclosure Status: {PATENT_STATUS_BOX.disclosureStatus}
             </div>
           </div>
         </div>

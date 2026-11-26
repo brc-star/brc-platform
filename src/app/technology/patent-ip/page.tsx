@@ -71,9 +71,9 @@ export default function PatentIpPage() {
           </div>
 
           <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
-            <span className="text-[10px] text-slate-500 uppercase block">Publication Status</span>
+            <span className="text-[10px] text-slate-500 uppercase block">Disclosure Status</span>
             <span className="font-bold text-amber-700 dark:text-amber-300 mt-0.5 block">
-              {PATENT_STATUS_BOX.publicationStatus}
+              {PATENT_STATUS_BOX.disclosureStatus}
             </span>
           </div>
 
@@ -92,9 +92,9 @@ export default function PatentIpPage() {
           </div>
 
           <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
-            <span className="text-[10px] text-slate-500 uppercase block">International (PCT) Filing</span>
+            <span className="text-[10px] text-slate-500 uppercase block">Jurisdictional Scope</span>
             <span className="font-bold text-slate-700 dark:text-slate-300 mt-0.5 block">
-              {PATENT_STATUS_BOX.pctStatus}
+              {PATENT_STATUS_BOX.jurisdictionScope}
             </span>
           </div>
         </div>
@@ -115,9 +115,9 @@ export default function PatentIpPage() {
 
         <div className="p-6 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3 transition-colors">
           <div className="text-xs font-mono uppercase text-cyan-600 dark:text-cyan-400 font-bold">Pillar 2</div>
-          <h3 className="text-base font-bold text-slate-900 dark:text-white">Unpublished Confidentiality</h3>
+          <h3 className="text-base font-bold text-slate-900 dark:text-white">Pre-Disclosure Confidentiality</h3>
           <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Because Application No. 202511050655 has not yet been published, verbatim specification and full claim text are not distributed publicly and are made available exclusively under mutual NDA.
+            Because Application No. 202511050655 is currently in confidential pre-disclosure status at the Indian Patent Office, verbatim specification and full claim text are not distributed publicly and are made available exclusively under mutual NDA.
           </p>
         </div>
 

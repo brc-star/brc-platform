@@ -157,7 +157,7 @@ export const AccessRequestModal: React.FC<AccessRequestModalProps> = ({
                 Apply for Enterprise Data Room Access
               </h2>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
-                Access to proprietary CAD telemetry, Series-A data rooms, and Dealership CRM is strictly credential-gated under bilateral NDA.
+                Access to proprietary CAD telemetry, Seed data rooms, and Dealership CRM is strictly credential-gated under bilateral NDA.
               </p>
             </div>
 
@@ -178,7 +178,7 @@ export const AccessRequestModal: React.FC<AccessRequestModalProps> = ({
                   {[
                     { id: "INVESTOR_RELATIONS", label: "Investor Data Room", sub: "Cap Table & Patent Deck" },
                     { id: "DEALER_FRANCHISE", label: "Authorized Dealership", sub: "Territory Allocation Hub" },
-                    { id: "RND_COLLABORATION", label: "R&D / Academic Lab", sub: "Dyno Telemetry & KERS API" },
+                    { id: "RND_COLLABORATION", label: "R&D / Academic Lab", sub: "Bench Telemetry & ACM API" },
                     { id: "COMMERCIAL_FLEET", label: "Enterprise Fleet Ops", sub: "StarTransit / Fleet TCO" },
                   ].map((option) => (
                     <button

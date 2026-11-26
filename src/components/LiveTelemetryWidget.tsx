@@ -322,7 +322,7 @@ export const LiveTelemetryWidget = () => {
                 <Cpu className="w-3 h-3 text-cyan-400" />
                 Immersion Thermal &amp; ACM Bus Controller
               </span>
-              <span>Protected under Indian Patent App No. 202511050655</span>
+              <span>Indian Patent App No. 202511050655 (Patent-Pending)</span>
             </div>
           </div>
         )}

@@ -1,6 +1,6 @@
 /**
  * BRC STAR - Public Architecture & Compliance Knowledge Engine
- * Grounded strictly in verified TRL 3/4 status and unpublished patent-pending disclosures.
+ * Grounded strictly in verified TRL 3/4 status and patent-pending disclosures.
  */
 
 import {
@@ -31,8 +31,8 @@ export const PATENT_METADATA = {
   applicationNumber: PATENT_STATUS_BOX.applicationNumber,
   filingDate: PATENT_STATUS_BOX.filingDate,
   jurisdiction: "Indian Patent Office (IPO)",
-  pctStatus: PATENT_STATUS_BOX.pctStatus,
-  publicationStatus: PATENT_STATUS_BOX.publicationStatus,
+  jurisdictionScope: PATENT_STATUS_BOX.jurisdictionScope,
+  disclosureStatus: PATENT_STATUS_BOX.disclosureStatus,
   grantStatus: PATENT_STATUS_BOX.grantStatus,
   applicant: "BRC STAR (OPC) PRIVATE LIMITED",
   cin: "U34100RJ2019OPC066948",
@@ -184,7 +184,7 @@ export function queryPatentKnowledge(
 
 **Disclosure Status:**
 * **Patent Filing**: ${PATENT_STATEMENT}
-* **PCT Filing**: ${PATENT_METADATA.pctStatus}
+* **Jurisdiction Scope**: ${PATENT_METADATA.jurisdictionScope}
 * **Readiness Level**: ${PATENT_METADATA.trlStage}
 * *${STANDARD_CLAIM_DISCLAIMER}*`;
   } else if (q.includes("ais") || q.includes("safety") || q.includes("homologation") || q.includes("standard")) {
@@ -217,7 +217,7 @@ Future production prototypes are designed to target:
 
 **Entity**: ${PATENT_METADATA.applicant} • CIN: \`${PATENT_METADATA.cin}\` • GSTIN: \`${PATENT_METADATA.gstin}\`  
 **Patent Status**: ${PATENT_STATEMENT}  
-**Note on Claims**: Because the application is **not yet published**, verbatim legal claims are not displayed publicly and are accessible only under bilateral NDA.
+**Note on Claims**: Because the application is **in confidential pre-disclosure status**, verbatim legal claims are not displayed publicly and are accessible only under bilateral NDA.
 
 ---
 

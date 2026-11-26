@@ -566,7 +566,7 @@ function PreBookContent() {
 
               <div className="text-[10px] text-center text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1.5 pt-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>Statutory 100% Refund Policy • Zero Obligation Waitlist</span>
+                <span>100% Refundable Expression of Interest • Zero Obligation Waitlist</span>
               </div>
             </form>
           </div>
