@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/technology/self-volt",
     "/technology/energy-recovery",
     "/technology/patent-ip",
+    "/evidence",
     "/vehicles",
     "/vehicles/passenger",
     "/vehicles/commercial",
