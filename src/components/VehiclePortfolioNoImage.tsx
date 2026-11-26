@@ -21,6 +21,7 @@ import {
   COMMON_DISCLAIMERS,
 } from "@/data/vehicles";
 import { formatInr } from "@/lib/utils";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
 import { VehiclesCTA } from "@/components/VehiclesCTA";
 import { usePreBookDrawer } from "@/components/PreBookContext";
 
@@ -114,19 +115,29 @@ export const VehiclePortfolioNoImage = () => {
                     Key Specifications (Simulated/Target)
                   </div>
                   <div className="space-y-1.5">
-                    {(vehicle.portfolioSpecs || []).map((spec, sIdx) => (
-                      <div
-                        key={sIdx}
-                        className="flex items-center justify-between text-xs gap-2"
-                      >
-                        <span className="text-slate-400 text-[11px] shrink-0">
-                          {spec.label}:
-                        </span>
-                        <span className="text-slate-200 font-semibold text-right text-[11px] truncate">
-                          {spec.value}
-                        </span>
-                      </div>
-                    ))}
+                    {(vehicle.portfolioSpecs || []).map((spec, sIdx) => {
+                      const isIllustrative = spec.label.includes("Illustrative");
+                      return (
+                        <div
+                          key={sIdx}
+                          className="flex items-center justify-between text-xs gap-2"
+                        >
+                          <span className="text-slate-400 text-[11px] shrink-0 flex items-center gap-1">
+                            <span>{spec.label}:</span>
+                            {isIllustrative && <EvidenceBadge status="illustrative" />}
+                          </span>
+                          <span className="text-slate-200 font-semibold text-right text-[11px] truncate">
+                            {isIllustrative ? (
+                              <Link href="/evidence#fleet_tco_illustrative" className="text-cyan-300 hover:underline">
+                                {spec.value}
+                              </Link>
+                            ) : (
+                              spec.value
+                            )}
+                          </span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

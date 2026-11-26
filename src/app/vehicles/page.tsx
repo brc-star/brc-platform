@@ -7,6 +7,7 @@ import { VehiclePortfolioVideoContainer } from "@/components/VehiclePortfolioVid
 import { VehiclePortfolioNoImage } from "@/components/VehiclePortfolioNoImage";
 import { VEHICLES_DATA } from "@/lib/data";
 import { formatInr } from "@/lib/utils";
+import { CLAIMS_REGISTRY } from "@/lib/claims";
 import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 export const metadata = {
@@ -64,11 +65,11 @@ export default function VehiclesPage() {
               StarCraft GT &amp; StarPulse SUV
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              CAD/CFD passenger concept lineup targeting high intercity range and 0–100 km/h in 3.2 s acceleration with dual-pack deceleration recoup (simulation target).
+              CAD/CFD passenger concept lineup targeting high intercity range and 0–100 km/h in {CLAIMS_REGISTRY.accel_starcraft_gt.metric} acceleration with dual-pack deceleration recoup (simulation target).
             </p>
             <div className="text-xs font-mono text-slate-400 space-y-1 pt-2 border-t border-slate-800">
               <div>• Indicative target from {formatInr(1650000)} (Not binding)</div>
-              <div>• Up to 850 km Target Range (Simulated)</div>
+              <div>• Up to {CLAIMS_REGISTRY.range_starcraft_gt.metric} Target Range (Simulated)</div>
             </div>
           </div>
           <Link
@@ -119,8 +120,8 @@ export default function VehiclesPage() {
               12-meter low-floor high-capacity electric bus with dual-axle kinetic harvesters for 18-hour continuous municipal duty.
             </p>
             <div className="text-xs font-mono text-slate-400 space-y-1 pt-2 border-t border-slate-800">
-              <div>• Starting from {formatInr(6500000)}</div>
-              <div>• 72+ Passenger High-Capacity Coach</div>
+              <div>• Indicative target from {formatInr(6500000)} (Not binding)</div>
+              <div>• 72+ Passenger Concept Capacity</div>
             </div>
           </div>
           <Link

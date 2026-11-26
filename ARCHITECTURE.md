@@ -51,7 +51,7 @@ When transaction volumes, security isolation, or team structures demand it, any 
 4. **Investor Relations & Data Room**: Gated access, digital bilateral NDA signature verification, watermarked document delivery.
 5. **Dealer Network**: Multi-tier franchise onboarding, territory rights, demo inventory allocation, commission tracker.
 6. **Vehicle Telemetry & IoT Gateway**: 50Hz CAN-bus streaming ingest, battery state-of-charge, ACM kinetic harvest logs, motor RPM.
-7. **R&D & Patent Application**: Indian Patent Application No. 202511050655 (patent-pending, awaiting examination), Stage 1 ACM lab logs, CFD meshes.
+7. **R&D & Patent Application**: Indian Patent Application No. 202511050655 (patent-pending, not yet published or examined), Stage 1 ACM lab logs, CFD meshes.
 8. **ERP & Manufacturing**: Bill of Materials (BOM), part inventory, component reorder thresholds, supplier database.
 9. **SOP Operating System**: Standard operating procedures, revision approval workflows, technician training records.
 10. **After-Sales & Service**: High-voltage diagnostic tickets, warranty claim processing, maintenance schedules.

@@ -213,23 +213,23 @@ export default function TermsConditionsPage() {
           </p>
 
           <h2 className="text-2xl font-bold text-white font-mono pt-2">
-            Vehicle Pre-Booking, Priority Token, &amp; 100% Refund Policy
+            Expression of Interest, Reservation Token &amp; Refund Policy
           </h2>
           <p>
-            When you submit a vehicle pre-booking reservation through https://www.brcstar.in/pre-book, the following terms govern the relationship between you and BRC STAR (OPC) PRIVATE LIMITED:
+            When you submit a waitlist registration or expression-of-interest deposit through https://www.brcstar.in/pre-book, the following terms govern the relationship between you and BRC STAR (OPC) PRIVATE LIMITED:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-xs font-mono text-slate-300">
             <li>
-              <strong>₹25,000 Fully Refundable Reservation Token</strong>: The initial reservation deposit of ₹25,000 is not a purchase agreement, but a priority queue reservation. The deposit is held in dedicated escrow/booking accounts.
+              <strong>Expression of Interest Only — No Vehicle Exists Yet</strong>: All vehicles showcased on this website remain CAD/CFD concepts at TRL 3/4 R&amp;D stage. No commercial vehicle exists yet, and any ₹25,000 waitlist token is strictly a non-binding expression of interest, not a binding vehicle sales contract or manufacturing commitment.
             </li>
             <li>
-              <strong>100% Unconditional Refund Policy</strong>: You may cancel your reservation at any time for any reason prior to signing the formal final allocation agreement and vehicle VIN assignment. Upon receiving your cancellation request, the full ₹25,000 token will be refunded to your original payment method within 7–10 banking business days without deduction or cancellation penalty.
+              <strong>Escrow / Refund Handling Account (Founder Placeholder)</strong>: <em>[Founder to fill: specify dedicated bank/escrow account institution, GST treatment, and custodian confirmation vetted by Chartered Accountant and corporate legal counsel prior to active commercial deposits]</em>.
             </li>
             <li>
-              <strong>Indicative Pricing &amp; Homologation Disclaimer</strong>: All vehicle specifications, pricing baselines (including StarCraft GT base ₹16,50,000), battery ranges, and acceleration figures displayed on this website are indicative engineering projections. Final vehicle specifications and ex-showroom prices remain subject to formal ARAI/ICAT statutory homologation testing and applicable state/central EV subsidies.
+              <strong>100% Refund Policy &amp; Timeline (Founder Placeholder)</strong>: You may withdraw your expression of interest at any time prior to signing a formal future vehicle allocation agreement. Upon written cancellation request sent to <em>[Founder to fill: dedicated refund email/grievance officer contact]</em>, 100% of any collected token amount is refundable within <em>[Founder to fill: statutory refund business-day window, e.g., 7–10 banking business days]</em> to the original payment instrument without cancellation penalty.
             </li>
             <li>
-              <strong>Production &amp; Allocation Timeline</strong>: Priority queue allocations are targeted for phased manufacturing rollouts across 2026–2027. Delivery queues are organized strictly by timestamp of confirmed reservation registration.
+              <strong>Indicative Pricing, Subsidies &amp; Homologation Disclaimer</strong>: Displayed specifications, target pricing (including StarCraft GT indicative baseline ₹16,50,000), battery ranges, and subsidy eligibility statements are non-binding concept estimates. Production specifications, final pricing, and delivery timelines depend on prototype completion, independent track validation, and mandatory future regulatory approvals (yet to start).
             </li>
           </ul>
 

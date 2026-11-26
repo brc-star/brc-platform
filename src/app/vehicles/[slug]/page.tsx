@@ -117,15 +117,29 @@ export default async function VehicleDetailPage({ params }: PageProps) {
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
-          {vehicle.specsList.map((spec) => (
-            <div
-              key={spec.label}
-              className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between"
-            >
-              <span className="text-slate-400">{spec.label}</span>
-              <span className="font-bold text-white text-right">{spec.value}</span>
-            </div>
-          ))}
+          {vehicle.specsList.map((spec) => {
+            const isIllustrative =
+              spec.category?.includes("Economics") || spec.label.includes("Illustrative");
+            return (
+              <div
+                key={spec.label}
+                className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between gap-2"
+              >
+                <span className="text-slate-400 flex items-center gap-1.5">
+                  <span>{spec.label}</span>
+                  {isIllustrative && <EvidenceBadge status="illustrative" />}
+                </span>
+                <span className="font-bold text-white text-right">
+                  {spec.value}
+                  {isIllustrative && (
+                    <Link href="/evidence#fleet_tco_illustrative" className="block text-[10px] text-cyan-400 underline font-normal mt-0.5">
+                      View assumptions →
+                    </Link>
+                  )}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -136,7 +150,8 @@ export default async function VehicleDetailPage({ params }: PageProps) {
             Ready to Configure {vehicle.name}?
           </h4>
           <p className="text-xs text-slate-300 mt-1">
-            Reserve your build priority slot with a 100% refundable token of ₹25,000.
+            Refundable Reservation Token ₹25,000 — Expression of interest only. No vehicle exists yet. Refund terms:{" "}
+            <Link href="/terms" className="text-cyan-400 underline">see Terms</Link>.
           </p>
         </div>
 

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Layers, Zap, Gauge, ArrowRight, ChevronRight, Activity } from "lucide-react";
 import { LiveTelemetryWidget } from "@/components/LiveTelemetryWidget";
-import { ENERGY_PHYSICS_NOTE } from "@/lib/claims";
+import { ENERGY_PHYSICS_NOTE, CLAIMS_REGISTRY } from "@/lib/claims";
 import { EvidenceBadge } from "@/components/EvidenceBadge";
 import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
@@ -92,7 +92,7 @@ export default function EnergyRecoveryPage() {
               2. Peak Deceleration Recoup
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              During braking events, controlled excitation directs transient deceleration peaks (up to +42 kW design target on heavy deceleration events) into the recovery buffer while targeting reduced friction brake pad wear.
+              During braking events, controlled excitation directs transient deceleration peaks (up to {CLAIMS_REGISTRY.acm_peak_recoup.metric} design target on heavy deceleration events) into the recovery buffer while targeting reduced friction brake pad wear.
             </p>
           </div>
 

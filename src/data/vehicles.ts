@@ -218,7 +218,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
     segmentBadge: "High-Uptime Logistics Van",
     tagline: "High-Uptime Commercial Electric Concept for Enterprise Logistics",
     description:
-      "Designed for logistics fleets and cold-chain supply chains. Dual-pack kinetic recovery targets illustrative electricity savings of up to 38% (approx. ₹4.8 Lakh/yr illustrative fuel savings assuming 150 km/day, ₹95/L diesel vs ₹8/kWh tariff — unaudited model).",
+      "Designed for logistics fleets and cold-chain supply chains. Dual-pack kinetic recovery targets illustrative electricity savings of up to 38% (approx. ₹4.8 Lakh/yr illustrative fuel savings assuming 150 km/day, ₹95/L diesel vs ₹8/kWh tariff — illustrative model; see /evidence#fleet_tco_illustrative).",
     imageUrl: "/starfleet-commercial.jpg",
     basePriceInr: 2450000, // Indicative Target: ₹24,50,000
     acceleration: "0-60 km/h in 5.8s (Target)",
@@ -255,7 +255,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
       { label: "Energy Recovery", value: "Dual-Pack Decel Recoup" },
       { label: "Fleet Telematics", value: "Cloud CAN-Bus Gateway" },
       { label: "Peak Decel Recoup", value: "+28 kW Target" },
-      { label: "Illustrative TCO*", value: "Up to ₹4.8L/yr (*Assumptions)" },
+      { label: "Illustrative TCO*", value: "Up to ₹4.8L/yr (*See /evidence assumptions)" },
     ],
     specsList: [
       { label: "Payload Target", value: "1,850 kg / 12.5 cubic meters volume", category: "Cargo" },
@@ -263,7 +263,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
       { label: "Peak Torque Target", value: "390 Nm (Target)", category: "Powertrain" },
       { label: "Kinetic Harvester", value: "PMG Alternator + Deceleration Recoup", category: "Self Volt System" },
       { label: "Telematics", value: "Cloud CAN-Bus Gateway Architecture", category: "Fleet OS" },
-      { label: "Illustrative TCO*", value: "Up to ₹4.8L/yr (*Assumes 150 km/d, ₹95/L, ₹8/kWh)", category: "Economics (Illustrative)" },
+      { label: "Illustrative TCO*", value: "Up to ₹4.8L/yr (*Illustrative; see /evidence#fleet_tco_illustrative)", category: "Economics (Illustrative)" },
     ],
   },
   {
@@ -274,7 +274,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
     segmentBadge: "High-Uptime Logistics Van",
     tagline: "High-Uptime Commercial Electric Concept for Enterprise Logistics",
     description:
-      "Designed for logistics fleets and cold-chain supply chains. Dual-pack kinetic recovery targets illustrative electricity savings of up to 38% (approx. ₹4.8 Lakh/yr illustrative fuel savings assuming 150 km/day, ₹95/L diesel vs ₹8/kWh tariff — unaudited model).",
+      "Designed for logistics fleets and cold-chain supply chains. Dual-pack kinetic recovery targets illustrative electricity savings of up to 38% (approx. ₹4.8 Lakh/yr illustrative fuel savings assuming 150 km/day, ₹95/L diesel vs ₹8/kWh tariff — illustrative model; see /evidence#fleet_tco_illustrative).",
     imageUrl: "/starfleet-commercial.jpg",
     basePriceInr: 2450000,
     acceleration: "0-60 km/h in 5.8s (Target)",
@@ -311,7 +311,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
       { label: "Energy Recovery", value: "Dual-Pack Decel Recoup" },
       { label: "Fleet Telematics", value: "Cloud CAN-Bus Gateway" },
       { label: "Peak Decel Recoup", value: "+28 kW Target" },
-      { label: "Illustrative TCO*", value: "Up to ₹4.8L/yr (*Assumptions)" },
+      { label: "Illustrative TCO*", value: "Up to ₹4.8L/yr (*See /evidence assumptions)" },
     ],
     specsList: [
       { label: "Payload Target", value: "1,850 kg / 12.5 cubic meters volume", category: "Cargo" },
@@ -319,7 +319,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
       { label: "Peak Torque Target", value: "390 Nm (Target)", category: "Powertrain" },
       { label: "Kinetic Harvester", value: "PMG Alternator + Deceleration Recoup", category: "Self Volt System" },
       { label: "Telematics", value: "Cloud CAN-Bus Gateway Architecture", category: "Fleet OS" },
-      { label: "Illustrative TCO*", value: "Up to ₹4.8L/yr (*Assumes 150 km/d, ₹95/L, ₹8/kWh)", category: "Economics (Illustrative)" },
+      { label: "Illustrative TCO*", value: "Up to ₹4.8L/yr (*Illustrative; see /evidence#fleet_tco_illustrative)", category: "Economics (Illustrative)" },
     ],
   },
   {
@@ -330,7 +330,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
     segmentBadge: "Concept Heavy Truck (Not in Development)",
     tagline: "Heavy-Duty Multi-Axle Electric Cargo Concept Roadmap",
     description:
-      "Concept — not in physical development stage. Explores tri-axle kinetic PMG recovery and thermal-regulated LFP packs targeting illustrative up to 44% operating cost savings under fleet duty assumptions.",
+      "Concept — not in physical development stage. Explores tri-axle kinetic PMG recovery and thermal-regulated LFP packs targeting illustrative up to 44% operating cost savings under fleet duty assumptions (see /evidence#fleet_tco_illustrative).",
     imageUrl: "/starhauler-truck.png",
     basePriceInr: 4950000, // Indicative Target: ₹49,50,000
     acceleration: "0-60 km/h in 6.4s (Target)",
@@ -386,7 +386,7 @@ export const VEHICLES_DATA: VehicleModelData[] = [
     segmentBadge: "Concept Semi-Trailer (Not in Development)",
     tagline: "Long-Haul Electric Semi-Trailer Concept Roadmap",
     description:
-      "Concept — not in physical development stage. Envisions multi-axle decelerative kinetic recovery targeting up to 750 km simulated freight range and illustrative up to 52% diesel fuel substitution under modeled freight duty assumptions.",
+      "Concept — not in physical development stage. Envisions multi-axle decelerative kinetic recovery targeting up to 750 km simulated freight range and illustrative up to 52% diesel fuel substitution under modeled freight duty assumptions (see /evidence#fleet_tco_illustrative).",
     imageUrl: "/startitan-semi-truck.png",
     basePriceInr: 7950000, // Indicative Target: ₹79,50,000
     acceleration: "0-60 km/h in 7.2s (Target)",

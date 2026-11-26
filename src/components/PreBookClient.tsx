@@ -226,13 +226,14 @@ function PreBookContent() {
       <div className="text-center max-w-3xl mx-auto space-y-3 mb-10 sm:mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100/80 border border-cyan-300/60 text-cyan-800 dark:bg-cyan-950/80 dark:border-cyan-500/30 dark:text-cyan-300 text-xs font-mono font-semibold shadow-sm transition-colors">
           <Zap className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-          <span>Priority Assembly Allocation • Series 2027</span>
+          <span>Waitlist Expression of Interest</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight font-display transition-colors">
-          Reserve Your <span className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-600 dark:from-cyan-300 dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent">BRC STAR Build Slot</span>
+          Submit Your <span className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-600 dark:from-cyan-300 dark:via-cyan-400 dark:to-blue-400 bg-clip-text text-transparent">Priority Waitlist Interest</span>
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 font-sans transition-colors">
-          Lock in priority manufacturing queue placement with a 100% refundable token of ₹25,000 held in compliant bank escrow.
+          Refundable Reservation Token ₹25,000 — Expression of interest only. No vehicle exists yet. Refund terms:{" "}
+          <Link href="/terms" className="underline text-cyan-700 dark:text-cyan-400">see Terms</Link>.
         </p>
       </div>
 
@@ -246,7 +247,7 @@ function PreBookContent() {
 
           <div className="space-y-1.5">
             <span className="text-xs font-mono font-bold text-cyan-700 dark:text-cyan-400 uppercase tracking-widest block">
-              OFFICIAL BRC STAR PRIORITY ALLOCATION CERTIFICATE
+              BRC STAR WAITLIST REGISTRATION RECORD (NON-BINDING)
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight">
               {bookingConfirmed.bookingReference}
@@ -281,7 +282,7 @@ function PreBookContent() {
             </div>
             <div className="flex justify-between border-b border-slate-200 dark:border-slate-800/80 pb-2">
               <span className="text-slate-500 dark:text-slate-400">Token Status:</span>
-              <span className="text-emerald-700 dark:text-emerald-400 font-bold">Payable upon Escrow Activation (100% Refundable)</span>
+              <span className="text-emerald-700 dark:text-emerald-400 font-bold">Expression of Interest Only (100% Refundable — see Terms)</span>
             </div>
             <div className="flex justify-between border-b border-slate-200 dark:border-slate-800/80 pb-2">
               <span className="text-slate-500 dark:text-slate-400">Waitlist Reference:</span>
@@ -519,11 +520,12 @@ function PreBookContent() {
                   {COMMON_DISCLAIMERS.homologationNotice}
                 </div>
                 <div className="flex justify-between text-emerald-700 dark:text-emerald-400 font-bold pt-2 border-t border-slate-200 dark:border-slate-800 text-xs sm:text-sm">
-                  <span>Priority Waitlist Token:</span>
+                  <span>Refundable Reservation Token:</span>
                   <span>₹25,000 (100% Refundable)</span>
                 </div>
                 <div className="p-2.5 rounded-lg bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-500/30 text-[11px] text-cyan-800 dark:text-cyan-300">
-                  <span className="font-bold">Waitlist Mode Active:</span> No payment is collected today. You will receive an invitation to lock your ₹25,000 escrow token when commercial banking is activated following ARAI homologation.
+                  <span className="font-bold">Waitlist Mode Active:</span> Expression of interest only. No vehicle exists yet. Refund terms:{" "}
+                  <Link href="/terms" className="underline font-semibold">see Terms</Link>. No payment is required to join the priority waitlist.
                 </div>
               </div>
 

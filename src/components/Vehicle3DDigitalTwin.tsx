@@ -29,6 +29,7 @@ import {
   calculateVehiclePrice,
 } from "@/data/vehicles";
 import { cn, formatInr } from "@/lib/utils";
+import { CLAIMS_REGISTRY, SYSTEM_VOLTAGES } from "@/lib/claims";
 import { usePreBookDrawer } from "@/components/PreBookContext";
 import { EvidenceBadge } from "@/components/EvidenceBadge";
 import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
@@ -107,7 +108,7 @@ const XRAY_HOTSPOTS: XRayHotspot[] = [
     yPct: 44,
     patentRef: "Patent App No. 202511050655 (Pending)",
     description: "Kinetic energy recovery module converting deceleration/glide momentum into regulated DC reserve charge.",
-    spec: "+42 kW Peak Decel Target • 98.4% Lab-Rig Yield",
+    spec: `${CLAIMS_REGISTRY.acm_peak_recoup.metric} Peak Decel Target • ${CLAIMS_REGISTRY.acm_bench_efficiency.metric} Target Yield`,
   },
   {
     id: "pack-a",
@@ -116,7 +117,7 @@ const XRAY_HOTSPOTS: XRayHotspot[] = [
     yPct: 62,
     patentRef: "Concept Subsystem: Primary Traction Storage",
     description: "Underbody structural battery pack powering high-voltage traction inverters.",
-    spec: "400V Nominal • Dielectric Liquid Cooling Concept",
+    spec: `${SYSTEM_VOLTAGES.packNominal} Nominal • Dielectric Liquid Cooling Concept`,
   },
   {
     id: "pack-b",
@@ -125,7 +126,7 @@ const XRAY_HOTSPOTS: XRayHotspot[] = [
     yPct: 62,
     patentRef: "Dual-Pack Bus Switching Architecture",
     description: "Isolated recovery buffer receiving ACM kinetic energy to reduce thermal load on Pack A (Simulated).",
-    spec: "400V Nominal • Isolated Buffer Pack",
+    spec: `${SYSTEM_VOLTAGES.acmHarvestBus} Nominal • Isolated Buffer Pack`,
   },
   {
     id: "rear-diffuser",
@@ -506,7 +507,7 @@ export const Vehicle3DDigitalTwin = () => {
 
               <div className="text-right pointer-events-auto">
                 <span className="text-[10px] font-mono text-emerald-400 block font-semibold">
-                  +42 kW Peak Decel Recoup Target
+                  {CLAIMS_REGISTRY.acm_peak_recoup.metric} Peak Decel Recoup Target
                 </span>
                 <span className="text-[11px] text-slate-400 font-mono">
                   CFD Simulated Downforce: {Math.round(104 * Math.pow(windTunnelSpeed / 160, 2))} kg @ {windTunnelSpeed} km/h
@@ -520,7 +521,7 @@ export const Vehicle3DDigitalTwin = () => {
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 dark:bg-slate-900/80 dark:border-slate-800 transition-colors flex flex-col items-center">
               <span className="text-[9px] uppercase text-slate-500 dark:text-slate-400 block">0-100 km/h Target</span>
               <span className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-                {selectedTrim === "performance" ? "2.9s" : (currentVehicle.acceleration.match(/\d+(\.\d+)?s/)?.[0] || "3.2s")}
+                {selectedTrim === "performance" ? "2.9s (Target)" : (currentVehicle.acceleration.match(/\d+(\.\d+)?s/)?.[0] || CLAIMS_REGISTRY.accel_starcraft_gt.metric)}
               </span>
               <EvidenceBadge status="target" className="mt-1" />
             </div>

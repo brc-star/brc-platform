@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Zap, Layers, Shield, Cpu, ArrowRight, CheckCircle2 } from "lucide-react";
-import { PATENT_STATEMENT } from "@/lib/claims";
+import { PATENT_STATEMENT, SYSTEM_VOLTAGES, CLAIMS_REGISTRY } from "@/lib/claims";
 import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
 const SelfVoltVisualizer = dynamic(
@@ -37,16 +37,16 @@ export default function TechnologyOverviewPage() {
       href: "/technology/self-volt",
       badge: "TRL 3/4 Target",
       icon: Zap,
-      desc: "Our dual-pack system separates traction discharge load from decelerative kinetic charging, designed to reduce thermal stress and target up to 850 km simulated range.",
-      specs: ["Dual 400V / 800V Architecture Target", "Isolated Buffer Pack Switching", "Simulation & Test Bench R&D"],
+      desc: `Our dual-pack system separates traction discharge load from decelerative kinetic charging, designed to reduce thermal stress and target up to ${CLAIMS_REGISTRY.range_starcraft_gt.metric} simulated range.`,
+      specs: [`Dual ${SYSTEM_VOLTAGES.packNominal} / ${SYSTEM_VOLTAGES.systemArchitecture} Architecture Target`, "Isolated Buffer Pack Switching", "Simulation & Test Bench R&D"],
     },
     {
       title: "Energy Recovery & Kinetic PMG",
       href: "/technology/energy-recovery",
-      badge: "Stage 1 ACM Bench",
+      badge: "TRL 3/4 R&D",
       icon: Layers,
       desc: "Permanent magnet generator (PMG) kinetic recovery captures vehicle deceleration and downhill momentum into auxiliary battery storage.",
-      specs: ["Deceleration & Glide Recoup", "98.4% ACM Rig Efficiency (Stage 1 Bench)", "Drive-Cycle Dependent Gain"],
+      specs: ["Deceleration & Glide Recoup", `${CLAIMS_REGISTRY.acm_bench_efficiency.metric} ACM Rig Target (Simulated / NDA)`, "Drive-Cycle Dependent Gain"],
     },
     {
       title: "Patent & Intellectual Property",
@@ -56,8 +56,8 @@ export default function TechnologyOverviewPage() {
       desc: PATENT_STATEMENT,
       specs: [
         "Indian Patent App No. 202511050655",
-        "24 claims as filed (subject to exam)",
-        "Awaiting examination; not yet granted",
+        "24 claims as filed (text under NDA)",
+        "Not yet published, not yet examined, not granted",
       ],
     },
   ];

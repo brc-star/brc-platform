@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { Truck, Zap, Gauge, Compass, ShieldCheck, ArrowRight, ChevronRight, CheckCircle2, TrendingDown, Box, BatteryCharging } from "lucide-react";
 import { VEHICLES_DATA, COMMON_DISCLAIMERS } from "@/lib/data";
+import { CLAIMS_REGISTRY } from "@/lib/claims";
+import { EvidenceBadge } from "@/components/EvidenceBadge";
 import { formatInr } from "@/lib/utils";
 import { ClaimDisclaimer } from "@/components/ClaimDisclaimer";
 
@@ -106,15 +108,19 @@ export default function CommercialVehiclesPage() {
                     {vehicle.ratedRangeKm} km
                   </div>
                 </div>
-                <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex flex-col items-center">
                   <div className="text-[10px] text-slate-400 uppercase">Illustrative Savings*</div>
                   <div className="text-base font-bold text-emerald-400 mt-0.5">
                     {vehicle.slug === "startitan-semi-truck"
-                      ? "~₹21.5L/yr (Illus.)"
+                      ? "~₹21.5L/yr"
                       : vehicle.slug === "starhauler-truck"
-                      ? "~₹11.2L/yr (Illus.)"
-                      : "~₹4.8L/yr (Illus.)"}
+                      ? "~₹11.2L/yr"
+                      : "~₹4.8L/yr"}
                   </div>
+                  <EvidenceBadge status={CLAIMS_REGISTRY.fleet_tco_illustrative.status} className="mt-1" />
+                  <Link href="/evidence#fleet_tco_illustrative" className="text-[10px] text-cyan-400 hover:underline mt-1">
+                    Assumptions →
+                  </Link>
                 </div>
               </div>
 

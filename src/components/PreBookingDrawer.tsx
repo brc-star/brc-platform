@@ -128,18 +128,26 @@ export function PreBookingDrawer() {
         {/* Body */}
         <div className="p-6 space-y-5 flex-1">
           {/* Token Summary Card */}
-          <div className="p-4 rounded-2xl bg-gradient-to-br from-cyan-50 via-white to-blue-50 dark:from-cyan-950/40 dark:via-[#0A0E1A] dark:to-blue-950/30 border border-cyan-200 dark:border-cyan-500/30 flex items-center justify-between gap-3">
-            <div>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 block">
-                Priority Reservation Token
-              </span>
-              <span className="text-2xl font-display font-extrabold text-slate-900 dark:text-white">
-                {formatInr(PREBOOK_TOKEN_AMOUNT_INR)}
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-cyan-50 via-white to-blue-50 dark:from-cyan-950/40 dark:via-[#0A0E1A] dark:to-blue-950/30 border border-cyan-200 dark:border-cyan-500/30 space-y-2">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 block">
+                  Refundable Reservation Token
+                </span>
+                <span className="text-2xl font-display font-extrabold text-slate-900 dark:text-white">
+                  {formatInr(PREBOOK_TOKEN_AMOUNT_INR)}
+                </span>
+              </div>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-300 dark:border-emerald-500/40 shrink-0">
+                100% Refundable
               </span>
             </div>
-            <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950/70 dark:text-emerald-300 dark:border-emerald-500/40 shrink-0">
-              100% Refundable
-            </span>
+            <p className="text-[11px] font-mono text-slate-700 dark:text-slate-300">
+              Expression of interest only. No vehicle exists yet. Refund terms:{" "}
+              <Link href="/terms" onClick={closeDrawer} className="underline text-cyan-700 dark:text-cyan-400">
+                see Terms
+              </Link>.
+            </p>
           </div>
 
           {/* Model Preview */}

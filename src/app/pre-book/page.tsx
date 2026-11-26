@@ -62,10 +62,11 @@ export default function PreBookPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
             <div className="space-y-1">
-              <span className="font-mono text-slate-500 dark:text-slate-400 block uppercase text-[10px]">Deposit Allocation</span>
+              <span className="font-mono text-slate-500 dark:text-slate-400 block uppercase text-[10px]">Refundable Reservation Token</span>
               <span className="font-bold text-slate-900 dark:text-white text-sm font-mono">₹25,000 Interest Token</span>
               <p className="text-slate-600 dark:text-slate-400 text-[11px] leading-relaxed">
-                No commercial vehicle exists yet; non-binding expression of interest held by BRC STAR (OPC) PRIVATE LIMITED.
+                Expression of interest only. No vehicle exists yet. Refund terms:{" "}
+                <Link href="/terms" className="underline text-cyan-700 dark:text-cyan-400">see Terms</Link>.
               </p>
             </div>
 
